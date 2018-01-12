@@ -2100,6 +2100,7 @@ fileExtension(xbase, ".prg").
 fileExtension(xbase, ".ch").
 fileExtension(xbase, ".prw").
 
+fileExtension(unknown_type, _).
 
 interpreter("apl", apl).
 interpreter("aplx", apl).
@@ -2205,4 +2206,5 @@ interpreter("tclsh", tcl).
 interpreter("wish", tcl).
 interpreter("lua", terra).
 interpreter("fish", fish).
+interpreter(unknown_interpreter, _).
 
