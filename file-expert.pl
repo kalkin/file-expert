@@ -1,17 +1,5 @@
-:- consult('github-extensions-kb').
-
-fileExtension(PATH, EXT):-
-    file_base_name(PATH, NAME),
-    split_string(NAME, ".", "", LIST),
-    reverse(LIST, [EXT_STR|_]),
-    string_concat(".", EXT_STR, EXT).
-
-
 shebangType(PATH, TYPE):-
-    exists_file(PATH),
-    open(PATH, read, Stream),
-    read_line_to_codes(Stream, Codes),
-    atom_chars(MAGIC_LINE, Codes),
+    fileFirstLine(PATH, MAGIC_LINE),
     shebang(TYPE, MAGIC_LINE).
 
 shebang(TYPE, MAGIC_LINE):-
@@ -32,9 +20,7 @@ shebang(PATH, TYPE, MAGIC_LINE):-
     shebang("#! ", PATH, CMD, MAGIC_LINE).
 
 shebang(BANG, PATH, CMD, MAGIC_LINE):-
-    string_concat(BANG, PATH, PREFIX),
-    string_concat(PREFIX, CMD, MAGIC_LINE).
-
+    my_concat(BANG, PATH, CMD, MAGIC_LINE).
 
 heuristic(_, [], unknown_type).
 
