@@ -467,1635 +467,1636 @@ langName(wdl, "wdl").
 langName(wisp, "wisp").
 langName(xbase, "xBase").
 
-fileExtension(".bsl", one_c_enterprise).
-fileExtension(".os", one_c_enterprise).
 
-fileExtension(".abap", abap).
+fileExtension(one_c_enterprise, ".bsl").
+fileExtension(one_c_enterprise, ".os").
 
-fileExtension(".abnf", abnf).
+fileExtension(abap, ".abap").
 
-fileExtension(".asc", ags_script).
-fileExtension(".ash", ags_script).
+fileExtension(abnf, ".abnf").
 
-fileExtension(".ampl", ampl).
-fileExtension(".mod", ampl).
+fileExtension(ags_script, ".asc").
+fileExtension(ags_script, ".ash").
 
-fileExtension(".g4", antlr).
+fileExtension(ampl, ".ampl").
+fileExtension(ampl, ".mod").
 
-fileExtension(".apib", api_blueprint).
+fileExtension(antlr, ".g4").
 
-fileExtension(".apl", apl).
-fileExtension(".dyalog", apl).
+fileExtension(api_blueprint, ".apib").
 
-fileExtension(".asn", asn.1).
-fileExtension(".asn1", asn.1).
+fileExtension(apl, ".apl").
+fileExtension(apl, ".dyalog").
 
-fileExtension(".asp", asp).
-fileExtension(".asax", asp).
-fileExtension(".ascx", asp).
-fileExtension(".ashx", asp).
-fileExtension(".asmx", asp).
-fileExtension(".aspx", asp).
-fileExtension(".axd", asp).
+fileExtension(asn.1, ".asn").
+fileExtension(asn.1, ".asn1").
 
-fileExtension(".dats", ats).
-fileExtension(".hats", ats).
-fileExtension(".sats", ats).
+fileExtension(asp, ".asp").
+fileExtension(asp, ".asax").
+fileExtension(asp, ".ascx").
+fileExtension(asp, ".ashx").
+fileExtension(asp, ".asmx").
+fileExtension(asp, ".aspx").
+fileExtension(asp, ".axd").
 
-fileExtension(".as", actionscript).
+fileExtension(ats, ".dats").
+fileExtension(ats, ".hats").
+fileExtension(ats, ".sats").
 
-fileExtension(".adb", ada).
-fileExtension(".ada", ada).
-fileExtension(".ads", ada).
+fileExtension(actionscript, ".as").
 
-fileExtension(".afm", adobe_font_metrics).
+fileExtension(ada, ".adb").
+fileExtension(ada, ".ada").
+fileExtension(ada, ".ads").
 
-fileExtension(".agda", agda).
+fileExtension(adobe_font_metrics, ".afm").
 
-fileExtension(".als", alloy).
+fileExtension(agda, ".agda").
 
+fileExtension(alloy, ".als").
 
-fileExtension(".as", angelscript).
-fileExtension(".angelscript", angelscript).
 
+fileExtension(angelscript, ".as").
+fileExtension(angelscript, ".angelscript").
 
-fileExtension(".apacheconf", apacheconf).
-fileExtension(".vhost", apacheconf).
 
-fileExtension(".cls", apex).
+fileExtension(apacheconf, ".apacheconf").
+fileExtension(apacheconf, ".vhost").
 
-fileExtension(".agc", apollo_guidance_computer).
+fileExtension(apex, ".cls").
 
-fileExtension(".applescript", applescript).
-fileExtension(".scpt", applescript).
+fileExtension(apollo_guidance_computer, ".agc").
 
-fileExtension(".arc", arc).
+fileExtension(applescript, ".applescript").
+fileExtension(applescript, ".scpt").
 
-fileExtension(".asciidoc", asciidoc).
-fileExtension(".adoc", asciidoc).
-fileExtension(".asc", asciidoc).
+fileExtension(arc, ".arc").
 
-fileExtension(".aj", aspectj).
+fileExtension(asciidoc, ".asciidoc").
+fileExtension(asciidoc, ".adoc").
+fileExtension(asciidoc, ".asc").
 
-fileExtension(".asm", assembly).
-fileExtension(".a51", assembly).
-fileExtension(".inc", assembly).
-fileExtension(".nasm", assembly).
+fileExtension(aspectj, ".aj").
 
-fileExtension(".aug", augeas).
+fileExtension(assembly, ".asm").
+fileExtension(assembly, ".a51").
+fileExtension(assembly, ".inc").
+fileExtension(assembly, ".nasm").
 
-fileExtension(".ahk", autohotkey).
-fileExtension(".ahkl", autohotkey).
+fileExtension(augeas, ".aug").
 
-fileExtension(".au3", autoit).
+fileExtension(autohotkey, ".ahk").
+fileExtension(autohotkey, ".ahkl").
 
-fileExtension(".awk", awk).
-fileExtension(".auk", awk).
-fileExtension(".gawk", awk).
-fileExtension(".mawk", awk).
-fileExtension(".nawk", awk).
+fileExtension(autoit, ".au3").
 
-fileExtension(".bal", ballerina).
+fileExtension(awk, ".awk").
+fileExtension(awk, ".auk").
+fileExtension(awk, ".gawk").
+fileExtension(awk, ".mawk").
+fileExtension(awk, ".nawk").
 
-fileExtension(".bat", batchfile).
-fileExtension(".cmd", batchfile).
+fileExtension(ballerina, ".bal").
 
-fileExtension(".befunge", befunge).
+fileExtension(batchfile, ".bat").
+fileExtension(batchfile, ".cmd").
 
-fileExtension(".bison", bison).
+fileExtension(befunge, ".befunge").
 
-fileExtension(".bb", bitbake).
+fileExtension(bison, ".bison").
 
-fileExtension(".blade", blade).
-fileExtension(".blade.php", blade).
+fileExtension(bitbake, ".bb").
 
-fileExtension(".bb", blitzbasic).
-fileExtension(".decls", blitzbasic).
+fileExtension(blade, ".blade").
+fileExtension(blade, ".blade.php").
 
-fileExtension(".bmx", blitzmax).
+fileExtension(blitzbasic, ".bb").
+fileExtension(blitzbasic, ".decls").
 
-fileExtension(".bsv", bluespec).
+fileExtension(blitzmax, ".bmx").
 
-fileExtension(".boo", boo).
+fileExtension(bluespec, ".bsv").
 
-fileExtension(".b", brainfuck).
-fileExtension(".bf", brainfuck).
+fileExtension(boo, ".boo").
 
-fileExtension(".brs", brightscript).
+fileExtension(brainfuck, ".b").
+fileExtension(brainfuck, ".bf").
 
-fileExtension(".bro", bro).
+fileExtension(brightscript, ".brs").
 
-fileExtension(".c", c).
-fileExtension(".cats", c).
-fileExtension(".h", c).
-fileExtension(".idc", c).
+fileExtension(bro, ".bro").
 
-fileExtension(".cs", c_sharp).
-fileExtension(".cake", c_sharp).
-fileExtension(".cshtml", c_sharp).
-fileExtension(".csx", c_sharp).
+fileExtension(c, ".c").
+fileExtension(c, ".cats").
+fileExtension(c, ".h").
+fileExtension(c, ".idc").
 
-fileExtension(".cpp", c_plus_plus).
-fileExtension(".c++", c_plus_plus).
-fileExtension(".cc", c_plus_plus).
-fileExtension(".cp", c_plus_plus).
-fileExtension(".cxx", c_plus_plus).
-fileExtension(".h", c_plus_plus).
-fileExtension(".h++", c_plus_plus).
-fileExtension(".hh", c_plus_plus).
-fileExtension(".hpp", c_plus_plus).
-fileExtension(".hxx", c_plus_plus).
-fileExtension(".inc", c_plus_plus).
-fileExtension(".inl", c_plus_plus).
-fileExtension(".ino", c_plus_plus).
-fileExtension(".ipp", c_plus_plus).
-fileExtension(".re", c_plus_plus).
-fileExtension(".tcc", c_plus_plus).
-fileExtension(".tpp", c_plus_plus).
+fileExtension(c_sharp, ".cs").
+fileExtension(c_sharp, ".cake").
+fileExtension(c_sharp, ".cshtml").
+fileExtension(c_sharp, ".csx").
 
-fileExtension(".c-objdump", c-objdump).
+fileExtension(c_plus_plus, ".cpp").
+fileExtension(c_plus_plus, ".c++").
+fileExtension(c_plus_plus, ".cc").
+fileExtension(c_plus_plus, ".cp").
+fileExtension(c_plus_plus, ".cxx").
+fileExtension(c_plus_plus, ".h").
+fileExtension(c_plus_plus, ".h++").
+fileExtension(c_plus_plus, ".hh").
+fileExtension(c_plus_plus, ".hpp").
+fileExtension(c_plus_plus, ".hxx").
+fileExtension(c_plus_plus, ".inc").
+fileExtension(c_plus_plus, ".inl").
+fileExtension(c_plus_plus, ".ino").
+fileExtension(c_plus_plus, ".ipp").
+fileExtension(c_plus_plus, ".re").
+fileExtension(c_plus_plus, ".tcc").
+fileExtension(c_plus_plus, ".tpp").
 
-fileExtension(".chs", c2hs_haskell).
+fileExtension(c-objdump, ".c-objdump").
 
-fileExtension(".clp", clips).
+fileExtension(c2hs_haskell, ".chs").
 
-fileExtension(".cmake", cmake).
-fileExtension(".cmake.in", cmake).
+fileExtension(clips, ".clp").
 
-fileExtension(".cob", cobol).
-fileExtension(".cbl", cobol).
-fileExtension(".ccp", cobol).
-fileExtension(".cobol", cobol).
-fileExtension(".cpy", cobol).
+fileExtension(cmake, ".cmake").
+fileExtension(cmake, ".cmake.in").
 
-fileExtension(".dae", collada).
+fileExtension(cobol, ".cob").
+fileExtension(cobol, ".cbl").
+fileExtension(cobol, ".ccp").
+fileExtension(cobol, ".cobol").
+fileExtension(cobol, ".cpy").
 
-fileExtension(".cson", cson).
+fileExtension(collada, ".dae").
 
-fileExtension(".css", css).
+fileExtension(cson, ".cson").
 
-fileExtension(".csv", csv).
+fileExtension(css, ".css").
 
-fileExtension(".w", cweb).
+fileExtension(csv, ".csv").
 
-fileExtension(".capnp", capn_proto).
+fileExtension(cweb, ".w").
 
-fileExtension(".mss", cartocss).
+fileExtension(capn_proto, ".capnp").
 
-fileExtension(".ceylon", ceylon).
+fileExtension(cartocss, ".mss").
 
-fileExtension(".chpl", chapel).
+fileExtension(ceylon, ".ceylon").
 
-fileExtension(".ch", charity).
+fileExtension(chapel, ".chpl").
 
-fileExtension(".ck", chuck).
+fileExtension(charity, ".ch").
 
-fileExtension(".cirru", cirru).
+fileExtension(chuck, ".ck").
 
-fileExtension(".clw", clarion).
+fileExtension(cirru, ".cirru").
 
-fileExtension(".icl", clean).
-fileExtension(".dcl", clean).
+fileExtension(clarion, ".clw").
 
-fileExtension(".click", click).
+fileExtension(clean, ".icl").
+fileExtension(clean, ".dcl").
 
-fileExtension(".clj", clojure).
-fileExtension(".boot", clojure).
-fileExtension(".cl2", clojure).
-fileExtension(".cljc", clojure).
-fileExtension(".cljs", clojure).
-fileExtension(".cljs.hl", clojure).
-fileExtension(".cljscm", clojure).
-fileExtension(".cljx", clojure).
-fileExtension(".hic", clojure).
+fileExtension(click, ".click").
 
-fileExtension(".soy", closure_templates).
+fileExtension(clojure, ".clj").
+fileExtension(clojure, ".boot").
+fileExtension(clojure, ".cl2").
+fileExtension(clojure, ".cljc").
+fileExtension(clojure, ".cljs").
+fileExtension(clojure, ".cljs.hl").
+fileExtension(clojure, ".cljscm").
+fileExtension(clojure, ".cljx").
+fileExtension(clojure, ".hic").
 
-fileExtension(".coffee", coffeescript).
-fileExtension("._coffee", coffeescript).
-fileExtension(".cake", coffeescript).
-fileExtension(".cjsx", coffeescript).
-fileExtension(".iced", coffeescript).
+fileExtension(closure_templates, ".soy").
 
-fileExtension(".cfm", coldfusion).
-fileExtension(".cfml", coldfusion).
+fileExtension(coffeescript, ".coffee").
+fileExtension(coffeescript, "._coffee").
+fileExtension(coffeescript, ".cake").
+fileExtension(coffeescript, ".cjsx").
+fileExtension(coffeescript, ".iced").
 
-fileExtension(".cfc", coldfusion_cfc).
+fileExtension(coldfusion, ".cfm").
+fileExtension(coldfusion, ".cfml").
 
-fileExtension(".lisp", common_lisp).
-fileExtension(".asd", common_lisp).
-fileExtension(".cl", common_lisp).
-fileExtension(".l", common_lisp).
-fileExtension(".lsp", common_lisp).
-fileExtension(".ny", common_lisp).
-fileExtension(".podsl", common_lisp).
-fileExtension(".sexp", common_lisp).
+fileExtension(coldfusion_cfc, ".cfc").
 
-fileExtension(".cwl", common_workflow_language).
+fileExtension(common_lisp, ".lisp").
+fileExtension(common_lisp, ".asd").
+fileExtension(common_lisp, ".cl").
+fileExtension(common_lisp, ".l").
+fileExtension(common_lisp, ".lsp").
+fileExtension(common_lisp, ".ny").
+fileExtension(common_lisp, ".podsl").
+fileExtension(common_lisp, ".sexp").
 
-fileExtension(".cp", component_pascal).
-fileExtension(".cps", component_pascal).
+fileExtension(common_workflow_language, ".cwl").
 
-fileExtension(".cl", cool).
+fileExtension(component_pascal, ".cp").
+fileExtension(component_pascal, ".cps").
 
-fileExtension(".coq", coq).
-fileExtension(".v", coq).
+fileExtension(cool, ".cl").
 
-fileExtension(".cppobjdump", cpp-objdump).
-fileExtension(".c++-objdump", cpp-objdump).
-fileExtension(".c++objdump", cpp-objdump).
-fileExtension(".cpp-objdump", cpp-objdump).
-fileExtension(".cxx-objdump", cpp-objdump).
+fileExtension(coq, ".coq").
+fileExtension(coq, ".v").
 
-fileExtension(".creole", creole).
+fileExtension(cpp-objdump, ".cppobjdump").
+fileExtension(cpp-objdump, ".c++-objdump").
+fileExtension(cpp-objdump, ".c++objdump").
+fileExtension(cpp-objdump, ".cpp-objdump").
+fileExtension(cpp-objdump, ".cxx-objdump").
 
-fileExtension(".cr", crystal).
+fileExtension(creole, ".creole").
 
-fileExtension(".orc", csound).
-fileExtension(".udo", csound).
+fileExtension(crystal, ".cr").
 
-fileExtension(".csd", csound_document).
+fileExtension(csound, ".orc").
+fileExtension(csound, ".udo").
 
-fileExtension(".sco", csound_score).
+fileExtension(csound_document, ".csd").
 
-fileExtension(".cu", cuda).
-fileExtension(".cuh", cuda).
+fileExtension(csound_score, ".sco").
 
-fileExtension(".cy", cycript).
+fileExtension(cuda, ".cu").
+fileExtension(cuda, ".cuh").
 
-fileExtension(".pyx", cython).
-fileExtension(".pxd", cython).
-fileExtension(".pxi", cython).
+fileExtension(cycript, ".cy").
 
-fileExtension(".d", d).
-fileExtension(".di", d).
+fileExtension(cython, ".pyx").
+fileExtension(cython, ".pxd").
+fileExtension(cython, ".pxi").
 
-fileExtension(".d-objdump", d-objdump).
+fileExtension(d, ".d").
+fileExtension(d, ".di").
 
-fileExtension(".com", digital_command_language).
+fileExtension(d-objdump, ".d-objdump").
 
-fileExtension(".dm", dm).
+fileExtension(digital_command_language, ".com").
 
-fileExtension(".zone", dns_zone).
-fileExtension(".arpa", dns_zone).
+fileExtension(dm, ".dm").
 
-fileExtension(".d", dtrace).
+fileExtension(dns_zone, ".zone").
+fileExtension(dns_zone, ".arpa").
 
-fileExtension(".darcspatch", darcs_patch).
-fileExtension(".dpatch", darcs_patch).
+fileExtension(dtrace, ".d").
 
-fileExtension(".dart", dart).
+fileExtension(darcs_patch, ".darcspatch").
+fileExtension(darcs_patch, ".dpatch").
 
-fileExtension(".dwl", dataweave).
+fileExtension(dart, ".dart").
 
-fileExtension(".diff", diff).
-fileExtension(".patch", diff).
+fileExtension(dataweave, ".dwl").
 
-fileExtension(".dockerfile", dockerfile).
+fileExtension(diff, ".diff").
+fileExtension(diff, ".patch").
 
-fileExtension(".djs", dogescript).
+fileExtension(dockerfile, ".dockerfile").
 
-fileExtension(".dylan", dylan).
-fileExtension(".dyl", dylan).
-fileExtension(".intr", dylan).
-fileExtension(".lid", dylan).
+fileExtension(dogescript, ".djs").
 
-fileExtension(".E", e).
+fileExtension(dylan, ".dylan").
+fileExtension(dylan, ".dyl").
+fileExtension(dylan, ".intr").
+fileExtension(dylan, ".lid").
 
-fileExtension(".ebnf", ebnf).
+fileExtension(e, ".E").
 
-fileExtension(".ecl", ecl).
-fileExtension(".eclxml", ecl).
+fileExtension(ebnf, ".ebnf").
 
-fileExtension(".ecl", eclipse).
+fileExtension(ecl, ".ecl").
+fileExtension(ecl, ".eclxml").
 
-fileExtension(".ejs", ejs).
+fileExtension(eclipse, ".ecl").
 
-fileExtension(".eq", eq).
+fileExtension(ejs, ".ejs").
 
-fileExtension(".sch", eagle).
-fileExtension(".brd", eagle).
+fileExtension(eq, ".eq").
 
-fileExtension(".eb", easybuild).
+fileExtension(eagle, ".sch").
+fileExtension(eagle, ".brd").
 
-fileExtension(".epj", ecere_projects).
+fileExtension(easybuild, ".eb").
 
-fileExtension(".edc", edje_data_collection).
+fileExtension(ecere_projects, ".epj").
 
-fileExtension(".e", eiffel).
+fileExtension(edje_data_collection, ".edc").
 
-fileExtension(".ex", elixir).
-fileExtension(".exs", elixir).
+fileExtension(eiffel, ".e").
 
-fileExtension(".elm", elm).
+fileExtension(elixir, ".ex").
+fileExtension(elixir, ".exs").
 
-fileExtension(".el", emacs_lisp).
-fileExtension(".emacs", emacs_lisp).
-fileExtension(".emacs.desktop", emacs_lisp).
+fileExtension(elm, ".elm").
 
-fileExtension(".em", emberscript).
-fileExtension(".emberscript", emberscript).
+fileExtension(emacs_lisp, ".el").
+fileExtension(emacs_lisp, ".emacs").
+fileExtension(emacs_lisp, ".emacs.desktop").
 
-fileExtension(".erl", erlang).
-fileExtension(".app.src", erlang).
-fileExtension(".es", erlang).
-fileExtension(".escript", erlang).
-fileExtension(".hrl", erlang).
-fileExtension(".xrl", erlang).
-fileExtension(".yrl", erlang).
+fileExtension(emberscript, ".em").
+fileExtension(emberscript, ".emberscript").
 
-fileExtension(".fs", f_sharp).
-fileExtension(".fsi", f_sharp).
-fileExtension(".fsx", f_sharp).
+fileExtension(erlang, ".erl").
+fileExtension(erlang, ".app.src").
+fileExtension(erlang, ".es").
+fileExtension(erlang, ".escript").
+fileExtension(erlang, ".hrl").
+fileExtension(erlang, ".xrl").
+fileExtension(erlang, ".yrl").
 
-fileExtension(".fx", flux).
-fileExtension(".flux", flux).
+fileExtension(f_sharp, ".fs").
+fileExtension(f_sharp, ".fsi").
+fileExtension(f_sharp, ".fsx").
 
-fileExtension(".factor", factor).
+fileExtension(flux, ".fx").
+fileExtension(flux, ".flux").
 
-fileExtension(".fy", fancy).
-fileExtension(".fancypack", fancy).
+fileExtension(factor, ".factor").
 
-fileExtension(".fan", fantom).
+fileExtension(fancy, ".fy").
+fileExtension(fancy, ".fancypack").
 
-fileExtension(".f", filebench_wml).
+fileExtension(fantom, ".fan").
 
-fileExtension(".fs", filterscript).
+fileExtension(filebench_wml, ".f").
 
-fileExtension(".for", formatted).
-fileExtension(".eam.fs", formatted).
+fileExtension(filterscript, ".fs").
 
-fileExtension(".fth", forth).
-fileExtension(".4th", forth).
-fileExtension(".f", forth).
-fileExtension(".for", forth).
-fileExtension(".forth", forth).
-fileExtension(".fr", forth).
-fileExtension(".frt", forth).
-fileExtension(".fs", forth).
+fileExtension(formatted, ".for").
+fileExtension(formatted, ".eam.fs").
 
-fileExtension(".f90", fortran).
-fileExtension(".f", fortran).
-fileExtension(".f03", fortran).
-fileExtension(".f08", fortran).
-fileExtension(".f77", fortran).
-fileExtension(".f95", fortran).
-fileExtension(".for", fortran).
-fileExtension(".fpp", fortran).
+fileExtension(forth, ".fth").
+fileExtension(forth, ".4th").
+fileExtension(forth, ".f").
+fileExtension(forth, ".for").
+fileExtension(forth, ".forth").
+fileExtension(forth, ".fr").
+fileExtension(forth, ".frt").
+fileExtension(forth, ".fs").
 
-fileExtension(".ftl", freemarker).
+fileExtension(fortran, ".f90").
+fileExtension(fortran, ".f").
+fileExtension(fortran, ".f03").
+fileExtension(fortran, ".f08").
+fileExtension(fortran, ".f77").
+fileExtension(fortran, ".f95").
+fileExtension(fortran, ".for").
+fileExtension(fortran, ".fpp").
 
-fileExtension(".fr", frege).
+fileExtension(freemarker, ".ftl").
 
-fileExtension(".g", g-code).
-fileExtension(".gco", g-code).
-fileExtension(".gcode", g-code).
+fileExtension(frege, ".fr").
 
-fileExtension(".gms", gams).
+fileExtension(g-code, ".g").
+fileExtension(g-code, ".gco").
+fileExtension(g-code, ".gcode").
 
-fileExtension(".g", gap).
-fileExtension(".gap", gap).
-fileExtension(".gd", gap).
-fileExtension(".gi", gap).
-fileExtension(".tst", gap).
+fileExtension(gams, ".gms").
 
-fileExtension(".md", gcc_machine_description).
+fileExtension(gap, ".g").
+fileExtension(gap, ".gap").
+fileExtension(gap, ".gd").
+fileExtension(gap, ".gi").
+fileExtension(gap, ".tst").
 
-fileExtension(".gdb", gdb).
-fileExtension(".gdbinit", gdb).
+fileExtension(gcc_machine_description, ".md").
 
-fileExtension(".gd", gdscript).
+fileExtension(gdb, ".gdb").
+fileExtension(gdb, ".gdbinit").
 
-fileExtension(".glsl", glsl).
-fileExtension(".fp", glsl).
-fileExtension(".frag", glsl).
-fileExtension(".frg", glsl).
-fileExtension(".fs", glsl).
-fileExtension(".fsh", glsl).
-fileExtension(".fshader", glsl).
-fileExtension(".geo", glsl).
-fileExtension(".geom", glsl).
-fileExtension(".glslv", glsl).
-fileExtension(".gshader", glsl).
-fileExtension(".shader", glsl).
-fileExtension(".tesc", glsl).
-fileExtension(".tese", glsl).
-fileExtension(".vert", glsl).
-fileExtension(".vrx", glsl).
-fileExtension(".vsh", glsl).
-fileExtension(".vshader", glsl).
+fileExtension(gdscript, ".gd").
 
-fileExtension(".gn", gn).
-fileExtension(".gni", gn).
+fileExtension(glsl, ".glsl").
+fileExtension(glsl, ".fp").
+fileExtension(glsl, ".frag").
+fileExtension(glsl, ".frg").
+fileExtension(glsl, ".fs").
+fileExtension(glsl, ".fsh").
+fileExtension(glsl, ".fshader").
+fileExtension(glsl, ".geo").
+fileExtension(glsl, ".geom").
+fileExtension(glsl, ".glslv").
+fileExtension(glsl, ".gshader").
+fileExtension(glsl, ".shader").
+fileExtension(glsl, ".tesc").
+fileExtension(glsl, ".tese").
+fileExtension(glsl, ".vert").
+fileExtension(glsl, ".vrx").
+fileExtension(glsl, ".vsh").
+fileExtension(glsl, ".vshader").
 
-fileExtension(".gml", game_maker_language).
+fileExtension(gn, ".gn").
+fileExtension(gn, ".gni").
 
-fileExtension(".gs", genie).
+fileExtension(game_maker_language, ".gml").
 
-fileExtension(".kid", genshi).
+fileExtension(genie, ".gs").
 
-fileExtension(".ebuild", gentoo_ebuild).
+fileExtension(genshi, ".kid").
 
-fileExtension(".eclass", gentoo_eclass).
+fileExtension(gentoo_ebuild, ".ebuild").
 
-fileExtension(".gbr", gerber_image).
-fileExtension(".gbl", gerber_image).
-fileExtension(".gbo", gerber_image).
-fileExtension(".gbp", gerber_image).
-fileExtension(".gbs", gerber_image).
-fileExtension(".gko", gerber_image).
-fileExtension(".gpb", gerber_image).
-fileExtension(".gpt", gerber_image).
-fileExtension(".gtl", gerber_image).
-fileExtension(".gto", gerber_image).
-fileExtension(".gtp", gerber_image).
-fileExtension(".gts", gerber_image).
+fileExtension(gentoo_eclass, ".eclass").
 
-fileExtension(".po", gettext_catalog).
-fileExtension(".pot", gettext_catalog).
+fileExtension(gerber_image, ".gbr").
+fileExtension(gerber_image, ".gbl").
+fileExtension(gerber_image, ".gbo").
+fileExtension(gerber_image, ".gbp").
+fileExtension(gerber_image, ".gbs").
+fileExtension(gerber_image, ".gko").
+fileExtension(gerber_image, ".gpb").
+fileExtension(gerber_image, ".gpt").
+fileExtension(gerber_image, ".gtl").
+fileExtension(gerber_image, ".gto").
+fileExtension(gerber_image, ".gtp").
+fileExtension(gerber_image, ".gts").
 
-fileExtension(".feature", gherkin).
+fileExtension(gettext_catalog, ".po").
+fileExtension(gettext_catalog, ".pot").
 
-fileExtension(".glf", glyph).
+fileExtension(gherkin, ".feature").
 
-fileExtension(".gp", gnuplot).
-fileExtension(".gnu", gnuplot).
-fileExtension(".gnuplot", gnuplot).
-fileExtension(".plot", gnuplot).
-fileExtension(".plt", gnuplot).
+fileExtension(glyph, ".glf").
 
-fileExtension(".go", go).
+fileExtension(gnuplot, ".gp").
+fileExtension(gnuplot, ".gnu").
+fileExtension(gnuplot, ".gnuplot").
+fileExtension(gnuplot, ".plot").
+fileExtension(gnuplot, ".plt").
 
-fileExtension(".golo", golo).
+fileExtension(go, ".go").
 
-fileExtension(".gs", gosu).
-fileExtension(".gst", gosu).
-fileExtension(".gsx", gosu).
-fileExtension(".vark", gosu).
+fileExtension(golo, ".golo").
 
-fileExtension(".grace", grace).
+fileExtension(gosu, ".gs").
+fileExtension(gosu, ".gst").
+fileExtension(gosu, ".gsx").
+fileExtension(gosu, ".vark").
 
-fileExtension(".gradle", gradle).
+fileExtension(grace, ".grace").
 
-fileExtension(".gf", grammatical_framework).
+fileExtension(gradle, ".gradle").
 
-fileExtension(".gml", graph_modeling_language).
+fileExtension(grammatical_framework, ".gf").
 
-fileExtension(".graphql", graphql).
-fileExtension(".gql", graphql).
+fileExtension(graph_modeling_language, ".gml").
 
-fileExtension(".dot", graphviz_(dot)).
-fileExtension(".gv", graphviz_(dot)).
+fileExtension(graphql, ".graphql").
+fileExtension(graphql, ".gql").
 
-fileExtension(".groovy", groovy).
-fileExtension(".grt", groovy).
-fileExtension(".gtpl", groovy).
-fileExtension(".gvy", groovy).
+fileExtension(graphviz_(dot), ".dot").
+fileExtension(graphviz_(dot), ".gv").
 
-fileExtension(".gsp", groovy_server_pages).
+fileExtension(groovy, ".groovy").
+fileExtension(groovy, ".grt").
+fileExtension(groovy, ".gtpl").
+fileExtension(groovy, ".gvy").
 
-fileExtension(".hcl", hcl).
-fileExtension(".tf", hcl).
+fileExtension(groovy_server_pages, ".gsp").
 
-fileExtension(".hlsl", hlsl).
-fileExtension(".cginc", hlsl).
-fileExtension(".fx", hlsl).
-fileExtension(".fxh", hlsl).
-fileExtension(".hlsli", hlsl).
+fileExtension(hcl, ".hcl").
+fileExtension(hcl, ".tf").
 
-fileExtension(".html", html).
-fileExtension(".htm", html).
-fileExtension(".html.hl", html).
-fileExtension(".inc", html).
-fileExtension(".st", html).
-fileExtension(".xht", html).
-fileExtension(".xhtml", html).
+fileExtension(hlsl, ".hlsl").
+fileExtension(hlsl, ".cginc").
+fileExtension(hlsl, ".fx").
+fileExtension(hlsl, ".fxh").
+fileExtension(hlsl, ".hlsli").
 
-fileExtension(".jinja", html_plusdjango).
-fileExtension(".mustache", html_plusdjango).
-fileExtension(".njk", html_plusdjango).
+fileExtension(html, ".html").
+fileExtension(html, ".htm").
+fileExtension(html, ".html.hl").
+fileExtension(html, ".inc").
+fileExtension(html, ".st").
+fileExtension(html, ".xht").
+fileExtension(html, ".xhtml").
 
-fileExtension(".ecr", html_plusecr).
+fileExtension(html_plusdjango, ".jinja").
+fileExtension(html_plusdjango, ".mustache").
+fileExtension(html_plusdjango, ".njk").
 
-fileExtension(".eex", html_pluseex).
+fileExtension(html_plusecr, ".ecr").
 
-fileExtension(".erb", html_pluserb).
-fileExtension(".erb.deface", html_pluserb).
+fileExtension(html_pluseex, ".eex").
 
-fileExtension(".phtml", html_plusphp).
+fileExtension(html_pluserb, ".erb").
+fileExtension(html_pluserb, ".erb.deface").
 
-fileExtension(".http", http).
+fileExtension(html_plusphp, ".phtml").
 
-fileExtension(".hh", hack).
-fileExtension(".php", hack).
+fileExtension(http, ".http").
 
-fileExtension(".haml", haml).
-fileExtension(".haml.deface", haml).
+fileExtension(hack, ".hh").
+fileExtension(hack, ".php").
 
-fileExtension(".handlebars", handlebars).
-fileExtension(".hbs", handlebars).
+fileExtension(haml, ".haml").
+fileExtension(haml, ".haml.deface").
 
-fileExtension(".hb", harbour).
+fileExtension(handlebars, ".handlebars").
+fileExtension(handlebars, ".hbs").
 
-fileExtension(".hs", haskell).
-fileExtension(".hsc", haskell).
+fileExtension(harbour, ".hb").
 
-fileExtension(".hx", haxe).
-fileExtension(".hxsl", haxe).
+fileExtension(haskell, ".hs").
+fileExtension(haskell, ".hsc").
 
-fileExtension(".hy", hy).
+fileExtension(haxe, ".hx").
+fileExtension(haxe, ".hxsl").
 
-fileExtension(".bf", hyphy).
+fileExtension(hy, ".hy").
 
-fileExtension(".pro", idl).
-fileExtension(".dlm", idl).
+fileExtension(hyphy, ".bf").
 
-fileExtension(".ipf", igor_pro).
+fileExtension(idl, ".pro").
+fileExtension(idl, ".dlm").
 
-fileExtension(".ini", ini).
-fileExtension(".cfg", ini).
-fileExtension(".prefs", ini).
-fileExtension(".pro", ini).
-fileExtension(".properties", ini).
+fileExtension(igor_pro, ".ipf").
 
-fileExtension(".irclog", irc_log).
-fileExtension(".weechatlog", irc_log).
+fileExtension(ini, ".ini").
+fileExtension(ini, ".cfg").
+fileExtension(ini, ".prefs").
+fileExtension(ini, ".pro").
+fileExtension(ini, ".properties").
 
-fileExtension(".idr", idris).
-fileExtension(".lidr", idris).
+fileExtension(irc_log, ".irclog").
+fileExtension(irc_log, ".weechatlog").
 
-fileExtension(".ni", inform_7).
-fileExtension(".i7x", inform_7).
+fileExtension(idris, ".idr").
+fileExtension(idris, ".lidr").
 
-fileExtension(".iss", inno_setup).
+fileExtension(inform_7, ".ni").
+fileExtension(inform_7, ".i7x").
 
-fileExtension(".io", io).
+fileExtension(inno_setup, ".iss").
 
-fileExtension(".ik", ioke).
+fileExtension(io, ".io").
 
-fileExtension(".thy", isabelle).
+fileExtension(ioke, ".ik").
 
+fileExtension(isabelle, ".thy").
 
-fileExtension(".ijs", j).
 
-fileExtension(".flex", jflex).
-fileExtension(".jflex", jflex).
+fileExtension(j, ".ijs").
 
-fileExtension(".json", json).
-fileExtension(".geojson", json).
-fileExtension(".JSON-tmLanguage", json).
-fileExtension(".topojson", json).
+fileExtension(jflex, ".flex").
+fileExtension(jflex, ".jflex").
 
-fileExtension(".json5", json5).
+fileExtension(json, ".json").
+fileExtension(json, ".geojson").
+fileExtension(json, ".JSON-tmLanguage").
+fileExtension(json, ".topojson").
 
-fileExtension(".jsonld", jsonld).
+fileExtension(json5, ".json5").
 
-fileExtension(".jq", jsoniq).
+fileExtension(jsonld, ".jsonld").
 
-fileExtension(".jsx", jsx).
+fileExtension(jsoniq, ".jq").
 
-fileExtension(".j", jasmin).
+fileExtension(jsx, ".jsx").
 
-fileExtension(".java", java).
+fileExtension(jasmin, ".j").
 
-fileExtension(".jsp", java_server_pages).
+fileExtension(java, ".java").
 
-fileExtension(".js", javascript).
-fileExtension("._js", javascript).
-fileExtension(".bones", javascript).
-fileExtension(".es", javascript).
-fileExtension(".es6", javascript).
-fileExtension(".frag", javascript).
-fileExtension(".gs", javascript).
-fileExtension(".jake", javascript).
-fileExtension(".jsb", javascript).
-fileExtension(".jscad", javascript).
-fileExtension(".jsfl", javascript).
-fileExtension(".jsm", javascript).
-fileExtension(".jss", javascript).
-fileExtension(".mjs", javascript).
-fileExtension(".njs", javascript).
-fileExtension(".pac", javascript).
-fileExtension(".sjs", javascript).
-fileExtension(".ssjs", javascript).
-fileExtension(".xsjs", javascript).
-fileExtension(".xsjslib", javascript).
+fileExtension(java_server_pages, ".jsp").
 
-fileExtension(".jison", jison).
+fileExtension(javascript, ".js").
+fileExtension(javascript, "._js").
+fileExtension(javascript, ".bones").
+fileExtension(javascript, ".es").
+fileExtension(javascript, ".es6").
+fileExtension(javascript, ".frag").
+fileExtension(javascript, ".gs").
+fileExtension(javascript, ".jake").
+fileExtension(javascript, ".jsb").
+fileExtension(javascript, ".jscad").
+fileExtension(javascript, ".jsfl").
+fileExtension(javascript, ".jsm").
+fileExtension(javascript, ".jss").
+fileExtension(javascript, ".mjs").
+fileExtension(javascript, ".njs").
+fileExtension(javascript, ".pac").
+fileExtension(javascript, ".sjs").
+fileExtension(javascript, ".ssjs").
+fileExtension(javascript, ".xsjs").
+fileExtension(javascript, ".xsjslib").
 
-fileExtension(".jisonlex", jison_lex).
+fileExtension(jison, ".jison").
 
-fileExtension(".ol", jolie).
-fileExtension(".iol", jolie).
+fileExtension(jison_lex, ".jisonlex").
 
-fileExtension(".jl", julia).
+fileExtension(jolie, ".ol").
+fileExtension(jolie, ".iol").
 
-fileExtension(".ipynb", jupyter_notebook).
+fileExtension(julia, ".jl").
 
-fileExtension(".krl", krl).
+fileExtension(jupyter_notebook, ".ipynb").
 
-fileExtension(".kicad_pcb", kicad_layout).
-fileExtension(".kicad_mod", kicad_layout).
-fileExtension(".kicad_wks", kicad_layout).
+fileExtension(krl, ".krl").
 
-fileExtension(".brd", kicad_legacy_layout).
+fileExtension(kicad_layout, ".kicad_pcb").
+fileExtension(kicad_layout, ".kicad_mod").
+fileExtension(kicad_layout, ".kicad_wks").
 
-fileExtension(".sch", kicad_schematic).
+fileExtension(kicad_legacy_layout, ".brd").
 
-fileExtension(".kit", kit).
+fileExtension(kicad_schematic, ".sch").
 
-fileExtension(".kt", kotlin).
-fileExtension(".ktm", kotlin).
-fileExtension(".kts", kotlin).
+fileExtension(kit, ".kit").
 
-fileExtension(".lfe", lfe).
+fileExtension(kotlin, ".kt").
+fileExtension(kotlin, ".ktm").
+fileExtension(kotlin, ".kts").
 
-fileExtension(".ll", llvm).
+fileExtension(lfe, ".lfe").
 
-fileExtension(".lol", lolcode).
+fileExtension(llvm, ".ll").
 
-fileExtension(".lsl", lsl).
-fileExtension(".lslp", lsl).
+fileExtension(lolcode, ".lol").
 
-fileExtension(".lvproj", labview).
+fileExtension(lsl, ".lsl").
+fileExtension(lsl, ".lslp").
 
-fileExtension(".lasso", lasso).
-fileExtension(".las", lasso).
-fileExtension(".lasso8", lasso).
-fileExtension(".lasso9", lasso).
-fileExtension(".ldml", lasso).
+fileExtension(labview, ".lvproj").
 
-fileExtension(".latte", latte).
+fileExtension(lasso, ".lasso").
+fileExtension(lasso, ".las").
+fileExtension(lasso, ".lasso8").
+fileExtension(lasso, ".lasso9").
+fileExtension(lasso, ".ldml").
 
-fileExtension(".lean", lean).
-fileExtension(".hlean", lean).
+fileExtension(latte, ".latte").
 
-fileExtension(".less", less).
+fileExtension(lean, ".lean").
+fileExtension(lean, ".hlean").
 
-fileExtension(".l", lex).
-fileExtension(".lex", lex).
+fileExtension(less, ".less").
 
-fileExtension(".ly", lilypond).
-fileExtension(".ily", lilypond).
+fileExtension(lex, ".l").
+fileExtension(lex, ".lex").
 
-fileExtension(".b", limbo).
-fileExtension(".m", limbo).
+fileExtension(lilypond, ".ly").
+fileExtension(lilypond, ".ily").
 
-fileExtension(".ld", linker_script).
-fileExtension(".lds", linker_script).
+fileExtension(limbo, ".b").
+fileExtension(limbo, ".m").
 
-fileExtension(".mod", linux_kernel_module).
+fileExtension(linker_script, ".ld").
+fileExtension(linker_script, ".lds").
 
-fileExtension(".liquid", liquid).
+fileExtension(linux_kernel_module, ".mod").
 
-fileExtension(".lagda", literate_agda).
+fileExtension(liquid, ".liquid").
 
-fileExtension(".litcoffee", literate_coffeescript).
+fileExtension(literate_agda, ".lagda").
 
-fileExtension(".lhs", literate_haskell).
+fileExtension(literate_coffeescript, ".litcoffee").
 
-fileExtension(".ls", livescript).
-fileExtension("._ls", livescript).
+fileExtension(literate_haskell, ".lhs").
 
-fileExtension(".xm", logos).
-fileExtension(".x", logos).
-fileExtension(".xi", logos).
+fileExtension(livescript, ".ls").
+fileExtension(livescript, "._ls").
 
-fileExtension(".lgt", logtalk).
-fileExtension(".logtalk", logtalk).
+fileExtension(logos, ".xm").
+fileExtension(logos, ".x").
+fileExtension(logos, ".xi").
 
-fileExtension(".lookml", lookml).
-fileExtension(".model.lkml", lookml).
-fileExtension(".view.lkml", lookml).
+fileExtension(logtalk, ".lgt").
+fileExtension(logtalk, ".logtalk").
 
-fileExtension(".ls", loomscript).
+fileExtension(lookml, ".lookml").
+fileExtension(lookml, ".model.lkml").
+fileExtension(lookml, ".view.lkml").
 
-fileExtension(".lua", lua).
-fileExtension(".fcgi", lua).
-fileExtension(".nse", lua).
-fileExtension(".pd_lua", lua).
-fileExtension(".rbxs", lua).
-fileExtension(".wlua", lua).
+fileExtension(loomscript, ".ls").
 
-fileExtension(".mumps", m).
-fileExtension(".m", m).
+fileExtension(lua, ".lua").
+fileExtension(lua, ".fcgi").
+fileExtension(lua, ".nse").
+fileExtension(lua, ".pd_lua").
+fileExtension(lua, ".rbxs").
+fileExtension(lua, ".wlua").
 
-fileExtension(".m4", m4).
+fileExtension(m, ".mumps").
+fileExtension(m, ".m").
 
-fileExtension(".m4", m4sugar).
+fileExtension(m4, ".m4").
 
-fileExtension(".ms", maxscript).
-fileExtension(".mcr", maxscript).
+fileExtension(m4sugar, ".m4").
 
-fileExtension(".mq4", mql4).
-fileExtension(".mqh", mql4).
+fileExtension(maxscript, ".ms").
+fileExtension(maxscript, ".mcr").
 
-fileExtension(".mq5", mql5).
-fileExtension(".mqh", mql5).
+fileExtension(mql4, ".mq4").
+fileExtension(mql4, ".mqh").
 
-fileExtension(".mtml", mtml).
+fileExtension(mql5, ".mq5").
+fileExtension(mql5, ".mqh").
 
-fileExtension(".muf", muf).
-fileExtension(".m", muf).
+fileExtension(mtml, ".mtml").
 
-fileExtension(".mak", makefile).
-fileExtension(".d", makefile).
-fileExtension(".make", makefile).
-fileExtension(".mk", makefile).
-fileExtension(".mkfile", makefile).
+fileExtension(muf, ".muf").
+fileExtension(muf, ".m").
 
-fileExtension(".mako", mako).
-fileExtension(".mao", mako).
+fileExtension(makefile, ".mak").
+fileExtension(makefile, ".d").
+fileExtension(makefile, ".make").
+fileExtension(makefile, ".mk").
+fileExtension(makefile, ".mkfile").
 
-fileExtension(".md", markdown).
-fileExtension(".markdown", markdown).
-fileExtension(".mdown", markdown).
-fileExtension(".mdwn", markdown).
-fileExtension(".mkd", markdown).
-fileExtension(".mkdn", markdown).
-fileExtension(".mkdown", markdown).
-fileExtension(".ron", markdown).
-fileExtension(".workbook", markdown).
+fileExtension(mako, ".mako").
+fileExtension(mako, ".mao").
 
-fileExtension(".marko", marko).
+fileExtension(markdown, ".md").
+fileExtension(markdown, ".markdown").
+fileExtension(markdown, ".mdown").
+fileExtension(markdown, ".mdwn").
+fileExtension(markdown, ".mkd").
+fileExtension(markdown, ".mkdn").
+fileExtension(markdown, ".mkdown").
+fileExtension(markdown, ".ron").
+fileExtension(markdown, ".workbook").
 
-fileExtension(".mask", mask).
+fileExtension(marko, ".marko").
 
-fileExtension(".mathematica", mathematica).
-fileExtension(".cdf", mathematica).
-fileExtension(".m", mathematica).
-fileExtension(".ma", mathematica).
-fileExtension(".mt", mathematica).
-fileExtension(".nb", mathematica).
-fileExtension(".nbp", mathematica).
-fileExtension(".wl", mathematica).
-fileExtension(".wlt", mathematica).
+fileExtension(mask, ".mask").
 
-fileExtension(".matlab", matlab).
-fileExtension(".m", matlab).
+fileExtension(mathematica, ".mathematica").
+fileExtension(mathematica, ".cdf").
+fileExtension(mathematica, ".m").
+fileExtension(mathematica, ".ma").
+fileExtension(mathematica, ".mt").
+fileExtension(mathematica, ".nb").
+fileExtension(mathematica, ".nbp").
+fileExtension(mathematica, ".wl").
+fileExtension(mathematica, ".wlt").
 
+fileExtension(matlab, ".matlab").
+fileExtension(matlab, ".m").
 
-fileExtension(".maxpat", max).
-fileExtension(".maxhelp", max).
-fileExtension(".maxproj", max).
-fileExtension(".mxt", max).
-fileExtension(".pat", max).
 
-fileExtension(".mediawiki", mediawiki).
-fileExtension(".wiki", mediawiki).
+fileExtension(max, ".maxpat").
+fileExtension(max, ".maxhelp").
+fileExtension(max, ".maxproj").
+fileExtension(max, ".mxt").
+fileExtension(max, ".pat").
 
-fileExtension(".m", mercury).
-fileExtension(".moo", mercury).
+fileExtension(mediawiki, ".mediawiki").
+fileExtension(mediawiki, ".wiki").
 
+fileExtension(mercury, ".m").
+fileExtension(mercury, ".moo").
 
-fileExtension(".metal", metal).
 
-fileExtension(".minid", minid).
+fileExtension(metal, ".metal").
 
-fileExtension(".druby", mirah).
-fileExtension(".duby", mirah).
-fileExtension(".mir", mirah).
-fileExtension(".mirah", mirah).
+fileExtension(minid, ".minid").
 
-fileExtension(".mo", modelica).
+fileExtension(mirah, ".druby").
+fileExtension(mirah, ".duby").
+fileExtension(mirah, ".mir").
+fileExtension(mirah, ".mirah").
 
-fileExtension(".mod", modula-2).
+fileExtension(modelica, ".mo").
 
-fileExtension(".mms", module_management_system).
-fileExtension(".mmk", module_management_system).
+fileExtension(modula-2, ".mod").
 
-fileExtension(".monkey", monkey).
-fileExtension(".monkey2", monkey).
+fileExtension(module_management_system, ".mms").
+fileExtension(module_management_system, ".mmk").
 
-fileExtension(".moo", moocode).
+fileExtension(monkey, ".monkey").
+fileExtension(monkey, ".monkey2").
 
-fileExtension(".moon", moonscript).
+fileExtension(moocode, ".moo").
 
-fileExtension(".myt", myghty).
+fileExtension(moonscript, ".moon").
 
-fileExtension(".ncl", ncl).
+fileExtension(myghty, ".myt").
 
-fileExtension(".nl", nl).
+fileExtension(ncl, ".ncl").
 
-fileExtension(".nsi", nsis).
-fileExtension(".nsh", nsis).
+fileExtension(nl, ".nl").
 
-fileExtension(".ne", nearley).
-fileExtension(".nearley", nearley).
+fileExtension(nsis, ".nsi").
+fileExtension(nsis, ".nsh").
 
-fileExtension(".n", nemerle).
+fileExtension(nearley, ".ne").
+fileExtension(nearley, ".nearley").
 
-fileExtension(".axs", netlinx).
-fileExtension(".axi", netlinx).
+fileExtension(nemerle, ".n").
 
-fileExtension(".axs.erb", netlinx_pluserb).
-fileExtension(".axi.erb", netlinx_pluserb).
+fileExtension(netlinx, ".axs").
+fileExtension(netlinx, ".axi").
 
-fileExtension(".nlogo", netlogo).
+fileExtension(netlinx_pluserb, ".axs.erb").
+fileExtension(netlinx_pluserb, ".axi.erb").
 
-fileExtension(".nl", newlisp).
-fileExtension(".lisp", newlisp).
-fileExtension(".lsp", newlisp).
+fileExtension(netlogo, ".nlogo").
 
-fileExtension(".nf", nextflow).
+fileExtension(newlisp, ".nl").
+fileExtension(newlisp, ".lisp").
+fileExtension(newlisp, ".lsp").
 
-fileExtension(".nginxconf", nginx).
-fileExtension(".vhost", nginx).
+fileExtension(nextflow, ".nf").
 
-fileExtension(".nim", nim).
-fileExtension(".nimrod", nim).
+fileExtension(nginx, ".nginxconf").
+fileExtension(nginx, ".vhost").
 
-fileExtension(".ninja", ninja).
+fileExtension(nim, ".nim").
+fileExtension(nim, ".nimrod").
 
-fileExtension(".nit", nit).
+fileExtension(ninja, ".ninja").
 
-fileExtension(".nix", nix).
+fileExtension(nit, ".nit").
 
-fileExtension(".nu", nu).
+fileExtension(nix, ".nix").
 
-fileExtension(".numpy", numpy).
-fileExtension(".numpyw", numpy).
-fileExtension(".numsc", numpy).
+fileExtension(nu, ".nu").
 
-fileExtension(".ml", ocaml).
-fileExtension(".eliom", ocaml).
-fileExtension(".eliomi", ocaml).
-fileExtension(".ml4", ocaml).
-fileExtension(".mli", ocaml).
-fileExtension(".mll", ocaml).
-fileExtension(".mly", ocaml).
+fileExtension(numpy, ".numpy").
+fileExtension(numpy, ".numpyw").
+fileExtension(numpy, ".numsc").
 
-fileExtension(".objdump", objdump).
+fileExtension(ocaml, ".ml").
+fileExtension(ocaml, ".eliom").
+fileExtension(ocaml, ".eliomi").
+fileExtension(ocaml, ".ml4").
+fileExtension(ocaml, ".mli").
+fileExtension(ocaml, ".mll").
+fileExtension(ocaml, ".mly").
 
-fileExtension(".m", objective-c).
-fileExtension(".h", objective-c).
+fileExtension(objdump, ".objdump").
 
-fileExtension(".mm", objective-c_plus_plus).
+fileExtension(objective-c, ".m").
+fileExtension(objective-c, ".h").
 
-fileExtension(".j", objective-j).
-fileExtension(".sj", objective-j).
+fileExtension(objective-c_plus_plus, ".mm").
 
-fileExtension(".omgrofl", omgrofl).
+fileExtension(objective-j, ".j").
+fileExtension(objective-j, ".sj").
 
-fileExtension(".opa", opa).
+fileExtension(omgrofl, ".omgrofl").
 
-fileExtension(".opal", opal).
+fileExtension(opa, ".opa").
 
-fileExtension(".cl", opencl).
-fileExtension(".opencl", opencl).
+fileExtension(opal, ".opal").
 
-fileExtension(".p", openedge_abl).
-fileExtension(".cls", openedge_abl).
-fileExtension(".w", openedge_abl).
+fileExtension(opencl, ".cl").
+fileExtension(opencl, ".opencl").
 
+fileExtension(openedge_abl, ".p").
+fileExtension(openedge_abl, ".cls").
+fileExtension(openedge_abl, ".w").
 
-fileExtension(".scad", openscad).
 
-fileExtension(".fea", opentype_feature_file).
+fileExtension(openscad, ".scad").
 
-fileExtension(".org", org).
+fileExtension(opentype_feature_file, ".fea").
 
-fileExtension(".ox", ox).
-fileExtension(".oxh", ox).
-fileExtension(".oxo", ox).
+fileExtension(org, ".org").
 
-fileExtension(".oxygene", oxygene).
+fileExtension(ox, ".ox").
+fileExtension(ox, ".oxh").
+fileExtension(ox, ".oxo").
 
-fileExtension(".oz", oz).
+fileExtension(oxygene, ".oxygene").
 
-fileExtension(".p4", p4).
+fileExtension(oz, ".oz").
 
-fileExtension(".pwn", pawn).
-fileExtension(".inc", pawn).
+fileExtension(p4, ".p4").
 
-fileExtension(".php", php).
-fileExtension(".aw", php).
-fileExtension(".ctp", php).
-fileExtension(".fcgi", php).
-fileExtension(".inc", php).
-fileExtension(".php3", php).
-fileExtension(".php4", php).
-fileExtension(".php5", php).
-fileExtension(".phps", php).
-fileExtension(".phpt", php).
+fileExtension(pawn, ".pwn").
+fileExtension(pawn, ".inc").
 
-fileExtension(".pls", plsql).
-fileExtension(".bdy", plsql).
-fileExtension(".ddl", plsql).
-fileExtension(".fnc", plsql).
-fileExtension(".pck", plsql).
-fileExtension(".pkb", plsql).
-fileExtension(".pks", plsql).
-fileExtension(".plb", plsql).
-fileExtension(".plsql", plsql).
-fileExtension(".prc", plsql).
-fileExtension(".spc", plsql).
-fileExtension(".sql", plsql).
-fileExtension(".tpb", plsql).
-fileExtension(".tps", plsql).
-fileExtension(".trg", plsql).
-fileExtension(".vw", plsql).
+fileExtension(php, ".php").
+fileExtension(php, ".aw").
+fileExtension(php, ".ctp").
+fileExtension(php, ".fcgi").
+fileExtension(php, ".inc").
+fileExtension(php, ".php3").
+fileExtension(php, ".php4").
+fileExtension(php, ".php5").
+fileExtension(php, ".phps").
+fileExtension(php, ".phpt").
 
-fileExtension(".sql", plpgsql).
+fileExtension(plsql, ".pls").
+fileExtension(plsql, ".bdy").
+fileExtension(plsql, ".ddl").
+fileExtension(plsql, ".fnc").
+fileExtension(plsql, ".pck").
+fileExtension(plsql, ".pkb").
+fileExtension(plsql, ".pks").
+fileExtension(plsql, ".plb").
+fileExtension(plsql, ".plsql").
+fileExtension(plsql, ".prc").
+fileExtension(plsql, ".spc").
+fileExtension(plsql, ".sql").
+fileExtension(plsql, ".tpb").
+fileExtension(plsql, ".tps").
+fileExtension(plsql, ".trg").
+fileExtension(plsql, ".vw").
 
-fileExtension(".pov", pov-ray_sdl).
-fileExtension(".inc", pov-ray_sdl).
+fileExtension(plpgsql, ".sql").
 
-fileExtension(".pan", pan).
+fileExtension(pov-ray_sdl, ".pov").
+fileExtension(pov-ray_sdl, ".inc").
 
-fileExtension(".psc", papyrus).
+fileExtension(pan, ".pan").
 
-fileExtension(".parrot", parrot).
+fileExtension(papyrus, ".psc").
 
-fileExtension(".pasm", parrot_assembly).
+fileExtension(parrot, ".parrot").
 
-fileExtension(".pir", parrot_internal_representation).
+fileExtension(parrot_assembly, ".pasm").
 
-fileExtension(".pas", pascal).
-fileExtension(".dfm", pascal).
-fileExtension(".dpr", pascal).
-fileExtension(".inc", pascal).
-fileExtension(".lpr", pascal).
-fileExtension(".pascal", pascal).
-fileExtension(".pp", pascal).
+fileExtension(parrot_internal_representation, ".pir").
 
-fileExtension(".pep", pep8).
+fileExtension(pascal, ".pas").
+fileExtension(pascal, ".dfm").
+fileExtension(pascal, ".dpr").
+fileExtension(pascal, ".inc").
+fileExtension(pascal, ".lpr").
+fileExtension(pascal, ".pascal").
+fileExtension(pascal, ".pp").
 
-fileExtension(".pl", perl).
-fileExtension(".al", perl).
-fileExtension(".cgi", perl).
-fileExtension(".fcgi", perl).
-fileExtension(".perl", perl).
-fileExtension(".ph", perl).
-fileExtension(".plx", perl).
-fileExtension(".pm", perl).
-fileExtension(".psgi", perl).
-fileExtension(".t", perl).
+fileExtension(pep8, ".pep").
 
-fileExtension(".6pl", perl_6).
-fileExtension(".6pm", perl_6).
-fileExtension(".nqp", perl_6).
-fileExtension(".p6", perl_6).
-fileExtension(".p6l", perl_6).
-fileExtension(".p6m", perl_6).
-fileExtension(".pl", perl_6).
-fileExtension(".pl6", perl_6).
-fileExtension(".pm", perl_6).
-fileExtension(".pm6", perl_6).
-fileExtension(".t", perl_6).
+fileExtension(perl, ".pl").
+fileExtension(perl, ".al").
+fileExtension(perl, ".cgi").
+fileExtension(perl, ".fcgi").
+fileExtension(perl, ".perl").
+fileExtension(perl, ".ph").
+fileExtension(perl, ".plx").
+fileExtension(perl, ".pm").
+fileExtension(perl, ".psgi").
+fileExtension(perl, ".t").
 
-fileExtension(".pic", pic).
-fileExtension(".chem", pic).
+fileExtension(perl_6, ".6pl").
+fileExtension(perl_6, ".6pm").
+fileExtension(perl_6, ".nqp").
+fileExtension(perl_6, ".p6").
+fileExtension(perl_6, ".p6l").
+fileExtension(perl_6, ".p6m").
+fileExtension(perl_6, ".pl").
+fileExtension(perl_6, ".pl6").
+fileExtension(perl_6, ".pm").
+fileExtension(perl_6, ".pm6").
+fileExtension(perl_6, ".t").
 
-fileExtension(".pkl", pickle).
+fileExtension(pic, ".pic").
+fileExtension(pic, ".chem").
 
-fileExtension(".l", picolisp).
+fileExtension(pickle, ".pkl").
 
-fileExtension(".pig", piglatin).
+fileExtension(picolisp, ".l").
 
-fileExtension(".pike", pike).
-fileExtension(".pmod", pike).
+fileExtension(piglatin, ".pig").
 
-fileExtension(".pod", pod).
+fileExtension(pike, ".pike").
+fileExtension(pike, ".pmod").
 
-fileExtension(".pogo", pogoscript).
+fileExtension(pod, ".pod").
 
-fileExtension(".pony", pony).
+fileExtension(pogoscript, ".pogo").
 
-fileExtension(".pcss", postcss).
+fileExtension(pony, ".pony").
 
-fileExtension(".ps", postscript).
-fileExtension(".eps", postscript).
-fileExtension(".pfa", postscript).
+fileExtension(postcss, ".pcss").
 
-fileExtension(".pbt", powerbuilder).
-fileExtension(".sra", powerbuilder).
-fileExtension(".sru", powerbuilder).
-fileExtension(".srw", powerbuilder).
+fileExtension(postscript, ".ps").
+fileExtension(postscript, ".eps").
+fileExtension(postscript, ".pfa").
 
-fileExtension(".ps1", powershell).
-fileExtension(".psd1", powershell).
-fileExtension(".psm1", powershell).
+fileExtension(powerbuilder, ".pbt").
+fileExtension(powerbuilder, ".sra").
+fileExtension(powerbuilder, ".sru").
+fileExtension(powerbuilder, ".srw").
 
-fileExtension(".pde", processing).
+fileExtension(powershell, ".ps1").
+fileExtension(powershell, ".psd1").
+fileExtension(powershell, ".psm1").
 
-fileExtension(".pl", prolog).
-fileExtension(".pro", prolog).
-fileExtension(".prolog", prolog).
-fileExtension(".yap", prolog).
+fileExtension(processing, ".pde").
 
-fileExtension(".spin", propeller_spin).
+fileExtension(prolog, ".pl").
+fileExtension(prolog, ".pro").
+fileExtension(prolog, ".prolog").
+fileExtension(prolog, ".yap").
 
-fileExtension(".proto", protocol_buffer).
+fileExtension(propeller_spin, ".spin").
 
-fileExtension(".asc", public_key).
-fileExtension(".pub", public_key).
+fileExtension(protocol_buffer, ".proto").
 
-fileExtension(".jade", pug).
-fileExtension(".pug", pug).
+fileExtension(public_key, ".asc").
+fileExtension(public_key, ".pub").
 
-fileExtension(".pp", puppet).
+fileExtension(pug, ".jade").
+fileExtension(pug, ".pug").
 
-fileExtension(".pd", pure_data).
+fileExtension(puppet, ".pp").
 
-fileExtension(".pb", purebasic).
-fileExtension(".pbi", purebasic).
+fileExtension(pure_data, ".pd").
 
-fileExtension(".purs", purescript).
+fileExtension(purebasic, ".pb").
+fileExtension(purebasic, ".pbi").
 
-fileExtension(".py", python).
-fileExtension(".bzl", python).
-fileExtension(".cgi", python).
-fileExtension(".fcgi", python).
-fileExtension(".gyp", python).
-fileExtension(".gypi", python).
-fileExtension(".lmi", python).
-fileExtension(".py3", python).
-fileExtension(".pyde", python).
-fileExtension(".pyi", python).
-fileExtension(".pyp", python).
-fileExtension(".pyt", python).
-fileExtension(".pyw", python).
-fileExtension(".rpy", python).
-fileExtension(".spec", python).
-fileExtension(".tac", python).
-fileExtension(".wsgi", python).
-fileExtension(".xpy", python).
+fileExtension(purescript, ".purs").
 
+fileExtension(python, ".py").
+fileExtension(python, ".bzl").
+fileExtension(python, ".cgi").
+fileExtension(python, ".fcgi").
+fileExtension(python, ".gyp").
+fileExtension(python, ".gypi").
+fileExtension(python, ".lmi").
+fileExtension(python, ".py3").
+fileExtension(python, ".pyde").
+fileExtension(python, ".pyi").
+fileExtension(python, ".pyp").
+fileExtension(python, ".pyt").
+fileExtension(python, ".pyw").
+fileExtension(python, ".rpy").
+fileExtension(python, ".spec").
+fileExtension(python, ".tac").
+fileExtension(python, ".wsgi").
+fileExtension(python, ".xpy").
 
-fileExtension(".pytb", python_traceback).
 
-fileExtension(".qml", qml).
-fileExtension(".qbs", qml).
+fileExtension(python_traceback, ".pytb").
 
-fileExtension(".pro", qmake).
-fileExtension(".pri", qmake).
+fileExtension(qml, ".qml").
+fileExtension(qml, ".qbs").
 
-fileExtension(".r", r).
-fileExtension(".rd", r).
-fileExtension(".rsx", r).
+fileExtension(qmake, ".pro").
+fileExtension(qmake, ".pri").
 
-fileExtension(".raml", raml).
+fileExtension(r, ".r").
+fileExtension(r, ".rd").
+fileExtension(r, ".rsx").
 
-fileExtension(".rdoc", rdoc).
+fileExtension(raml, ".raml").
 
-fileExtension(".rbbas", realbasic).
-fileExtension(".rbfrm", realbasic).
-fileExtension(".rbmnu", realbasic).
-fileExtension(".rbres", realbasic).
-fileExtension(".rbtbar", realbasic).
-fileExtension(".rbuistate", realbasic).
+fileExtension(rdoc, ".rdoc").
 
-fileExtension(".rexx", rexx).
-fileExtension(".pprx", rexx).
-fileExtension(".rex", rexx).
+fileExtension(realbasic, ".rbbas").
+fileExtension(realbasic, ".rbfrm").
+fileExtension(realbasic, ".rbmnu").
+fileExtension(realbasic, ".rbres").
+fileExtension(realbasic, ".rbtbar").
+fileExtension(realbasic, ".rbuistate").
 
-fileExtension(".rhtml", rhtml).
+fileExtension(rexx, ".rexx").
+fileExtension(rexx, ".pprx").
+fileExtension(rexx, ".rex").
 
-fileExtension(".rmd", rmarkdown).
+fileExtension(rhtml, ".rhtml").
 
-fileExtension(".spec", rpm_spec).
+fileExtension(rmarkdown, ".rmd").
 
-fileExtension(".rnh", runoff).
-fileExtension(".rno", runoff).
+fileExtension(rpm_spec, ".spec").
 
-fileExtension(".rkt", racket).
-fileExtension(".rktd", racket).
-fileExtension(".rktl", racket).
-fileExtension(".scrbl", racket).
+fileExtension(runoff, ".rnh").
+fileExtension(runoff, ".rno").
 
-fileExtension(".rl", ragel).
+fileExtension(racket, ".rkt").
+fileExtension(racket, ".rktd").
+fileExtension(racket, ".rktl").
+fileExtension(racket, ".scrbl").
 
-fileExtension(".rsc", rascal).
+fileExtension(ragel, ".rl").
 
-fileExtension(".raw", raw_token_data).
+fileExtension(rascal, ".rsc").
 
-fileExtension(".re", reason).
-fileExtension(".rei", reason).
+fileExtension(raw_token_data, ".raw").
 
-fileExtension(".reb", rebol).
-fileExtension(".r", rebol).
-fileExtension(".r2", rebol).
-fileExtension(".r3", rebol).
-fileExtension(".rebol", rebol).
+fileExtension(reason, ".re").
+fileExtension(reason, ".rei").
 
-fileExtension(".red", red).
-fileExtension(".reds", red).
+fileExtension(rebol, ".reb").
+fileExtension(rebol, ".r").
+fileExtension(rebol, ".r2").
+fileExtension(rebol, ".r3").
+fileExtension(rebol, ".rebol").
 
-fileExtension(".cw", redcode).
+fileExtension(red, ".red").
+fileExtension(red, ".reds").
 
-fileExtension(".regexp", regular_expression).
-fileExtension(".regex", regular_expression).
+fileExtension(redcode, ".cw").
 
-fileExtension(".rpy", renpy).
+fileExtension(regular_expression, ".regexp").
+fileExtension(regular_expression, ".regex").
 
-fileExtension(".rs", renderscript).
-fileExtension(".rsh", renderscript).
+fileExtension(renpy, ".rpy").
 
-fileExtension(".ring", ring).
+fileExtension(renderscript, ".rs").
+fileExtension(renderscript, ".rsh").
 
-fileExtension(".robot", robotframework).
+fileExtension(ring, ".ring").
 
-fileExtension(".man", roff).
-fileExtension(".1", roff).
-fileExtension(".1in", roff).
-fileExtension(".1m", roff).
-fileExtension(".1x", roff).
-fileExtension(".2", roff).
-fileExtension(".3", roff).
-fileExtension(".3in", roff).
-fileExtension(".3m", roff).
-fileExtension(".3qt", roff).
-fileExtension(".3x", roff).
-fileExtension(".4", roff).
-fileExtension(".5", roff).
-fileExtension(".6", roff).
-fileExtension(".7", roff).
-fileExtension(".8", roff).
-fileExtension(".9", roff).
-fileExtension(".l", roff).
-fileExtension(".me", roff).
-fileExtension(".ms", roff).
-fileExtension(".n", roff).
-fileExtension(".nr", roff).
-fileExtension(".rno", roff).
-fileExtension(".roff", roff).
-fileExtension(".tmac", roff).
+fileExtension(robotframework, ".robot").
 
-fileExtension(".rg", rouge).
+fileExtension(roff, ".man").
+fileExtension(roff, ".1").
+fileExtension(roff, ".1in").
+fileExtension(roff, ".1m").
+fileExtension(roff, ".1x").
+fileExtension(roff, ".2").
+fileExtension(roff, ".3").
+fileExtension(roff, ".3in").
+fileExtension(roff, ".3m").
+fileExtension(roff, ".3qt").
+fileExtension(roff, ".3x").
+fileExtension(roff, ".4").
+fileExtension(roff, ".5").
+fileExtension(roff, ".6").
+fileExtension(roff, ".7").
+fileExtension(roff, ".8").
+fileExtension(roff, ".9").
+fileExtension(roff, ".l").
+fileExtension(roff, ".me").
+fileExtension(roff, ".ms").
+fileExtension(roff, ".n").
+fileExtension(roff, ".nr").
+fileExtension(roff, ".rno").
+fileExtension(roff, ".roff").
+fileExtension(roff, ".tmac").
 
-fileExtension(".rb", ruby).
-fileExtension(".builder", ruby).
-fileExtension(".eye", ruby).
-fileExtension(".fcgi", ruby).
-fileExtension(".gemspec", ruby).
-fileExtension(".god", ruby).
-fileExtension(".jbuilder", ruby).
-fileExtension(".mspec", ruby).
-fileExtension(".pluginspec", ruby).
-fileExtension(".podspec", ruby).
-fileExtension(".rabl", ruby).
-fileExtension(".rake", ruby).
-fileExtension(".rbuild", ruby).
-fileExtension(".rbw", ruby).
-fileExtension(".rbx", ruby).
-fileExtension(".ru", ruby).
-fileExtension(".ruby", ruby).
-fileExtension(".spec", ruby).
-fileExtension(".thor", ruby).
-fileExtension(".watchr", ruby).
+fileExtension(rouge, ".rg").
 
-fileExtension(".rs", rust).
-fileExtension(".rs.in", rust).
+fileExtension(ruby, ".rb").
+fileExtension(ruby, ".builder").
+fileExtension(ruby, ".eye").
+fileExtension(ruby, ".fcgi").
+fileExtension(ruby, ".gemspec").
+fileExtension(ruby, ".god").
+fileExtension(ruby, ".jbuilder").
+fileExtension(ruby, ".mspec").
+fileExtension(ruby, ".pluginspec").
+fileExtension(ruby, ".podspec").
+fileExtension(ruby, ".rabl").
+fileExtension(ruby, ".rake").
+fileExtension(ruby, ".rbuild").
+fileExtension(ruby, ".rbw").
+fileExtension(ruby, ".rbx").
+fileExtension(ruby, ".ru").
+fileExtension(ruby, ".ruby").
+fileExtension(ruby, ".spec").
+fileExtension(ruby, ".thor").
+fileExtension(ruby, ".watchr").
 
-fileExtension(".sas", sas).
+fileExtension(rust, ".rs").
+fileExtension(rust, ".rs.in").
 
-fileExtension(".scss", scss).
+fileExtension(sas, ".sas").
 
-fileExtension(".smt2", smt).
-fileExtension(".smt", smt).
+fileExtension(scss, ".scss").
 
-fileExtension(".sparql", sparql).
-fileExtension(".rq", sparql).
+fileExtension(smt, ".smt2").
+fileExtension(smt, ".smt").
 
-fileExtension(".sqf", sqf).
-fileExtension(".hqf", sqf).
+fileExtension(sparql, ".sparql").
+fileExtension(sparql, ".rq").
 
-fileExtension(".sql", sql).
-fileExtension(".cql", sql).
-fileExtension(".ddl", sql).
-fileExtension(".inc", sql).
-fileExtension(".mysql", sql).
-fileExtension(".prc", sql).
-fileExtension(".tab", sql).
-fileExtension(".udf", sql).
-fileExtension(".viw", sql).
+fileExtension(sqf, ".sqf").
+fileExtension(sqf, ".hqf").
 
-fileExtension(".sql", sqlpl).
-fileExtension(".db2", sqlpl).
+fileExtension(sql, ".sql").
+fileExtension(sql, ".cql").
+fileExtension(sql, ".ddl").
+fileExtension(sql, ".inc").
+fileExtension(sql, ".mysql").
+fileExtension(sql, ".prc").
+fileExtension(sql, ".tab").
+fileExtension(sql, ".udf").
+fileExtension(sql, ".viw").
 
-fileExtension(".srt", srecode_template).
+fileExtension(sqlpl, ".sql").
+fileExtension(sqlpl, ".db2").
 
-fileExtension(".ston", ston).
+fileExtension(srecode_template, ".srt").
 
-fileExtension(".svg", svg).
+fileExtension(ston, ".ston").
 
-fileExtension(".sage", sage).
-fileExtension(".sagews", sage).
+fileExtension(svg, ".svg").
 
-fileExtension(".sls", saltstack).
+fileExtension(sage, ".sage").
+fileExtension(sage, ".sagews").
 
-fileExtension(".sass", sass).
+fileExtension(saltstack, ".sls").
 
-fileExtension(".scala", scala).
-fileExtension(".sbt", scala).
-fileExtension(".sc", scala).
+fileExtension(sass, ".sass").
 
-fileExtension(".scaml", scaml).
+fileExtension(scala, ".scala").
+fileExtension(scala, ".sbt").
+fileExtension(scala, ".sc").
 
-fileExtension(".scm", scheme).
-fileExtension(".sch", scheme).
-fileExtension(".sld", scheme).
-fileExtension(".sls", scheme).
-fileExtension(".sps", scheme).
-fileExtension(".ss", scheme).
+fileExtension(scaml, ".scaml").
 
-fileExtension(".sci", scilab).
-fileExtension(".sce", scilab).
-fileExtension(".tst", scilab).
+fileExtension(scheme, ".scm").
+fileExtension(scheme, ".sch").
+fileExtension(scheme, ".sld").
+fileExtension(scheme, ".sls").
+fileExtension(scheme, ".sps").
+fileExtension(scheme, ".ss").
 
-fileExtension(".self", self).
+fileExtension(scilab, ".sci").
+fileExtension(scilab, ".sce").
+fileExtension(scilab, ".tst").
 
-fileExtension(".shader", shaderlab).
+fileExtension(self, ".self").
 
-fileExtension(".sh", shell).
-fileExtension(".bash", shell).
-fileExtension(".bats", shell).
-fileExtension(".cgi", shell).
-fileExtension(".command", shell).
-fileExtension(".fcgi", shell).
-fileExtension(".ksh", shell).
-fileExtension(".sh.in", shell).
-fileExtension(".tmux", shell).
-fileExtension(".tool", shell).
-fileExtension(".zsh", shell).
+fileExtension(shaderlab, ".shader").
 
-fileExtension(".sh-session", shellsession).
+fileExtension(shell, ".sh").
+fileExtension(shell, ".bash").
+fileExtension(shell, ".bats").
+fileExtension(shell, ".cgi").
+fileExtension(shell, ".command").
+fileExtension(shell, ".fcgi").
+fileExtension(shell, ".ksh").
+fileExtension(shell, ".sh.in").
+fileExtension(shell, ".tmux").
+fileExtension(shell, ".tool").
+fileExtension(shell, ".zsh").
 
-fileExtension(".shen", shen).
+fileExtension(shellsession, ".sh-session").
 
-fileExtension(".sl", slash).
+fileExtension(shen, ".shen").
 
-fileExtension(".slim", slim).
+fileExtension(slash, ".sl").
 
-fileExtension(".smali", smali).
+fileExtension(slim, ".slim").
 
-fileExtension(".st", smalltalk).
-fileExtension(".cs", smalltalk).
+fileExtension(smali, ".smali").
 
-fileExtension(".tpl", smarty).
+fileExtension(smalltalk, ".st").
+fileExtension(smalltalk, ".cs").
 
-fileExtension(".sp", sourcepawn).
-fileExtension(".inc", sourcepawn).
-fileExtension(".sma", sourcepawn).
+fileExtension(smarty, ".tpl").
 
-fileExtension(".sfd", spline_font_database).
+fileExtension(sourcepawn, ".sp").
+fileExtension(sourcepawn, ".inc").
+fileExtension(sourcepawn, ".sma").
 
-fileExtension(".nut", squirrel).
+fileExtension(spline_font_database, ".sfd").
 
-fileExtension(".stan", stan).
+fileExtension(squirrel, ".nut").
 
-fileExtension(".ML", standard_ml).
-fileExtension(".fun", standard_ml).
-fileExtension(".sig", standard_ml).
-fileExtension(".sml", standard_ml).
+fileExtension(stan, ".stan").
 
-fileExtension(".do", stata).
-fileExtension(".ado", stata).
-fileExtension(".doh", stata).
-fileExtension(".ihlp", stata).
-fileExtension(".mata", stata).
-fileExtension(".matah", stata).
-fileExtension(".sthlp", stata).
+fileExtension(standard_ml, ".ML").
+fileExtension(standard_ml, ".fun").
+fileExtension(standard_ml, ".sig").
+fileExtension(standard_ml, ".sml").
 
-fileExtension(".styl", stylus).
+fileExtension(stata, ".do").
+fileExtension(stata, ".ado").
+fileExtension(stata, ".doh").
+fileExtension(stata, ".ihlp").
+fileExtension(stata, ".mata").
+fileExtension(stata, ".matah").
+fileExtension(stata, ".sthlp").
 
-fileExtension(".srt", subrip_text).
+fileExtension(stylus, ".styl").
 
-fileExtension(".sublime-build", sublime_text_config).
-fileExtension(".sublime-commands", sublime_text_config).
-fileExtension(".sublime-completions", sublime_text_config).
-fileExtension(".sublime-keymap", sublime_text_config).
-fileExtension(".sublime-macro", sublime_text_config).
-fileExtension(".sublime-menu", sublime_text_config).
-fileExtension(".sublime-mousemap", sublime_text_config).
-fileExtension(".sublime-project", sublime_text_config).
-fileExtension(".sublime-settings", sublime_text_config).
-fileExtension(".sublime-theme", sublime_text_config).
-fileExtension(".sublime-workspace", sublime_text_config).
-fileExtension(".sublime_metrics", sublime_text_config).
-fileExtension(".sublime_session", sublime_text_config).
+fileExtension(subrip_text, ".srt").
 
-fileExtension(".sss", sugarss).
+fileExtension(sublime_text_config, ".sublime-build").
+fileExtension(sublime_text_config, ".sublime-commands").
+fileExtension(sublime_text_config, ".sublime-completions").
+fileExtension(sublime_text_config, ".sublime-keymap").
+fileExtension(sublime_text_config, ".sublime-macro").
+fileExtension(sublime_text_config, ".sublime-menu").
+fileExtension(sublime_text_config, ".sublime-mousemap").
+fileExtension(sublime_text_config, ".sublime-project").
+fileExtension(sublime_text_config, ".sublime-settings").
+fileExtension(sublime_text_config, ".sublime-theme").
+fileExtension(sublime_text_config, ".sublime-workspace").
+fileExtension(sublime_text_config, ".sublime_metrics").
+fileExtension(sublime_text_config, ".sublime_session").
 
-fileExtension(".sc", supercollider).
-fileExtension(".scd", supercollider).
+fileExtension(sugarss, ".sss").
 
-fileExtension(".swift", swift).
+fileExtension(supercollider, ".sc").
+fileExtension(supercollider, ".scd").
 
-fileExtension(".sv", systemverilog).
-fileExtension(".svh", systemverilog).
-fileExtension(".vh", systemverilog).
+fileExtension(swift, ".swift").
 
-fileExtension(".8xp", ti_program).
-fileExtension(".8xk", ti_program).
-fileExtension(".8xk.txt", ti_program).
-fileExtension(".8xp.txt", ti_program).
+fileExtension(systemverilog, ".sv").
+fileExtension(systemverilog, ".svh").
+fileExtension(systemverilog, ".vh").
 
-fileExtension(".tla", tla).
+fileExtension(ti_program, ".8xp").
+fileExtension(ti_program, ".8xk").
+fileExtension(ti_program, ".8xk.txt").
+fileExtension(ti_program, ".8xp.txt").
 
-fileExtension(".toml", toml).
+fileExtension(tla, ".tla").
 
-fileExtension(".txl", txl).
+fileExtension(toml, ".toml").
 
-fileExtension(".tcl", tcl).
-fileExtension(".adp", tcl).
-fileExtension(".tm", tcl).
+fileExtension(txl, ".txl").
 
-fileExtension(".tcsh", tcsh).
-fileExtension(".csh", tcsh).
+fileExtension(tcl, ".tcl").
+fileExtension(tcl, ".adp").
+fileExtension(tcl, ".tm").
 
-fileExtension(".tex", tex).
-fileExtension(".aux", tex).
-fileExtension(".bbx", tex).
-fileExtension(".bib", tex).
-fileExtension(".cbx", tex).
-fileExtension(".cls", tex).
-fileExtension(".dtx", tex).
-fileExtension(".ins", tex).
-fileExtension(".lbx", tex).
-fileExtension(".ltx", tex).
-fileExtension(".mkii", tex).
-fileExtension(".mkiv", tex).
-fileExtension(".mkvi", tex).
-fileExtension(".sty", tex).
-fileExtension(".toc", tex).
+fileExtension(tcsh, ".tcsh").
+fileExtension(tcsh, ".csh").
 
-fileExtension(".tea", tea).
+fileExtension(tex, ".tex").
+fileExtension(tex, ".aux").
+fileExtension(tex, ".bbx").
+fileExtension(tex, ".bib").
+fileExtension(tex, ".cbx").
+fileExtension(tex, ".cls").
+fileExtension(tex, ".dtx").
+fileExtension(tex, ".ins").
+fileExtension(tex, ".lbx").
+fileExtension(tex, ".ltx").
+fileExtension(tex, ".mkii").
+fileExtension(tex, ".mkiv").
+fileExtension(tex, ".mkvi").
+fileExtension(tex, ".sty").
+fileExtension(tex, ".toc").
 
-fileExtension(".t", terra).
+fileExtension(tea, ".tea").
 
-fileExtension(".txt", text).
-fileExtension(".fr", text).
-fileExtension(".nb", text).
-fileExtension(".ncl", text).
-fileExtension(".no", text).
+fileExtension(terra, ".t").
 
-fileExtension(".textile", textile).
+fileExtension(text, ".txt").
+fileExtension(text, ".fr").
+fileExtension(text, ".nb").
+fileExtension(text, ".ncl").
+fileExtension(text, ".no").
 
-fileExtension(".thrift", thrift).
+fileExtension(textile, ".textile").
 
-fileExtension(".t", turing).
-fileExtension(".tu", turing).
+fileExtension(thrift, ".thrift").
 
-fileExtension(".ttl", turtle).
+fileExtension(turing, ".t").
+fileExtension(turing, ".tu").
 
-fileExtension(".twig", twig).
+fileExtension(turtle, ".ttl").
 
-fileExtension(".tl", type_language).
+fileExtension(twig, ".twig").
 
-fileExtension(".ts", typescript).
-fileExtension(".tsx", typescript).
+fileExtension(type_language, ".tl").
 
-fileExtension(".upc", unified_parallel_c).
+fileExtension(typescript, ".ts").
+fileExtension(typescript, ".tsx").
 
-fileExtension(".anim", unity3d_asset).
-fileExtension(".asset", unity3d_asset).
-fileExtension(".mat", unity3d_asset).
-fileExtension(".meta", unity3d_asset).
-fileExtension(".prefab", unity3d_asset).
-fileExtension(".unity", unity3d_asset).
+fileExtension(unified_parallel_c, ".upc").
 
-fileExtension(".s", unix_assembly).
-fileExtension(".ms", unix_assembly).
+fileExtension(unity3d_asset, ".anim").
+fileExtension(unity3d_asset, ".asset").
+fileExtension(unity3d_asset, ".mat").
+fileExtension(unity3d_asset, ".meta").
+fileExtension(unity3d_asset, ".prefab").
+fileExtension(unity3d_asset, ".unity").
 
-fileExtension(".uno", uno).
+fileExtension(unix_assembly, ".s").
+fileExtension(unix_assembly, ".ms").
 
-fileExtension(".uc", unrealscript).
+fileExtension(uno, ".uno").
 
-fileExtension(".ur", urweb).
-fileExtension(".urs", urweb).
+fileExtension(unrealscript, ".uc").
 
-fileExtension(".vcl", vcl).
+fileExtension(urweb, ".ur").
+fileExtension(urweb, ".urs").
 
-fileExtension(".vhdl", vhdl).
-fileExtension(".vhd", vhdl).
-fileExtension(".vhf", vhdl).
-fileExtension(".vhi", vhdl).
-fileExtension(".vho", vhdl).
-fileExtension(".vhs", vhdl).
-fileExtension(".vht", vhdl).
-fileExtension(".vhw", vhdl).
+fileExtension(vcl, ".vcl").
 
-fileExtension(".vala", vala).
-fileExtension(".vapi", vala).
+fileExtension(vhdl, ".vhdl").
+fileExtension(vhdl, ".vhd").
+fileExtension(vhdl, ".vhf").
+fileExtension(vhdl, ".vhi").
+fileExtension(vhdl, ".vho").
+fileExtension(vhdl, ".vhs").
+fileExtension(vhdl, ".vht").
+fileExtension(vhdl, ".vhw").
 
-fileExtension(".v", verilog).
-fileExtension(".veo", verilog).
+fileExtension(vala, ".vala").
+fileExtension(vala, ".vapi").
 
-fileExtension(".vim", vim_script).
+fileExtension(verilog, ".v").
+fileExtension(verilog, ".veo").
 
-fileExtension(".vb", visual_basic).
-fileExtension(".bas", visual_basic).
-fileExtension(".cls", visual_basic).
-fileExtension(".frm", visual_basic).
-fileExtension(".frx", visual_basic).
-fileExtension(".vba", visual_basic).
-fileExtension(".vbhtml", visual_basic).
-fileExtension(".vbs", visual_basic).
+fileExtension(vim_script, ".vim").
 
-fileExtension(".volt", volt).
+fileExtension(visual_basic, ".vb").
+fileExtension(visual_basic, ".bas").
+fileExtension(visual_basic, ".cls").
+fileExtension(visual_basic, ".frm").
+fileExtension(visual_basic, ".frx").
+fileExtension(visual_basic, ".vba").
+fileExtension(visual_basic, ".vbhtml").
+fileExtension(visual_basic, ".vbs").
 
-fileExtension(".vue", vue).
+fileExtension(volt, ".volt").
 
-fileExtension(".mtl", wavefront_material).
+fileExtension(vue, ".vue").
 
-fileExtension(".obj", wavefront_object).
+fileExtension(wavefront_material, ".mtl").
 
-fileExtension(".owl", web_ontology_language).
+fileExtension(wavefront_object, ".obj").
 
-fileExtension(".wast", webassembly).
-fileExtension(".wat", webassembly).
+fileExtension(web_ontology_language, ".owl").
 
-fileExtension(".webidl", webidl).
+fileExtension(webassembly, ".wast").
+fileExtension(webassembly, ".wat").
 
-fileExtension(".toc", world_of_warcraft_addon_data).
+fileExtension(webidl, ".webidl").
 
-fileExtension(".x10", x10).
+fileExtension(world_of_warcraft_addon_data, ".toc").
 
-fileExtension(".xc", xc).
+fileExtension(x10, ".x10").
 
+fileExtension(xc, ".xc").
 
-fileExtension(".xml", xml).
-fileExtension(".adml", xml).
-fileExtension(".admx", xml).
-fileExtension(".ant", xml).
-fileExtension(".axml", xml).
-fileExtension(".builds", xml).
-fileExtension(".ccproj", xml).
-fileExtension(".ccxml", xml).
-fileExtension(".clixml", xml).
-fileExtension(".cproject", xml).
-fileExtension(".cscfg", xml).
-fileExtension(".csdef", xml).
-fileExtension(".csl", xml).
-fileExtension(".csproj", xml).
-fileExtension(".ct", xml).
-fileExtension(".depproj", xml).
-fileExtension(".dita", xml).
-fileExtension(".ditamap", xml).
-fileExtension(".ditaval", xml).
-fileExtension(".dll.config", xml).
-fileExtension(".dotsettings", xml).
-fileExtension(".filters", xml).
-fileExtension(".fsproj", xml).
-fileExtension(".fxml", xml).
-fileExtension(".glade", xml).
-fileExtension(".gml", xml).
-fileExtension(".grxml", xml).
-fileExtension(".iml", xml).
-fileExtension(".ivy", xml).
-fileExtension(".jelly", xml).
-fileExtension(".jsproj", xml).
-fileExtension(".kml", xml).
-fileExtension(".launch", xml).
-fileExtension(".mdpolicy", xml).
-fileExtension(".mjml", xml).
-fileExtension(".mm", xml).
-fileExtension(".mod", xml).
-fileExtension(".mxml", xml).
-fileExtension(".natvis", xml).
-fileExtension(".ndproj", xml).
-fileExtension(".nproj", xml).
-fileExtension(".nuspec", xml).
-fileExtension(".odd", xml).
-fileExtension(".osm", xml).
-fileExtension(".pkgproj", xml).
-fileExtension(".plist", xml).
-fileExtension(".pluginspec", xml).
-fileExtension(".proj", xml).
-fileExtension(".props", xml).
-fileExtension(".ps1xml", xml).
-fileExtension(".psc1", xml).
-fileExtension(".pt", xml).
-fileExtension(".rdf", xml).
-fileExtension(".resx", xml).
-fileExtension(".rss", xml).
-fileExtension(".sch", xml).
-fileExtension(".scxml", xml).
-fileExtension(".sfproj", xml).
-fileExtension(".shproj", xml).
-fileExtension(".srdf", xml).
-fileExtension(".storyboard", xml).
-fileExtension(".stTheme", xml).
-fileExtension(".sublime-snippet", xml).
-fileExtension(".targets", xml).
-fileExtension(".tmCommand", xml).
-fileExtension(".tml", xml).
-fileExtension(".tmLanguage", xml).
-fileExtension(".tmPreferences", xml).
-fileExtension(".tmSnippet", xml).
-fileExtension(".tmTheme", xml).
-fileExtension(".ts", xml).
-fileExtension(".tsx", xml).
-fileExtension(".ui", xml).
-fileExtension(".urdf", xml).
-fileExtension(".ux", xml).
-fileExtension(".vbproj", xml).
-fileExtension(".vcxproj", xml).
-fileExtension(".vsixmanifest", xml).
-fileExtension(".vssettings", xml).
-fileExtension(".vstemplate", xml).
-fileExtension(".vxml", xml).
-fileExtension(".wixproj", xml).
-fileExtension(".wsdl", xml).
-fileExtension(".wsf", xml).
-fileExtension(".wxi", xml).
-fileExtension(".wxl", xml).
-fileExtension(".wxs", xml).
-fileExtension(".x3d", xml).
-fileExtension(".xacro", xml).
-fileExtension(".xaml", xml).
-fileExtension(".xib", xml).
-fileExtension(".xlf", xml).
-fileExtension(".xliff", xml).
-fileExtension(".xmi", xml).
-fileExtension(".xml.dist", xml).
-fileExtension(".xproj", xml).
-fileExtension(".xsd", xml).
-fileExtension(".xspec", xml).
-fileExtension(".xul", xml).
-fileExtension(".zcml", xml).
 
-fileExtension(".xpm", xpm).
-fileExtension(".pm", xpm).
+fileExtension(xml, ".xml").
+fileExtension(xml, ".adml").
+fileExtension(xml, ".admx").
+fileExtension(xml, ".ant").
+fileExtension(xml, ".axml").
+fileExtension(xml, ".builds").
+fileExtension(xml, ".ccproj").
+fileExtension(xml, ".ccxml").
+fileExtension(xml, ".clixml").
+fileExtension(xml, ".cproject").
+fileExtension(xml, ".cscfg").
+fileExtension(xml, ".csdef").
+fileExtension(xml, ".csl").
+fileExtension(xml, ".csproj").
+fileExtension(xml, ".ct").
+fileExtension(xml, ".depproj").
+fileExtension(xml, ".dita").
+fileExtension(xml, ".ditamap").
+fileExtension(xml, ".ditaval").
+fileExtension(xml, ".dll.config").
+fileExtension(xml, ".dotsettings").
+fileExtension(xml, ".filters").
+fileExtension(xml, ".fsproj").
+fileExtension(xml, ".fxml").
+fileExtension(xml, ".glade").
+fileExtension(xml, ".gml").
+fileExtension(xml, ".grxml").
+fileExtension(xml, ".iml").
+fileExtension(xml, ".ivy").
+fileExtension(xml, ".jelly").
+fileExtension(xml, ".jsproj").
+fileExtension(xml, ".kml").
+fileExtension(xml, ".launch").
+fileExtension(xml, ".mdpolicy").
+fileExtension(xml, ".mjml").
+fileExtension(xml, ".mm").
+fileExtension(xml, ".mod").
+fileExtension(xml, ".mxml").
+fileExtension(xml, ".natvis").
+fileExtension(xml, ".ndproj").
+fileExtension(xml, ".nproj").
+fileExtension(xml, ".nuspec").
+fileExtension(xml, ".odd").
+fileExtension(xml, ".osm").
+fileExtension(xml, ".pkgproj").
+fileExtension(xml, ".plist").
+fileExtension(xml, ".pluginspec").
+fileExtension(xml, ".proj").
+fileExtension(xml, ".props").
+fileExtension(xml, ".ps1xml").
+fileExtension(xml, ".psc1").
+fileExtension(xml, ".pt").
+fileExtension(xml, ".rdf").
+fileExtension(xml, ".resx").
+fileExtension(xml, ".rss").
+fileExtension(xml, ".sch").
+fileExtension(xml, ".scxml").
+fileExtension(xml, ".sfproj").
+fileExtension(xml, ".shproj").
+fileExtension(xml, ".srdf").
+fileExtension(xml, ".storyboard").
+fileExtension(xml, ".stTheme").
+fileExtension(xml, ".sublime-snippet").
+fileExtension(xml, ".targets").
+fileExtension(xml, ".tmCommand").
+fileExtension(xml, ".tml").
+fileExtension(xml, ".tmLanguage").
+fileExtension(xml, ".tmPreferences").
+fileExtension(xml, ".tmSnippet").
+fileExtension(xml, ".tmTheme").
+fileExtension(xml, ".ts").
+fileExtension(xml, ".tsx").
+fileExtension(xml, ".ui").
+fileExtension(xml, ".urdf").
+fileExtension(xml, ".ux").
+fileExtension(xml, ".vbproj").
+fileExtension(xml, ".vcxproj").
+fileExtension(xml, ".vsixmanifest").
+fileExtension(xml, ".vssettings").
+fileExtension(xml, ".vstemplate").
+fileExtension(xml, ".vxml").
+fileExtension(xml, ".wixproj").
+fileExtension(xml, ".wsdl").
+fileExtension(xml, ".wsf").
+fileExtension(xml, ".wxi").
+fileExtension(xml, ".wxl").
+fileExtension(xml, ".wxs").
+fileExtension(xml, ".x3d").
+fileExtension(xml, ".xacro").
+fileExtension(xml, ".xaml").
+fileExtension(xml, ".xib").
+fileExtension(xml, ".xlf").
+fileExtension(xml, ".xliff").
+fileExtension(xml, ".xmi").
+fileExtension(xml, ".xml.dist").
+fileExtension(xml, ".xproj").
+fileExtension(xml, ".xsd").
+fileExtension(xml, ".xspec").
+fileExtension(xml, ".xul").
+fileExtension(xml, ".zcml").
 
-fileExtension(".xsp-config", xpages).
-fileExtension(".xsp.metadata", xpages).
+fileExtension(xpm, ".xpm").
+fileExtension(xpm, ".pm").
 
-fileExtension(".xpl", xproc).
-fileExtension(".xproc", xproc).
+fileExtension(xpages, ".xsp-config").
+fileExtension(xpages, ".xsp.metadata").
 
-fileExtension(".xquery", xquery).
-fileExtension(".xq", xquery).
-fileExtension(".xql", xquery).
-fileExtension(".xqm", xquery).
-fileExtension(".xqy", xquery).
+fileExtension(xproc, ".xpl").
+fileExtension(xproc, ".xproc").
 
-fileExtension(".xs", xs).
+fileExtension(xquery, ".xquery").
+fileExtension(xquery, ".xq").
+fileExtension(xquery, ".xql").
+fileExtension(xquery, ".xqm").
+fileExtension(xquery, ".xqy").
 
-fileExtension(".xslt", xslt).
-fileExtension(".xsl", xslt).
+fileExtension(xs, ".xs").
 
-fileExtension(".xojo_code", xojo).
-fileExtension(".xojo_menu", xojo).
-fileExtension(".xojo_report", xojo).
-fileExtension(".xojo_script", xojo).
-fileExtension(".xojo_toolbar", xojo).
-fileExtension(".xojo_window", xojo).
+fileExtension(xslt, ".xslt").
+fileExtension(xslt, ".xsl").
 
-fileExtension(".xtend", xtend).
+fileExtension(xojo, ".xojo_code").
+fileExtension(xojo, ".xojo_menu").
+fileExtension(xojo, ".xojo_report").
+fileExtension(xojo, ".xojo_script").
+fileExtension(xojo, ".xojo_toolbar").
+fileExtension(xojo, ".xojo_window").
 
-fileExtension(".yml", yaml).
-fileExtension(".reek", yaml).
-fileExtension(".rviz", yaml).
-fileExtension(".sublime-syntax", yaml).
-fileExtension(".syntax", yaml).
-fileExtension(".yaml", yaml).
-fileExtension(".yaml-tmlanguage", yaml).
-fileExtension(".yml.mysql", yaml).
+fileExtension(xtend, ".xtend").
 
-fileExtension(".yang", yang).
+fileExtension(yaml, ".yml").
+fileExtension(yaml, ".reek").
+fileExtension(yaml, ".rviz").
+fileExtension(yaml, ".sublime-syntax").
+fileExtension(yaml, ".syntax").
+fileExtension(yaml, ".yaml").
+fileExtension(yaml, ".yaml-tmlanguage").
+fileExtension(yaml, ".yml.mysql").
 
-fileExtension(".yar", yara).
-fileExtension(".yara", yara).
+fileExtension(yang, ".yang").
 
-fileExtension(".y", yacc).
-fileExtension(".yacc", yacc).
-fileExtension(".yy", yacc).
+fileExtension(yara, ".yar").
+fileExtension(yara, ".yara").
 
-fileExtension(".zep", zephir).
+fileExtension(yacc, ".y").
+fileExtension(yacc, ".yacc").
+fileExtension(yacc, ".yy").
 
-fileExtension(".zimpl", zimpl).
-fileExtension(".zmpl", zimpl).
-fileExtension(".zpl", zimpl).
+fileExtension(zephir, ".zep").
 
-fileExtension(".desktop", desktop).
-fileExtension(".desktop.in", desktop).
+fileExtension(zimpl, ".zimpl").
+fileExtension(zimpl, ".zmpl").
+fileExtension(zimpl, ".zpl").
 
-fileExtension(".ec", ec).
-fileExtension(".eh", ec).
+fileExtension(desktop, ".desktop").
+fileExtension(desktop, ".desktop.in").
 
-fileExtension(".edn", edn).
+fileExtension(ec, ".ec").
+fileExtension(ec, ".eh").
 
-fileExtension(".fish", fish).
+fileExtension(edn, ".edn").
 
-fileExtension(".mu", mupad).
+fileExtension(fish, ".fish").
 
-fileExtension(".nc", nesc).
+fileExtension(mupad, ".mu").
 
-fileExtension(".ooc", ooc).
+fileExtension(nesc, ".nc").
 
-fileExtension(".rst", restructuredtext).
-fileExtension(".rest", restructuredtext).
-fileExtension(".rest.txt", restructuredtext).
-fileExtension(".rst.txt", restructuredtext).
+fileExtension(ooc, ".ooc").
 
-fileExtension(".wdl", wdl).
+fileExtension(restructuredtext, ".rst").
+fileExtension(restructuredtext, ".rest").
+fileExtension(restructuredtext, ".rest.txt").
+fileExtension(restructuredtext, ".rst.txt").
 
-fileExtension(".wisp", wisp).
+fileExtension(wdl, ".wdl").
 
-fileExtension(".prg", xbase).
-fileExtension(".ch", xbase).
-fileExtension(".prw", xbase).
+fileExtension(wisp, ".wisp").
+
+fileExtension(xbase, ".prg").
+fileExtension(xbase, ".ch").
+fileExtension(xbase, ".prw").
 
