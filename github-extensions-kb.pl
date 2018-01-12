@@ -2163,7 +2163,7 @@ interpreter(python, "python").
 interpreter(python2, "python").
 interpreter(python3, "python").
 interpreter(qmake, "qmake").
-interpreter(Rscript, "r").
+interpreter(rscript, "r").
 interpreter(regina, "rexx").
 interpreter(rexx, "rexx").
 interpreter(racket, "racket").
