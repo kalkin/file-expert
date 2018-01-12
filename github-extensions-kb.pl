@@ -6,7 +6,7 @@ langName(ampl, "AMPL").
 langName(antlr, "ANTLR").
 langName(api_blueprint, "API Blueprint").
 langName(apl, "APL").
-langName(asn.1, "ASN.1").
+langName(asn_1, "ASN.1").
 langName(asp, "ASP").
 langName(ats, "ATS").
 langName(actionscript, "ActionScript").
@@ -488,8 +488,8 @@ typeExtension(api_blueprint, ".apib").
 typeExtension(apl, ".apl").
 typeExtension(apl, ".dyalog").
 
-typeExtension(asn.1, ".asn").
-typeExtension(asn.1, ".asn1").
+typeExtension(asn_1, ".asn").
+typeExtension(asn_1, ".asn1").
 
 typeExtension(asp, ".asp").
 typeExtension(asp, ".asax").

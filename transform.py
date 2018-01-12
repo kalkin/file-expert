@@ -4,7 +4,7 @@ import yaml
 
 
 def normalize(name: str) -> str:
-    name = name.lower().replace(" ", "_").replace("'", "")
+    name = name.lower().replace(" ", "_").replace("'", "").replace(".", "_")
     if name[0] == "1":
         name = "one_" + name[1:]
     name = name.replace("#", "_sharp")
