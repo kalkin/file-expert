@@ -23,14 +23,12 @@ with open("languages.yml", 'r') as stream:
         lang_name = normalize(name)
         if 'extensions' in lang_data:
             for ext in lang_data['extensions']:
-                print('fileExtension(%s, "%s").' % (lang_name, ext))
+                print('typeExtension(%s, "%s").' % (lang_name, ext))
         print("")
-    print('fileExtension(unknown_type, _).')
     print("")
     for name, lang_data in result.items():
         lang_name = normalize(name)
         if 'interpreters' in lang_data:
             for inter in lang_data['interpreters']:
-                print('interpreter("%s", %s).' % (inter, lang_name))
-    print('interpreter(unknown_interpreter, _).')
+                print('interpreter(%s, "%s").' % (inter, lang_name))
     print("")
