@@ -1,4 +1,4 @@
-:- ["github-extensions-kb"].
+:- consult('github-extensions-kb').
 
 fileExtension(PATH, EXT):-
     file_base_name(PATH, NAME),
