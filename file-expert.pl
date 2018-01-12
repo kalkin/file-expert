@@ -1,10 +1,5 @@
 :- ["github-extensions-kb"].
 
-reverse([], []).
-reverse([X], [X]).
-reverse([X|Xs], R):- reverse(Xs, T), append(T, [X], R).
-
-
 fileExtension(PATH, EXT):-
     file_base_name(PATH, NAME),
     split_string(NAME, ".", "", LIST),
