@@ -1,6 +1,6 @@
 # About
 
-A file type recognition system simalar to github/linguist in prolog
+A file type recognition system similar to GitHub/linguist in Prolog
 
 ## Usage
 
