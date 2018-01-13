@@ -21,7 +21,7 @@ heuristic(_, [], unknown_type).
 
 heuristic(_, [X], X).
 
-heuristic(_, [_], multiple_posibilities).
+heuristic(_, _, multiple_posibilities).
 
 fileType(PATH, RESULT):-
     fileExtension(PATH, EXT),
