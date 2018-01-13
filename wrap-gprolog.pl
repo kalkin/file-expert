@@ -1,10 +1,5 @@
 :- set_prolog_flag(double_quotes, codes).
 
-my_concat(BANG, PATH, CMD, MAGIC_LINE):-
-    append(BANG, PATH, PREFIX),
-    append(PREFIX, CMD, Codes),
-    atom_codes(MAGIC_LINE, Codes).
-
 fileExtension(PATH, EXT):-
     atom_codes(Codes, PATH),
     decompose_file_name(Codes, _, _, EXT).
