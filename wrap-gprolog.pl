@@ -6,6 +6,7 @@ fileExtension(PATH, EXT):-
 
 fileFirstLine(PATH, FIRST_LINE):-
     atom_codes(Codes, PATH),
+    file_permission(Codes, read),
     open(Codes, read, Stream),
     read_line_codes(Stream, [], R),
     atom_codes(FIRST_LINE, R).
