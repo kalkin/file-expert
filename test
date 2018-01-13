@@ -1,0 +1,40 @@
+#!/bin/sh
+
+run_test() {
+passed=0
+unrecognized=0
+misrecognized=0
+SAMPLES=linguist/samples
+
+check() {
+    lang=$1
+    for file in "$SAMPLES/$lang"/*; do
+        if [ -f "$file" ]; then
+            result=$(./file-expert "$file") || unrecognized=$((unrecognized + 1))
+            [ -z "$result" ] && continue
+            if [ "$result" = "$lang" ]; then
+                passed=$((passed + 1))
+            else
+                misrecognized=$((misrecognized + 1))
+                echo "FAIL: $lang != $result → $file"
+            fi
+        fi
+
+    done
+}
+
+for smth in "$SAMPLES"/*; do
+    if [ -d "$smth" ]; then
+        check "$(basename "$smth")"
+    fi
+done;
+
+echo "PASSED: $passed"
+echo "misrecognized: $misrecognized"
+echo "unrecognized: $unrecognized"
+
+[ $misrecognized -eq 0 ] && exit 0
+exit 1
+}
+
+run_test
