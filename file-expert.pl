@@ -43,3 +43,19 @@ fileType(PATH, RESULT):-
     heuristic(PATH, POSSIBLE_TYPES, RESULT), !, true;
     shebangType(PATH, RESULT), !, true;
     RESULT = unknown_type.
+
+main(Argv) :-
+        guess(Argv).
+
+guess([]):-
+    write("No files specified"), nl,
+    halt(1).
+
+guess([Last]) :- !,
+        fileType(Last, Type),
+        write(Type), nl.
+
+guess([H|Rest]) :-
+        fileType(H, Type),
+        write(Type), nl,
+        guess(Rest).
