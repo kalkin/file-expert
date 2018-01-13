@@ -1,26 +1,21 @@
+
+bang('#!').
+bang('#! ').
+executablePath('/bin').
+executablePath('/usr/bin').
+executablePath('/usr/bin/env ').
+
+
 shebangType(PATH, TYPE):-
-    fileFirstLine(PATH, MAGIC_LINE),
-    shebang(TYPE, MAGIC_LINE).
+    fileFirstLine(PATH, MagicLine),
+    shebang(Cmd, MagicLine),
+    interpreter(Cmd, TYPE).
 
-shebang(TYPE, MAGIC_LINE):-
-    shebang("/bin/", TYPE, MAGIC_LINE).
-
-shebang(TYPE, MAGIC_LINE):-
-    shebang("/usr/bin/", TYPE, MAGIC_LINE).
-
-shebang(TYPE, MAGIC_LINE):-
-    shebang("/usr/bin/env ", TYPE, MAGIC_LINE).
-
-shebang(PATH, TYPE, MAGIC_LINE):-
-    interpreter(TYPE, CMD),
-    shebang("#! ", PATH, CMD, MAGIC_LINE).
-
-shebang(PATH, TYPE, MAGIC_LINE):-
-    interpreter(TYPE, CMD),
-    shebang("#! ", PATH, CMD, MAGIC_LINE).
-
-shebang(BANG, PATH, CMD, MAGIC_LINE):-
-    my_concat(BANG, PATH, CMD, MAGIC_LINE).
+shebang(Cmd, MagicLine):-
+    bang(Bang),
+    executablePath(Path),
+    atom_concat(Bang, Path, Tmp),
+    atom_concat(Tmp, Cmd, MagicLine).
 
 heuristic(_, [], unknown_type).
 
