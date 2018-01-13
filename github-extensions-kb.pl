@@ -1,2208 +1,1738 @@
-langName(one_c_enterprise, "1C Enterprise").
-langName(abap, "ABAP").
-langName(abnf, "ABNF").
-langName(ags_script, "AGS Script").
-langName(ampl, "AMPL").
-langName(antlr, "ANTLR").
-langName(api_blueprint, "API Blueprint").
-langName(apl, "APL").
-langName(asn_1, "ASN.1").
-langName(asp, "ASP").
-langName(ats, "ATS").
-langName(actionscript, "ActionScript").
-langName(ada, "Ada").
-langName(adobe_font_metrics, "Adobe Font Metrics").
-langName(agda, "Agda").
-langName(alloy, "Alloy").
-langName(alpine_abuild, "Alpine Abuild").
-langName(angelscript, "AngelScript").
-langName(ant_build_system, "Ant Build System").
-langName(apacheconf, "ApacheConf").
-langName(apex, "Apex").
-langName(apollo_guidance_computer, "Apollo Guidance Computer").
-langName(applescript, "AppleScript").
-langName(arc, "Arc").
-langName(asciidoc, "AsciiDoc").
-langName(aspectj, "AspectJ").
-langName(assembly, "Assembly").
-langName(augeas, "Augeas").
-langName(autohotkey, "AutoHotkey").
-langName(autoit, "AutoIt").
-langName(awk, "Awk").
-langName(ballerina, "Ballerina").
-langName(batchfile, "Batchfile").
-langName(befunge, "Befunge").
-langName(bison, "Bison").
-langName(bitbake, "BitBake").
-langName(blade, "Blade").
-langName(blitzbasic, "BlitzBasic").
-langName(blitzmax, "BlitzMax").
-langName(bluespec, "Bluespec").
-langName(boo, "Boo").
-langName(brainfuck, "Brainfuck").
-langName(brightscript, "Brightscript").
-langName(bro, "Bro").
-langName(c, "C").
-langName(c_sharp, "C#").
-langName(c_plus_plus, "C++").
-langName(c-objdump, "C-ObjDump").
-langName(c2hs_haskell, "C2hs Haskell").
-langName(clips, "CLIPS").
-langName(cmake, "CMake").
-langName(cobol, "COBOL").
-langName(collada, "COLLADA").
-langName(cson, "CSON").
-langName(css, "CSS").
-langName(csv, "CSV").
-langName(cweb, "CWeb").
-langName(capn_proto, "Cap'n Proto").
-langName(cartocss, "CartoCSS").
-langName(ceylon, "Ceylon").
-langName(chapel, "Chapel").
-langName(charity, "Charity").
-langName(chuck, "ChucK").
-langName(cirru, "Cirru").
-langName(clarion, "Clarion").
-langName(clean, "Clean").
-langName(click, "Click").
-langName(clojure, "Clojure").
-langName(closure_templates, "Closure Templates").
-langName(coffeescript, "CoffeeScript").
-langName(coldfusion, "ColdFusion").
-langName(coldfusion_cfc, "ColdFusion CFC").
-langName(common_lisp, "Common Lisp").
-langName(common_workflow_language, "Common Workflow Language").
-langName(component_pascal, "Component Pascal").
-langName(cool, "Cool").
-langName(coq, "Coq").
-langName(cpp-objdump, "Cpp-ObjDump").
-langName(creole, "Creole").
-langName(crystal, "Crystal").
-langName(csound, "Csound").
-langName(csound_document, "Csound Document").
-langName(csound_score, "Csound Score").
-langName(cuda, "Cuda").
-langName(cycript, "Cycript").
-langName(cython, "Cython").
-langName(d, "D").
-langName(d-objdump, "D-ObjDump").
-langName(digital_command_language, "DIGITAL Command Language").
-langName(dm, "DM").
-langName(dns_zone, "DNS Zone").
-langName(dtrace, "DTrace").
-langName(darcs_patch, "Darcs Patch").
-langName(dart, "Dart").
-langName(dataweave, "DataWeave").
-langName(diff, "Diff").
-langName(dockerfile, "Dockerfile").
-langName(dogescript, "Dogescript").
-langName(dylan, "Dylan").
-langName(e, "E").
-langName(ebnf, "EBNF").
-langName(ecl, "ECL").
-langName(eclipse, "ECLiPSe").
-langName(ejs, "EJS").
-langName(eq, "EQ").
-langName(eagle, "Eagle").
-langName(easybuild, "Easybuild").
-langName(ecere_projects, "Ecere Projects").
-langName(edje_data_collection, "Edje Data Collection").
-langName(eiffel, "Eiffel").
-langName(elixir, "Elixir").
-langName(elm, "Elm").
-langName(emacs_lisp, "Emacs Lisp").
-langName(emberscript, "EmberScript").
-langName(erlang, "Erlang").
-langName(f_sharp, "F#").
-langName(flux, "FLUX").
-langName(factor, "Factor").
-langName(fancy, "Fancy").
-langName(fantom, "Fantom").
-langName(filebench_wml, "Filebench WML").
-langName(filterscript, "Filterscript").
-langName(formatted, "Formatted").
-langName(forth, "Forth").
-langName(fortran, "Fortran").
-langName(freemarker, "FreeMarker").
-langName(frege, "Frege").
-langName(g-code, "G-code").
-langName(gams, "GAMS").
-langName(gap, "GAP").
-langName(gcc_machine_description, "GCC Machine Description").
-langName(gdb, "GDB").
-langName(gdscript, "GDScript").
-langName(glsl, "GLSL").
-langName(gn, "GN").
-langName(game_maker_language, "Game Maker Language").
-langName(genie, "Genie").
-langName(genshi, "Genshi").
-langName(gentoo_ebuild, "Gentoo Ebuild").
-langName(gentoo_eclass, "Gentoo Eclass").
-langName(gerber_image, "Gerber Image").
-langName(gettext_catalog, "Gettext Catalog").
-langName(gherkin, "Gherkin").
-langName(glyph, "Glyph").
-langName(gnuplot, "Gnuplot").
-langName(go, "Go").
-langName(golo, "Golo").
-langName(gosu, "Gosu").
-langName(grace, "Grace").
-langName(gradle, "Gradle").
-langName(grammatical_framework, "Grammatical Framework").
-langName(graph_modeling_language, "Graph Modeling Language").
-langName(graphql, "GraphQL").
-langName(graphviz_(dot), "Graphviz (DOT)").
-langName(groovy, "Groovy").
-langName(groovy_server_pages, "Groovy Server Pages").
-langName(hcl, "HCL").
-langName(hlsl, "HLSL").
-langName(html, "HTML").
-langName(html_plusdjango, "HTML+Django").
-langName(html_plusecr, "HTML+ECR").
-langName(html_pluseex, "HTML+EEX").
-langName(html_pluserb, "HTML+ERB").
-langName(html_plusphp, "HTML+PHP").
-langName(http, "HTTP").
-langName(hack, "Hack").
-langName(haml, "Haml").
-langName(handlebars, "Handlebars").
-langName(harbour, "Harbour").
-langName(haskell, "Haskell").
-langName(haxe, "Haxe").
-langName(hy, "Hy").
-langName(hyphy, "HyPhy").
-langName(idl, "IDL").
-langName(igor_pro, "IGOR Pro").
-langName(ini, "INI").
-langName(irc_log, "IRC log").
-langName(idris, "Idris").
-langName(inform_7, "Inform 7").
-langName(inno_setup, "Inno Setup").
-langName(io, "Io").
-langName(ioke, "Ioke").
-langName(isabelle, "Isabelle").
-langName(isabelle_root, "Isabelle ROOT").
-langName(j, "J").
-langName(jflex, "JFlex").
-langName(json, "JSON").
-langName(json5, "JSON5").
-langName(jsonld, "JSONLD").
-langName(jsoniq, "JSONiq").
-langName(jsx, "JSX").
-langName(jasmin, "Jasmin").
-langName(java, "Java").
-langName(java_server_pages, "Java Server Pages").
-langName(javascript, "JavaScript").
-langName(jison, "Jison").
-langName(jison_lex, "Jison Lex").
-langName(jolie, "Jolie").
-langName(julia, "Julia").
-langName(jupyter_notebook, "Jupyter Notebook").
-langName(krl, "KRL").
-langName(kicad_layout, "KiCad Layout").
-langName(kicad_legacy_layout, "KiCad Legacy Layout").
-langName(kicad_schematic, "KiCad Schematic").
-langName(kit, "Kit").
-langName(kotlin, "Kotlin").
-langName(lfe, "LFE").
-langName(llvm, "LLVM").
-langName(lolcode, "LOLCODE").
-langName(lsl, "LSL").
-langName(labview, "LabVIEW").
-langName(lasso, "Lasso").
-langName(latte, "Latte").
-langName(lean, "Lean").
-langName(less, "Less").
-langName(lex, "Lex").
-langName(lilypond, "LilyPond").
-langName(limbo, "Limbo").
-langName(linker_script, "Linker Script").
-langName(linux_kernel_module, "Linux Kernel Module").
-langName(liquid, "Liquid").
-langName(literate_agda, "Literate Agda").
-langName(literate_coffeescript, "Literate CoffeeScript").
-langName(literate_haskell, "Literate Haskell").
-langName(livescript, "LiveScript").
-langName(logos, "Logos").
-langName(logtalk, "Logtalk").
-langName(lookml, "LookML").
-langName(loomscript, "LoomScript").
-langName(lua, "Lua").
-langName(m, "M").
-langName(m4, "M4").
-langName(m4sugar, "M4Sugar").
-langName(maxscript, "MAXScript").
-langName(mql4, "MQL4").
-langName(mql5, "MQL5").
-langName(mtml, "MTML").
-langName(muf, "MUF").
-langName(makefile, "Makefile").
-langName(mako, "Mako").
-langName(markdown, "Markdown").
-langName(marko, "Marko").
-langName(mask, "Mask").
-langName(mathematica, "Mathematica").
-langName(matlab, "Matlab").
-langName(maven_pom, "Maven POM").
-langName(max, "Max").
-langName(mediawiki, "MediaWiki").
-langName(mercury, "Mercury").
-langName(meson, "Meson").
-langName(metal, "Metal").
-langName(minid, "MiniD").
-langName(mirah, "Mirah").
-langName(modelica, "Modelica").
-langName(modula-2, "Modula-2").
-langName(module_management_system, "Module Management System").
-langName(monkey, "Monkey").
-langName(moocode, "Moocode").
-langName(moonscript, "MoonScript").
-langName(myghty, "Myghty").
-langName(ncl, "NCL").
-langName(nl, "NL").
-langName(nsis, "NSIS").
-langName(nearley, "Nearley").
-langName(nemerle, "Nemerle").
-langName(netlinx, "NetLinx").
-langName(netlinx_pluserb, "NetLinx+ERB").
-langName(netlogo, "NetLogo").
-langName(newlisp, "NewLisp").
-langName(nextflow, "Nextflow").
-langName(nginx, "Nginx").
-langName(nim, "Nim").
-langName(ninja, "Ninja").
-langName(nit, "Nit").
-langName(nix, "Nix").
-langName(nu, "Nu").
-langName(numpy, "NumPy").
-langName(ocaml, "OCaml").
-langName(objdump, "ObjDump").
-langName(objective-c, "Objective-C").
-langName(objective-c_plus_plus, "Objective-C++").
-langName(objective-j, "Objective-J").
-langName(omgrofl, "Omgrofl").
-langName(opa, "Opa").
-langName(opal, "Opal").
-langName(opencl, "OpenCL").
-langName(openedge_abl, "OpenEdge ABL").
-langName(openrc_runscript, "OpenRC runscript").
-langName(openscad, "OpenSCAD").
-langName(opentype_feature_file, "OpenType Feature File").
-langName(org, "Org").
-langName(ox, "Ox").
-langName(oxygene, "Oxygene").
-langName(oz, "Oz").
-langName(p4, "P4").
-langName(pawn, "PAWN").
-langName(php, "PHP").
-langName(plsql, "PLSQL").
-langName(plpgsql, "PLpgSQL").
-langName(pov-ray_sdl, "POV-Ray SDL").
-langName(pan, "Pan").
-langName(papyrus, "Papyrus").
-langName(parrot, "Parrot").
-langName(parrot_assembly, "Parrot Assembly").
-langName(parrot_internal_representation, "Parrot Internal Representation").
-langName(pascal, "Pascal").
-langName(pep8, "Pep8").
-langName(perl, "Perl").
-langName(perl_6, "Perl 6").
-langName(pic, "Pic").
-langName(pickle, "Pickle").
-langName(picolisp, "PicoLisp").
-langName(piglatin, "PigLatin").
-langName(pike, "Pike").
-langName(pod, "Pod").
-langName(pogoscript, "PogoScript").
-langName(pony, "Pony").
-langName(postcss, "PostCSS").
-langName(postscript, "PostScript").
-langName(powerbuilder, "PowerBuilder").
-langName(powershell, "PowerShell").
-langName(processing, "Processing").
-langName(prolog, "Prolog").
-langName(propeller_spin, "Propeller Spin").
-langName(protocol_buffer, "Protocol Buffer").
-langName(public_key, "Public Key").
-langName(pug, "Pug").
-langName(puppet, "Puppet").
-langName(pure_data, "Pure Data").
-langName(purebasic, "PureBasic").
-langName(purescript, "PureScript").
-langName(python, "Python").
-langName(python_console, "Python console").
-langName(python_traceback, "Python traceback").
-langName(qml, "QML").
-langName(qmake, "QMake").
-langName(r, "R").
-langName(raml, "RAML").
-langName(rdoc, "RDoc").
-langName(realbasic, "REALbasic").
-langName(rexx, "REXX").
-langName(rhtml, "RHTML").
-langName(rmarkdown, "RMarkdown").
-langName(rpm_spec, "RPM Spec").
-langName(runoff, "RUNOFF").
-langName(racket, "Racket").
-langName(ragel, "Ragel").
-langName(rascal, "Rascal").
-langName(raw_token_data, "Raw token data").
-langName(reason, "Reason").
-langName(rebol, "Rebol").
-langName(red, "Red").
-langName(redcode, "Redcode").
-langName(regular_expression, "Regular Expression").
-langName(renpy, "Ren'Py").
-langName(renderscript, "RenderScript").
-langName(ring, "Ring").
-langName(robotframework, "RobotFramework").
-langName(roff, "Roff").
-langName(rouge, "Rouge").
-langName(ruby, "Ruby").
-langName(rust, "Rust").
-langName(sas, "SAS").
-langName(scss, "SCSS").
-langName(smt, "SMT").
-langName(sparql, "SPARQL").
-langName(sqf, "SQF").
-langName(sql, "SQL").
-langName(sqlpl, "SQLPL").
-langName(srecode_template, "SRecode Template").
-langName(ston, "STON").
-langName(svg, "SVG").
-langName(sage, "Sage").
-langName(saltstack, "SaltStack").
-langName(sass, "Sass").
-langName(scala, "Scala").
-langName(scaml, "Scaml").
-langName(scheme, "Scheme").
-langName(scilab, "Scilab").
-langName(self, "Self").
-langName(shaderlab, "ShaderLab").
-langName(shell, "Shell").
-langName(shellsession, "ShellSession").
-langName(shen, "Shen").
-langName(slash, "Slash").
-langName(slim, "Slim").
-langName(smali, "Smali").
-langName(smalltalk, "Smalltalk").
-langName(smarty, "Smarty").
-langName(sourcepawn, "SourcePawn").
-langName(spline_font_database, "Spline Font Database").
-langName(squirrel, "Squirrel").
-langName(stan, "Stan").
-langName(standard_ml, "Standard ML").
-langName(stata, "Stata").
-langName(stylus, "Stylus").
-langName(subrip_text, "SubRip Text").
-langName(sublime_text_config, "Sublime Text Config").
-langName(sugarss, "SugarSS").
-langName(supercollider, "SuperCollider").
-langName(swift, "Swift").
-langName(systemverilog, "SystemVerilog").
-langName(ti_program, "TI Program").
-langName(tla, "TLA").
-langName(toml, "TOML").
-langName(txl, "TXL").
-langName(tcl, "Tcl").
-langName(tcsh, "Tcsh").
-langName(tex, "TeX").
-langName(tea, "Tea").
-langName(terra, "Terra").
-langName(text, "Text").
-langName(textile, "Textile").
-langName(thrift, "Thrift").
-langName(turing, "Turing").
-langName(turtle, "Turtle").
-langName(twig, "Twig").
-langName(type_language, "Type Language").
-langName(typescript, "TypeScript").
-langName(unified_parallel_c, "Unified Parallel C").
-langName(unity3d_asset, "Unity3D Asset").
-langName(unix_assembly, "Unix Assembly").
-langName(uno, "Uno").
-langName(unrealscript, "UnrealScript").
-langName(urweb, "UrWeb").
-langName(vcl, "VCL").
-langName(vhdl, "VHDL").
-langName(vala, "Vala").
-langName(verilog, "Verilog").
-langName(vim_script, "Vim script").
-langName(visual_basic, "Visual Basic").
-langName(volt, "Volt").
-langName(vue, "Vue").
-langName(wavefront_material, "Wavefront Material").
-langName(wavefront_object, "Wavefront Object").
-langName(web_ontology_language, "Web Ontology Language").
-langName(webassembly, "WebAssembly").
-langName(webidl, "WebIDL").
-langName(world_of_warcraft_addon_data, "World of Warcraft Addon Data").
-langName(x10, "X10").
-langName(xc, "XC").
-langName(xcompose, "XCompose").
-langName(xml, "XML").
-langName(xpm, "XPM").
-langName(xpages, "XPages").
-langName(xproc, "XProc").
-langName(xquery, "XQuery").
-langName(xs, "XS").
-langName(xslt, "XSLT").
-langName(xojo, "Xojo").
-langName(xtend, "Xtend").
-langName(yaml, "YAML").
-langName(yang, "YANG").
-langName(yara, "YARA").
-langName(yacc, "Yacc").
-langName(zephir, "Zephir").
-langName(zimpl, "Zimpl").
-langName(desktop, "desktop").
-langName(ec, "eC").
-langName(edn, "edn").
-langName(fish, "fish").
-langName(mupad, "mupad").
-langName(nesc, "nesC").
-langName(ooc, "ooc").
-langName(restructuredtext, "reStructuredText").
-langName(wdl, "wdl").
-langName(wisp, "wisp").
-langName(xbase, "xBase").
-
-
-typeExtension(one_c_enterprise, ".bsl").
-typeExtension(one_c_enterprise, ".os").
-
-typeExtension(abap, ".abap").
-
-typeExtension(abnf, ".abnf").
-
-typeExtension(ags_script, ".asc").
-typeExtension(ags_script, ".ash").
-
-typeExtension(ampl, ".ampl").
-typeExtension(ampl, ".mod").
-
-typeExtension(antlr, ".g4").
-
-typeExtension(api_blueprint, ".apib").
-
-typeExtension(apl, ".apl").
-typeExtension(apl, ".dyalog").
-
-typeExtension(asn_1, ".asn").
-typeExtension(asn_1, ".asn1").
-
-typeExtension(asp, ".asp").
-typeExtension(asp, ".asax").
-typeExtension(asp, ".ascx").
-typeExtension(asp, ".ashx").
-typeExtension(asp, ".asmx").
-typeExtension(asp, ".aspx").
-typeExtension(asp, ".axd").
-
-typeExtension(ats, ".dats").
-typeExtension(ats, ".hats").
-typeExtension(ats, ".sats").
-
-typeExtension(actionscript, ".as").
-
-typeExtension(ada, ".adb").
-typeExtension(ada, ".ada").
-typeExtension(ada, ".ads").
-
-typeExtension(adobe_font_metrics, ".afm").
-
-typeExtension(agda, ".agda").
-
-typeExtension(alloy, ".als").
-
-
-typeExtension(angelscript, ".as").
-typeExtension(angelscript, ".angelscript").
-
-
-typeExtension(apacheconf, ".apacheconf").
-typeExtension(apacheconf, ".vhost").
-
-typeExtension(apex, ".cls").
-
-typeExtension(apollo_guidance_computer, ".agc").
-
-typeExtension(applescript, ".applescript").
-typeExtension(applescript, ".scpt").
-
-typeExtension(arc, ".arc").
-
-typeExtension(asciidoc, ".asciidoc").
-typeExtension(asciidoc, ".adoc").
-typeExtension(asciidoc, ".asc").
-
-typeExtension(aspectj, ".aj").
-
-typeExtension(assembly, ".asm").
-typeExtension(assembly, ".a51").
-typeExtension(assembly, ".inc").
-typeExtension(assembly, ".nasm").
-
-typeExtension(augeas, ".aug").
-
-typeExtension(autohotkey, ".ahk").
-typeExtension(autohotkey, ".ahkl").
-
-typeExtension(autoit, ".au3").
-
-typeExtension(awk, ".awk").
-typeExtension(awk, ".auk").
-typeExtension(awk, ".gawk").
-typeExtension(awk, ".mawk").
-typeExtension(awk, ".nawk").
-
-typeExtension(ballerina, ".bal").
-
-typeExtension(batchfile, ".bat").
-typeExtension(batchfile, ".cmd").
-
-typeExtension(befunge, ".befunge").
-
-typeExtension(bison, ".bison").
-
-typeExtension(bitbake, ".bb").
-
-typeExtension(blade, ".blade").
-typeExtension(blade, ".blade.php").
-
-typeExtension(blitzbasic, ".bb").
-typeExtension(blitzbasic, ".decls").
-
-typeExtension(blitzmax, ".bmx").
-
-typeExtension(bluespec, ".bsv").
-
-typeExtension(boo, ".boo").
-
-typeExtension(brainfuck, ".b").
-typeExtension(brainfuck, ".bf").
-
-typeExtension(brightscript, ".brs").
-
-typeExtension(bro, ".bro").
-
-typeExtension(c, ".c").
-typeExtension(c, ".cats").
-typeExtension(c, ".h").
-typeExtension(c, ".idc").
-
-typeExtension(c_sharp, ".cs").
-typeExtension(c_sharp, ".cake").
-typeExtension(c_sharp, ".cshtml").
-typeExtension(c_sharp, ".csx").
-
-typeExtension(c_plus_plus, ".cpp").
-typeExtension(c_plus_plus, ".c++").
-typeExtension(c_plus_plus, ".cc").
-typeExtension(c_plus_plus, ".cp").
-typeExtension(c_plus_plus, ".cxx").
-typeExtension(c_plus_plus, ".h").
-typeExtension(c_plus_plus, ".h++").
-typeExtension(c_plus_plus, ".hh").
-typeExtension(c_plus_plus, ".hpp").
-typeExtension(c_plus_plus, ".hxx").
-typeExtension(c_plus_plus, ".inc").
-typeExtension(c_plus_plus, ".inl").
-typeExtension(c_plus_plus, ".ino").
-typeExtension(c_plus_plus, ".ipp").
-typeExtension(c_plus_plus, ".re").
-typeExtension(c_plus_plus, ".tcc").
-typeExtension(c_plus_plus, ".tpp").
-
-typeExtension(c-objdump, ".c-objdump").
-
-typeExtension(c2hs_haskell, ".chs").
-
-typeExtension(clips, ".clp").
-
-typeExtension(cmake, ".cmake").
-typeExtension(cmake, ".cmake.in").
-
-typeExtension(cobol, ".cob").
-typeExtension(cobol, ".cbl").
-typeExtension(cobol, ".ccp").
-typeExtension(cobol, ".cobol").
-typeExtension(cobol, ".cpy").
-
-typeExtension(collada, ".dae").
-
-typeExtension(cson, ".cson").
-
-typeExtension(css, ".css").
-
-typeExtension(csv, ".csv").
-
-typeExtension(cweb, ".w").
-
-typeExtension(capn_proto, ".capnp").
-
-typeExtension(cartocss, ".mss").
-
-typeExtension(ceylon, ".ceylon").
-
-typeExtension(chapel, ".chpl").
-
-typeExtension(charity, ".ch").
-
-typeExtension(chuck, ".ck").
-
-typeExtension(cirru, ".cirru").
-
-typeExtension(clarion, ".clw").
-
-typeExtension(clean, ".icl").
-typeExtension(clean, ".dcl").
-
-typeExtension(click, ".click").
-
-typeExtension(clojure, ".clj").
-typeExtension(clojure, ".boot").
-typeExtension(clojure, ".cl2").
-typeExtension(clojure, ".cljc").
-typeExtension(clojure, ".cljs").
-typeExtension(clojure, ".cljs.hl").
-typeExtension(clojure, ".cljscm").
-typeExtension(clojure, ".cljx").
-typeExtension(clojure, ".hic").
-
-typeExtension(closure_templates, ".soy").
-
-typeExtension(coffeescript, ".coffee").
-typeExtension(coffeescript, "._coffee").
-typeExtension(coffeescript, ".cake").
-typeExtension(coffeescript, ".cjsx").
-typeExtension(coffeescript, ".iced").
-
-typeExtension(coldfusion, ".cfm").
-typeExtension(coldfusion, ".cfml").
-
-typeExtension(coldfusion_cfc, ".cfc").
-
-typeExtension(common_lisp, ".lisp").
-typeExtension(common_lisp, ".asd").
-typeExtension(common_lisp, ".cl").
-typeExtension(common_lisp, ".l").
-typeExtension(common_lisp, ".lsp").
-typeExtension(common_lisp, ".ny").
-typeExtension(common_lisp, ".podsl").
-typeExtension(common_lisp, ".sexp").
-
-typeExtension(common_workflow_language, ".cwl").
-
-typeExtension(component_pascal, ".cp").
-typeExtension(component_pascal, ".cps").
-
-typeExtension(cool, ".cl").
-
-typeExtension(coq, ".coq").
-typeExtension(coq, ".v").
-
-typeExtension(cpp-objdump, ".cppobjdump").
-typeExtension(cpp-objdump, ".c++-objdump").
-typeExtension(cpp-objdump, ".c++objdump").
-typeExtension(cpp-objdump, ".cpp-objdump").
-typeExtension(cpp-objdump, ".cxx-objdump").
-
-typeExtension(creole, ".creole").
-
-typeExtension(crystal, ".cr").
-
-typeExtension(csound, ".orc").
-typeExtension(csound, ".udo").
-
-typeExtension(csound_document, ".csd").
-
-typeExtension(csound_score, ".sco").
-
-typeExtension(cuda, ".cu").
-typeExtension(cuda, ".cuh").
-
-typeExtension(cycript, ".cy").
-
-typeExtension(cython, ".pyx").
-typeExtension(cython, ".pxd").
-typeExtension(cython, ".pxi").
-
-typeExtension(d, ".d").
-typeExtension(d, ".di").
-
-typeExtension(d-objdump, ".d-objdump").
-
-typeExtension(digital_command_language, ".com").
-
-typeExtension(dm, ".dm").
-
-typeExtension(dns_zone, ".zone").
-typeExtension(dns_zone, ".arpa").
-
-typeExtension(dtrace, ".d").
-
-typeExtension(darcs_patch, ".darcspatch").
-typeExtension(darcs_patch, ".dpatch").
-
-typeExtension(dart, ".dart").
-
-typeExtension(dataweave, ".dwl").
-
-typeExtension(diff, ".diff").
-typeExtension(diff, ".patch").
-
-typeExtension(dockerfile, ".dockerfile").
-
-typeExtension(dogescript, ".djs").
-
-typeExtension(dylan, ".dylan").
-typeExtension(dylan, ".dyl").
-typeExtension(dylan, ".intr").
-typeExtension(dylan, ".lid").
-
-typeExtension(e, ".E").
-
-typeExtension(ebnf, ".ebnf").
-
-typeExtension(ecl, ".ecl").
-typeExtension(ecl, ".eclxml").
-
-typeExtension(eclipse, ".ecl").
-
-typeExtension(ejs, ".ejs").
-
-typeExtension(eq, ".eq").
-
-typeExtension(eagle, ".sch").
-typeExtension(eagle, ".brd").
-
-typeExtension(easybuild, ".eb").
-
-typeExtension(ecere_projects, ".epj").
-
-typeExtension(edje_data_collection, ".edc").
-
-typeExtension(eiffel, ".e").
-
-typeExtension(elixir, ".ex").
-typeExtension(elixir, ".exs").
-
-typeExtension(elm, ".elm").
-
-typeExtension(emacs_lisp, ".el").
-typeExtension(emacs_lisp, ".emacs").
-typeExtension(emacs_lisp, ".emacs.desktop").
-
-typeExtension(emberscript, ".em").
-typeExtension(emberscript, ".emberscript").
-
-typeExtension(erlang, ".erl").
-typeExtension(erlang, ".app.src").
-typeExtension(erlang, ".es").
-typeExtension(erlang, ".escript").
-typeExtension(erlang, ".hrl").
-typeExtension(erlang, ".xrl").
-typeExtension(erlang, ".yrl").
-
-typeExtension(f_sharp, ".fs").
-typeExtension(f_sharp, ".fsi").
-typeExtension(f_sharp, ".fsx").
-
-typeExtension(flux, ".fx").
-typeExtension(flux, ".flux").
-
-typeExtension(factor, ".factor").
-
-typeExtension(fancy, ".fy").
-typeExtension(fancy, ".fancypack").
-
-typeExtension(fantom, ".fan").
-
-typeExtension(filebench_wml, ".f").
-
-typeExtension(filterscript, ".fs").
-
-typeExtension(formatted, ".for").
-typeExtension(formatted, ".eam.fs").
-
-typeExtension(forth, ".fth").
-typeExtension(forth, ".4th").
-typeExtension(forth, ".f").
-typeExtension(forth, ".for").
-typeExtension(forth, ".forth").
-typeExtension(forth, ".fr").
-typeExtension(forth, ".frt").
-typeExtension(forth, ".fs").
-
-typeExtension(fortran, ".f90").
-typeExtension(fortran, ".f").
-typeExtension(fortran, ".f03").
-typeExtension(fortran, ".f08").
-typeExtension(fortran, ".f77").
-typeExtension(fortran, ".f95").
-typeExtension(fortran, ".for").
-typeExtension(fortran, ".fpp").
-
-typeExtension(freemarker, ".ftl").
-
-typeExtension(frege, ".fr").
-
-typeExtension(g-code, ".g").
-typeExtension(g-code, ".gco").
-typeExtension(g-code, ".gcode").
-
-typeExtension(gams, ".gms").
-
-typeExtension(gap, ".g").
-typeExtension(gap, ".gap").
-typeExtension(gap, ".gd").
-typeExtension(gap, ".gi").
-typeExtension(gap, ".tst").
-
-typeExtension(gcc_machine_description, ".md").
-
-typeExtension(gdb, ".gdb").
-typeExtension(gdb, ".gdbinit").
-
-typeExtension(gdscript, ".gd").
-
-typeExtension(glsl, ".glsl").
-typeExtension(glsl, ".fp").
-typeExtension(glsl, ".frag").
-typeExtension(glsl, ".frg").
-typeExtension(glsl, ".fs").
-typeExtension(glsl, ".fsh").
-typeExtension(glsl, ".fshader").
-typeExtension(glsl, ".geo").
-typeExtension(glsl, ".geom").
-typeExtension(glsl, ".glslv").
-typeExtension(glsl, ".gshader").
-typeExtension(glsl, ".shader").
-typeExtension(glsl, ".tesc").
-typeExtension(glsl, ".tese").
-typeExtension(glsl, ".vert").
-typeExtension(glsl, ".vrx").
-typeExtension(glsl, ".vsh").
-typeExtension(glsl, ".vshader").
-
-typeExtension(gn, ".gn").
-typeExtension(gn, ".gni").
-
-typeExtension(game_maker_language, ".gml").
-
-typeExtension(genie, ".gs").
-
-typeExtension(genshi, ".kid").
-
-typeExtension(gentoo_ebuild, ".ebuild").
-
-typeExtension(gentoo_eclass, ".eclass").
-
-typeExtension(gerber_image, ".gbr").
-typeExtension(gerber_image, ".gbl").
-typeExtension(gerber_image, ".gbo").
-typeExtension(gerber_image, ".gbp").
-typeExtension(gerber_image, ".gbs").
-typeExtension(gerber_image, ".gko").
-typeExtension(gerber_image, ".gpb").
-typeExtension(gerber_image, ".gpt").
-typeExtension(gerber_image, ".gtl").
-typeExtension(gerber_image, ".gto").
-typeExtension(gerber_image, ".gtp").
-typeExtension(gerber_image, ".gts").
-
-typeExtension(gettext_catalog, ".po").
-typeExtension(gettext_catalog, ".pot").
-
-typeExtension(gherkin, ".feature").
-
-typeExtension(glyph, ".glf").
-
-typeExtension(gnuplot, ".gp").
-typeExtension(gnuplot, ".gnu").
-typeExtension(gnuplot, ".gnuplot").
-typeExtension(gnuplot, ".plot").
-typeExtension(gnuplot, ".plt").
-
-typeExtension(go, ".go").
-
-typeExtension(golo, ".golo").
-
-typeExtension(gosu, ".gs").
-typeExtension(gosu, ".gst").
-typeExtension(gosu, ".gsx").
-typeExtension(gosu, ".vark").
-
-typeExtension(grace, ".grace").
-
-typeExtension(gradle, ".gradle").
-
-typeExtension(grammatical_framework, ".gf").
-
-typeExtension(graph_modeling_language, ".gml").
-
-typeExtension(graphql, ".graphql").
-typeExtension(graphql, ".gql").
-
-typeExtension(graphviz_(dot), ".dot").
-typeExtension(graphviz_(dot), ".gv").
-
-typeExtension(groovy, ".groovy").
-typeExtension(groovy, ".grt").
-typeExtension(groovy, ".gtpl").
-typeExtension(groovy, ".gvy").
-
-typeExtension(groovy_server_pages, ".gsp").
-
-typeExtension(hcl, ".hcl").
-typeExtension(hcl, ".tf").
-
-typeExtension(hlsl, ".hlsl").
-typeExtension(hlsl, ".cginc").
-typeExtension(hlsl, ".fx").
-typeExtension(hlsl, ".fxh").
-typeExtension(hlsl, ".hlsli").
-
-typeExtension(html, ".html").
-typeExtension(html, ".htm").
-typeExtension(html, ".html.hl").
-typeExtension(html, ".inc").
-typeExtension(html, ".st").
-typeExtension(html, ".xht").
-typeExtension(html, ".xhtml").
-
-typeExtension(html_plusdjango, ".jinja").
-typeExtension(html_plusdjango, ".mustache").
-typeExtension(html_plusdjango, ".njk").
-
-typeExtension(html_plusecr, ".ecr").
-
-typeExtension(html_pluseex, ".eex").
-
-typeExtension(html_pluserb, ".erb").
-typeExtension(html_pluserb, ".erb.deface").
-
-typeExtension(html_plusphp, ".phtml").
-
-typeExtension(http, ".http").
-
-typeExtension(hack, ".hh").
-typeExtension(hack, ".php").
-
-typeExtension(haml, ".haml").
-typeExtension(haml, ".haml.deface").
-
-typeExtension(handlebars, ".handlebars").
-typeExtension(handlebars, ".hbs").
-
-typeExtension(harbour, ".hb").
-
-typeExtension(haskell, ".hs").
-typeExtension(haskell, ".hsc").
-
-typeExtension(haxe, ".hx").
-typeExtension(haxe, ".hxsl").
-
-typeExtension(hy, ".hy").
-
-typeExtension(hyphy, ".bf").
-
-typeExtension(idl, ".pro").
-typeExtension(idl, ".dlm").
-
-typeExtension(igor_pro, ".ipf").
-
-typeExtension(ini, ".ini").
-typeExtension(ini, ".cfg").
-typeExtension(ini, ".prefs").
-typeExtension(ini, ".pro").
-typeExtension(ini, ".properties").
-
-typeExtension(irc_log, ".irclog").
-typeExtension(irc_log, ".weechatlog").
-
-typeExtension(idris, ".idr").
-typeExtension(idris, ".lidr").
-
-typeExtension(inform_7, ".ni").
-typeExtension(inform_7, ".i7x").
-
-typeExtension(inno_setup, ".iss").
-
-typeExtension(io, ".io").
-
-typeExtension(ioke, ".ik").
-
-typeExtension(isabelle, ".thy").
-
-
-typeExtension(j, ".ijs").
-
-typeExtension(jflex, ".flex").
-typeExtension(jflex, ".jflex").
-
-typeExtension(json, ".json").
-typeExtension(json, ".geojson").
-typeExtension(json, ".JSON-tmLanguage").
-typeExtension(json, ".topojson").
-
-typeExtension(json5, ".json5").
-
-typeExtension(jsonld, ".jsonld").
-
-typeExtension(jsoniq, ".jq").
-
-typeExtension(jsx, ".jsx").
-
-typeExtension(jasmin, ".j").
-
-typeExtension(java, ".java").
-
-typeExtension(java_server_pages, ".jsp").
-
-typeExtension(javascript, ".js").
-typeExtension(javascript, "._js").
-typeExtension(javascript, ".bones").
-typeExtension(javascript, ".es").
-typeExtension(javascript, ".es6").
-typeExtension(javascript, ".frag").
-typeExtension(javascript, ".gs").
-typeExtension(javascript, ".jake").
-typeExtension(javascript, ".jsb").
-typeExtension(javascript, ".jscad").
-typeExtension(javascript, ".jsfl").
-typeExtension(javascript, ".jsm").
-typeExtension(javascript, ".jss").
-typeExtension(javascript, ".mjs").
-typeExtension(javascript, ".njs").
-typeExtension(javascript, ".pac").
-typeExtension(javascript, ".sjs").
-typeExtension(javascript, ".ssjs").
-typeExtension(javascript, ".xsjs").
-typeExtension(javascript, ".xsjslib").
-
-typeExtension(jison, ".jison").
-
-typeExtension(jison_lex, ".jisonlex").
-
-typeExtension(jolie, ".ol").
-typeExtension(jolie, ".iol").
-
-typeExtension(julia, ".jl").
-
-typeExtension(jupyter_notebook, ".ipynb").
-
-typeExtension(krl, ".krl").
-
-typeExtension(kicad_layout, ".kicad_pcb").
-typeExtension(kicad_layout, ".kicad_mod").
-typeExtension(kicad_layout, ".kicad_wks").
-
-typeExtension(kicad_legacy_layout, ".brd").
-
-typeExtension(kicad_schematic, ".sch").
-
-typeExtension(kit, ".kit").
-
-typeExtension(kotlin, ".kt").
-typeExtension(kotlin, ".ktm").
-typeExtension(kotlin, ".kts").
-
-typeExtension(lfe, ".lfe").
-
-typeExtension(llvm, ".ll").
-
-typeExtension(lolcode, ".lol").
-
-typeExtension(lsl, ".lsl").
-typeExtension(lsl, ".lslp").
-
-typeExtension(labview, ".lvproj").
-
-typeExtension(lasso, ".lasso").
-typeExtension(lasso, ".las").
-typeExtension(lasso, ".lasso8").
-typeExtension(lasso, ".lasso9").
-typeExtension(lasso, ".ldml").
-
-typeExtension(latte, ".latte").
-
-typeExtension(lean, ".lean").
-typeExtension(lean, ".hlean").
-
-typeExtension(less, ".less").
-
-typeExtension(lex, ".l").
-typeExtension(lex, ".lex").
-
-typeExtension(lilypond, ".ly").
-typeExtension(lilypond, ".ily").
-
-typeExtension(limbo, ".b").
-typeExtension(limbo, ".m").
-
-typeExtension(linker_script, ".ld").
-typeExtension(linker_script, ".lds").
-
-typeExtension(linux_kernel_module, ".mod").
-
-typeExtension(liquid, ".liquid").
-
-typeExtension(literate_agda, ".lagda").
-
-typeExtension(literate_coffeescript, ".litcoffee").
-
-typeExtension(literate_haskell, ".lhs").
-
-typeExtension(livescript, ".ls").
-typeExtension(livescript, "._ls").
-
-typeExtension(logos, ".xm").
-typeExtension(logos, ".x").
-typeExtension(logos, ".xi").
-
-typeExtension(logtalk, ".lgt").
-typeExtension(logtalk, ".logtalk").
-
-typeExtension(lookml, ".lookml").
-typeExtension(lookml, ".model.lkml").
-typeExtension(lookml, ".view.lkml").
-
-typeExtension(loomscript, ".ls").
-
-typeExtension(lua, ".lua").
-typeExtension(lua, ".fcgi").
-typeExtension(lua, ".nse").
-typeExtension(lua, ".pd_lua").
-typeExtension(lua, ".rbxs").
-typeExtension(lua, ".wlua").
-
-typeExtension(m, ".mumps").
-typeExtension(m, ".m").
-
-typeExtension(m4, ".m4").
-
-typeExtension(m4sugar, ".m4").
-
-typeExtension(maxscript, ".ms").
-typeExtension(maxscript, ".mcr").
-
-typeExtension(mql4, ".mq4").
-typeExtension(mql4, ".mqh").
-
-typeExtension(mql5, ".mq5").
-typeExtension(mql5, ".mqh").
-
-typeExtension(mtml, ".mtml").
-
-typeExtension(muf, ".muf").
-typeExtension(muf, ".m").
-
-typeExtension(makefile, ".mak").
-typeExtension(makefile, ".d").
-typeExtension(makefile, ".make").
-typeExtension(makefile, ".mk").
-typeExtension(makefile, ".mkfile").
-
-typeExtension(mako, ".mako").
-typeExtension(mako, ".mao").
-
-typeExtension(markdown, ".md").
-typeExtension(markdown, ".markdown").
-typeExtension(markdown, ".mdown").
-typeExtension(markdown, ".mdwn").
-typeExtension(markdown, ".mkd").
-typeExtension(markdown, ".mkdn").
-typeExtension(markdown, ".mkdown").
-typeExtension(markdown, ".ron").
-typeExtension(markdown, ".workbook").
-
-typeExtension(marko, ".marko").
-
-typeExtension(mask, ".mask").
-
-typeExtension(mathematica, ".mathematica").
-typeExtension(mathematica, ".cdf").
-typeExtension(mathematica, ".m").
-typeExtension(mathematica, ".ma").
-typeExtension(mathematica, ".mt").
-typeExtension(mathematica, ".nb").
-typeExtension(mathematica, ".nbp").
-typeExtension(mathematica, ".wl").
-typeExtension(mathematica, ".wlt").
-
-typeExtension(matlab, ".matlab").
-typeExtension(matlab, ".m").
-
-
-typeExtension(max, ".maxpat").
-typeExtension(max, ".maxhelp").
-typeExtension(max, ".maxproj").
-typeExtension(max, ".mxt").
-typeExtension(max, ".pat").
-
-typeExtension(mediawiki, ".mediawiki").
-typeExtension(mediawiki, ".wiki").
-
-typeExtension(mercury, ".m").
-typeExtension(mercury, ".moo").
-
-
-typeExtension(metal, ".metal").
-
-typeExtension(minid, ".minid").
-
-typeExtension(mirah, ".druby").
-typeExtension(mirah, ".duby").
-typeExtension(mirah, ".mir").
-typeExtension(mirah, ".mirah").
-
-typeExtension(modelica, ".mo").
-
-typeExtension(modula-2, ".mod").
-
-typeExtension(module_management_system, ".mms").
-typeExtension(module_management_system, ".mmk").
-
-typeExtension(monkey, ".monkey").
-typeExtension(monkey, ".monkey2").
-
-typeExtension(moocode, ".moo").
-
-typeExtension(moonscript, ".moon").
-
-typeExtension(myghty, ".myt").
-
-typeExtension(ncl, ".ncl").
-
-typeExtension(nl, ".nl").
-
-typeExtension(nsis, ".nsi").
-typeExtension(nsis, ".nsh").
-
-typeExtension(nearley, ".ne").
-typeExtension(nearley, ".nearley").
-
-typeExtension(nemerle, ".n").
-
-typeExtension(netlinx, ".axs").
-typeExtension(netlinx, ".axi").
-
-typeExtension(netlinx_pluserb, ".axs.erb").
-typeExtension(netlinx_pluserb, ".axi.erb").
-
-typeExtension(netlogo, ".nlogo").
-
-typeExtension(newlisp, ".nl").
-typeExtension(newlisp, ".lisp").
-typeExtension(newlisp, ".lsp").
-
-typeExtension(nextflow, ".nf").
-
-typeExtension(nginx, ".nginxconf").
-typeExtension(nginx, ".vhost").
-
-typeExtension(nim, ".nim").
-typeExtension(nim, ".nimrod").
-
-typeExtension(ninja, ".ninja").
-
-typeExtension(nit, ".nit").
-
-typeExtension(nix, ".nix").
-
-typeExtension(nu, ".nu").
-
-typeExtension(numpy, ".numpy").
-typeExtension(numpy, ".numpyw").
-typeExtension(numpy, ".numsc").
-
-typeExtension(ocaml, ".ml").
-typeExtension(ocaml, ".eliom").
-typeExtension(ocaml, ".eliomi").
-typeExtension(ocaml, ".ml4").
-typeExtension(ocaml, ".mli").
-typeExtension(ocaml, ".mll").
-typeExtension(ocaml, ".mly").
-
-typeExtension(objdump, ".objdump").
-
-typeExtension(objective-c, ".m").
-typeExtension(objective-c, ".h").
-
-typeExtension(objective-c_plus_plus, ".mm").
-
-typeExtension(objective-j, ".j").
-typeExtension(objective-j, ".sj").
-
-typeExtension(omgrofl, ".omgrofl").
-
-typeExtension(opa, ".opa").
-
-typeExtension(opal, ".opal").
-
-typeExtension(opencl, ".cl").
-typeExtension(opencl, ".opencl").
-
-typeExtension(openedge_abl, ".p").
-typeExtension(openedge_abl, ".cls").
-typeExtension(openedge_abl, ".w").
-
-
-typeExtension(openscad, ".scad").
-
-typeExtension(opentype_feature_file, ".fea").
-
-typeExtension(org, ".org").
-
-typeExtension(ox, ".ox").
-typeExtension(ox, ".oxh").
-typeExtension(ox, ".oxo").
-
-typeExtension(oxygene, ".oxygene").
-
-typeExtension(oz, ".oz").
-
-typeExtension(p4, ".p4").
-
-typeExtension(pawn, ".pwn").
-typeExtension(pawn, ".inc").
-
-typeExtension(php, ".php").
-typeExtension(php, ".aw").
-typeExtension(php, ".ctp").
-typeExtension(php, ".fcgi").
-typeExtension(php, ".inc").
-typeExtension(php, ".php3").
-typeExtension(php, ".php4").
-typeExtension(php, ".php5").
-typeExtension(php, ".phps").
-typeExtension(php, ".phpt").
-
-typeExtension(plsql, ".pls").
-typeExtension(plsql, ".bdy").
-typeExtension(plsql, ".ddl").
-typeExtension(plsql, ".fnc").
-typeExtension(plsql, ".pck").
-typeExtension(plsql, ".pkb").
-typeExtension(plsql, ".pks").
-typeExtension(plsql, ".plb").
-typeExtension(plsql, ".plsql").
-typeExtension(plsql, ".prc").
-typeExtension(plsql, ".spc").
-typeExtension(plsql, ".sql").
-typeExtension(plsql, ".tpb").
-typeExtension(plsql, ".tps").
-typeExtension(plsql, ".trg").
-typeExtension(plsql, ".vw").
-
-typeExtension(plpgsql, ".sql").
-
-typeExtension(pov-ray_sdl, ".pov").
-typeExtension(pov-ray_sdl, ".inc").
-
-typeExtension(pan, ".pan").
-
-typeExtension(papyrus, ".psc").
-
-typeExtension(parrot, ".parrot").
-
-typeExtension(parrot_assembly, ".pasm").
-
-typeExtension(parrot_internal_representation, ".pir").
-
-typeExtension(pascal, ".pas").
-typeExtension(pascal, ".dfm").
-typeExtension(pascal, ".dpr").
-typeExtension(pascal, ".inc").
-typeExtension(pascal, ".lpr").
-typeExtension(pascal, ".pascal").
-typeExtension(pascal, ".pp").
-
-typeExtension(pep8, ".pep").
-
-typeExtension(perl, ".pl").
-typeExtension(perl, ".al").
-typeExtension(perl, ".cgi").
-typeExtension(perl, ".fcgi").
-typeExtension(perl, ".perl").
-typeExtension(perl, ".ph").
-typeExtension(perl, ".plx").
-typeExtension(perl, ".pm").
-typeExtension(perl, ".psgi").
-typeExtension(perl, ".t").
-
-typeExtension(perl_6, ".6pl").
-typeExtension(perl_6, ".6pm").
-typeExtension(perl_6, ".nqp").
-typeExtension(perl_6, ".p6").
-typeExtension(perl_6, ".p6l").
-typeExtension(perl_6, ".p6m").
-typeExtension(perl_6, ".pl").
-typeExtension(perl_6, ".pl6").
-typeExtension(perl_6, ".pm").
-typeExtension(perl_6, ".pm6").
-typeExtension(perl_6, ".t").
-
-typeExtension(pic, ".pic").
-typeExtension(pic, ".chem").
-
-typeExtension(pickle, ".pkl").
-
-typeExtension(picolisp, ".l").
-
-typeExtension(piglatin, ".pig").
-
-typeExtension(pike, ".pike").
-typeExtension(pike, ".pmod").
-
-typeExtension(pod, ".pod").
-
-typeExtension(pogoscript, ".pogo").
-
-typeExtension(pony, ".pony").
-
-typeExtension(postcss, ".pcss").
-
-typeExtension(postscript, ".ps").
-typeExtension(postscript, ".eps").
-typeExtension(postscript, ".pfa").
-
-typeExtension(powerbuilder, ".pbt").
-typeExtension(powerbuilder, ".sra").
-typeExtension(powerbuilder, ".sru").
-typeExtension(powerbuilder, ".srw").
-
-typeExtension(powershell, ".ps1").
-typeExtension(powershell, ".psd1").
-typeExtension(powershell, ".psm1").
-
-typeExtension(processing, ".pde").
-
-typeExtension(prolog, ".pl").
-typeExtension(prolog, ".pro").
-typeExtension(prolog, ".prolog").
-typeExtension(prolog, ".yap").
-
-typeExtension(propeller_spin, ".spin").
-
-typeExtension(protocol_buffer, ".proto").
-
-typeExtension(public_key, ".asc").
-typeExtension(public_key, ".pub").
-
-typeExtension(pug, ".jade").
-typeExtension(pug, ".pug").
-
-typeExtension(puppet, ".pp").
-
-typeExtension(pure_data, ".pd").
-
-typeExtension(purebasic, ".pb").
-typeExtension(purebasic, ".pbi").
-
-typeExtension(purescript, ".purs").
-
-typeExtension(python, ".py").
-typeExtension(python, ".bzl").
-typeExtension(python, ".cgi").
-typeExtension(python, ".fcgi").
-typeExtension(python, ".gyp").
-typeExtension(python, ".gypi").
-typeExtension(python, ".lmi").
-typeExtension(python, ".py3").
-typeExtension(python, ".pyde").
-typeExtension(python, ".pyi").
-typeExtension(python, ".pyp").
-typeExtension(python, ".pyt").
-typeExtension(python, ".pyw").
-typeExtension(python, ".rpy").
-typeExtension(python, ".spec").
-typeExtension(python, ".tac").
-typeExtension(python, ".wsgi").
-typeExtension(python, ".xpy").
-
-
-typeExtension(python_traceback, ".pytb").
-
-typeExtension(qml, ".qml").
-typeExtension(qml, ".qbs").
-
-typeExtension(qmake, ".pro").
-typeExtension(qmake, ".pri").
-
-typeExtension(r, ".r").
-typeExtension(r, ".rd").
-typeExtension(r, ".rsx").
-
-typeExtension(raml, ".raml").
-
-typeExtension(rdoc, ".rdoc").
-
-typeExtension(realbasic, ".rbbas").
-typeExtension(realbasic, ".rbfrm").
-typeExtension(realbasic, ".rbmnu").
-typeExtension(realbasic, ".rbres").
-typeExtension(realbasic, ".rbtbar").
-typeExtension(realbasic, ".rbuistate").
-
-typeExtension(rexx, ".rexx").
-typeExtension(rexx, ".pprx").
-typeExtension(rexx, ".rex").
-
-typeExtension(rhtml, ".rhtml").
-
-typeExtension(rmarkdown, ".rmd").
-
-typeExtension(rpm_spec, ".spec").
-
-typeExtension(runoff, ".rnh").
-typeExtension(runoff, ".rno").
-
-typeExtension(racket, ".rkt").
-typeExtension(racket, ".rktd").
-typeExtension(racket, ".rktl").
-typeExtension(racket, ".scrbl").
-
-typeExtension(ragel, ".rl").
-
-typeExtension(rascal, ".rsc").
-
-typeExtension(raw_token_data, ".raw").
-
-typeExtension(reason, ".re").
-typeExtension(reason, ".rei").
-
-typeExtension(rebol, ".reb").
-typeExtension(rebol, ".r").
-typeExtension(rebol, ".r2").
-typeExtension(rebol, ".r3").
-typeExtension(rebol, ".rebol").
-
-typeExtension(red, ".red").
-typeExtension(red, ".reds").
-
-typeExtension(redcode, ".cw").
-
-typeExtension(regular_expression, ".regexp").
-typeExtension(regular_expression, ".regex").
-
-typeExtension(renpy, ".rpy").
-
-typeExtension(renderscript, ".rs").
-typeExtension(renderscript, ".rsh").
-
-typeExtension(ring, ".ring").
-
-typeExtension(robotframework, ".robot").
-
-typeExtension(roff, ".man").
-typeExtension(roff, ".1").
-typeExtension(roff, ".1in").
-typeExtension(roff, ".1m").
-typeExtension(roff, ".1x").
-typeExtension(roff, ".2").
-typeExtension(roff, ".3").
-typeExtension(roff, ".3in").
-typeExtension(roff, ".3m").
-typeExtension(roff, ".3qt").
-typeExtension(roff, ".3x").
-typeExtension(roff, ".4").
-typeExtension(roff, ".5").
-typeExtension(roff, ".6").
-typeExtension(roff, ".7").
-typeExtension(roff, ".8").
-typeExtension(roff, ".9").
-typeExtension(roff, ".l").
-typeExtension(roff, ".me").
-typeExtension(roff, ".ms").
-typeExtension(roff, ".n").
-typeExtension(roff, ".nr").
-typeExtension(roff, ".rno").
-typeExtension(roff, ".roff").
-typeExtension(roff, ".tmac").
-
-typeExtension(rouge, ".rg").
-
-typeExtension(ruby, ".rb").
-typeExtension(ruby, ".builder").
-typeExtension(ruby, ".eye").
-typeExtension(ruby, ".fcgi").
-typeExtension(ruby, ".gemspec").
-typeExtension(ruby, ".god").
-typeExtension(ruby, ".jbuilder").
-typeExtension(ruby, ".mspec").
-typeExtension(ruby, ".pluginspec").
-typeExtension(ruby, ".podspec").
-typeExtension(ruby, ".rabl").
-typeExtension(ruby, ".rake").
-typeExtension(ruby, ".rbuild").
-typeExtension(ruby, ".rbw").
-typeExtension(ruby, ".rbx").
-typeExtension(ruby, ".ru").
-typeExtension(ruby, ".ruby").
-typeExtension(ruby, ".spec").
-typeExtension(ruby, ".thor").
-typeExtension(ruby, ".watchr").
-
-typeExtension(rust, ".rs").
-typeExtension(rust, ".rs.in").
-
-typeExtension(sas, ".sas").
-
-typeExtension(scss, ".scss").
-
-typeExtension(smt, ".smt2").
-typeExtension(smt, ".smt").
-
-typeExtension(sparql, ".sparql").
-typeExtension(sparql, ".rq").
-
-typeExtension(sqf, ".sqf").
-typeExtension(sqf, ".hqf").
-
-typeExtension(sql, ".sql").
-typeExtension(sql, ".cql").
-typeExtension(sql, ".ddl").
-typeExtension(sql, ".inc").
-typeExtension(sql, ".mysql").
-typeExtension(sql, ".prc").
-typeExtension(sql, ".tab").
-typeExtension(sql, ".udf").
-typeExtension(sql, ".viw").
-
-typeExtension(sqlpl, ".sql").
-typeExtension(sqlpl, ".db2").
-
-typeExtension(srecode_template, ".srt").
-
-typeExtension(ston, ".ston").
-
-typeExtension(svg, ".svg").
-
-typeExtension(sage, ".sage").
-typeExtension(sage, ".sagews").
-
-typeExtension(saltstack, ".sls").
-
-typeExtension(sass, ".sass").
-
-typeExtension(scala, ".scala").
-typeExtension(scala, ".sbt").
-typeExtension(scala, ".sc").
-
-typeExtension(scaml, ".scaml").
-
-typeExtension(scheme, ".scm").
-typeExtension(scheme, ".sch").
-typeExtension(scheme, ".sld").
-typeExtension(scheme, ".sls").
-typeExtension(scheme, ".sps").
-typeExtension(scheme, ".ss").
-
-typeExtension(scilab, ".sci").
-typeExtension(scilab, ".sce").
-typeExtension(scilab, ".tst").
-
-typeExtension(self, ".self").
-
-typeExtension(shaderlab, ".shader").
-
-typeExtension(shell, ".sh").
-typeExtension(shell, ".bash").
-typeExtension(shell, ".bats").
-typeExtension(shell, ".cgi").
-typeExtension(shell, ".command").
-typeExtension(shell, ".fcgi").
-typeExtension(shell, ".ksh").
-typeExtension(shell, ".sh.in").
-typeExtension(shell, ".tmux").
-typeExtension(shell, ".tool").
-typeExtension(shell, ".zsh").
-
-typeExtension(shellsession, ".sh-session").
-
-typeExtension(shen, ".shen").
-
-typeExtension(slash, ".sl").
-
-typeExtension(slim, ".slim").
-
-typeExtension(smali, ".smali").
-
-typeExtension(smalltalk, ".st").
-typeExtension(smalltalk, ".cs").
-
-typeExtension(smarty, ".tpl").
-
-typeExtension(sourcepawn, ".sp").
-typeExtension(sourcepawn, ".inc").
-typeExtension(sourcepawn, ".sma").
-
-typeExtension(spline_font_database, ".sfd").
-
-typeExtension(squirrel, ".nut").
-
-typeExtension(stan, ".stan").
-
-typeExtension(standard_ml, ".ML").
-typeExtension(standard_ml, ".fun").
-typeExtension(standard_ml, ".sig").
-typeExtension(standard_ml, ".sml").
-
-typeExtension(stata, ".do").
-typeExtension(stata, ".ado").
-typeExtension(stata, ".doh").
-typeExtension(stata, ".ihlp").
-typeExtension(stata, ".mata").
-typeExtension(stata, ".matah").
-typeExtension(stata, ".sthlp").
-
-typeExtension(stylus, ".styl").
-
-typeExtension(subrip_text, ".srt").
-
-typeExtension(sublime_text_config, ".sublime-build").
-typeExtension(sublime_text_config, ".sublime-commands").
-typeExtension(sublime_text_config, ".sublime-completions").
-typeExtension(sublime_text_config, ".sublime-keymap").
-typeExtension(sublime_text_config, ".sublime-macro").
-typeExtension(sublime_text_config, ".sublime-menu").
-typeExtension(sublime_text_config, ".sublime-mousemap").
-typeExtension(sublime_text_config, ".sublime-project").
-typeExtension(sublime_text_config, ".sublime-settings").
-typeExtension(sublime_text_config, ".sublime-theme").
-typeExtension(sublime_text_config, ".sublime-workspace").
-typeExtension(sublime_text_config, ".sublime_metrics").
-typeExtension(sublime_text_config, ".sublime_session").
-
-typeExtension(sugarss, ".sss").
-
-typeExtension(supercollider, ".sc").
-typeExtension(supercollider, ".scd").
-
-typeExtension(swift, ".swift").
-
-typeExtension(systemverilog, ".sv").
-typeExtension(systemverilog, ".svh").
-typeExtension(systemverilog, ".vh").
-
-typeExtension(ti_program, ".8xp").
-typeExtension(ti_program, ".8xk").
-typeExtension(ti_program, ".8xk.txt").
-typeExtension(ti_program, ".8xp.txt").
-
-typeExtension(tla, ".tla").
-
-typeExtension(toml, ".toml").
-
-typeExtension(txl, ".txl").
-
-typeExtension(tcl, ".tcl").
-typeExtension(tcl, ".adp").
-typeExtension(tcl, ".tm").
-
-typeExtension(tcsh, ".tcsh").
-typeExtension(tcsh, ".csh").
-
-typeExtension(tex, ".tex").
-typeExtension(tex, ".aux").
-typeExtension(tex, ".bbx").
-typeExtension(tex, ".bib").
-typeExtension(tex, ".cbx").
-typeExtension(tex, ".cls").
-typeExtension(tex, ".dtx").
-typeExtension(tex, ".ins").
-typeExtension(tex, ".lbx").
-typeExtension(tex, ".ltx").
-typeExtension(tex, ".mkii").
-typeExtension(tex, ".mkiv").
-typeExtension(tex, ".mkvi").
-typeExtension(tex, ".sty").
-typeExtension(tex, ".toc").
-
-typeExtension(tea, ".tea").
-
-typeExtension(terra, ".t").
-
-typeExtension(text, ".txt").
-typeExtension(text, ".fr").
-typeExtension(text, ".nb").
-typeExtension(text, ".ncl").
-typeExtension(text, ".no").
-
-typeExtension(textile, ".textile").
-
-typeExtension(thrift, ".thrift").
-
-typeExtension(turing, ".t").
-typeExtension(turing, ".tu").
-
-typeExtension(turtle, ".ttl").
-
-typeExtension(twig, ".twig").
-
-typeExtension(type_language, ".tl").
-
-typeExtension(typescript, ".ts").
-typeExtension(typescript, ".tsx").
-
-typeExtension(unified_parallel_c, ".upc").
-
-typeExtension(unity3d_asset, ".anim").
-typeExtension(unity3d_asset, ".asset").
-typeExtension(unity3d_asset, ".mat").
-typeExtension(unity3d_asset, ".meta").
-typeExtension(unity3d_asset, ".prefab").
-typeExtension(unity3d_asset, ".unity").
-
-typeExtension(unix_assembly, ".s").
-typeExtension(unix_assembly, ".ms").
-
-typeExtension(uno, ".uno").
-
-typeExtension(unrealscript, ".uc").
-
-typeExtension(urweb, ".ur").
-typeExtension(urweb, ".urs").
-
-typeExtension(vcl, ".vcl").
-
-typeExtension(vhdl, ".vhdl").
-typeExtension(vhdl, ".vhd").
-typeExtension(vhdl, ".vhf").
-typeExtension(vhdl, ".vhi").
-typeExtension(vhdl, ".vho").
-typeExtension(vhdl, ".vhs").
-typeExtension(vhdl, ".vht").
-typeExtension(vhdl, ".vhw").
-
-typeExtension(vala, ".vala").
-typeExtension(vala, ".vapi").
-
-typeExtension(verilog, ".v").
-typeExtension(verilog, ".veo").
-
-typeExtension(vim_script, ".vim").
-
-typeExtension(visual_basic, ".vb").
-typeExtension(visual_basic, ".bas").
-typeExtension(visual_basic, ".cls").
-typeExtension(visual_basic, ".frm").
-typeExtension(visual_basic, ".frx").
-typeExtension(visual_basic, ".vba").
-typeExtension(visual_basic, ".vbhtml").
-typeExtension(visual_basic, ".vbs").
-
-typeExtension(volt, ".volt").
-
-typeExtension(vue, ".vue").
-
-typeExtension(wavefront_material, ".mtl").
-
-typeExtension(wavefront_object, ".obj").
-
-typeExtension(web_ontology_language, ".owl").
-
-typeExtension(webassembly, ".wast").
-typeExtension(webassembly, ".wat").
-
-typeExtension(webidl, ".webidl").
-
-typeExtension(world_of_warcraft_addon_data, ".toc").
-
-typeExtension(x10, ".x10").
-
-typeExtension(xc, ".xc").
-
-
-typeExtension(xml, ".xml").
-typeExtension(xml, ".adml").
-typeExtension(xml, ".admx").
-typeExtension(xml, ".ant").
-typeExtension(xml, ".axml").
-typeExtension(xml, ".builds").
-typeExtension(xml, ".ccproj").
-typeExtension(xml, ".ccxml").
-typeExtension(xml, ".clixml").
-typeExtension(xml, ".cproject").
-typeExtension(xml, ".cscfg").
-typeExtension(xml, ".csdef").
-typeExtension(xml, ".csl").
-typeExtension(xml, ".csproj").
-typeExtension(xml, ".ct").
-typeExtension(xml, ".depproj").
-typeExtension(xml, ".dita").
-typeExtension(xml, ".ditamap").
-typeExtension(xml, ".ditaval").
-typeExtension(xml, ".dll.config").
-typeExtension(xml, ".dotsettings").
-typeExtension(xml, ".filters").
-typeExtension(xml, ".fsproj").
-typeExtension(xml, ".fxml").
-typeExtension(xml, ".glade").
-typeExtension(xml, ".gml").
-typeExtension(xml, ".grxml").
-typeExtension(xml, ".iml").
-typeExtension(xml, ".ivy").
-typeExtension(xml, ".jelly").
-typeExtension(xml, ".jsproj").
-typeExtension(xml, ".kml").
-typeExtension(xml, ".launch").
-typeExtension(xml, ".mdpolicy").
-typeExtension(xml, ".mjml").
-typeExtension(xml, ".mm").
-typeExtension(xml, ".mod").
-typeExtension(xml, ".mxml").
-typeExtension(xml, ".natvis").
-typeExtension(xml, ".ndproj").
-typeExtension(xml, ".nproj").
-typeExtension(xml, ".nuspec").
-typeExtension(xml, ".odd").
-typeExtension(xml, ".osm").
-typeExtension(xml, ".pkgproj").
-typeExtension(xml, ".plist").
-typeExtension(xml, ".pluginspec").
-typeExtension(xml, ".proj").
-typeExtension(xml, ".props").
-typeExtension(xml, ".ps1xml").
-typeExtension(xml, ".psc1").
-typeExtension(xml, ".pt").
-typeExtension(xml, ".rdf").
-typeExtension(xml, ".resx").
-typeExtension(xml, ".rss").
-typeExtension(xml, ".sch").
-typeExtension(xml, ".scxml").
-typeExtension(xml, ".sfproj").
-typeExtension(xml, ".shproj").
-typeExtension(xml, ".srdf").
-typeExtension(xml, ".storyboard").
-typeExtension(xml, ".stTheme").
-typeExtension(xml, ".sublime-snippet").
-typeExtension(xml, ".targets").
-typeExtension(xml, ".tmCommand").
-typeExtension(xml, ".tml").
-typeExtension(xml, ".tmLanguage").
-typeExtension(xml, ".tmPreferences").
-typeExtension(xml, ".tmSnippet").
-typeExtension(xml, ".tmTheme").
-typeExtension(xml, ".ts").
-typeExtension(xml, ".tsx").
-typeExtension(xml, ".ui").
-typeExtension(xml, ".urdf").
-typeExtension(xml, ".ux").
-typeExtension(xml, ".vbproj").
-typeExtension(xml, ".vcxproj").
-typeExtension(xml, ".vsixmanifest").
-typeExtension(xml, ".vssettings").
-typeExtension(xml, ".vstemplate").
-typeExtension(xml, ".vxml").
-typeExtension(xml, ".wixproj").
-typeExtension(xml, ".wsdl").
-typeExtension(xml, ".wsf").
-typeExtension(xml, ".wxi").
-typeExtension(xml, ".wxl").
-typeExtension(xml, ".wxs").
-typeExtension(xml, ".x3d").
-typeExtension(xml, ".xacro").
-typeExtension(xml, ".xaml").
-typeExtension(xml, ".xib").
-typeExtension(xml, ".xlf").
-typeExtension(xml, ".xliff").
-typeExtension(xml, ".xmi").
-typeExtension(xml, ".xml.dist").
-typeExtension(xml, ".xproj").
-typeExtension(xml, ".xsd").
-typeExtension(xml, ".xspec").
-typeExtension(xml, ".xul").
-typeExtension(xml, ".zcml").
-
-typeExtension(xpm, ".xpm").
-typeExtension(xpm, ".pm").
-
-typeExtension(xpages, ".xsp-config").
-typeExtension(xpages, ".xsp.metadata").
-
-typeExtension(xproc, ".xpl").
-typeExtension(xproc, ".xproc").
-
-typeExtension(xquery, ".xquery").
-typeExtension(xquery, ".xq").
-typeExtension(xquery, ".xql").
-typeExtension(xquery, ".xqm").
-typeExtension(xquery, ".xqy").
-
-typeExtension(xs, ".xs").
-
-typeExtension(xslt, ".xslt").
-typeExtension(xslt, ".xsl").
-
-typeExtension(xojo, ".xojo_code").
-typeExtension(xojo, ".xojo_menu").
-typeExtension(xojo, ".xojo_report").
-typeExtension(xojo, ".xojo_script").
-typeExtension(xojo, ".xojo_toolbar").
-typeExtension(xojo, ".xojo_window").
-
-typeExtension(xtend, ".xtend").
-
-typeExtension(yaml, ".yml").
-typeExtension(yaml, ".reek").
-typeExtension(yaml, ".rviz").
-typeExtension(yaml, ".sublime-syntax").
-typeExtension(yaml, ".syntax").
-typeExtension(yaml, ".yaml").
-typeExtension(yaml, ".yaml-tmlanguage").
-typeExtension(yaml, ".yml.mysql").
-
-typeExtension(yang, ".yang").
-
-typeExtension(yara, ".yar").
-typeExtension(yara, ".yara").
-
-typeExtension(yacc, ".y").
-typeExtension(yacc, ".yacc").
-typeExtension(yacc, ".yy").
-
-typeExtension(zephir, ".zep").
-
-typeExtension(zimpl, ".zimpl").
-typeExtension(zimpl, ".zmpl").
-typeExtension(zimpl, ".zpl").
-
-typeExtension(desktop, ".desktop").
-typeExtension(desktop, ".desktop.in").
-
-typeExtension(ec, ".ec").
-typeExtension(ec, ".eh").
-
-typeExtension(edn, ".edn").
-
-typeExtension(fish, ".fish").
-
-typeExtension(mupad, ".mu").
-
-typeExtension(nesc, ".nc").
-
-typeExtension(ooc, ".ooc").
-
-typeExtension(restructuredtext, ".rst").
-typeExtension(restructuredtext, ".rest").
-typeExtension(restructuredtext, ".rest.txt").
-typeExtension(restructuredtext, ".rst.txt").
-
-typeExtension(wdl, ".wdl").
-
-typeExtension(wisp, ".wisp").
-
-typeExtension(xbase, ".prg").
-typeExtension(xbase, ".ch").
-typeExtension(xbase, ".prw").
-
-
-interpreter(apl, "apl").
-interpreter(aplx, "apl").
-interpreter(dyalog, "apl").
-interpreter(osascript, "applescript").
-interpreter(awk, "awk").
-interpreter(gawk, "awk").
-interpreter(mawk, "awk").
-interpreter(nawk, "awk").
-interpreter(tcc, "c").
-interpreter(coffee, "coffeescript").
-interpreter(lisp, "common_lisp").
-interpreter(sbcl, "common_lisp").
-interpreter(ccl, "common_lisp").
-interpreter(clisp, "common_lisp").
-interpreter(ecl, "common_lisp").
-interpreter(cwl-runner, "common_workflow_language").
-interpreter(crystal, "crystal").
-interpreter(dtrace, "dtrace").
-interpreter(dart, "dart").
-interpreter(rune, "e").
-interpreter(elixir, "elixir").
-interpreter(escript, "erlang").
-interpreter(gn, "gn").
-interpreter(gerbv, "gerber_image").
-interpreter(gerbview, "gerber_image").
-interpreter(gnuplot, "gnuplot").
-interpreter(groovy, "groovy").
-interpreter(runhaskell, "haskell").
-interpreter(io, "io").
-interpreter(ioke, "ioke").
-interpreter(jconsole, "j").
-interpreter(node, "javascript").
-interpreter(jolie, "jolie").
-interpreter(julia, "julia").
-interpreter(lsl, "lsl").
-interpreter(lua, "lua").
-interpreter(make, "makefile").
-interpreter(mmi, "mercury").
-interpreter(moon, "moonscript").
-interpreter(newlisp, "newlisp").
-interpreter(nextflow, "nextflow").
-interpreter(nush, "nu").
-interpreter(ocaml, "ocaml").
-interpreter(ocamlrun, "ocaml").
-interpreter(ocamlscript, "ocaml").
-interpreter(openrc-run, "openrc_runscript").
-interpreter(php, "php").
-interpreter(parrot, "parrot_assembly").
-interpreter(parrot, "parrot_internal_representation").
-interpreter(instantfpc, "pascal").
-interpreter(perl, "perl").
-interpreter(perl6, "perl_6").
-interpreter(picolisp, "picolisp").
-interpreter(pil, "picolisp").
-interpreter(pike, "pike").
-interpreter(perl, "pod").
-interpreter(swipl, "prolog").
-interpreter(yap, "prolog").
-interpreter(python, "python").
-interpreter(python2, "python").
-interpreter(python3, "python").
-interpreter(qmake, "qmake").
-interpreter(rscript, "r").
-interpreter(regina, "rexx").
-interpreter(rexx, "rexx").
-interpreter(racket, "racket").
-interpreter(ocaml, "reason").
-interpreter(ruby, "ruby").
-interpreter(macruby, "ruby").
-interpreter(rake, "ruby").
-interpreter(jruby, "ruby").
-interpreter(rbx, "ruby").
-interpreter(boolector, "smt").
-interpreter(cvc4, "smt").
-interpreter(mathsat5, "smt").
-interpreter(opensmt, "smt").
-interpreter(smtinterpol, "smt").
-interpreter(smt-rat, "smt").
-interpreter(stp, "smt").
-interpreter(verit, "smt").
-interpreter(yices2, "smt").
-interpreter(z3, "smt").
-interpreter(scala, "scala").
-interpreter(guile, "scheme").
-interpreter(bigloo, "scheme").
-interpreter(chicken, "scheme").
-interpreter(csi, "scheme").
-interpreter(gosh, "scheme").
-interpreter(r6rs, "scheme").
-interpreter(ash, "shell").
-interpreter(bash, "shell").
-interpreter(dash, "shell").
-interpreter(ksh, "shell").
-interpreter(mksh, "shell").
-interpreter(pdksh, "shell").
-interpreter(rc, "shell").
-interpreter(sh, "shell").
-interpreter(zsh, "shell").
-interpreter(sclang, "supercollider").
-interpreter(scsynth, "supercollider").
-interpreter(tclsh, "tcl").
-interpreter(wish, "tcl").
-interpreter(lua, "terra").
-interpreter(fish, "fish").
+typeExtension('1C Enterprise', '.bsl').
+typeExtension('1C Enterprise', '.os').
+
+typeExtension('ABAP', '.abap').
+
+typeExtension('ABNF', '.abnf').
+
+typeExtension('AGS Script', '.asc').
+typeExtension('AGS Script', '.ash').
+
+typeExtension('AMPL', '.ampl').
+typeExtension('AMPL', '.mod').
+
+typeExtension('ANTLR', '.g4').
+
+typeExtension('API Blueprint', '.apib').
+
+typeExtension('APL', '.apl').
+typeExtension('APL', '.dyalog').
+
+typeExtension('ASN.1', '.asn').
+typeExtension('ASN.1', '.asn1').
+
+typeExtension('ASP', '.asp').
+typeExtension('ASP', '.asax').
+typeExtension('ASP', '.ascx').
+typeExtension('ASP', '.ashx').
+typeExtension('ASP', '.asmx').
+typeExtension('ASP', '.aspx').
+typeExtension('ASP', '.axd').
+
+typeExtension('ATS', '.dats').
+typeExtension('ATS', '.hats').
+typeExtension('ATS', '.sats').
+
+typeExtension('ActionScript', '.as').
+
+typeExtension('Ada', '.adb').
+typeExtension('Ada', '.ada').
+typeExtension('Ada', '.ads').
+
+typeExtension('Adobe Font Metrics', '.afm').
+
+typeExtension('Agda', '.agda').
+
+typeExtension('Alloy', '.als').
+
+
+typeExtension('AngelScript', '.as').
+typeExtension('AngelScript', '.angelscript').
+
+
+typeExtension('ApacheConf', '.apacheconf').
+typeExtension('ApacheConf', '.vhost').
+
+typeExtension('Apex', '.cls').
+
+typeExtension('Apollo Guidance Computer', '.agc').
+
+typeExtension('AppleScript', '.applescript').
+typeExtension('AppleScript', '.scpt').
+
+typeExtension('Arc', '.arc').
+
+typeExtension('AsciiDoc', '.asciidoc').
+typeExtension('AsciiDoc', '.adoc').
+typeExtension('AsciiDoc', '.asc').
+
+typeExtension('AspectJ', '.aj').
+
+typeExtension('Assembly', '.asm').
+typeExtension('Assembly', '.a51').
+typeExtension('Assembly', '.inc').
+typeExtension('Assembly', '.nasm').
+
+typeExtension('Augeas', '.aug').
+
+typeExtension('AutoHotkey', '.ahk').
+typeExtension('AutoHotkey', '.ahkl').
+
+typeExtension('AutoIt', '.au3').
+
+typeExtension('Awk', '.awk').
+typeExtension('Awk', '.auk').
+typeExtension('Awk', '.gawk').
+typeExtension('Awk', '.mawk').
+typeExtension('Awk', '.nawk').
+
+typeExtension('Ballerina', '.bal').
+
+typeExtension('Batchfile', '.bat').
+typeExtension('Batchfile', '.cmd').
+
+typeExtension('Befunge', '.befunge').
+
+typeExtension('Bison', '.bison').
+
+typeExtension('BitBake', '.bb').
+
+typeExtension('Blade', '.blade').
+typeExtension('Blade', '.blade.php').
+
+typeExtension('BlitzBasic', '.bb').
+typeExtension('BlitzBasic', '.decls').
+
+typeExtension('BlitzMax', '.bmx').
+
+typeExtension('Bluespec', '.bsv').
+
+typeExtension('Boo', '.boo').
+
+typeExtension('Brainfuck', '.b').
+typeExtension('Brainfuck', '.bf').
+
+typeExtension('Brightscript', '.brs').
+
+typeExtension('Bro', '.bro').
+
+typeExtension('C', '.c').
+typeExtension('C', '.cats').
+typeExtension('C', '.h').
+typeExtension('C', '.idc').
+
+typeExtension('C#', '.cs').
+typeExtension('C#', '.cake').
+typeExtension('C#', '.cshtml').
+typeExtension('C#', '.csx').
+
+typeExtension('C++', '.cpp').
+typeExtension('C++', '.c++').
+typeExtension('C++', '.cc').
+typeExtension('C++', '.cp').
+typeExtension('C++', '.cxx').
+typeExtension('C++', '.h').
+typeExtension('C++', '.h++').
+typeExtension('C++', '.hh').
+typeExtension('C++', '.hpp').
+typeExtension('C++', '.hxx').
+typeExtension('C++', '.inc').
+typeExtension('C++', '.inl').
+typeExtension('C++', '.ino').
+typeExtension('C++', '.ipp').
+typeExtension('C++', '.re').
+typeExtension('C++', '.tcc').
+typeExtension('C++', '.tpp').
+
+typeExtension('C-ObjDump', '.c-objdump').
+
+typeExtension('C2hs Haskell', '.chs').
+
+typeExtension('CLIPS', '.clp').
+
+typeExtension('CMake', '.cmake').
+typeExtension('CMake', '.cmake.in').
+
+typeExtension('COBOL', '.cob').
+typeExtension('COBOL', '.cbl').
+typeExtension('COBOL', '.ccp').
+typeExtension('COBOL', '.cobol').
+typeExtension('COBOL', '.cpy').
+
+typeExtension('COLLADA', '.dae').
+
+typeExtension('CSON', '.cson').
+
+typeExtension('CSS', '.css').
+
+typeExtension('CSV', '.csv').
+
+typeExtension('CWeb', '.w').
+
+typeExtension('Cap\'n Proto', '.capnp').
+
+typeExtension('CartoCSS', '.mss').
+
+typeExtension('Ceylon', '.ceylon').
+
+typeExtension('Chapel', '.chpl').
+
+typeExtension('Charity', '.ch').
+
+typeExtension('ChucK', '.ck').
+
+typeExtension('Cirru', '.cirru').
+
+typeExtension('Clarion', '.clw').
+
+typeExtension('Clean', '.icl').
+typeExtension('Clean', '.dcl').
+
+typeExtension('Click', '.click').
+
+typeExtension('Clojure', '.clj').
+typeExtension('Clojure', '.boot').
+typeExtension('Clojure', '.cl2').
+typeExtension('Clojure', '.cljc').
+typeExtension('Clojure', '.cljs').
+typeExtension('Clojure', '.cljs.hl').
+typeExtension('Clojure', '.cljscm').
+typeExtension('Clojure', '.cljx').
+typeExtension('Clojure', '.hic').
+
+typeExtension('Closure Templates', '.soy').
+
+typeExtension('CoffeeScript', '.coffee').
+typeExtension('CoffeeScript', '._coffee').
+typeExtension('CoffeeScript', '.cake').
+typeExtension('CoffeeScript', '.cjsx').
+typeExtension('CoffeeScript', '.iced').
+
+typeExtension('ColdFusion', '.cfm').
+typeExtension('ColdFusion', '.cfml').
+
+typeExtension('ColdFusion CFC', '.cfc').
+
+typeExtension('Common Lisp', '.lisp').
+typeExtension('Common Lisp', '.asd').
+typeExtension('Common Lisp', '.cl').
+typeExtension('Common Lisp', '.l').
+typeExtension('Common Lisp', '.lsp').
+typeExtension('Common Lisp', '.ny').
+typeExtension('Common Lisp', '.podsl').
+typeExtension('Common Lisp', '.sexp').
+
+typeExtension('Common Workflow Language', '.cwl').
+
+typeExtension('Component Pascal', '.cp').
+typeExtension('Component Pascal', '.cps').
+
+typeExtension('Cool', '.cl').
+
+typeExtension('Coq', '.coq').
+typeExtension('Coq', '.v').
+
+typeExtension('Cpp-ObjDump', '.cppobjdump').
+typeExtension('Cpp-ObjDump', '.c++-objdump').
+typeExtension('Cpp-ObjDump', '.c++objdump').
+typeExtension('Cpp-ObjDump', '.cpp-objdump').
+typeExtension('Cpp-ObjDump', '.cxx-objdump').
+
+typeExtension('Creole', '.creole').
+
+typeExtension('Crystal', '.cr').
+
+typeExtension('Csound', '.orc').
+typeExtension('Csound', '.udo').
+
+typeExtension('Csound Document', '.csd').
+
+typeExtension('Csound Score', '.sco').
+
+typeExtension('Cuda', '.cu').
+typeExtension('Cuda', '.cuh').
+
+typeExtension('Cycript', '.cy').
+
+typeExtension('Cython', '.pyx').
+typeExtension('Cython', '.pxd').
+typeExtension('Cython', '.pxi').
+
+typeExtension('D', '.d').
+typeExtension('D', '.di').
+
+typeExtension('D-ObjDump', '.d-objdump').
+
+typeExtension('DIGITAL Command Language', '.com').
+
+typeExtension('DM', '.dm').
+
+typeExtension('DNS Zone', '.zone').
+typeExtension('DNS Zone', '.arpa').
+
+typeExtension('DTrace', '.d').
+
+typeExtension('Darcs Patch', '.darcspatch').
+typeExtension('Darcs Patch', '.dpatch').
+
+typeExtension('Dart', '.dart').
+
+typeExtension('DataWeave', '.dwl').
+
+typeExtension('Diff', '.diff').
+typeExtension('Diff', '.patch').
+
+typeExtension('Dockerfile', '.dockerfile').
+
+typeExtension('Dogescript', '.djs').
+
+typeExtension('Dylan', '.dylan').
+typeExtension('Dylan', '.dyl').
+typeExtension('Dylan', '.intr').
+typeExtension('Dylan', '.lid').
+
+typeExtension('E', '.E').
+
+typeExtension('EBNF', '.ebnf').
+
+typeExtension('ECL', '.ecl').
+typeExtension('ECL', '.eclxml').
+
+typeExtension('ECLiPSe', '.ecl').
+
+typeExtension('EJS', '.ejs').
+
+typeExtension('EQ', '.eq').
+
+typeExtension('Eagle', '.sch').
+typeExtension('Eagle', '.brd').
+
+typeExtension('Easybuild', '.eb').
+
+typeExtension('Ecere Projects', '.epj').
+
+typeExtension('Edje Data Collection', '.edc').
+
+typeExtension('Eiffel', '.e').
+
+typeExtension('Elixir', '.ex').
+typeExtension('Elixir', '.exs').
+
+typeExtension('Elm', '.elm').
+
+typeExtension('Emacs Lisp', '.el').
+typeExtension('Emacs Lisp', '.emacs').
+typeExtension('Emacs Lisp', '.emacs.desktop').
+
+typeExtension('EmberScript', '.em').
+typeExtension('EmberScript', '.emberscript').
+
+typeExtension('Erlang', '.erl').
+typeExtension('Erlang', '.app.src').
+typeExtension('Erlang', '.es').
+typeExtension('Erlang', '.escript').
+typeExtension('Erlang', '.hrl').
+typeExtension('Erlang', '.xrl').
+typeExtension('Erlang', '.yrl').
+
+typeExtension('F#', '.fs').
+typeExtension('F#', '.fsi').
+typeExtension('F#', '.fsx').
+
+typeExtension('FLUX', '.fx').
+typeExtension('FLUX', '.flux').
+
+typeExtension('Factor', '.factor').
+
+typeExtension('Fancy', '.fy').
+typeExtension('Fancy', '.fancypack').
+
+typeExtension('Fantom', '.fan').
+
+typeExtension('Filebench WML', '.f').
+
+typeExtension('Filterscript', '.fs').
+
+typeExtension('Formatted', '.for').
+typeExtension('Formatted', '.eam.fs').
+
+typeExtension('Forth', '.fth').
+typeExtension('Forth', '.4th').
+typeExtension('Forth', '.f').
+typeExtension('Forth', '.for').
+typeExtension('Forth', '.forth').
+typeExtension('Forth', '.fr').
+typeExtension('Forth', '.frt').
+typeExtension('Forth', '.fs').
+
+typeExtension('Fortran', '.f90').
+typeExtension('Fortran', '.f').
+typeExtension('Fortran', '.f03').
+typeExtension('Fortran', '.f08').
+typeExtension('Fortran', '.f77').
+typeExtension('Fortran', '.f95').
+typeExtension('Fortran', '.for').
+typeExtension('Fortran', '.fpp').
+
+typeExtension('FreeMarker', '.ftl').
+
+typeExtension('Frege', '.fr').
+
+typeExtension('G-code', '.g').
+typeExtension('G-code', '.gco').
+typeExtension('G-code', '.gcode').
+
+typeExtension('GAMS', '.gms').
+
+typeExtension('GAP', '.g').
+typeExtension('GAP', '.gap').
+typeExtension('GAP', '.gd').
+typeExtension('GAP', '.gi').
+typeExtension('GAP', '.tst').
+
+typeExtension('GCC Machine Description', '.md').
+
+typeExtension('GDB', '.gdb').
+typeExtension('GDB', '.gdbinit').
+
+typeExtension('GDScript', '.gd').
+
+typeExtension('GLSL', '.glsl').
+typeExtension('GLSL', '.fp').
+typeExtension('GLSL', '.frag').
+typeExtension('GLSL', '.frg').
+typeExtension('GLSL', '.fs').
+typeExtension('GLSL', '.fsh').
+typeExtension('GLSL', '.fshader').
+typeExtension('GLSL', '.geo').
+typeExtension('GLSL', '.geom').
+typeExtension('GLSL', '.glslv').
+typeExtension('GLSL', '.gshader').
+typeExtension('GLSL', '.shader').
+typeExtension('GLSL', '.tesc').
+typeExtension('GLSL', '.tese').
+typeExtension('GLSL', '.vert').
+typeExtension('GLSL', '.vrx').
+typeExtension('GLSL', '.vsh').
+typeExtension('GLSL', '.vshader').
+
+typeExtension('GN', '.gn').
+typeExtension('GN', '.gni').
+
+typeExtension('Game Maker Language', '.gml').
+
+typeExtension('Genie', '.gs').
+
+typeExtension('Genshi', '.kid').
+
+typeExtension('Gentoo Ebuild', '.ebuild').
+
+typeExtension('Gentoo Eclass', '.eclass').
+
+typeExtension('Gerber Image', '.gbr').
+typeExtension('Gerber Image', '.gbl').
+typeExtension('Gerber Image', '.gbo').
+typeExtension('Gerber Image', '.gbp').
+typeExtension('Gerber Image', '.gbs').
+typeExtension('Gerber Image', '.gko').
+typeExtension('Gerber Image', '.gpb').
+typeExtension('Gerber Image', '.gpt').
+typeExtension('Gerber Image', '.gtl').
+typeExtension('Gerber Image', '.gto').
+typeExtension('Gerber Image', '.gtp').
+typeExtension('Gerber Image', '.gts').
+
+typeExtension('Gettext Catalog', '.po').
+typeExtension('Gettext Catalog', '.pot').
+
+typeExtension('Gherkin', '.feature').
+
+typeExtension('Glyph', '.glf').
+
+typeExtension('Gnuplot', '.gp').
+typeExtension('Gnuplot', '.gnu').
+typeExtension('Gnuplot', '.gnuplot').
+typeExtension('Gnuplot', '.plot').
+typeExtension('Gnuplot', '.plt').
+
+typeExtension('Go', '.go').
+
+typeExtension('Golo', '.golo').
+
+typeExtension('Gosu', '.gs').
+typeExtension('Gosu', '.gst').
+typeExtension('Gosu', '.gsx').
+typeExtension('Gosu', '.vark').
+
+typeExtension('Grace', '.grace').
+
+typeExtension('Gradle', '.gradle').
+
+typeExtension('Grammatical Framework', '.gf').
+
+typeExtension('Graph Modeling Language', '.gml').
+
+typeExtension('GraphQL', '.graphql').
+typeExtension('GraphQL', '.gql').
+
+typeExtension('Graphviz (DOT)', '.dot').
+typeExtension('Graphviz (DOT)', '.gv').
+
+typeExtension('Groovy', '.groovy').
+typeExtension('Groovy', '.grt').
+typeExtension('Groovy', '.gtpl').
+typeExtension('Groovy', '.gvy').
+
+typeExtension('Groovy Server Pages', '.gsp').
+
+typeExtension('HCL', '.hcl').
+typeExtension('HCL', '.tf').
+
+typeExtension('HLSL', '.hlsl').
+typeExtension('HLSL', '.cginc').
+typeExtension('HLSL', '.fx').
+typeExtension('HLSL', '.fxh').
+typeExtension('HLSL', '.hlsli').
+
+typeExtension('HTML', '.html').
+typeExtension('HTML', '.htm').
+typeExtension('HTML', '.html.hl').
+typeExtension('HTML', '.inc').
+typeExtension('HTML', '.st').
+typeExtension('HTML', '.xht').
+typeExtension('HTML', '.xhtml').
+
+typeExtension('HTML+Django', '.jinja').
+typeExtension('HTML+Django', '.mustache').
+typeExtension('HTML+Django', '.njk').
+
+typeExtension('HTML+ECR', '.ecr').
+
+typeExtension('HTML+EEX', '.eex').
+
+typeExtension('HTML+ERB', '.erb').
+typeExtension('HTML+ERB', '.erb.deface').
+
+typeExtension('HTML+PHP', '.phtml').
+
+typeExtension('HTTP', '.http').
+
+typeExtension('Hack', '.hh').
+typeExtension('Hack', '.php').
+
+typeExtension('Haml', '.haml').
+typeExtension('Haml', '.haml.deface').
+
+typeExtension('Handlebars', '.handlebars').
+typeExtension('Handlebars', '.hbs').
+
+typeExtension('Harbour', '.hb').
+
+typeExtension('Haskell', '.hs').
+typeExtension('Haskell', '.hsc').
+
+typeExtension('Haxe', '.hx').
+typeExtension('Haxe', '.hxsl').
+
+typeExtension('Hy', '.hy').
+
+typeExtension('HyPhy', '.bf').
+
+typeExtension('IDL', '.pro').
+typeExtension('IDL', '.dlm').
+
+typeExtension('IGOR Pro', '.ipf').
+
+typeExtension('INI', '.ini').
+typeExtension('INI', '.cfg').
+typeExtension('INI', '.prefs').
+typeExtension('INI', '.pro').
+typeExtension('INI', '.properties').
+
+typeExtension('IRC log', '.irclog').
+typeExtension('IRC log', '.weechatlog').
+
+typeExtension('Idris', '.idr').
+typeExtension('Idris', '.lidr').
+
+typeExtension('Inform 7', '.ni').
+typeExtension('Inform 7', '.i7x').
+
+typeExtension('Inno Setup', '.iss').
+
+typeExtension('Io', '.io').
+
+typeExtension('Ioke', '.ik').
+
+typeExtension('Isabelle', '.thy').
+
+
+typeExtension('J', '.ijs').
+
+typeExtension('JFlex', '.flex').
+typeExtension('JFlex', '.jflex').
+
+typeExtension('JSON', '.json').
+typeExtension('JSON', '.geojson').
+typeExtension('JSON', '.JSON-tmLanguage').
+typeExtension('JSON', '.topojson').
+
+typeExtension('JSON5', '.json5').
+
+typeExtension('JSONLD', '.jsonld').
+
+typeExtension('JSONiq', '.jq').
+
+typeExtension('JSX', '.jsx').
+
+typeExtension('Jasmin', '.j').
+
+typeExtension('Java', '.java').
+
+typeExtension('Java Server Pages', '.jsp').
+
+typeExtension('JavaScript', '.js').
+typeExtension('JavaScript', '._js').
+typeExtension('JavaScript', '.bones').
+typeExtension('JavaScript', '.es').
+typeExtension('JavaScript', '.es6').
+typeExtension('JavaScript', '.frag').
+typeExtension('JavaScript', '.gs').
+typeExtension('JavaScript', '.jake').
+typeExtension('JavaScript', '.jsb').
+typeExtension('JavaScript', '.jscad').
+typeExtension('JavaScript', '.jsfl').
+typeExtension('JavaScript', '.jsm').
+typeExtension('JavaScript', '.jss').
+typeExtension('JavaScript', '.mjs').
+typeExtension('JavaScript', '.njs').
+typeExtension('JavaScript', '.pac').
+typeExtension('JavaScript', '.sjs').
+typeExtension('JavaScript', '.ssjs').
+typeExtension('JavaScript', '.xsjs').
+typeExtension('JavaScript', '.xsjslib').
+
+typeExtension('Jison', '.jison').
+
+typeExtension('Jison Lex', '.jisonlex').
+
+typeExtension('Jolie', '.ol').
+typeExtension('Jolie', '.iol').
+
+typeExtension('Julia', '.jl').
+
+typeExtension('Jupyter Notebook', '.ipynb').
+
+typeExtension('KRL', '.krl').
+
+typeExtension('KiCad Layout', '.kicad_pcb').
+typeExtension('KiCad Layout', '.kicad_mod').
+typeExtension('KiCad Layout', '.kicad_wks').
+
+typeExtension('KiCad Legacy Layout', '.brd').
+
+typeExtension('KiCad Schematic', '.sch').
+
+typeExtension('Kit', '.kit').
+
+typeExtension('Kotlin', '.kt').
+typeExtension('Kotlin', '.ktm').
+typeExtension('Kotlin', '.kts').
+
+typeExtension('LFE', '.lfe').
+
+typeExtension('LLVM', '.ll').
+
+typeExtension('LOLCODE', '.lol').
+
+typeExtension('LSL', '.lsl').
+typeExtension('LSL', '.lslp').
+
+typeExtension('LabVIEW', '.lvproj').
+
+typeExtension('Lasso', '.lasso').
+typeExtension('Lasso', '.las').
+typeExtension('Lasso', '.lasso8').
+typeExtension('Lasso', '.lasso9').
+typeExtension('Lasso', '.ldml').
+
+typeExtension('Latte', '.latte').
+
+typeExtension('Lean', '.lean').
+typeExtension('Lean', '.hlean').
+
+typeExtension('Less', '.less').
+
+typeExtension('Lex', '.l').
+typeExtension('Lex', '.lex').
+
+typeExtension('LilyPond', '.ly').
+typeExtension('LilyPond', '.ily').
+
+typeExtension('Limbo', '.b').
+typeExtension('Limbo', '.m').
+
+typeExtension('Linker Script', '.ld').
+typeExtension('Linker Script', '.lds').
+
+typeExtension('Linux Kernel Module', '.mod').
+
+typeExtension('Liquid', '.liquid').
+
+typeExtension('Literate Agda', '.lagda').
+
+typeExtension('Literate CoffeeScript', '.litcoffee').
+
+typeExtension('Literate Haskell', '.lhs').
+
+typeExtension('LiveScript', '.ls').
+typeExtension('LiveScript', '._ls').
+
+typeExtension('Logos', '.xm').
+typeExtension('Logos', '.x').
+typeExtension('Logos', '.xi').
+
+typeExtension('Logtalk', '.lgt').
+typeExtension('Logtalk', '.logtalk').
+
+typeExtension('LookML', '.lookml').
+typeExtension('LookML', '.model.lkml').
+typeExtension('LookML', '.view.lkml').
+
+typeExtension('LoomScript', '.ls').
+
+typeExtension('Lua', '.lua').
+typeExtension('Lua', '.fcgi').
+typeExtension('Lua', '.nse').
+typeExtension('Lua', '.pd_lua').
+typeExtension('Lua', '.rbxs').
+typeExtension('Lua', '.wlua').
+
+typeExtension('M', '.mumps').
+typeExtension('M', '.m').
+
+typeExtension('M4', '.m4').
+
+typeExtension('M4Sugar', '.m4').
+
+typeExtension('MAXScript', '.ms').
+typeExtension('MAXScript', '.mcr').
+
+typeExtension('MQL4', '.mq4').
+typeExtension('MQL4', '.mqh').
+
+typeExtension('MQL5', '.mq5').
+typeExtension('MQL5', '.mqh').
+
+typeExtension('MTML', '.mtml').
+
+typeExtension('MUF', '.muf').
+typeExtension('MUF', '.m').
+
+typeExtension('Makefile', '.mak').
+typeExtension('Makefile', '.d').
+typeExtension('Makefile', '.make').
+typeExtension('Makefile', '.mk').
+typeExtension('Makefile', '.mkfile').
+
+typeExtension('Mako', '.mako').
+typeExtension('Mako', '.mao').
+
+typeExtension('Markdown', '.md').
+typeExtension('Markdown', '.markdown').
+typeExtension('Markdown', '.mdown').
+typeExtension('Markdown', '.mdwn').
+typeExtension('Markdown', '.mkd').
+typeExtension('Markdown', '.mkdn').
+typeExtension('Markdown', '.mkdown').
+typeExtension('Markdown', '.ron').
+typeExtension('Markdown', '.workbook').
+
+typeExtension('Marko', '.marko').
+
+typeExtension('Mask', '.mask').
+
+typeExtension('Mathematica', '.mathematica').
+typeExtension('Mathematica', '.cdf').
+typeExtension('Mathematica', '.m').
+typeExtension('Mathematica', '.ma').
+typeExtension('Mathematica', '.mt').
+typeExtension('Mathematica', '.nb').
+typeExtension('Mathematica', '.nbp').
+typeExtension('Mathematica', '.wl').
+typeExtension('Mathematica', '.wlt').
+
+typeExtension('Matlab', '.matlab').
+typeExtension('Matlab', '.m').
+
+
+typeExtension('Max', '.maxpat').
+typeExtension('Max', '.maxhelp').
+typeExtension('Max', '.maxproj').
+typeExtension('Max', '.mxt').
+typeExtension('Max', '.pat').
+
+typeExtension('MediaWiki', '.mediawiki').
+typeExtension('MediaWiki', '.wiki').
+
+typeExtension('Mercury', '.m').
+typeExtension('Mercury', '.moo').
+
+
+typeExtension('Metal', '.metal').
+
+typeExtension('MiniD', '.minid').
+
+typeExtension('Mirah', '.druby').
+typeExtension('Mirah', '.duby').
+typeExtension('Mirah', '.mir').
+typeExtension('Mirah', '.mirah').
+
+typeExtension('Modelica', '.mo').
+
+typeExtension('Modula-2', '.mod').
+
+typeExtension('Module Management System', '.mms').
+typeExtension('Module Management System', '.mmk').
+
+typeExtension('Monkey', '.monkey').
+typeExtension('Monkey', '.monkey2').
+
+typeExtension('Moocode', '.moo').
+
+typeExtension('MoonScript', '.moon').
+
+typeExtension('Myghty', '.myt').
+
+typeExtension('NCL', '.ncl').
+
+typeExtension('NL', '.nl').
+
+typeExtension('NSIS', '.nsi').
+typeExtension('NSIS', '.nsh').
+
+typeExtension('Nearley', '.ne').
+typeExtension('Nearley', '.nearley').
+
+typeExtension('Nemerle', '.n').
+
+typeExtension('NetLinx', '.axs').
+typeExtension('NetLinx', '.axi').
+
+typeExtension('NetLinx+ERB', '.axs.erb').
+typeExtension('NetLinx+ERB', '.axi.erb').
+
+typeExtension('NetLogo', '.nlogo').
+
+typeExtension('NewLisp', '.nl').
+typeExtension('NewLisp', '.lisp').
+typeExtension('NewLisp', '.lsp').
+
+typeExtension('Nextflow', '.nf').
+
+typeExtension('Nginx', '.nginxconf').
+typeExtension('Nginx', '.vhost').
+
+typeExtension('Nim', '.nim').
+typeExtension('Nim', '.nimrod').
+
+typeExtension('Ninja', '.ninja').
+
+typeExtension('Nit', '.nit').
+
+typeExtension('Nix', '.nix').
+
+typeExtension('Nu', '.nu').
+
+typeExtension('NumPy', '.numpy').
+typeExtension('NumPy', '.numpyw').
+typeExtension('NumPy', '.numsc').
+
+typeExtension('OCaml', '.ml').
+typeExtension('OCaml', '.eliom').
+typeExtension('OCaml', '.eliomi').
+typeExtension('OCaml', '.ml4').
+typeExtension('OCaml', '.mli').
+typeExtension('OCaml', '.mll').
+typeExtension('OCaml', '.mly').
+
+typeExtension('ObjDump', '.objdump').
+
+typeExtension('Objective-C', '.m').
+typeExtension('Objective-C', '.h').
+
+typeExtension('Objective-C++', '.mm').
+
+typeExtension('Objective-J', '.j').
+typeExtension('Objective-J', '.sj').
+
+typeExtension('Omgrofl', '.omgrofl').
+
+typeExtension('Opa', '.opa').
+
+typeExtension('Opal', '.opal').
+
+typeExtension('OpenCL', '.cl').
+typeExtension('OpenCL', '.opencl').
+
+typeExtension('OpenEdge ABL', '.p').
+typeExtension('OpenEdge ABL', '.cls').
+typeExtension('OpenEdge ABL', '.w').
+
+
+typeExtension('OpenSCAD', '.scad').
+
+typeExtension('OpenType Feature File', '.fea').
+
+typeExtension('Org', '.org').
+
+typeExtension('Ox', '.ox').
+typeExtension('Ox', '.oxh').
+typeExtension('Ox', '.oxo').
+
+typeExtension('Oxygene', '.oxygene').
+
+typeExtension('Oz', '.oz').
+
+typeExtension('P4', '.p4').
+
+typeExtension('PAWN', '.pwn').
+typeExtension('PAWN', '.inc').
+
+typeExtension('PHP', '.php').
+typeExtension('PHP', '.aw').
+typeExtension('PHP', '.ctp').
+typeExtension('PHP', '.fcgi').
+typeExtension('PHP', '.inc').
+typeExtension('PHP', '.php3').
+typeExtension('PHP', '.php4').
+typeExtension('PHP', '.php5').
+typeExtension('PHP', '.phps').
+typeExtension('PHP', '.phpt').
+
+typeExtension('PLSQL', '.pls').
+typeExtension('PLSQL', '.bdy').
+typeExtension('PLSQL', '.ddl').
+typeExtension('PLSQL', '.fnc').
+typeExtension('PLSQL', '.pck').
+typeExtension('PLSQL', '.pkb').
+typeExtension('PLSQL', '.pks').
+typeExtension('PLSQL', '.plb').
+typeExtension('PLSQL', '.plsql').
+typeExtension('PLSQL', '.prc').
+typeExtension('PLSQL', '.spc').
+typeExtension('PLSQL', '.sql').
+typeExtension('PLSQL', '.tpb').
+typeExtension('PLSQL', '.tps').
+typeExtension('PLSQL', '.trg').
+typeExtension('PLSQL', '.vw').
+
+typeExtension('PLpgSQL', '.sql').
+
+typeExtension('POV-Ray SDL', '.pov').
+typeExtension('POV-Ray SDL', '.inc').
+
+typeExtension('Pan', '.pan').
+
+typeExtension('Papyrus', '.psc').
+
+typeExtension('Parrot', '.parrot').
+
+typeExtension('Parrot Assembly', '.pasm').
+
+typeExtension('Parrot Internal Representation', '.pir').
+
+typeExtension('Pascal', '.pas').
+typeExtension('Pascal', '.dfm').
+typeExtension('Pascal', '.dpr').
+typeExtension('Pascal', '.inc').
+typeExtension('Pascal', '.lpr').
+typeExtension('Pascal', '.pascal').
+typeExtension('Pascal', '.pp').
+
+typeExtension('Pep8', '.pep').
+
+typeExtension('Perl', '.pl').
+typeExtension('Perl', '.al').
+typeExtension('Perl', '.cgi').
+typeExtension('Perl', '.fcgi').
+typeExtension('Perl', '.perl').
+typeExtension('Perl', '.ph').
+typeExtension('Perl', '.plx').
+typeExtension('Perl', '.pm').
+typeExtension('Perl', '.psgi').
+typeExtension('Perl', '.t').
+
+typeExtension('Perl 6', '.6pl').
+typeExtension('Perl 6', '.6pm').
+typeExtension('Perl 6', '.nqp').
+typeExtension('Perl 6', '.p6').
+typeExtension('Perl 6', '.p6l').
+typeExtension('Perl 6', '.p6m').
+typeExtension('Perl 6', '.pl').
+typeExtension('Perl 6', '.pl6').
+typeExtension('Perl 6', '.pm').
+typeExtension('Perl 6', '.pm6').
+typeExtension('Perl 6', '.t').
+
+typeExtension('Pic', '.pic').
+typeExtension('Pic', '.chem').
+
+typeExtension('Pickle', '.pkl').
+
+typeExtension('PicoLisp', '.l').
+
+typeExtension('PigLatin', '.pig').
+
+typeExtension('Pike', '.pike').
+typeExtension('Pike', '.pmod').
+
+typeExtension('Pod', '.pod').
+
+typeExtension('PogoScript', '.pogo').
+
+typeExtension('Pony', '.pony').
+
+typeExtension('PostCSS', '.pcss').
+
+typeExtension('PostScript', '.ps').
+typeExtension('PostScript', '.eps').
+typeExtension('PostScript', '.pfa').
+
+typeExtension('PowerBuilder', '.pbt').
+typeExtension('PowerBuilder', '.sra').
+typeExtension('PowerBuilder', '.sru').
+typeExtension('PowerBuilder', '.srw').
+
+typeExtension('PowerShell', '.ps1').
+typeExtension('PowerShell', '.psd1').
+typeExtension('PowerShell', '.psm1').
+
+typeExtension('Processing', '.pde').
+
+typeExtension('Prolog', '.pl').
+typeExtension('Prolog', '.pro').
+typeExtension('Prolog', '.prolog').
+typeExtension('Prolog', '.yap').
+
+typeExtension('Propeller Spin', '.spin').
+
+typeExtension('Protocol Buffer', '.proto').
+
+typeExtension('Public Key', '.asc').
+typeExtension('Public Key', '.pub').
+
+typeExtension('Pug', '.jade').
+typeExtension('Pug', '.pug').
+
+typeExtension('Puppet', '.pp').
+
+typeExtension('Pure Data', '.pd').
+
+typeExtension('PureBasic', '.pb').
+typeExtension('PureBasic', '.pbi').
+
+typeExtension('PureScript', '.purs').
+
+typeExtension('Python', '.py').
+typeExtension('Python', '.bzl').
+typeExtension('Python', '.cgi').
+typeExtension('Python', '.fcgi').
+typeExtension('Python', '.gyp').
+typeExtension('Python', '.gypi').
+typeExtension('Python', '.lmi').
+typeExtension('Python', '.py3').
+typeExtension('Python', '.pyde').
+typeExtension('Python', '.pyi').
+typeExtension('Python', '.pyp').
+typeExtension('Python', '.pyt').
+typeExtension('Python', '.pyw').
+typeExtension('Python', '.rpy').
+typeExtension('Python', '.spec').
+typeExtension('Python', '.tac').
+typeExtension('Python', '.wsgi').
+typeExtension('Python', '.xpy').
+
+
+typeExtension('Python traceback', '.pytb').
+
+typeExtension('QML', '.qml').
+typeExtension('QML', '.qbs').
+
+typeExtension('QMake', '.pro').
+typeExtension('QMake', '.pri').
+
+typeExtension('R', '.r').
+typeExtension('R', '.rd').
+typeExtension('R', '.rsx').
+
+typeExtension('RAML', '.raml').
+
+typeExtension('RDoc', '.rdoc').
+
+typeExtension('REALbasic', '.rbbas').
+typeExtension('REALbasic', '.rbfrm').
+typeExtension('REALbasic', '.rbmnu').
+typeExtension('REALbasic', '.rbres').
+typeExtension('REALbasic', '.rbtbar').
+typeExtension('REALbasic', '.rbuistate').
+
+typeExtension('REXX', '.rexx').
+typeExtension('REXX', '.pprx').
+typeExtension('REXX', '.rex').
+
+typeExtension('RHTML', '.rhtml').
+
+typeExtension('RMarkdown', '.rmd').
+
+typeExtension('RPM Spec', '.spec').
+
+typeExtension('RUNOFF', '.rnh').
+typeExtension('RUNOFF', '.rno').
+
+typeExtension('Racket', '.rkt').
+typeExtension('Racket', '.rktd').
+typeExtension('Racket', '.rktl').
+typeExtension('Racket', '.scrbl').
+
+typeExtension('Ragel', '.rl').
+
+typeExtension('Rascal', '.rsc').
+
+typeExtension('Raw token data', '.raw').
+
+typeExtension('Reason', '.re').
+typeExtension('Reason', '.rei').
+
+typeExtension('Rebol', '.reb').
+typeExtension('Rebol', '.r').
+typeExtension('Rebol', '.r2').
+typeExtension('Rebol', '.r3').
+typeExtension('Rebol', '.rebol').
+
+typeExtension('Red', '.red').
+typeExtension('Red', '.reds').
+
+typeExtension('Redcode', '.cw').
+
+typeExtension('Regular Expression', '.regexp').
+typeExtension('Regular Expression', '.regex').
+
+typeExtension('Ren\'Py', '.rpy').
+
+typeExtension('RenderScript', '.rs').
+typeExtension('RenderScript', '.rsh').
+
+typeExtension('Ring', '.ring').
+
+typeExtension('RobotFramework', '.robot').
+
+typeExtension('Roff', '.man').
+typeExtension('Roff', '.1').
+typeExtension('Roff', '.1in').
+typeExtension('Roff', '.1m').
+typeExtension('Roff', '.1x').
+typeExtension('Roff', '.2').
+typeExtension('Roff', '.3').
+typeExtension('Roff', '.3in').
+typeExtension('Roff', '.3m').
+typeExtension('Roff', '.3qt').
+typeExtension('Roff', '.3x').
+typeExtension('Roff', '.4').
+typeExtension('Roff', '.5').
+typeExtension('Roff', '.6').
+typeExtension('Roff', '.7').
+typeExtension('Roff', '.8').
+typeExtension('Roff', '.9').
+typeExtension('Roff', '.l').
+typeExtension('Roff', '.me').
+typeExtension('Roff', '.ms').
+typeExtension('Roff', '.n').
+typeExtension('Roff', '.nr').
+typeExtension('Roff', '.rno').
+typeExtension('Roff', '.roff').
+typeExtension('Roff', '.tmac').
+
+typeExtension('Rouge', '.rg').
+
+typeExtension('Ruby', '.rb').
+typeExtension('Ruby', '.builder').
+typeExtension('Ruby', '.eye').
+typeExtension('Ruby', '.fcgi').
+typeExtension('Ruby', '.gemspec').
+typeExtension('Ruby', '.god').
+typeExtension('Ruby', '.jbuilder').
+typeExtension('Ruby', '.mspec').
+typeExtension('Ruby', '.pluginspec').
+typeExtension('Ruby', '.podspec').
+typeExtension('Ruby', '.rabl').
+typeExtension('Ruby', '.rake').
+typeExtension('Ruby', '.rbuild').
+typeExtension('Ruby', '.rbw').
+typeExtension('Ruby', '.rbx').
+typeExtension('Ruby', '.ru').
+typeExtension('Ruby', '.ruby').
+typeExtension('Ruby', '.spec').
+typeExtension('Ruby', '.thor').
+typeExtension('Ruby', '.watchr').
+
+typeExtension('Rust', '.rs').
+typeExtension('Rust', '.rs.in').
+
+typeExtension('SAS', '.sas').
+
+typeExtension('SCSS', '.scss').
+
+typeExtension('SMT', '.smt2').
+typeExtension('SMT', '.smt').
+
+typeExtension('SPARQL', '.sparql').
+typeExtension('SPARQL', '.rq').
+
+typeExtension('SQF', '.sqf').
+typeExtension('SQF', '.hqf').
+
+typeExtension('SQL', '.sql').
+typeExtension('SQL', '.cql').
+typeExtension('SQL', '.ddl').
+typeExtension('SQL', '.inc').
+typeExtension('SQL', '.mysql').
+typeExtension('SQL', '.prc').
+typeExtension('SQL', '.tab').
+typeExtension('SQL', '.udf').
+typeExtension('SQL', '.viw').
+
+typeExtension('SQLPL', '.sql').
+typeExtension('SQLPL', '.db2').
+
+typeExtension('SRecode Template', '.srt').
+
+typeExtension('STON', '.ston').
+
+typeExtension('SVG', '.svg').
+
+typeExtension('Sage', '.sage').
+typeExtension('Sage', '.sagews').
+
+typeExtension('SaltStack', '.sls').
+
+typeExtension('Sass', '.sass').
+
+typeExtension('Scala', '.scala').
+typeExtension('Scala', '.sbt').
+typeExtension('Scala', '.sc').
+
+typeExtension('Scaml', '.scaml').
+
+typeExtension('Scheme', '.scm').
+typeExtension('Scheme', '.sch').
+typeExtension('Scheme', '.sld').
+typeExtension('Scheme', '.sls').
+typeExtension('Scheme', '.sps').
+typeExtension('Scheme', '.ss').
+
+typeExtension('Scilab', '.sci').
+typeExtension('Scilab', '.sce').
+typeExtension('Scilab', '.tst').
+
+typeExtension('Self', '.self').
+
+typeExtension('ShaderLab', '.shader').
+
+typeExtension('Shell', '.sh').
+typeExtension('Shell', '.bash').
+typeExtension('Shell', '.bats').
+typeExtension('Shell', '.cgi').
+typeExtension('Shell', '.command').
+typeExtension('Shell', '.fcgi').
+typeExtension('Shell', '.ksh').
+typeExtension('Shell', '.sh.in').
+typeExtension('Shell', '.tmux').
+typeExtension('Shell', '.tool').
+typeExtension('Shell', '.zsh').
+
+typeExtension('ShellSession', '.sh-session').
+
+typeExtension('Shen', '.shen').
+
+typeExtension('Slash', '.sl').
+
+typeExtension('Slim', '.slim').
+
+typeExtension('Smali', '.smali').
+
+typeExtension('Smalltalk', '.st').
+typeExtension('Smalltalk', '.cs').
+
+typeExtension('Smarty', '.tpl').
+
+typeExtension('SourcePawn', '.sp').
+typeExtension('SourcePawn', '.inc').
+typeExtension('SourcePawn', '.sma').
+
+typeExtension('Spline Font Database', '.sfd').
+
+typeExtension('Squirrel', '.nut').
+
+typeExtension('Stan', '.stan').
+
+typeExtension('Standard ML', '.ML').
+typeExtension('Standard ML', '.fun').
+typeExtension('Standard ML', '.sig').
+typeExtension('Standard ML', '.sml').
+
+typeExtension('Stata', '.do').
+typeExtension('Stata', '.ado').
+typeExtension('Stata', '.doh').
+typeExtension('Stata', '.ihlp').
+typeExtension('Stata', '.mata').
+typeExtension('Stata', '.matah').
+typeExtension('Stata', '.sthlp').
+
+typeExtension('Stylus', '.styl').
+
+typeExtension('SubRip Text', '.srt').
+
+typeExtension('Sublime Text Config', '.sublime-build').
+typeExtension('Sublime Text Config', '.sublime-commands').
+typeExtension('Sublime Text Config', '.sublime-completions').
+typeExtension('Sublime Text Config', '.sublime-keymap').
+typeExtension('Sublime Text Config', '.sublime-macro').
+typeExtension('Sublime Text Config', '.sublime-menu').
+typeExtension('Sublime Text Config', '.sublime-mousemap').
+typeExtension('Sublime Text Config', '.sublime-project').
+typeExtension('Sublime Text Config', '.sublime-settings').
+typeExtension('Sublime Text Config', '.sublime-theme').
+typeExtension('Sublime Text Config', '.sublime-workspace').
+typeExtension('Sublime Text Config', '.sublime_metrics').
+typeExtension('Sublime Text Config', '.sublime_session').
+
+typeExtension('SugarSS', '.sss').
+
+typeExtension('SuperCollider', '.sc').
+typeExtension('SuperCollider', '.scd').
+
+typeExtension('Swift', '.swift').
+
+typeExtension('SystemVerilog', '.sv').
+typeExtension('SystemVerilog', '.svh').
+typeExtension('SystemVerilog', '.vh').
+
+typeExtension('TI Program', '.8xp').
+typeExtension('TI Program', '.8xk').
+typeExtension('TI Program', '.8xk.txt').
+typeExtension('TI Program', '.8xp.txt').
+
+typeExtension('TLA', '.tla').
+
+typeExtension('TOML', '.toml').
+
+typeExtension('TXL', '.txl').
+
+typeExtension('Tcl', '.tcl').
+typeExtension('Tcl', '.adp').
+typeExtension('Tcl', '.tm').
+
+typeExtension('Tcsh', '.tcsh').
+typeExtension('Tcsh', '.csh').
+
+typeExtension('TeX', '.tex').
+typeExtension('TeX', '.aux').
+typeExtension('TeX', '.bbx').
+typeExtension('TeX', '.bib').
+typeExtension('TeX', '.cbx').
+typeExtension('TeX', '.cls').
+typeExtension('TeX', '.dtx').
+typeExtension('TeX', '.ins').
+typeExtension('TeX', '.lbx').
+typeExtension('TeX', '.ltx').
+typeExtension('TeX', '.mkii').
+typeExtension('TeX', '.mkiv').
+typeExtension('TeX', '.mkvi').
+typeExtension('TeX', '.sty').
+typeExtension('TeX', '.toc').
+
+typeExtension('Tea', '.tea').
+
+typeExtension('Terra', '.t').
+
+typeExtension('Text', '.txt').
+typeExtension('Text', '.fr').
+typeExtension('Text', '.nb').
+typeExtension('Text', '.ncl').
+typeExtension('Text', '.no').
+
+typeExtension('Textile', '.textile').
+
+typeExtension('Thrift', '.thrift').
+
+typeExtension('Turing', '.t').
+typeExtension('Turing', '.tu').
+
+typeExtension('Turtle', '.ttl').
+
+typeExtension('Twig', '.twig').
+
+typeExtension('Type Language', '.tl').
+
+typeExtension('TypeScript', '.ts').
+typeExtension('TypeScript', '.tsx').
+
+typeExtension('Unified Parallel C', '.upc').
+
+typeExtension('Unity3D Asset', '.anim').
+typeExtension('Unity3D Asset', '.asset').
+typeExtension('Unity3D Asset', '.mat').
+typeExtension('Unity3D Asset', '.meta').
+typeExtension('Unity3D Asset', '.prefab').
+typeExtension('Unity3D Asset', '.unity').
+
+typeExtension('Unix Assembly', '.s').
+typeExtension('Unix Assembly', '.ms').
+
+typeExtension('Uno', '.uno').
+
+typeExtension('UnrealScript', '.uc').
+
+typeExtension('UrWeb', '.ur').
+typeExtension('UrWeb', '.urs').
+
+typeExtension('VCL', '.vcl').
+
+typeExtension('VHDL', '.vhdl').
+typeExtension('VHDL', '.vhd').
+typeExtension('VHDL', '.vhf').
+typeExtension('VHDL', '.vhi').
+typeExtension('VHDL', '.vho').
+typeExtension('VHDL', '.vhs').
+typeExtension('VHDL', '.vht').
+typeExtension('VHDL', '.vhw').
+
+typeExtension('Vala', '.vala').
+typeExtension('Vala', '.vapi').
+
+typeExtension('Verilog', '.v').
+typeExtension('Verilog', '.veo').
+
+typeExtension('Vim script', '.vim').
+
+typeExtension('Visual Basic', '.vb').
+typeExtension('Visual Basic', '.bas').
+typeExtension('Visual Basic', '.cls').
+typeExtension('Visual Basic', '.frm').
+typeExtension('Visual Basic', '.frx').
+typeExtension('Visual Basic', '.vba').
+typeExtension('Visual Basic', '.vbhtml').
+typeExtension('Visual Basic', '.vbs').
+
+typeExtension('Volt', '.volt').
+
+typeExtension('Vue', '.vue').
+
+typeExtension('Wavefront Material', '.mtl').
+
+typeExtension('Wavefront Object', '.obj').
+
+typeExtension('Web Ontology Language', '.owl').
+
+typeExtension('WebAssembly', '.wast').
+typeExtension('WebAssembly', '.wat').
+
+typeExtension('WebIDL', '.webidl').
+
+typeExtension('World of Warcraft Addon Data', '.toc').
+
+typeExtension('X10', '.x10').
+
+typeExtension('XC', '.xc').
+
+
+typeExtension('XML', '.xml').
+typeExtension('XML', '.adml').
+typeExtension('XML', '.admx').
+typeExtension('XML', '.ant').
+typeExtension('XML', '.axml').
+typeExtension('XML', '.builds').
+typeExtension('XML', '.ccproj').
+typeExtension('XML', '.ccxml').
+typeExtension('XML', '.clixml').
+typeExtension('XML', '.cproject').
+typeExtension('XML', '.cscfg').
+typeExtension('XML', '.csdef').
+typeExtension('XML', '.csl').
+typeExtension('XML', '.csproj').
+typeExtension('XML', '.ct').
+typeExtension('XML', '.depproj').
+typeExtension('XML', '.dita').
+typeExtension('XML', '.ditamap').
+typeExtension('XML', '.ditaval').
+typeExtension('XML', '.dll.config').
+typeExtension('XML', '.dotsettings').
+typeExtension('XML', '.filters').
+typeExtension('XML', '.fsproj').
+typeExtension('XML', '.fxml').
+typeExtension('XML', '.glade').
+typeExtension('XML', '.gml').
+typeExtension('XML', '.grxml').
+typeExtension('XML', '.iml').
+typeExtension('XML', '.ivy').
+typeExtension('XML', '.jelly').
+typeExtension('XML', '.jsproj').
+typeExtension('XML', '.kml').
+typeExtension('XML', '.launch').
+typeExtension('XML', '.mdpolicy').
+typeExtension('XML', '.mjml').
+typeExtension('XML', '.mm').
+typeExtension('XML', '.mod').
+typeExtension('XML', '.mxml').
+typeExtension('XML', '.natvis').
+typeExtension('XML', '.ndproj').
+typeExtension('XML', '.nproj').
+typeExtension('XML', '.nuspec').
+typeExtension('XML', '.odd').
+typeExtension('XML', '.osm').
+typeExtension('XML', '.pkgproj').
+typeExtension('XML', '.plist').
+typeExtension('XML', '.pluginspec').
+typeExtension('XML', '.proj').
+typeExtension('XML', '.props').
+typeExtension('XML', '.ps1xml').
+typeExtension('XML', '.psc1').
+typeExtension('XML', '.pt').
+typeExtension('XML', '.rdf').
+typeExtension('XML', '.resx').
+typeExtension('XML', '.rss').
+typeExtension('XML', '.sch').
+typeExtension('XML', '.scxml').
+typeExtension('XML', '.sfproj').
+typeExtension('XML', '.shproj').
+typeExtension('XML', '.srdf').
+typeExtension('XML', '.storyboard').
+typeExtension('XML', '.stTheme').
+typeExtension('XML', '.sublime-snippet').
+typeExtension('XML', '.targets').
+typeExtension('XML', '.tmCommand').
+typeExtension('XML', '.tml').
+typeExtension('XML', '.tmLanguage').
+typeExtension('XML', '.tmPreferences').
+typeExtension('XML', '.tmSnippet').
+typeExtension('XML', '.tmTheme').
+typeExtension('XML', '.ts').
+typeExtension('XML', '.tsx').
+typeExtension('XML', '.ui').
+typeExtension('XML', '.urdf').
+typeExtension('XML', '.ux').
+typeExtension('XML', '.vbproj').
+typeExtension('XML', '.vcxproj').
+typeExtension('XML', '.vsixmanifest').
+typeExtension('XML', '.vssettings').
+typeExtension('XML', '.vstemplate').
+typeExtension('XML', '.vxml').
+typeExtension('XML', '.wixproj').
+typeExtension('XML', '.wsdl').
+typeExtension('XML', '.wsf').
+typeExtension('XML', '.wxi').
+typeExtension('XML', '.wxl').
+typeExtension('XML', '.wxs').
+typeExtension('XML', '.x3d').
+typeExtension('XML', '.xacro').
+typeExtension('XML', '.xaml').
+typeExtension('XML', '.xib').
+typeExtension('XML', '.xlf').
+typeExtension('XML', '.xliff').
+typeExtension('XML', '.xmi').
+typeExtension('XML', '.xml.dist').
+typeExtension('XML', '.xproj').
+typeExtension('XML', '.xsd').
+typeExtension('XML', '.xspec').
+typeExtension('XML', '.xul').
+typeExtension('XML', '.zcml').
+
+typeExtension('XPM', '.xpm').
+typeExtension('XPM', '.pm').
+
+typeExtension('XPages', '.xsp-config').
+typeExtension('XPages', '.xsp.metadata').
+
+typeExtension('XProc', '.xpl').
+typeExtension('XProc', '.xproc').
+
+typeExtension('XQuery', '.xquery').
+typeExtension('XQuery', '.xq').
+typeExtension('XQuery', '.xql').
+typeExtension('XQuery', '.xqm').
+typeExtension('XQuery', '.xqy').
+
+typeExtension('XS', '.xs').
+
+typeExtension('XSLT', '.xslt').
+typeExtension('XSLT', '.xsl').
+
+typeExtension('Xojo', '.xojo_code').
+typeExtension('Xojo', '.xojo_menu').
+typeExtension('Xojo', '.xojo_report').
+typeExtension('Xojo', '.xojo_script').
+typeExtension('Xojo', '.xojo_toolbar').
+typeExtension('Xojo', '.xojo_window').
+
+typeExtension('Xtend', '.xtend').
+
+typeExtension('YAML', '.yml').
+typeExtension('YAML', '.reek').
+typeExtension('YAML', '.rviz').
+typeExtension('YAML', '.sublime-syntax').
+typeExtension('YAML', '.syntax').
+typeExtension('YAML', '.yaml').
+typeExtension('YAML', '.yaml-tmlanguage').
+typeExtension('YAML', '.yml.mysql').
+
+typeExtension('YANG', '.yang').
+
+typeExtension('YARA', '.yar').
+typeExtension('YARA', '.yara').
+
+typeExtension('Yacc', '.y').
+typeExtension('Yacc', '.yacc').
+typeExtension('Yacc', '.yy').
+
+typeExtension('Zephir', '.zep').
+
+typeExtension('Zimpl', '.zimpl').
+typeExtension('Zimpl', '.zmpl').
+typeExtension('Zimpl', '.zpl').
+
+typeExtension('desktop', '.desktop').
+typeExtension('desktop', '.desktop.in').
+
+typeExtension('eC', '.ec').
+typeExtension('eC', '.eh').
+
+typeExtension('edn', '.edn').
+
+typeExtension('fish', '.fish').
+
+typeExtension('mupad', '.mu').
+
+typeExtension('nesC', '.nc').
+
+typeExtension('ooc', '.ooc').
+
+typeExtension('reStructuredText', '.rst').
+typeExtension('reStructuredText', '.rest').
+typeExtension('reStructuredText', '.rest.txt').
+typeExtension('reStructuredText', '.rst.txt').
+
+typeExtension('wdl', '.wdl').
+
+typeExtension('wisp', '.wisp').
+
+typeExtension('xBase', '.prg').
+typeExtension('xBase', '.ch').
+typeExtension('xBase', '.prw').
+
+
+interpreter('apl', 'APL').
+interpreter('aplx', 'APL').
+interpreter('dyalog', 'APL').
+interpreter('osascript', 'AppleScript').
+interpreter('awk', 'Awk').
+interpreter('gawk', 'Awk').
+interpreter('mawk', 'Awk').
+interpreter('nawk', 'Awk').
+interpreter('tcc', 'C').
+interpreter('coffee', 'CoffeeScript').
+interpreter('lisp', 'Common Lisp').
+interpreter('sbcl', 'Common Lisp').
+interpreter('ccl', 'Common Lisp').
+interpreter('clisp', 'Common Lisp').
+interpreter('ecl', 'Common Lisp').
+interpreter('cwl-runner', 'Common Workflow Language').
+interpreter('crystal', 'Crystal').
+interpreter('dtrace', 'DTrace').
+interpreter('dart', 'Dart').
+interpreter('rune', 'E').
+interpreter('elixir', 'Elixir').
+interpreter('escript', 'Erlang').
+interpreter('gn', 'GN').
+interpreter('gerbv', 'Gerber Image').
+interpreter('gerbview', 'Gerber Image').
+interpreter('gnuplot', 'Gnuplot').
+interpreter('groovy', 'Groovy').
+interpreter('runhaskell', 'Haskell').
+interpreter('io', 'Io').
+interpreter('ioke', 'Ioke').
+interpreter('jconsole', 'J').
+interpreter('node', 'JavaScript').
+interpreter('jolie', 'Jolie').
+interpreter('julia', 'Julia').
+interpreter('lsl', 'LSL').
+interpreter('lua', 'Lua').
+interpreter('make', 'Makefile').
+interpreter('mmi', 'Mercury').
+interpreter('moon', 'MoonScript').
+interpreter('newlisp', 'NewLisp').
+interpreter('nextflow', 'Nextflow').
+interpreter('nush', 'Nu').
+interpreter('ocaml', 'OCaml').
+interpreter('ocamlrun', 'OCaml').
+interpreter('ocamlscript', 'OCaml').
+interpreter('openrc-run', 'OpenRC runscript').
+interpreter('php', 'PHP').
+interpreter('parrot', 'Parrot Assembly').
+interpreter('parrot', 'Parrot Internal Representation').
+interpreter('instantfpc', 'Pascal').
+interpreter('perl', 'Perl').
+interpreter('perl6', 'Perl 6').
+interpreter('picolisp', 'PicoLisp').
+interpreter('pil', 'PicoLisp').
+interpreter('pike', 'Pike').
+interpreter('perl', 'Pod').
+interpreter('swipl', 'Prolog').
+interpreter('yap', 'Prolog').
+interpreter('python', 'Python').
+interpreter('python2', 'Python').
+interpreter('python3', 'Python').
+interpreter('qmake', 'QMake').
+interpreter('Rscript', 'R').
+interpreter('regina', 'REXX').
+interpreter('rexx', 'REXX').
+interpreter('racket', 'Racket').
+interpreter('ocaml', 'Reason').
+interpreter('ruby', 'Ruby').
+interpreter('macruby', 'Ruby').
+interpreter('rake', 'Ruby').
+interpreter('jruby', 'Ruby').
+interpreter('rbx', 'Ruby').
+interpreter('boolector', 'SMT').
+interpreter('cvc4', 'SMT').
+interpreter('mathsat5', 'SMT').
+interpreter('opensmt', 'SMT').
+interpreter('smtinterpol', 'SMT').
+interpreter('smt-rat', 'SMT').
+interpreter('stp', 'SMT').
+interpreter('verit', 'SMT').
+interpreter('yices2', 'SMT').
+interpreter('z3', 'SMT').
+interpreter('scala', 'Scala').
+interpreter('guile', 'Scheme').
+interpreter('bigloo', 'Scheme').
+interpreter('chicken', 'Scheme').
+interpreter('csi', 'Scheme').
+interpreter('gosh', 'Scheme').
+interpreter('r6rs', 'Scheme').
+interpreter('ash', 'Shell').
+interpreter('bash', 'Shell').
+interpreter('dash', 'Shell').
+interpreter('ksh', 'Shell').
+interpreter('mksh', 'Shell').
+interpreter('pdksh', 'Shell').
+interpreter('rc', 'Shell').
+interpreter('sh', 'Shell').
+interpreter('zsh', 'Shell').
+interpreter('sclang', 'SuperCollider').
+interpreter('scsynth', 'SuperCollider').
+interpreter('tclsh', 'Tcl').
+interpreter('wish', 'Tcl').
+interpreter('lua', 'Terra').
+interpreter('fish', 'fish').
 
