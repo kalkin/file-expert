@@ -26,6 +26,6 @@ heuristic(_, [_], multiple_posibilities).
 fileType(PATH, RESULT):-
     fileExtension(PATH, EXT),
     setof(TYPE, typeExtension(TYPE, EXT), POSSIBLE_TYPES),
-    heuristic(PATH, POSSIBLE_TYPES, RESULT);
-    shebangType(PATH, RESULT);
+    heuristic(PATH, POSSIBLE_TYPES, RESULT), !, true;
+    shebangType(PATH, RESULT), !, true;
     RESULT = unknown_type.
