@@ -1,8 +1,17 @@
-# About
+# file-expert(1) -- Guess the file type
+
+## SYNOPSIS
+
+  `file-expert` <FILE>... <br>
+
+## DESCRIPTION
 
 A file type recognition system similar to GitHub/linguist in Prolog
 
-## Usage
+## BUILDING
 
-1. Start the interpreter: `swipl file-expert.pl`
-2. Ask for type of file **foo/bar/buz.py**: `fileType("foo/bar/buz.py", TYPE).`
+Just run `make`.
+
+## AUTHOR
+
+Written by Bahtiar \`kalkin-\` Gadimov.
