@@ -45,7 +45,8 @@ fileType(PATH, RESULT):-
     RESULT = unknown_type.
 
 main(Argv) :-
-        guess(Argv).
+        guess(Argv),
+        halt(0).
 
 guess([]):-
     write("No files specified"), nl,
