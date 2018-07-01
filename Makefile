@@ -8,7 +8,7 @@ check: file-expert linguist/samples
 	./test
 
 linguist/samples:
-	git submodule update --depth=1 --init linguist/
+	git submodule update --init linguist
 
 clean:
 	rm -f github-extensions-kb.pl
