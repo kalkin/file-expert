@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 run_test() {
 passed=0
@@ -10,13 +10,13 @@ check() {
     lang=$1
     for file in "$SAMPLES/$lang"/*; do
         if [ -f "$file" ]; then
-            result=$(./file-expert "$file") || unrecognized=$((unrecognized + 1))
+            result=$(./file-expert "$file"|cut -f2) || unrecognized=$((unrecognized + 1))
             [ -z "$result" ] && continue
             if [ "$result" = "$lang" ]; then
                 passed=$((passed + 1))
             else
                 misrecognized=$((misrecognized + 1))
-                echo "FAIL: $lang != $result → $file"
+                echo "FAIL: $result != $lang"$'\t'"$file"
             fi
         fi
 
