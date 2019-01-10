@@ -44,17 +44,26 @@ fileType(PATH, RESULT):-
     shebangType(PATH, RESULT), !, true;
     RESULT = unknown_type.
 
+say(File, unknown_type):-
+    write(File), write('\t'), write('Unknown type'), nl.
+
+say(File, multiple_possibilities):-
+    write(File), write('\t'), write('Unknown type'), nl.
+
+say(File, Type):-
+    write(File), write('\t'), write(Type), nl.
+
 guess([]):-
     write("No files specified"), nl,
     halt(1).
 
 guess([Last]) :- !,
         fileType(Last, Type),
-        write(Type), nl.
+        say(Last, Type).
 
 guess([H|Rest]) :-
         fileType(H, Type),
-        write(Type), nl,
+        say(H, Type),
         guess(Rest).
 
 read_args([]):-
