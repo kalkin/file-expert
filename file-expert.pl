@@ -44,10 +44,10 @@ fileType(PATH, RESULT):-
     RESULT = unknown_type.
 
 say(File, unknown_type):-
-    write(File), write('\t'), write('Unknown type'), nl.
+    write(File), write('\t'), write('Unknown file'), nl.
 
 say(File, multiple_possibilities):-
-    write(File), write('\t'), write('Unknown type'), nl.
+    write(File), write('\t'), write('Unknown file'), nl.
 
 say(File, Type):-
     write(File), write('\t'), write(Type), nl.
