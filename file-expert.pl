@@ -1,4 +1,4 @@
-:- ['github-extensions-kb'].
+:- ['github-extensions-kb', 'extra-extensions-kb'].
 
 bang('#!').
 bang('#! ').
