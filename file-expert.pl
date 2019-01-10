@@ -39,8 +39,8 @@ heuristic(_, _, multiple_possibilities).
 fileType(PATH, RESULT):-
     fileExtension(PATH, EXT),
     setof(TYPE, typeExtension(TYPE, EXT), POSSIBLE_TYPES),
-    heuristic(PATH, POSSIBLE_TYPES, RESULT), !, true;
-    shebangType(PATH, RESULT), !, true;
+    heuristic(PATH, POSSIBLE_TYPES, RESULT);
+    shebangType(PATH, RESULT);
     RESULT = unknown_type.
 
 say(File, unknown_type):-
