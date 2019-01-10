@@ -44,10 +44,6 @@ fileType(PATH, RESULT):-
     shebangType(PATH, RESULT), !, true;
     RESULT = unknown_type.
 
-main(Argv) :-
-        guess(Argv),
-        halt(0).
-
 guess([]):-
     write("No files specified"), nl,
     halt(1).
@@ -60,3 +56,21 @@ guess([H|Rest]) :-
         fileType(H, Type),
         write(Type), nl,
         guess(Rest).
+
+read_args([]):-
+    at_end_of_stream(user_input).
+
+read_args([H|T]):-
+    \+ at_end_of_stream(user_input),
+    read_line_to_string(user_input, H),
+    read_args(T).
+
+main([]) :-
+    prompt(_, ''),
+    read_args(Argv),
+    guess(Argv),
+    halt(0).
+
+main(Argv) :-
+        guess(Argv),
+        halt(0).
