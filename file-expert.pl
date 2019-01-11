@@ -10,12 +10,17 @@ executablePath('/usr/bin/env ').
 executablePath('/usr/local/bin/').
 executablePath('/usr/sbin/').
 
-fileExtension(PATH, EXT):-
+parse_extension(PATH, EXT):-
     file_base_name(PATH, NAME),
     split_string(NAME, ".", "", LIST),
     reverse(LIST, [EXT_STR|_]),
     not(atom_string(NAME, EXT_STR)),
     atom_concat('.', EXT_STR, EXT).
+
+read_file(Path, String):-
+    open(Path, read, Stream, []),
+    Length is 50*1024,
+    read_string(Stream, Length, String).
 
 
 fileFirstLine(PATH, FIRST_LINE):-
@@ -35,18 +40,24 @@ shebang(Cmd, MagicLine):-
     atom_concat(Bang, Path, Tmp),
     atom_concat(Tmp, Cmd, MagicLine).
 
-heuristic(_, [], unknown_type).
+guess_file(Path, Language):-
+    file_base_name(Path, File), filename(Language, File).
 
-heuristic(_, [X], X).
+guess_file(Path, Language):-
+    parse_extension(Path, Ext),
+    file_extension(Ext, Language, Pattern),
+    re_compile(Pattern, RegEx, [multiline(true)]),
+    read_file(Path, String),
+    re_match(RegEx, String).
 
-heuristic(_, _, multiple_possibilities).
+guess_file(Path, Language):-
+    parse_extension(Path, Ext),
+    file_extension(Ext, Language).
 
-fileType(PATH, RESULT):-
-    fileExtension(PATH, EXT),
-    setof(TYPE, typeExtension(TYPE, EXT), POSSIBLE_TYPES),
-    heuristic(PATH, POSSIBLE_TYPES, RESULT);
-    shebangType(PATH, RESULT);
-    RESULT = unknown_type.
+guess_file(Path, Language):-
+    shebangType(Path, Language).
+
+guess_file(_, unknown_type).
 
 say(File, unknown_type):-
     write(File), write('\t'), write('Unknown file'), nl.
@@ -62,11 +73,11 @@ guess([]):-
     halt(1).
 
 guess([Last]) :- !,
-        fileType(Last, Type),
+        guess_file(Last, Type),
         say(Last, Type).
 
 guess([H|Rest]) :-
-        fileType(H, Type),
+        guess_file(H, Type),
         say(H, Type),
         guess(Rest).
 
