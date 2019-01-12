@@ -22,7 +22,7 @@ fileFirstLine(PATH, FIRST_LINE):-
 shebangType(PATH, TYPE):-
     fileFirstLine(PATH, MagicLine),
     shebang(Cmd, MagicLine),
-    interpreter(Cmd, TYPE).
+    interpreter(TYPE, Cmd).
 
 shebang(Cmd, MagicLine):-
     bang(Bang),

@@ -7,7 +7,7 @@ There are three kind of rules which are generated from “./languages.yml” fil
 
 ⒈ typeExtension(Language, Extension).
 ⒉ filename(Language, Filename).
-⒊ interpreter(Interpreter, Language).
+⒊ interpreter(Language, Interpreter).
 '''
 
 import yaml
@@ -30,5 +30,5 @@ with open("languages.yml", 'r') as stream:
         lang_name = escape_name(name)
         if 'interpreters' in lang_data:
             for inter in lang_data['interpreters']:
-                print("interpreter('%s', '%s')." % (inter, lang_name))
+                print("interpreter('%s', '%s')." % (lang_name, inter))
     print("")
