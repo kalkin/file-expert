@@ -17,7 +17,8 @@ fileExtension(PATH, EXT):-
 fileFirstLine(PATH, FIRST_LINE):-
     exists_file(PATH),
     open(PATH, read, Stream),
-    read_line_to_string(Stream, FIRST_LINE).
+    read_line_to_string(Stream, FIRST_LINE),
+    close(Stream).
 
 shebangType(PATH, TYPE):-
     fileFirstLine(PATH, MagicLine),
