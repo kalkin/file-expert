@@ -17,3 +17,7 @@ clean:
 
 distclean: clean
 	git submodule deinit linguist/
+
+.PHONY: test
+test:
+	./test

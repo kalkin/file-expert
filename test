@@ -1,43 +1,34 @@
 #!/bin/bash
 
-run_test() {
-passed=0
-unrecognized=0
-misrecognized=0
+quit() {
+    exit 1
+}
+
+trap quit SIGINT SIGTERM
+
 SAMPLES=linguist/samples
 
 check() {
     lang=$1
-    for file in "$SAMPLES/$lang"/*; do
-        if [ -f "$file" ]; then
-            result=$(./file-expert "$file"|cut -f2) || unrecognized=$((unrecognized + 1))
-            [ -z "$result" ] && continue
+    git --git-dir=linguist/.git ls-files "samples/$lang" \
+        |while read -r line; do echo "linguist/$line"; done |./file-expert \
+        |while read -r line; do
+            result=$(echo "$line"|cut -f2)
+            filename=$(echo "$line"|cut -f1)
             if [ "$result" = "$lang" ]; then
-                passed=$((passed + 1))
+                echo "PASS"
             elif [ "$result" = "Unknown file" ]; then
-                unrecognized=$((unrecognized + 1))
-                echo "????: $result != $lang"$'\t'"$file"
+                echo "????: $result != $lang"$'\t'"$filename" > /dev/stderr
+                echo "???"
             else
-                misrecognized=$((misrecognized + 1))
-                echo "FAIL: $result != $lang"$'\t'"$file"
+                echo "FAIL: $result != $lang"$'\t'"$filename" > /dev/stderr
+                echo "FAIL"
             fi
-        fi
-
-    done
+        done;
 }
 
 for smth in "$SAMPLES"/*; do
     if [ -d "$smth" ]; then
         check "$(basename "$smth")"
     fi
-done;
-
-echo "PASSED: $passed"
-echo "misrecognized: $misrecognized"
-echo "unrecognized: $unrecognized"
-
-[ $misrecognized -eq 0 ] && exit 0
-exit 1
-}
-
-run_test
+done|cut -d: -f1|sort|uniq -c
