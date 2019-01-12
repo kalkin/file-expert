@@ -14,6 +14,9 @@ check() {
             [ -z "$result" ] && continue
             if [ "$result" = "$lang" ]; then
                 passed=$((passed + 1))
+            elif [ "$result" = "Unknown file" ]; then
+                unrecognized=$((unrecognized + 1))
+                echo "????: $result != $lang"$'\t'"$file"
             else
                 misrecognized=$((misrecognized + 1))
                 echo "FAIL: $result != $lang"$'\t'"$file"
