@@ -19,5 +19,5 @@ distclean: clean
 	git submodule deinit linguist/
 
 .PHONY: test
-test:
+test: file-expert
 	./test
