@@ -85,3 +85,11 @@ file_extension('.v', 'Verilog', '^\\s*endmodule\\s*$').
 file_extension('.vhost', 'ApacheConf', "</(VirtualHost|Directory)").
 file_extension('.vhost', 'Nginx', "\\blocation\\b").
 file_extension('.workflow', 'XML', '<\\?xml').
+
+interpreter('Python', 'python2.1').
+interpreter('Python', 'python2.2').
+interpreter('Python', 'python2.3').
+interpreter('Python', 'python2.4').
+interpreter('Python', 'python2.5').
+interpreter('Python', 'python2.6').
+interpreter('Python', 'python2.7').
