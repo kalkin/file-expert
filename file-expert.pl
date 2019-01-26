@@ -15,7 +15,8 @@ parse_extension(PATH, EXT):-
     split_string(NAME, ".", "", LIST),
     reverse(LIST, [EXT_STR|_]),
     not(atom_string(NAME, EXT_STR)),
-    atom_concat('.', EXT_STR, EXT).
+    atom_concat('.', EXT_STR, EXT_TMP),
+    downcase_atom(EXT_TMP, EXT).
 
 read_file(Path, String):-
     open(Path, read, Stream, []),
