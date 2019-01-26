@@ -23,5 +23,6 @@ file_extension('.mod', 'Linux Kernel Module', "^[a-zA-Z0-9/_-]+\\.(ko|o)$").
 file_extension('.re', 'Reason', '\\blet\\b').
 file_extension('.pluginspec', 'XML', '<\\\\\\w+>').
 file_extension('.shader', 'ShaderLab', '^\\s*Shader\s+".*"$').
+file_extension('.st', 'HTML', '<\\\\\\w+>').
 file_extension('.t', 'Perl 6', '^\\s*use\\s+Test\\s*;').
 file_extension('.v', 'Verilog', '^\\s*endmodule\\s*$').
