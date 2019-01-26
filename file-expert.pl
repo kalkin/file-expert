@@ -13,6 +13,34 @@ executablePath('/usr/sbin/').
 parse_extension(PATH, EXT):-
     file_base_name(PATH, NAME),
     split_string(NAME, ".", "", LIST),
+    reverse(LIST, [EXT_STR1, EXT_STR2|_]),
+    not(atom_string(NAME, EXT_STR1)),
+    not(atom_string(NAME, EXT_STR2)),
+    atom_concat('.', EXT_STR1, EXT_TMP1),
+    atom_concat('.', EXT_STR2, EXT_TMP2),
+    atom_concat(EXT_TMP2, EXT_TMP1, EXT).
+
+parse_extension(PATH, EXT):-
+    file_base_name(PATH, NAME),
+    split_string(NAME, ".", "", LIST),
+    reverse(LIST, [EXT_STR|_]),
+    not(atom_string(NAME, EXT_STR)),
+    atom_concat('.', EXT_STR, EXT).
+
+parse_extension(PATH, EXT):-
+    file_base_name(PATH, NAME),
+    split_string(NAME, ".", "", LIST),
+    reverse(LIST, [EXT_STR1, EXT_STR2|_]),
+    not(atom_string(NAME, EXT_STR1)),
+    not(atom_string(NAME, EXT_STR2)),
+    atom_concat('.', EXT_STR1, EXT_TMP1),
+    atom_concat('.', EXT_STR2, EXT_TMP2),
+    atom_concat(EXT_TMP2, EXT_TMP1, EXT_RES),
+    downcase_atom(EXT_RES, EXT).
+
+parse_extension(PATH, EXT):-
+    file_base_name(PATH, NAME),
+    split_string(NAME, ".", "", LIST),
     reverse(LIST, [EXT_STR|_]),
     not(atom_string(NAME, EXT_STR)),
     atom_concat('.', EXT_STR, EXT_TMP),
