@@ -17,4 +17,5 @@ filename('Dircolors', 'LS_COLORS').
 file_extension('WOFF', '.woff').
 file_extension('.zunit', 'Shell').
 file_extension('.cfg', 'HAProxy', '^(global|default|frontend|backend)\\s*\n\\s+').
+file_extension('.inc', 'Pascal', "^\\s*end[.;]").
 file_extension('.v', 'Verilog', '^\\s*endmodule\\s*$').
