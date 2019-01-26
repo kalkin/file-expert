@@ -19,6 +19,7 @@ file_extension('.zunit', 'Shell').
 file_extension('.cfg', 'HAProxy', '^(global|default|frontend|backend)\\s*\n\\s+').
 file_extension('.inc', 'Pascal', "^\\s*end[.;]").
 file_extension('.fcgi', 'PHP', "<\\?php").
+file_extension('.mod', 'Linux Kernel Module', "^[a-zA-Z0-9/_-]+\\.(ko|o)$").
 file_extension('.re', 'Reason', '\\blet\\b').
 file_extension('.shader', 'ShaderLab', '^\\s*Shader\s+".*"$').
 file_extension('.v', 'Verilog', '^\\s*endmodule\\s*$').
