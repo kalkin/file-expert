@@ -35,6 +35,12 @@ shebangType(PATH, TYPE):-
     shebang(Cmd, MagicLine),
     interpreter(TYPE, Cmd).
 
+shebangType(PATH, TYPE):-
+    fileFirstLine(PATH, MagicLineTmp),
+    split_string(MagicLineTmp, " ", "", [MagicLine|_]),
+    shebang(Cmd, MagicLine),
+    interpreter(TYPE, Cmd).
+
 shebang(Cmd, MagicLine):-
     bang(Bang),
     executablePath(Path),
