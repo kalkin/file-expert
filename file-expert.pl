@@ -52,11 +52,12 @@ guess_file(Path, Language):-
     re_match(RegEx, String).
 
 guess_file(Path, Language):-
-    parse_extension(Path, Ext),
-    file_extension(Ext, Language).
+    shebangType(Path, Language).
+
 
 guess_file(Path, Language):-
-    shebangType(Path, Language).
+    parse_extension(Path, Ext),
+    file_extension(Ext, Language).
 
 guess_file(_, unknown_type).
 
