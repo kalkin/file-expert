@@ -75,19 +75,22 @@ shebang(Cmd, MagicLine):-
     atom_concat(Bang, Path, Tmp),
     atom_concat(Tmp, Cmd, MagicLine).
 
+match_regex(String, Pattern):-
+    re_compile(Pattern, RegEx, [multiline(true)]),
+    re_match(RegEx, String),
+    re_flush().
+
 guess_file(Path, Language):-
     file_base_name(Path, File), filename(Language, File).
 
 guess_file(Path, Language):-
     parse_extension(Path, Ext),
     file_extension(Ext, Language, Pattern),
-    re_compile(Pattern, RegEx, [multiline(true)]),
     read_file(Path, String),
-    re_match(RegEx, String).
+    match_regex(String, Pattern).
 
 guess_file(Path, Language):-
     shebangType(Path, Language).
-
 
 guess_file(Path, Language):-
     parse_extension(Path, Ext),
