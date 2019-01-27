@@ -32,6 +32,9 @@ RESULT = {}
 FILENAMES = []
 INTERPRETER = []
 IGNORED = {
+    'Ruby': ['.spec'],
+    'Python': ['.spec'],
+    'RPM Spec': ['.spec'],
 }
 
 
