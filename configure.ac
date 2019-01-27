@@ -7,6 +7,13 @@ if test x"${SWIPL}" != x"yes"; then
     AC_MSG_ERROR([Please install SWI Prolog])
 fi
 
+AC_MSG_CHECKING([for SWI Prolog version])
+SWIPL_VERSION=$(swipl --version|cut -d" " -f3|cut -d"." -f1)
+AC_MSG_RESULT([$SWIPL_VERSION])
+if test "${SWIPL_VERSION}" -lt 8; then
+    AC_MSG_ERROR([Please install SWI Prolog version ≥ 8])
+fi
+
 AC_CHECK_PROG(PYTHON, python3, yes)
 if test x"${PYTHON}" != x"yes"; then
     AC_MSG_ERROR([Please install Python 3])
