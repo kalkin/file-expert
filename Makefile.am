@@ -1,4 +1,9 @@
-file-expert: file-expert.pl github-extensions-kb.pl extra-extensions-kb.pl
+bin_PROGRAMS = file-expert
+file_expert_SOURCES = file-expert.pl \
+					  extra-extensions-kb.pl \
+					  github-extensions-kb.pl
+
+file-expert$(EXEEXT): $(file_expert_SOURCES)
 	swipl -o file-expert -g main -c file-expert.pl github-extensions-kb.pl extra-extensions-kb.pl
 
 github-extensions-kb.pl: transform.py languages.yml
@@ -8,19 +13,5 @@ github-extensions-kb.pl: transform.py languages.yml
 	@echo ":- multifile interpreter/2." >> github-extensions-kb.pl
 	python3 transform.py languages.yml >> github-extensions-kb.pl
 
-check: file-expert linguist/samples
-	./test
-
-linguist/samples:
-	git submodule update --init linguist
-
-clean:
-	rm -f github-extensions-kb.pl
-	rm -f file-expert
-
-distclean: clean
-	git submodule deinit linguist/
-
-.PHONY: test
-test: file-expert
-	./test
+clean-local:
+	-rm -f github-extensions-kb.pl
