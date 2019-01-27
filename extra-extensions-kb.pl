@@ -1,3 +1,4 @@
 :- multifile typeExtension/2.
-typeExtension('WOFF', '.woff').
+file_extension('WOFF', '.woff').
+filename('Markdown', 'README.md').
 
