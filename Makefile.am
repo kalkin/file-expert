@@ -3,6 +3,8 @@ file_expert_SOURCES = file-expert.pl \
 					  extra-extensions-kb.pl \
 					  github-extensions-kb.pl
 
+EXTRA_DIST = transform.py languages.yml heuristics.yml
+
 file-expert$(EXEEXT): $(file_expert_SOURCES)
 	swipl -o file-expert -g main -c file-expert.pl github-extensions-kb.pl extra-extensions-kb.pl
 
