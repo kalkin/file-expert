@@ -28,7 +28,7 @@ else
 fi
 
 BKG_ENABLE_XDG
-BKG_PACKAGE_INFO(["Expert system for recognizing different files."])
+BKG_PACKAGE_INFO(["Expert system for recognizing file types."])
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
 
