@@ -17,3 +17,6 @@ github-extensions-kb.pl: transform.py languages.yml
 
 clean-local:
 	-rm -f github-extensions-kb.pl
+
+distclean:
+	@cat .gitignore|grep -v '\s*#'|grep .|sed 's#^/#./#'|xargs rm -frv
