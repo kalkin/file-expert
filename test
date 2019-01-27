@@ -13,6 +13,8 @@ check() {
     git --git-dir=linguist/.git ls-files "samples/$lang" \
         |while read -r line; do echo "linguist/$line"; done |./file-expert \
         |while read -r line; do
+            [ "$lang" = "Fstar" ] && lang="F*"
+            [ "$lang" = "Java Properties" ] && lang="Java properties"
             result=$(echo "$line"|cut -f2)
             filename=$(echo "$line"|cut -f1)
             if [ "$result" = "$lang" ]; then
