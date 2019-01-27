@@ -2,9 +2,13 @@
 
 bang('#!').
 bang('#! ').
-executablePath('/bin').
-executablePath('/usr/bin').
+executablePath('/bin/').
+executablePath('/opt/bin/').
+executablePath('/sbin/').
+executablePath('/usr/bin/').
 executablePath('/usr/bin/env ').
+executablePath('/usr/local/bin/').
+executablePath('/usr/sbin/').
 
 fileExtension(PATH, EXT):-
     file_base_name(PATH, NAME),
