@@ -35,6 +35,8 @@ IGNORED = {
     'Ruby': ['.spec'],
     'Python': ['.spec'],
     'RPM Spec': ['.spec'],
+    'Eagle': ['.sch'],
+    'KiCad Schematic': ['.sch'],
 }
 
 

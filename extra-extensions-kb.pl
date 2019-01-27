@@ -75,7 +75,12 @@ file_extension('.bf', 'HyPhy', '/\\*').
 file_extension('.b', 'Limbo', "^\\s*include\\s+\".*\"\\s*;").
 file_extension('.md', 'GCC Machine Description', "^\\s*\\(define ").
 file_extension('.b', 'Limbo', "^\\w+\\s*:\\s*module\\s*{").
+file_extension('.brd', 'Eagle', '!DOCTYPE eagle').
 file_extension('.pluginspec', 'XML', "</\\w+>").
+file_extension('.sch', 'Eagle', '!DOCTYPE eagle').
+file_extension('.sch', 'KiCad Schematic', "\\bWire\\s+\\w+Line\\n").
+file_extension('.sch', 'KiCad Schematic', "^\\w [0-9 ]+$").
+file_extension('.sch', 'KiCad Schematic', "^\\s*LIBS:").
 file_extension('.sch', 'XML', "<\\?xml").
 file_extension('.shader', 'ShaderLab', "^\\s*Shader\s+\".*\"$").
 file_extension('.spec', 'RPM Spec', '^\\s*Name:\\s*.*$').
