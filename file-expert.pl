@@ -2,49 +2,49 @@
 
 bang('#!').
 bang('#! ').
-executablePath('/bin/').
-executablePath('/opt/bin/').
-executablePath('/sbin/').
-executablePath('/usr/bin/').
-executablePath('/usr/bin/env ').
-executablePath('/usr/local/bin/').
-executablePath('/usr/sbin/').
+shebang_path('/bin/').
+shebang_path('/opt/bin/').
+shebang_path('/sbin/').
+shebang_path('/usr/bin/').
+shebang_path('/usr/bin/env ').
+shebang_path('/usr/local/bin/').
+shebang_path('/usr/sbin/').
 
-parse_extension(PATH, EXT):-
-    file_base_name(PATH, NAME),
-    split_string(NAME, ".", "", LIST),
-    reverse(LIST, [EXT_STR1, EXT_STR2|_]),
-    not(atom_string(NAME, EXT_STR1)),
-    not(atom_string(NAME, EXT_STR2)),
-    atom_concat('.', EXT_STR1, EXT_TMP1),
-    atom_concat('.', EXT_STR2, EXT_TMP2),
-    atom_concat(EXT_TMP2, EXT_TMP1, EXT).
+parse_extension(Path, Ext):-
+    file_base_name(Path, Name),
+    split_string(Name, ".", "", List),
+    reverse(List, [ExtStr1, ExtStr2|_]),
+    not(atom_string(Name, ExtStr1)),
+    not(atom_string(Name, ExtStr2)),
+    atom_concat('.', ExtStr1, ExtTmp1),
+    atom_concat('.', ExtStr2, ExtTmp2),
+    atom_concat(ExtTmp2, ExtTmp1, Ext).
 
-parse_extension(PATH, EXT):-
-    file_base_name(PATH, NAME),
-    split_string(NAME, ".", "", LIST),
-    reverse(LIST, [EXT_STR|_]),
-    not(atom_string(NAME, EXT_STR)),
-    atom_concat('.', EXT_STR, EXT).
+parse_extension(Path, Ext):-
+    file_base_name(Path, Name),
+    split_string(Name, ".", "", List),
+    reverse(List, [ExtStr|_]),
+    not(atom_string(Name, ExtStr)),
+    atom_concat('.', ExtStr, Ext).
 
-parse_extension(PATH, EXT):-
-    file_base_name(PATH, NAME),
-    split_string(NAME, ".", "", LIST),
-    reverse(LIST, [EXT_STR1, EXT_STR2|_]),
-    not(atom_string(NAME, EXT_STR1)),
-    not(atom_string(NAME, EXT_STR2)),
-    atom_concat('.', EXT_STR1, EXT_TMP1),
-    atom_concat('.', EXT_STR2, EXT_TMP2),
-    atom_concat(EXT_TMP2, EXT_TMP1, EXT_RES),
-    downcase_atom(EXT_RES, EXT).
+parse_extension(Path, Ext):-
+    file_base_name(Path, Name),
+    split_string(Name, ".", "", List),
+    reverse(List, [ExtStr1, ExtStr2|_]),
+    not(atom_string(Name, ExtStr1)),
+    not(atom_string(Name, ExtStr2)),
+    atom_concat('.', ExtStr1, ExtTmp1),
+    atom_concat('.', ExtStr2, ExtTmp2),
+    atom_concat(ExtTmp2, ExtTmp1, ExtRes),
+    downcase_atom(ExtRes, Ext).
 
-parse_extension(PATH, EXT):-
-    file_base_name(PATH, NAME),
-    split_string(NAME, ".", "", LIST),
-    reverse(LIST, [EXT_STR|_]),
-    not(atom_string(NAME, EXT_STR)),
-    atom_concat('.', EXT_STR, EXT_TMP),
-    downcase_atom(EXT_TMP, EXT).
+parse_extension(Path, Ext):-
+    file_base_name(Path, Name),
+    split_string(Name, ".", "", List),
+    reverse(List, [ExtStr|_]),
+    not(atom_string(Name, ExtStr)),
+    atom_concat('.', ExtStr, ExtTmp),
+    downcase_atom(ExtTmp, Ext).
 
 read_file(Path, String):-
     open(Path, read, Stream, []),
@@ -52,26 +52,26 @@ read_file(Path, String):-
     read_string(Stream, Length, String).
 
 
-fileFirstLine(PATH, FIRST_LINE):-
-    exists_file(PATH),
-    open(PATH, read, Stream),
-    read_line_to_string(Stream, FIRST_LINE),
+first_line(Path, FirstLine):-
+    exists_file(Path),
+    open(Path, read, Stream),
+    read_line_to_string(Stream, FirstLine),
     close(Stream).
 
-shebangType(PATH, TYPE):-
-    fileFirstLine(PATH, MagicLine),
+shebang_exec(Path, Type):-
+    first_line(Path, MagicLine),
     shebang(Cmd, MagicLine),
-    interpreter(TYPE, Cmd).
+    interpreter(Type, Cmd).
 
-shebangType(PATH, TYPE):-
-    fileFirstLine(PATH, MagicLineTmp),
+shebang_exec(Path, Type):-
+    first_line(Path, MagicLineTmp),
     split_string(MagicLineTmp, " ", "", [MagicLine|_]),
     shebang(Cmd, MagicLine),
-    interpreter(TYPE, Cmd).
+    interpreter(Type, Cmd).
 
 shebang(Cmd, MagicLine):-
     bang(Bang),
-    executablePath(Path),
+    shebang_path(Path),
     atom_concat(Bang, Path, Tmp),
     atom_concat(Tmp, Cmd, MagicLine).
 
@@ -90,7 +90,7 @@ guess_file(Path, Language):-
     match_regex(String, Pattern).
 
 guess_file(Path, Language):-
-    shebangType(Path, Language).
+    shebang_exec(Path, Language).
 
 guess_file(Path, Language):-
     parse_extension(Path, Ext),
