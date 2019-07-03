@@ -143,12 +143,12 @@ read_args([]):-
 read_args([H|T]):-
     \+ at_end_of_stream(user_input),
     read_line_to_string(user_input, H),
+    guess([H]),
     read_args(T).
 
 main([]) :-
     prompt(_, ''),
     read_args(Argv),
-    guess(Argv),
     halt(0).
 
 main(Argv) :-
