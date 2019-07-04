@@ -66,7 +66,8 @@ parse_extension(Path, Ext):-
 read_file(Path, String):-
     open(Path, read, Stream, []),
     Length is 50*1024,
-    read_string(Stream, Length, String).
+    read_string(Stream, Length, String),
+    close(Stream).
 
 
 first_line(Path, FirstLine):-
