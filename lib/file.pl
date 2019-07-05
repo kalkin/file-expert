@@ -9,6 +9,12 @@ extension(Name, _):-
     split_string(Name, ".", "", ["", _]), !, false.
 
 extension(Name, Ext):-
+    split_string(Name, ".", "", [""|Rest]), !,
+    atomic_list_concat(Rest, '.', NewNameAtomic),
+    atom_string(NewNameAtomic, NewName),
+    extension(NewName, Ext).
+
+extension(Name, Ext):-
     split_string(Name, ".", "", List),
     reverse(List, [ExtStr1, ExtStr2|_]),
     not(atom_string(Name, ExtStr1)),

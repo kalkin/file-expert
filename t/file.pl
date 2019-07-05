@@ -11,7 +11,8 @@ test("One possible extension"):-
     parse_extension("asda.foo", ".foo").
 
 test("One possible extension for a file starting with a dot"):-
-    parse_extension(".asda.foo", ".foo").
+    parse_extension(".asda.foo", X),
+    assertion(X = ".foo").
 
 test("Filename with version number separated by dots"):-
     parse_extension("linguist/samples/Easybuild/bzip2-1.0.6-GCC-4.9.2.eb", ".eb").
