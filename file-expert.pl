@@ -17,6 +17,8 @@
 
 :- ['extra-extensions-kb', 'github-extensions-kb'].
 
+:- use_module('lib/file').
+
 bang('#!').
 bang('#! ').
 shebang_path('/bin/').
@@ -27,41 +29,6 @@ shebang_path('/usr/bin/env ').
 shebang_path('/usr/local/bin/').
 shebang_path('/usr/sbin/').
 
-parse_extension(Path, Ext):-
-    file_base_name(Path, Name),
-    split_string(Name, ".", "", List),
-    reverse(List, [ExtStr1, ExtStr2|_]),
-    not(atom_string(Name, ExtStr1)),
-    not(atom_string(Name, ExtStr2)),
-    atom_concat('.', ExtStr1, ExtTmp1),
-    atom_concat('.', ExtStr2, ExtTmp2),
-    atom_concat(ExtTmp2, ExtTmp1, Ext).
-
-parse_extension(Path, Ext):-
-    file_base_name(Path, Name),
-    split_string(Name, ".", "", List),
-    reverse(List, [ExtStr|_]),
-    not(atom_string(Name, ExtStr)),
-    atom_concat('.', ExtStr, Ext).
-
-parse_extension(Path, Ext):-
-    file_base_name(Path, Name),
-    split_string(Name, ".", "", List),
-    reverse(List, [ExtStr1, ExtStr2|_]),
-    not(atom_string(Name, ExtStr1)),
-    not(atom_string(Name, ExtStr2)),
-    atom_concat('.', ExtStr1, ExtTmp1),
-    atom_concat('.', ExtStr2, ExtTmp2),
-    atom_concat(ExtTmp2, ExtTmp1, ExtRes),
-    downcase_atom(ExtRes, Ext).
-
-parse_extension(Path, Ext):-
-    file_base_name(Path, Name),
-    split_string(Name, ".", "", List),
-    reverse(List, [ExtStr|_]),
-    not(atom_string(Name, ExtStr)),
-    atom_concat('.', ExtStr, ExtTmp),
-    downcase_atom(ExtTmp, Ext).
 
 read_file(Path, String):-
     open(Path, read, Stream, []),
