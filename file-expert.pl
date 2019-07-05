@@ -149,7 +149,7 @@ read_args([H|T]):-
 
 main([]) :-
     prompt(_, ''),
-    read_args(Argv),
+    read_args(_),
     halt(0).
 
 main(Argv) :-
