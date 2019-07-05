@@ -4,6 +4,9 @@ parse_extension(Path, Ext):-
     file_base_name(Path, Name),
     extension(Name, Ext).
 
+extension(Name, _):-
+    split_string(Name, ".", "", ["", _]), !, false.
+
 extension(Name, Ext):-
     split_string(Name, ".", "", List),
     reverse(List, [ExtStr1, ExtStr2|_]),

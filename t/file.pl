@@ -4,13 +4,13 @@
 test("File with no extension"):-
     \+ parse_extension("asda", _).
 
+test("No extension for '.foo'"):-
+    \+ parse_extension(".foo", _).
+
 test("One possible extension"):-
     parse_extension("asda.foo", ".foo").
 
-fixme("No extension for '.foo'"):-
-    \+ parse_extension(".foo", _).
-
-fixme("One possible extension for a file starting with a dot"):-
+test("One possible extension for a file starting with a dot"):-
     parse_extension(".asda.foo", ".foo").
 
 test("Filename with version number separated by dots"):-
