@@ -1,5 +1,6 @@
 bin_PROGRAMS = file-expert
 file_expert_SOURCES = lib/file.pl \
+					  src/file_expert.pl \
 					  file-expert.pl \
 					  extra-extensions-kb.pl \
 					  github-extensions-kb.pl

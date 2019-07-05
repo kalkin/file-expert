@@ -1,4 +1,4 @@
-:- module(file, [parse_extension/2, read_file/3]).
+:- module(file, [parse_extension/2, read_file/3, first_line/2]).
 
 parse_extension(Path, Ext):-
     file_base_name(Path, Name),
@@ -42,4 +42,10 @@ extension(Name, Ext):-
 read_file(Path, MaxLength, String):-
     open(Path, read, Stream, []),
     read_string(Stream, MaxLength, String),
+    close(Stream).
+
+first_line(Path, FirstLine):-
+    exists_file(Path),
+    open(Path, read, Stream),
+    read_line_to_string(Stream, FirstLine),
     close(Stream).
