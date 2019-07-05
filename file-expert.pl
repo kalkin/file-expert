@@ -30,13 +30,6 @@ shebang_path('/usr/local/bin/').
 shebang_path('/usr/sbin/').
 
 
-read_file(Path, String):-
-    open(Path, read, Stream, []),
-    Length is 10*1024,
-    read_string(Stream, Length, String),
-    close(Stream).
-
-
 first_line(Path, FirstLine):-
     exists_file(Path),
     open(Path, read, Stream),
@@ -70,8 +63,10 @@ guess_file(Path, Language):-
 
 guess_file(Path, Language):-
     parse_extension(Path, Ext),
+    MaxLength is 10*1024,
+    file:parse_extension(Path, Ext),
     file_extension(Ext, Language, Pattern),
-    read_file(Path, String),
+    file:read_file(Path, MaxLength, String),
     match_regex(String, Pattern).
 
 guess_file(Path, Language):-

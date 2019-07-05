@@ -1,4 +1,4 @@
-:- module(file, [parse_extension/2]).
+:- module(file, [parse_extension/2, read_file/3]).
 
 parse_extension(Path, Ext):-
     file_base_name(Path, Name),
@@ -36,3 +36,7 @@ extension(Name, Ext):-
     atom_concat('.', ExtStr, ExtTmp),
     downcase_atom(ExtTmp, Ext).
 
+read_file(Path, MaxLength, String):-
+    open(Path, read, Stream, []),
+    read_string(Stream, MaxLength, String),
+    close(Stream).
