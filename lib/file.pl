@@ -1,4 +1,5 @@
-:- module(file, [parse_extension/2, read_file/3, first_line/2]).
+:- module(file, [parse_extension/2, read_file/3, first_line/2,
+    list_files_recursive/2]).
 
 parse_extension(Path, Ext):-
     file_base_name(Path, Name),
@@ -49,3 +50,21 @@ first_line(Path, FirstLine):-
     open(Path, read, Stream),
     read_line_to_string(Stream, FirstLine),
     close(Stream).
+
+
+list_directory(Path, Dirs, Files):-
+    directory_files(Path, Tmp),
+    exclude([In]>>member(In, ['..', '.']), Tmp, Filtered),
+    maplist({Path}/[In,Out]>>(
+        atom_concat(Path, '/', PathTmp),
+        atom_concat(PathTmp, In, Out)
+    ), Filtered, Result),
+    include(exists_directory, Result, Dirs),
+    include(exists_file, Result, Files).
+
+list_files_recursive(Dir, Files):-
+    absolute_file_name(Dir, Path),
+    list_directory(Path, Dirs, CurFiles),
+    maplist(list_files_recursive, Dirs, MoreFiles),
+    append(CurFiles, MoreFiles, Tree),
+    flatten(Tree, Files).
