@@ -1,3 +1,4 @@
+:- [ '../extra-extensions-kb', '../github-extensions-kb'].
 :- begin_tests(linguist).
 :- use_module('../lib/file').
 :- use_module('../src/file_expert').

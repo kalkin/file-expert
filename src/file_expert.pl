@@ -1,6 +1,5 @@
 :- module(file_expert, [guess_file/2]).
 :- use_module('../lib/file').
-:- [ '../extra-extensions-kb', '../github-extensions-kb'].
 
 bang('#!').
 bang('#! ').
