@@ -1,14 +1,15 @@
 bin_PROGRAMS = file-expert
 file_expert_SOURCES = lib/file.pl \
 					  src/file_expert.pl \
-					  file-expert.pl \
+					  load.pl \
+					  run.pl \
 					  extra-extensions-kb.pl \
 					  github-extensions-kb.pl
 
 EXTRA_DIST = transform.py languages.yml heuristics.yml
 
 file-expert$(EXEEXT): $(file_expert_SOURCES)
-	swipl -o file-expert -g main -c file-expert.pl github-extensions-kb.pl extra-extensions-kb.pl
+	swipl -o file-expert -g main -c run.pl github-extensions-kb.pl extra-extensions-kb.pl load.pl
 
 github-extensions-kb.pl: transform.py languages.yml
 	@echo ":- multifile file_extension/3." > github-extensions-kb.pl

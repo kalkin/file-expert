@@ -15,31 +15,7 @@
 %  You should have received a copy of the GNU Affero General Public License
 %  along with file-expert.  If not, see <https://www.gnu.org/licenses/>.
 
-:- [ 'extra-extensions-kb', 'github-extensions-kb'].
-
-:- use_module('src/file_expert').
-
-say(File, unknown_type):-
-    write(File), write('\t'), write('Unknown file'), nl.
-
-say(File, multiple_possibilities):-
-    write(File), write('\t'), write('Unknown file'), nl.
-
-say(File, Type):-
-    write(File), write('\t'), write(Type), nl.
-
-guess([]):-
-    write("No files specified"), nl,
-    halt(1).
-
-guess([Last]) :- !,
-        guess_file(Last, Type),
-        say(Last, Type).
-
-guess([H|Rest]) :-
-        guess_file(H, Type),
-        say(H, Type),
-        guess(Rest).
+:- [ 'load' ].
 
 read_args([]):-
     at_end_of_stream(user_input).

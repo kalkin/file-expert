@@ -15,14 +15,28 @@
 %  You should have received a copy of the GNU Affero General Public License
 %  along with file-expert.  If not, see <https://www.gnu.org/licenses/>.
 
-:- [ '../extra-extensions-kb', '../github-extensions-kb'].
-:- begin_tests(linguist).
-:- use_module('../lib/file').
-:- use_module('../src/load').
-:- use_module('helpers').
 
-test("Linguist samples", [nondet,forall(helpers:expected_results([File, Type]))]):-
-    string_to_atom(Type, A),
-    guess_file(File, A).
+:- ['github-extensions-kb', 'extra-extensions-kb.pl' ].
+:- use_module('src/file_expert').
 
-:- end_tests(linguist).
+say(File, unknown_type):-
+    write(File), write('\t'), write('Unknown file'), nl.
+
+say(File, multiple_possibilities):-
+    write(File), write('\t'), write('Unknown file'), nl.
+
+say(File, Type):-
+    write(File), write('\t'), write(Type), nl.
+
+guess([]):-
+    write("No files specified"), nl,
+    halt(1).
+
+guess([Last]) :- !,
+        guess_file(Last, Type),
+        say(Last, Type).
+
+guess([H|Rest]) :-
+        guess_file(H, Type),
+        say(H, Type),
+        guess(Rest).
