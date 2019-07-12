@@ -23,3 +23,6 @@ clean-local:
 
 distclean:
 	@cat .gitignore|grep -v '\s*#'|grep .|sed 's#^/#./#'|xargs rm -frv
+
+test:
+	swipl -s debug.pl -g 'run_tests'

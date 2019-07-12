@@ -15,7 +15,6 @@
 %  You should have received a copy of the GNU Affero General Public License
 %  along with file-expert.  If not, see <https://www.gnu.org/licenses/>.
 
-:- [ '../extra-extensions-kb', '../github-extensions-kb'].
 :- begin_tests(linguist).
 :- use_module('../lib/file').
 :- use_module('../src/load').

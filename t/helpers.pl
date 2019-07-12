@@ -18,7 +18,7 @@
 :- module(helpers, [expected_results/1, sample_dir/1]).
 
 sample_dir(Path):-
-    absolute_file_name('../linguist/samples', Path).
+    absolute_file_name('linguist/samples', Path).
 
 as_choices([H|R], X):-
     X = H ; as_choices(R, X).
