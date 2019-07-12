@@ -18,17 +18,20 @@ check() {
             result=$(echo "$line"|cut -f2)
             filename=$(echo "$line"|cut -f1)
             if [ "$result" = "$lang" ]; then
-                echo "PASS"
+                printf '.' > /dev/stderr
             elif [ "$result" = "Unknown file" ]; then
-                echo "????: $result != $lang"$'\t'"$filename" > /dev/stderr
+                printf "?" > /dev/stderr
+                echo "????: $result != $lang"$'\t'"$filename" >> ./test-results
                 echo "???"
             else
-                echo "FAIL: $result != $lang"$'\t'"$filename" > /dev/stderr
+                printf "F" > /dev/stderr
+                echo "FAIL: $result != $lang"$'\t'"$filename" >> ./test-results
                 echo "FAIL"
             fi
         done;
 }
 
+rm -f ./test-results
 for smth in "$SAMPLES"/*; do
     if [ -d "$smth" ]; then
         check "$(basename "$smth")"
