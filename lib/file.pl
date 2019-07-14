@@ -20,48 +20,26 @@
 
 parse_extension(Path, Ext):-
     file_base_name(Path, Name),
-    extension(Name, Ext).
-
-extension(Name, _):-
-    split_string(Name, ".", "", ["", _]), !, false.
-
-extension(Name, Ext):-
-    split_string(Name, ".", "", [""|Rest]), !,
-    atomic_list_concat(Rest, '.', NewNameAtomic),
-    atom_string(NewNameAtomic, NewName),
-    extension(NewName, Ext).
-
-extension(Name, Ext):-
     split_string(Name, ".", "", List),
-    reverse(List, [ExtStr1, ExtStr2|_]),
-    not(atom_string(Name, ExtStr1)),
-    not(atom_string(Name, ExtStr2)),
-    atom_concat('.', ExtStr1, ExtTmp1),
-    atom_concat('.', ExtStr2, ExtTmp2),
-    atom_concat(ExtTmp2, ExtTmp1, Ext).
+    extension_from_name(List, Tmp),
+    (downcase_atom(Tmp, Ext); Ext = Tmp).
 
-extension(Name, Ext):-
-    split_string(Name, ".", "", List),
-    reverse(List, [ExtStr|_]),
-    not(atom_string(Name, ExtStr)),
-    atom_concat('.', ExtStr, Ext).
+extension_from_name([""|Tail], Ext):- !,
+    length(Tail, Length),
+    Length > 1,
+    extension_from_name(Tail, Ext).
 
-extension(Name, Ext):-
-    split_string(Name, ".", "", List),
-    reverse(List, [ExtStr1, ExtStr2|_]),
-    not(atom_string(Name, ExtStr1)),
-    not(atom_string(Name, ExtStr2)),
-    atom_concat('.', ExtStr1, ExtTmp1),
-    atom_concat('.', ExtStr2, ExtTmp2),
-    atom_concat(ExtTmp2, ExtTmp1, ExtRes),
-    downcase_atom(ExtRes, Ext).
+extension_from_name([_|Tail], Ext):-
+    length(Tail, Length),
+    Length > 0,
+    construct_extension(Tail, Ext).
 
-extension(Name, Ext):-
-    split_string(Name, ".", "", List),
-    reverse(List, [ExtStr|_]),
-    not(atom_string(Name, ExtStr)),
-    atom_concat('.', ExtStr, ExtTmp),
-    downcase_atom(ExtTmp, Ext).
+construct_extension([One], Ext):-
+    atom_concat('.', One, Ext).
+
+construct_extension([Head|Tail], Ext):-
+    atomic_list_concat([Head|Tail], '.', NewNameAtomic),
+    atom_concat('.', NewNameAtomic, Ext); construct_extension(Tail, Ext).
 
 read_file(Path, MaxLength, String):-
     open(Path, read, Stream, []),
