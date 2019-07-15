@@ -24,5 +24,8 @@ clean-local:
 distclean:
 	@cat .gitignore|grep -v '\s*#'|grep .|sed 's#^/#./#'|xargs rm -frv
 
-test:
-	swipl -s debug.pl -g 'run_tests'
+test: debug.pl $(file_expert_SOURCES)
+	swipl -s debug.pl -g 'run_tests, halt(0); halt(1)'
+
+save-skipped:
+	swipl -s debug.pl -g 'generate_skipped, halt(0); halt(1).'|sort > skipped.pl

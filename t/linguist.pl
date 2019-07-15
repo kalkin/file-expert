@@ -17,10 +17,12 @@
 
 :- begin_tests(linguist).
 :- use_module('../lib/file').
-:- use_module('../src/load').
-:- use_module('helpers').
 
-test("Linguist samples", [nondet,forall(helpers:expected_results([File, Type]))]):-
+test("Linguist samples", [
+    nondet,
+    forall(expected_results([File, Type])), 
+    condition(\+skipped(File))
+    ]):-
     string_to_atom(Type, A),
     guess_file(File, A).
 
