@@ -143,25 +143,6 @@ def parse_langs():
                     INTERPRETER.append((name, inter))
 
 
-def filter_rules():
-    ''' Filter out results which map to multiple extensions.'''
-    for ext in RESULT:
-        i = 0
-        duplicates = []
-        for name, val in RESULT[ext].items():
-            if val is not None:
-                continue
-            if name in IGNORED and ext in IGNORED[name]:
-                continue
-            i += 1
-            if i > 1:
-                duplicates.append(name)
-        if i > 1:
-            for name in duplicates:
-                del RESULT[ext][name]
-
-
 parse_heuristics()
 parse_langs()
-filter_rules()
 print_rules()
