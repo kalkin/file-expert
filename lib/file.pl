@@ -63,8 +63,7 @@ list_directory(Path, Dirs, Files):-
     include(exists_directory, Result, Dirs),
     include(exists_file, Result, Files).
 
-list_files_recursive(Dir, Files):-
-    absolute_file_name(Dir, Path),
+list_files_recursive(Path, Files):-
     list_directory(Path, Dirs, CurFiles),
     maplist(list_files_recursive, Dirs, MoreFiles),
     append(CurFiles, MoreFiles, Tree),
