@@ -22,7 +22,7 @@ def escape_name(txt: str) -> str:
 
 
 def escape_pattern(txt: str) -> str:
-    ''' Escapes “'” character in language names '''
+    ''' Escapes backslash character in language names '''
     result = txt.replace("\\", "\\\\")
     result = result.replace('"', '\\"')
     return result
