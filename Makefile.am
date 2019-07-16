@@ -12,11 +12,7 @@ file-expert$(EXEEXT): $(file_expert_SOURCES)
 	swipl -o file-expert -g main -c run.pl github-extensions-kb.pl extra-extensions-kb.pl load.pl
 
 github-extensions-kb.pl: transform.py languages.yml
-	@echo ":- multifile file_extension/3." > github-extensions-kb.pl
-	@echo ":- multifile file_extension/2." >> github-extensions-kb.pl
-	@echo ":- multifile filename/2." >> github-extensions-kb.pl
-	@echo ":- multifile interpreter/2." >> github-extensions-kb.pl
-	python3 transform.py languages.yml >> github-extensions-kb.pl
+	python3 transform.py > github-extensions-kb.pl
 
 clean-local:
 	-rm -f github-extensions-kb.pl

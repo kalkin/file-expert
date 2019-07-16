@@ -68,3 +68,14 @@ list_files_recursive(Path, Files):-
     maplist(list_files_recursive, Dirs, MoreFiles),
     append(CurFiles, MoreFiles, Tree),
     flatten(Tree, Files).
+
+
+match_regex(Path, Pattern):-
+    MaxLength is 10*1024,
+    read_file(Path, MaxLength, String),
+    match_regex_(String, Pattern).
+
+match_regex_(String, Pattern):-
+    re_compile(Pattern, RegEx, [multiline(true)]),
+    re_match(RegEx, String),
+    re_flush().

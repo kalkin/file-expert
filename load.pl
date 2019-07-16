@@ -16,7 +16,8 @@
 %  along with file-expert.  If not, see <https://www.gnu.org/licenses/>.
 
 
-:- ['github-extensions-kb', 'extra-extensions-kb.pl' ].
+:- use_module('lib/file').
+:- ['github-extensions-kb'].
 :- use_module('src/file_expert').
 
 say(File, unknown_type):-
