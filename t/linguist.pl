@@ -19,7 +19,6 @@
 :- use_module('../lib/file').
 
 test("Linguist samples", [
-    nondet,
     forall(expected_results([File, Type])), 
     condition(\+skipped(File))
     ]):-
