@@ -16,7 +16,6 @@
 %  along with file-expert.  If not, see <https://www.gnu.org/licenses/>.
 
 :- begin_tests(linguist).
-:- use_module('../lib/file').
 
 test("Linguist samples", [
     forall(expected_results([File, Type])), 

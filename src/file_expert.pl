@@ -38,35 +38,28 @@ shebang(Cmd, MagicLine):-
 shebang_exec(Path, Type):-
     file:first_line(Path, MagicLine),
     shebang(Cmd, MagicLine),
-    interpreter(Type, Cmd).
+    interpreter(Cmd, Type).
 
 shebang_exec(Path, Type):-
     file:first_line(Path, MagicLineTmp),
     split_string(MagicLineTmp, " ", "", [MagicLine|_]),
     shebang(Cmd, MagicLine),
-    interpreter(Type, Cmd).
+    interpreter(Cmd, Type).
 
-match_regex(String, Pattern):-
-    re_compile(Pattern, RegEx, [multiline(true)]),
-    re_match(RegEx, String),
-    re_flush().
+
 
 guess_file(Path, Language):-
-    file_base_name(Path, File), filename(Language, File).
+    file_base_name(Path, File), filename(File, Language), !.
 
 guess_file(Path, Language):-
-    MaxLength is 10*1024,
+    file_expert:shebang_exec(Path, Language), !.
+
+guess_file(Path, Language):-
     file:parse_extension(Path, Ext),
-    file_extension(Ext, Language, Pattern),
-    file:read_file(Path, MaxLength, String),
-    match_regex(String, Pattern).
+    heuristic(Path, Ext, Language), !.
 
 guess_file(Path, Language):-
-    file_expert:shebang_exec(Path, Language).
-
-guess_file(Path, Language):-
-    parse_extension(Path, Ext),
-    file_extension(Ext, Language).
+    file:parse_extension(Path, Ext),
+    extension(Ext, Language), \+ heuristic(Path, Ext, _), !.
 
 guess_file(_, unknown_type).
-

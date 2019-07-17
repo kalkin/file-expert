@@ -1,31 +1,15 @@
 skipped('linguist/samples/Altium Designer/Sample Altium Project.PrjPcb').
-skipped('linguist/samples/C++/constexpr_header.h').
-skipped('linguist/samples/C++/Field.h').
-skipped('linguist/samples/C++/rpc.h').
 skipped('linguist/samples/Fstar/Hacl.HKDF.fst').
 skipped('linguist/samples/Fstar/Hacl.Spec.Bignum.Fmul.fst').
-skipped('linguist/samples/JSON/block-sync-counter8.ice').
-skipped('linguist/samples/Logos/string1.x').
-skipped('linguist/samples/M/arrays.m').
-skipped('linguist/samples/MATLAB/Check_plot.m').
-skipped('linguist/samples/MATLAB/matlab_class.m').
-skipped('linguist/samples/MATLAB/normalize.m').
-skipped('linguist/samples/M/fibonacci.m').
-skipped('linguist/samples/M/forloop.m').
-skipped('linguist/samples/M/helloworld.m').
-skipped('linguist/samples/M/ifelse.m').
-skipped('linguist/samples/M/indirectfunctions.m').
-skipped('linguist/samples/M/mileage.m').
-skipped('linguist/samples/M/nesting.m').
-skipped('linguist/samples/Objective-C/cocoa_monitor.m').
-skipped('linguist/samples/Puppet/hiera_include.pp').
-skipped('linguist/samples/Puppet/stages-example.pp').
-skipped('linguist/samples/Python/spec.linux.spec').
-skipped('linguist/samples/Ruby/any.spec').
+skipped('linguist/samples/Java Properties/libraries.properties').
+skipped('linguist/samples/Java Properties/sounds.properties').
+skipped('linguist/samples/Linker Script/inject.x').
+skipped('linguist/samples/Python/python').
 skipped('linguist/samples/Ruby/ruby2').
 skipped('linguist/samples/Scala/99-bottles-of-beer').
 skipped('linguist/samples/Scala/scala').
-skipped('linguist/samples/SQLPL/check_reorg.sql').
-skipped('linguist/samples/SQLPL/runstats.sql').
-skipped('linguist/samples/SQLPL/sleep.sql').
-skipped('linguist/samples/Text/LIDARLite.ncl').
+skipped('linguist/samples/TSX/import.tsx').
+skipped('linguist/samples/TSX/react-native.tsx').
+skipped('linguist/samples/TSX/require.tsx').
+skipped('linguist/samples/TSX/triple-slash-reference.tsx').
+skipped('linguist/samples/X PixMap/cc-public_domain_mark_white.pm').
