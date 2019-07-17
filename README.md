@@ -10,6 +10,7 @@ file-expert FILE…
 ```
 
 The program can also read the files from `STDIN` like this:
+
 ```shell
 git ls-files|file-expert
 ```
@@ -49,7 +50,6 @@ transform.py    Python
 * SWI Prolog
 * Python 3
 * PyYAML
-
 
 ### Installation
 
