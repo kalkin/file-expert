@@ -43,5 +43,6 @@ written in Prolog.
 
 
 %changelog
-
+* Wed Jul 17 2019 Bahtiar Gadimov (kalkin-) <bahtiar@gadimov.de>
+  Rework the file guessing logic
 
