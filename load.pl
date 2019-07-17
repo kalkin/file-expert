@@ -17,7 +17,7 @@
 
 
 :- use_module('lib/file').
-:- ['github-extensions-kb'].
+:- ['github-extensions-kb', 'extra-extensions-kb'].
 :- use_module('src/file_expert').
 
 say(File, unknown_type):-

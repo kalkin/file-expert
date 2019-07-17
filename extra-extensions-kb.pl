@@ -15,29 +15,29 @@
 %  You should have received a copy of the GNU Affero General Public License
 %  along with file-expert.  If not, see <https://www.gnu.org/licenses/>.
 
+:- multifile extension/2.
 :- multifile filename/2.
 :- multifile interpreter/2.
 
-filename('Markdown', 'README.md').
-filename('Text', 'AUTHORS').
-filename('Text', 'DESCRIPTION').
-filename('Text', 'LICENSE').
-filename('Text', 'LICENSE-APACHE').
-filename('Text', 'LICENSE-BSD').
-filename('Text', 'LICENSE-MIT').
-filename('Text', 'VERSION').
-filename('Text', 'version').
-filename('Dircolors', 'LS_COLORS').
+filename('README.md', 'Markdown').
+filename('AUTHORS', 'Text').
+filename('DESCRIPTION', 'Text').
+filename('LICENSE', 'Text').
+filename('LICENSE-APACHE', 'Text').
+filename('LICENSE-BSD', 'Text').
+filename('LICENSE-MIT', 'Text').
+filename('VERSION', 'Text').
+filename('version', 'Text').
+filename('LS_COLORS', 'Dircolors').
 
-file_extension('.png', 'PNG').
-file_extension('.zunit', 'Shell').
-file_extension('WOFF', '.woff').
+extension('.png', 'PNG').
+extension('.zunit', 'Shell').
+extension('.woff', 'WOFF').
 
-
-interpreter('Python', 'python2.1').
-interpreter('Python', 'python2.2').
-interpreter('Python', 'python2.3').
-interpreter('Python', 'python2.4').
-interpreter('Python', 'python2.5').
-interpreter('Python', 'python2.6').
-interpreter('Python', 'python2.7').
+interpreter('python2.1', 'Python').
+interpreter('python2.2', 'Python').
+interpreter('python2.3', 'Python').
+interpreter('python2.4', 'Python').
+interpreter('python2.5', 'Python').
+interpreter('python2.6', 'Python').
+interpreter('python2.7', 'Python').
