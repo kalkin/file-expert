@@ -18,6 +18,7 @@
 :- multifile extension/2.
 :- multifile filename/2.
 :- multifile interpreter/2.
+:- multifile heuristic/3.
 
 filename('README.md', 'Markdown').
 filename('AUTHORS', 'Text').
@@ -41,3 +42,6 @@ interpreter('python2.4', 'Python').
 interpreter('python2.5', 'Python').
 interpreter('python2.6', 'Python').
 interpreter('python2.7', 'Python').
+
+heuristic(File, '.spec', 'RPM Spec'):-
+    file:match_regex(File, "\\s*Name\\:\\s*\\w+"), !.

@@ -1,5 +1,5 @@
 Name:           file-expert
-Version:        0.10
+Version:        0.10.1
 Release:        2%{?dist}
 Summary:        Expert system for recognizing file types.
 License:        GPLv3
@@ -45,8 +45,9 @@ written in Prolog.
 
 
 %changelog
-* Wed Jul 28 2019 Bahtiar Gadimov (kalkin-) <bahtiar@gadimov.de>
-  Add runtime requirement for swipl
+* Sun Jul 28 2019 Bahtiar Gadimov (kalkin-) <bahtiar@gadimov.de>
+  - Fix recognition for RPM Spec
+  - Add runtime requirement for swipl
 
 * Wed Jul 17 2019 Bahtiar Gadimov (kalkin-) <bahtiar@gadimov.de>
   Rework the file guessing logic

@@ -45,8 +45,9 @@ written in Prolog.
 
 
 %changelog
-* Wed Jul 28 2019 Bahtiar Gadimov (kalkin-) <bahtiar@gadimov.de>
-  Add runtime requirement for swipl
+* Sun Jul 28 2019 Bahtiar Gadimov (kalkin-) <bahtiar@gadimov.de>
+  - Fix recognition for RPM Spec
+  - Add runtime requirement for swipl
 
 * Wed Jul 17 2019 Bahtiar Gadimov (kalkin-) <bahtiar@gadimov.de>
   Rework the file guessing logic
