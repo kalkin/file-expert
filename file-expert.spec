@@ -1,6 +1,6 @@
 Name:           file-expert
 Version:        0.10
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Expert system for recognizing file types.
 License:        GPLv3
 
@@ -9,6 +9,8 @@ URL:            https://github.com/kalkin/file-expert
 BuildRequires: python3
 BuildRequires: pl >= 8.0.2
 BuildRequires: python3-pyyaml
+
+Requires: pl >= 8.0.2
 
 %global debug_package %{nil}
 %define _builddir %(pwd)
@@ -43,6 +45,9 @@ written in Prolog.
 
 
 %changelog
+* Wed Jul 28 2019 Bahtiar Gadimov (kalkin-) <bahtiar@gadimov.de>
+  Add runtime requirement for swipl
+
 * Wed Jul 17 2019 Bahtiar Gadimov (kalkin-) <bahtiar@gadimov.de>
   Rework the file guessing logic
 
