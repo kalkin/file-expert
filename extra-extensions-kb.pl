@@ -31,6 +31,8 @@ filename('VERSION', 'Text').
 filename('version', 'Text').
 filename('LS_COLORS', 'Dircolors').
 
+filename('Makefile.builder', 'Makefile').
+
 extension('.png', 'PNG').
 extension('.zunit', 'Shell').
 extension('.woff', 'WOFF').
