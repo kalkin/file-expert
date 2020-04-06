@@ -29,7 +29,7 @@ fi
 
 BKG_ENABLE_XDG
 BKG_PACKAGE_GENTOO(["dev-util"])
-BKG_PACKAGE_INFO(["Expert system for recognizing file types."])
+BKG_PACKAGE_INFO([Expert system for recognizing file types.])
 AC_CONFIG_FILES([Makefile file-expert.spec])
 AC_OUTPUT
 
