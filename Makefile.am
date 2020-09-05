@@ -26,4 +26,5 @@ test: debug.pl $(file_expert_SOURCES)
 save-skipped:
 	swipl -s debug.pl -g 'generate_skipped, halt(0); halt(1).'|sort > skipped.pl
 
+@BKG_RPM_TEMPLATE@
 @BKG_DEPLOY_GENTOO@
