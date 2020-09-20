@@ -1,6 +1,6 @@
 Name:           file-expert
 Version:        0.10.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Expert system for recognizing file types.
 License:        GPLv3
 
@@ -26,6 +26,7 @@ written in Prolog.
 
 
 %build
+autoreconf -i
 %configure
 %make_build
 
