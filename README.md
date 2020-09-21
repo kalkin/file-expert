@@ -51,7 +51,7 @@ In production.
 
 * Autoconf
 * Automake
-* SWI Prolog
+* SWI Prolog ≥ 8 (Tested with 8.0.2(?) and 8.2.1)
 * Python 3
 * PyYAML
 

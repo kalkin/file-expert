@@ -7,10 +7,10 @@ License:        GPLv3
 URL:            https://github.com/kalkin/file-expert
 
 BuildRequires: python3
-BuildRequires: pl >= 8.0.2
+BuildRequires: pl
 BuildRequires: python3-pyyaml
 
-Requires: pl >= 8.0.2
+Requires: pl
 
 %global debug_package %{nil}
 %define _builddir %(pwd)
