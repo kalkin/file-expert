@@ -42,6 +42,7 @@ construct_extension([Head|Tail], Ext):-
     atom_concat('.', NewNameAtomic, Ext); construct_extension(Tail, Ext).
 
 read_file(Path, MaxLength, String):-
+    exists_file(Path),
     open(Path, read, Stream, []),
     read_string(Stream, MaxLength, String),
     close(Stream).
