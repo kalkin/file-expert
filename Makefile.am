@@ -11,8 +11,8 @@ EXTRA_DIST = transform.py languages.yml heuristics.yml
 file-expert$(EXEEXT): $(file_expert_SOURCES)
 	swipl -o file-expert --goal=main -c run.pl github-extensions-kb.pl extra-extensions-kb.pl load.pl
 
-github-extensions-kb.pl: transform.py languages.yml
-	python3 transform.py > github-extensions-kb.pl
+github-extensions-kb.pl: transform.py languages.yml heuristics.yml
+	python3 $^ > $@
 
 clean-local:
 	-rm -f github-extensions-kb.pl
