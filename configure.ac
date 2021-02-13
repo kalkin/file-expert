@@ -1,4 +1,4 @@
-AC_INIT(file-expert, 0.10.1)
+AC_INIT(file-expert, 0.11.0)
 AM_INIT_AUTOMAKE([foreign])
 AC_CONFIG_MACRO_DIR([m4])
 
