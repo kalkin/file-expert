@@ -16,7 +16,7 @@
 %  along with file-expert.  If not, see <https://www.gnu.org/licenses/>.
 
 :- module(file, [parse_extension/2, read_file/3, first_line/2,
-    list_files_recursive/2]).
+                 list_files_recursive/2, file_type/2]).
 
 parse_extension(Path, Ext):-
     file_base_name(Path, Name),
@@ -70,11 +70,18 @@ list_files_recursive(Path, Files):-
     append(CurFiles, MoreFiles, Tree),
     flatten(Tree, Files).
 
+is_binary_file(Stream):-
+    read_stream_to_codes(Stream, Codes),
+    memberchk(0, Codes).
+
+file_type(Stream, Type):-
+    is_binary_file(Stream) -> Type = "Binary"; Type = "Generic".
 
 match_regex(Path, Pattern):-
     MaxLength is 10*1024,
     read_file(Path, MaxLength, String),
     match_regex_(String, Pattern).
+
 
 match_regex_(String, Pattern):-
     re_compile(Pattern, RegEx, [multiline(true)]),

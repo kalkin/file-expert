@@ -52,14 +52,17 @@ guess_file(Path, Language):-
     file_base_name(Path, File), filename(File, Language), !.
 
 guess_file(Path, Language):-
-    file_expert:shebang_exec(Path, Language), !.
+    open(Path, read, Stream, [type(binary), close_on_abort(true)]),
+    file:file_type(Stream, Type), close(Stream),
+    (
+        Type = "Binary" -> string_to_atom("Binary", Language) ; guess_by_content(Path, Language), ! ; 
+        Language = unknown_type
+    ).
 
-guess_file(Path, Language):-
+guess_by_content(Path, Language):-
+    file_expert:shebang_exec(Path, Language), !;
     file:parse_extension(Path, Ext),
-    heuristic(Path, Ext, Language), !.
-
-guess_file(Path, Language):-
-    file:parse_extension(Path, Ext),
-    extension(Ext, Language), \+ heuristic(Path, Ext, _), !.
-
-guess_file(_, unknown_type).
+    (
+        heuristic(Path, Ext, Language), extension(Ext, Language);
+        extension(Ext, Language), !
+    ).

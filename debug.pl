@@ -22,6 +22,7 @@ skipped('/dev/null').
 :- [ 'skipped' ].
 
 sample_dir('linguist/samples').
+sample_dir('fixtures/').
 
 as_choices([H|R], X):-
     X = H ; as_choices(R, X).
