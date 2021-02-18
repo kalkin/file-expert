@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.12.0] - 2021-02-18
+
+### Added
+
+- Recognize binaries
+- M4 vs M4Sugar disambiguation
+- missing Gerber extensions and heuristics
+- `.eleventyignore` to Ignore List category
+- new Raku file extensions
+- support for Boogie
+- classify scdoc under Markdown
+- support for record-jar files
+- Beef language
+- ImageJ Macro Language
+- support for ABAP CDS
+
+### Changed
+
+- Split Nunjucks into its own language
+
+### Fixed
+
+- misclassified `.rs` XML files
+
 ## [0.11.1] - 2021-02-14
 
 ### Added
