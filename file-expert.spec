@@ -1,6 +1,6 @@
 Name:           file-expert
 Version:        0.11.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Expert system for recognizing file types.
 License:        GPLv3
 
@@ -37,6 +37,7 @@ autoreconf -i
 
 %check
 %{_rpmconfigdir}/check-rpaths
+make test
 
 
 %files

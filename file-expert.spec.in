@@ -1,6 +1,6 @@
 Name:           @BKG_PACKAGE_NAME@
 Version:        @BKG_PACKAGE_VERSION@
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        @BKG_PACKAGE_SUMMARY@
 License:        GPLv3
 
@@ -37,6 +37,7 @@ autoreconf -i
 
 %check
 %{_rpmconfigdir}/check-rpaths
+make test
 
 
 %files
