@@ -17,8 +17,12 @@ github-extensions-kb.pl: transform.py languages.yml heuristics.yml
 clean-local:
 	-rm -f github-extensions-kb.pl
 
-distclean:
-	@cat .gitignore|grep -v '\s*#'|grep .|sed 's#^/#./#'|xargs rm -frv
+
+.PHONY: distclean-generated
+distclean-generated:
+	git clean -fdx --quiet
+
+distclean: distclean-generated
 
 test: debug.pl $(file_expert_SOURCES)
 	swipl -s debug.pl -g 'run_tests, halt(0); halt(1)'
