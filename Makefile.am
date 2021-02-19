@@ -9,7 +9,7 @@ file_expert_SOURCES = lib/file.pl \
 EXTRA_DIST = transform.py languages.yml heuristics.yml
 
 file-expert$(EXEEXT): $(file_expert_SOURCES)
-	swipl -O -o file-expert --goal=main -c run.pl github-extensions-kb.pl extra-extensions-kb.pl load.pl
+	LC_ALL="C.utf8" swipl -q -O -o $@ --goal=main -c $^
 
 github-extensions-kb.pl: transform.py languages.yml heuristics.yml
 	python3 $^ > $@
@@ -25,7 +25,7 @@ distclean-generated:
 distclean: distclean-generated
 
 test: debug.pl $(file_expert_SOURCES)
-	swipl -s debug.pl -g 'run_tests, halt(0); halt(1)'
+	LC_ALL="C.utf8" swipl -q -s debug.pl -g 'run_tests, halt(0); halt(1)'
 
 save-skipped:
 	swipl -s debug.pl -g 'generate_skipped, halt(0); halt(1).'|sort > skipped.pl
