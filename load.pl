@@ -29,15 +29,10 @@ say(File, multiple_possibilities):-
 say(File, Type):-
     write(File), write('\t'), write(Type), nl.
 
-guess([]):-
-    write("No files specified"), nl,
-    halt(1).
-
-guess([Last]) :- !,
-        guess_file(Last, Type),
-        say(Last, Type).
 
 guess([H|Rest]) :-
         guess_file(H, Type),
         say(H, Type),
         guess(Rest).
+
+guess([]).
