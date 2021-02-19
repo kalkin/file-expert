@@ -31,8 +31,13 @@ say(File, Type):-
 
 
 guess([H|Rest]) :-
+        exists_file(H),
         guess_file(H, Type),
         say(H, Type),
+        guess(Rest).
+
+guess([H|Rest]) :-
+        exists_directory(H),
         guess(Rest).
 
 guess([]).
