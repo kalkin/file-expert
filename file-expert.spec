@@ -1,5 +1,5 @@
 Name:           file-expert
-Version:        0.12.0
+Version:        0.13.0
 Release:        1%{?dist}
 Summary:        Expert system for recognizing file types.
 License:        GPLv3
