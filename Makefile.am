@@ -22,7 +22,7 @@ clean-local:
 distclean-generated:
 	git clean -fdx --quiet
 
-distclean: distclean-generated
+distclean-local: distclean-generated
 
 test: debug.pl $(file_expert_SOURCES)
 	LC_ALL="C.utf8" swipl -q -s debug.pl -g 'run_tests, halt(0); halt(1)'
