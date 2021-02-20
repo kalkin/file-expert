@@ -41,7 +41,7 @@ print(":- discontiguous extension/2.")
 print(":- discontiguous filename/2.")
 print(":- discontiguous interpreter/2.")
 with open("languages.yml", 'r') as lang_stream:
-    LANGS = yaml.load(lang_stream)
+    LANGS = yaml.safe_load(lang_stream)
     for name, data in LANGS.items():
         language = escape_name(name)
         if 'extensions' in data:
@@ -58,7 +58,7 @@ with open("languages.yml", 'r') as lang_stream:
                 print('filename(%s, %s).' % (file_name, language))
 
 with open("heuristics.yml", "r") as heuristic:
-    HEURISTIC = yaml.load(heuristic)
+    HEURISTIC = yaml.safe_load(heuristic)
     DISAMBIGUATIONS = HEURISTIC['disambiguations']
     NAMED_PATTERN = HEURISTIC['named_patterns']
     for entries in DISAMBIGUATIONS:
