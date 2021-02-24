@@ -6,7 +6,7 @@ file_expert_SOURCES = lib/file.pl \
 					  extra-extensions-kb.pl \
 					  github-extensions-kb.pl
 
-EXTRA_DIST = transform.py languages.yml heuristics.yml
+EXTRA_DIST = transform.py languages.yml heuristics.yml file-expert.spec.in
 
 file-expert$(EXEEXT): $(file_expert_SOURCES)
 	LC_ALL="C.utf8" swipl -q -O -o $@ --goal=main -c $^
@@ -18,11 +18,8 @@ clean-local:
 	-rm -f github-extensions-kb.pl
 
 
-.PHONY: distclean-generated
-distclean-generated:
-	git clean -fdx --quiet
-
-distclean-local: distclean-generated
+distclean-local:
+	rm file-expert.spec
 
 test: debug.pl $(file_expert_SOURCES)
 	LC_ALL="C.utf8" swipl -q -s debug.pl -g 'run_tests, halt(0); halt(1)'
