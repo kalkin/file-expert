@@ -6,7 +6,8 @@ file_expert_SOURCES = lib/file.pl \
 					  extra-extensions-kb.pl \
 					  github-extensions-kb.pl
 
-EXTRA_DIST = transform.py languages.yml heuristics.yml file-expert.spec.in
+EXTRA_DIST = transform.py languages.yml heuristics.yml @BKG_RPM_SPECFILE@.in
+CLEANFILES = @BKG_RPM_SPECFILE@
 
 file-expert$(EXEEXT): $(file_expert_SOURCES)
 	LC_ALL="C.utf8" swipl -q -O -o $@ --goal=main -c $^
@@ -15,11 +16,7 @@ github-extensions-kb.pl: transform.py languages.yml heuristics.yml
 	python3 $^ > $@
 
 clean-local:
-	-rm -f github-extensions-kb.pl
-
-
-distclean-local:
-	rm file-expert.spec
+	rm -f github-extensions-kb.pl
 
 test: debug.pl $(file_expert_SOURCES)
 	LC_ALL="C.utf8" swipl -q -s debug.pl -g 'run_tests, halt(0); halt(1)'
