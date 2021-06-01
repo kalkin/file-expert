@@ -1,0 +1,8 @@
+[package]
+name = "file-expert"
+version = "0.1.0"
+authors = ["Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>"]
+edition = "2018"
+
+[dependencies]
+clap = "3.0.0-beta.2"
