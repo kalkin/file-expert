@@ -1,8 +1,11 @@
+mod expert;
+mod heuristic;
 mod shebang;
 
 use clap::{AppSettings, Arg, ArgMatches};
 use std::io;
 use std::io::prelude::*;
+use std::path::Path;
 
 fn main() {
     let matches: ArgMatches = {
@@ -22,14 +25,18 @@ fn main() {
     eprintln!("{:#?}", matches);
     if matches.is_present("file") {
         for file in matches.values_of("file").unwrap() {
-            eprintln!("Would parse {:?}", file)
+            let result = expert::expert(Path::new(file));
+            eprintln!("{}\t{}", file, result)
         }
     } else {
         eprintln!("Reading from stdin");
         let stdin = io::stdin();
         for line in stdin.lock().lines() {
             match line {
-                Ok(l) => eprintln!("Would parse {:?}", l),
+                Ok(l) => {
+                    let result = expert::expert(Path::new(&l));
+                    eprintln!("{}\t{}", l, result)
+                }
                 Err(_) => break,
             }
         }

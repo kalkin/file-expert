@@ -1,7 +1,7 @@
-use std::fs;
+use crate::heuristic;
+use crate::heuristic::guess_by_interpreter;
+use std::fmt::{Display, Formatter, Write};
 use std::path::Path;
-use std::io::{BufRead, BufReader};
-use crate::shebang;
 
 #[derive(Debug, Eq, PartialEq)]
 pub enum ExpertResult {
@@ -9,21 +9,18 @@ pub enum ExpertResult {
     Unknown,
 }
 
-pub fn expert(path: &Path) -> ExpertResult {
-    // let first_line = first_line(path);
-    // if let Some(interpreter) = shebang::interpreter(&first_line) {
-    //
-    // }
-    ExpertResult::Unknown
+impl Display for ExpertResult {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        match self {
+            ExpertResult::Kind(lang) => f.write_str(lang),
+            ExpertResult::Unknown => f.write_str("Unknown file"),
+        }
+    }
 }
 
-fn first_line(path: &Path) -> String {
-    let file = match fs::File::open(&path) {
-        Ok(file) => file,
-        Err(_) => panic!("Unable to read title from {:?}", &path),
-    };
-    let mut buffer = BufReader::new(file);
-    let mut first_line = String::new();
-    buffer.read_line(&mut first_line).unwrap();
-    first_line
+pub fn expert(path: &Path) -> ExpertResult {
+    if let Some(interpreter) = guess_by_interpreter(path) {
+        return ExpertResult::Kind(interpreter.to_string());
+    }
+    ExpertResult::Unknown
 }
