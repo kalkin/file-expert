@@ -1,6 +1,7 @@
 mod expert;
 mod heuristic;
 mod shebang;
+mod modeline;
 
 use clap::{AppSettings, Arg, ArgMatches};
 use std::io;
