@@ -2,6 +2,7 @@ use crate::heuristic;
 use crate::heuristic::guess_by_interpreter;
 use std::fmt::{Display, Formatter, Write};
 use std::path::Path;
+use crate::data_structures::{FileContent, Text};
 
 #[derive(Debug, Eq, PartialEq)]
 pub enum ExpertResult {
@@ -19,7 +20,17 @@ impl Display for ExpertResult {
 }
 
 pub fn expert(path: &Path) -> ExpertResult {
-    if let Some(interpreter) = guess_by_interpreter(path) {
+    let data = FileContent::new(path).unwrap();
+    if data.is_empty() {
+        return ExpertResult::Kind("Unknown file".to_string());
+    }
+    if data.is_binary() {
+        return ExpertResult::Kind("Binary".to_string());
+    }
+
+    let content = Text::from(data);
+
+    if let Some(interpreter) = guess_by_interpreter(content) {
         return ExpertResult::Kind(interpreter.to_string());
     }
     ExpertResult::Unknown
