@@ -16,6 +16,7 @@ fn main() {
     root_dir.push_str("/languages.yml");
     let languages = parse_languages_yaml(&root_dir);
     generate_linguist_interpreters(&out_dir, &languages);
+    generate_linguist_aliases(&out_dir, &languages);
 }
 
 /// A combination of a file suffix and a Regex
@@ -130,6 +131,36 @@ fn generate_linguist_interpreters(out_dir: &OsString, languages: &Languages) {
     writeln!(output, "}}").unwrap();
 }
 
+fn generate_linguist_aliases(out_dir: &OsString, languages: &Languages) {
+    let dest_path = Path::new(&out_dir).join("linguist_aliases.rs");
+    let mut output = File::create(dest_path).unwrap();
+    writeln!(output, "").unwrap();
+    writeln!(output, "lazy_static! {{").unwrap();
+
+    writeln!(
+        output,
+        "    static ref ALIASES: HashMap<String, String> = ["
+    )
+        .unwrap();
+    for (name, lang) in languages {
+        writeln!(
+            output,
+            "        ({:?}.to_string(), {:?}.to_string()),",
+            name, name
+        ).unwrap();
+        if let Some(aliases) = &lang.aliases {
+            for alias in aliases {
+                writeln!(
+                    output,
+                    "        ({:?}.to_string(), {:?}.to_string()),",
+                    alias, name
+                ).unwrap();
+            }
+        }
+    }
+    writeln!(output, "    ].iter().cloned().collect();").unwrap();
+    writeln!(output, "}}").unwrap();
+}
 fn samples() -> Vec<DirEntry> {
     let in_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
     WalkDir::new(format!("{}/../../file-expert/linguist/samples", in_dir))

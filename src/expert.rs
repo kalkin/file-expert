@@ -30,8 +30,14 @@ pub fn expert(path: &Path) -> ExpertResult {
 
     let content = Text::from(data);
 
-    if let Some(interpreter) = guess_by_interpreter(content) {
+    if let Some(interpreter) = guess_by_interpreter(&content) {
         return ExpertResult::Kind(interpreter.to_string());
     }
+
+    if let Some(lang) = guess_by_modeline(&content) {
+        return ExpertResult::Kind(lang.to_string());
+    }
+
+
     ExpertResult::Unknown
 }
