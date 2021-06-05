@@ -1,6 +1,5 @@
-use crate::heuristic;
-use crate::heuristic::guess_by_interpreter;
-use std::fmt::{Display, Formatter, Write};
+use crate::heuristic::{guess_by_interpreter, guess_by_modeline};
+use std::fmt::{Display, Formatter};
 use std::path::Path;
 use crate::data_structures::{FileContent, Text};
 

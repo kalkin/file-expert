@@ -1,9 +1,5 @@
 use crate::shebang;
 use crate::modeline;
-use std::fs::File;
-use std::io::prelude::*;
-use std::io::BufReader;
-use std::path::Path;
 use crate::data_structures::Text;
 
 include!(concat!(env!("OUT_DIR"), "/linguist_interpreters.rs"));
@@ -21,15 +17,4 @@ pub fn  guess_by_modeline(content: &Text) -> Option<&'static String> {
         return ALIASES.get(alias);
     }
     None
-}
-
-fn read_first_line(path: &Path) -> String {
-    let file = match File::open(&path) {
-        Ok(file) => file,
-        Err(_) => panic!("Unable to read title from {:?}", &path),
-    };
-    let mut buffer = BufReader::new(file);
-    let mut first_line = String::new();
-    buffer.read_line(&mut first_line).unwrap();
-    first_line
 }

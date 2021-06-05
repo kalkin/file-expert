@@ -1,19 +1,19 @@
 use std::io::prelude::*;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use std::fs::File;
 
-pub struct FileContent(Vec<u8>);
+pub struct FileContent(Vec<u8>, PathBuf);
 
 impl FileContent {
     pub fn new(path: &Path) -> Result<Self, std::io::Error> {
-        let mut file = File::open(path)?;
-        let mut data: Vec<u8> = file
+        let file = File::open(path)?;
+        let data: Vec<u8> = file
             .bytes()
             .take(1024)
             .map(|r: Result<u8, _>| r.unwrap()) // or deal explicitly with failure!
             .collect();
 
-        Ok(FileContent(data))
+        Ok(FileContent(data, path.to_owned()))
     }
 
     pub fn is_binary(&self) -> bool {
