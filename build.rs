@@ -22,21 +22,14 @@ fn main() {
 /// A combination of a file suffix and a Regex
 #[derive(Debug, PartialEq, Deserialize, Serialize)]
 struct Language {
-    fs_name: Option<String>,
     r#type: String,
     aliases: Option<Vec<String>>,
     interpreters: Option<Vec<String>>,
-    ace_mode: String,
-    codemirror_mode: Option<String>,
-    codemirror_mime_type: Option<String>,
     wrap: Option<bool>,
     extensions: Option<Vec<String>>,
     filenames: Option<Vec<String>>,
     searchable: Option<bool>,
-    language_id: usize,
     color: Option<String>,
-    tm_scope: Option<String>,
-    group: Option<String>,
 }
 
 type Languages = HashMap<String, Language>;
