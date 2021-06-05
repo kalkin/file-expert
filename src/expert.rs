@@ -1,4 +1,4 @@
-use crate::heuristic::{guess_by_interpreter, guess_by_modeline};
+use crate::heuristic::{guess_by_interpreter, guess_by_modeline, guess_by_filename};
 use std::fmt::{Display, Formatter};
 use std::path::Path;
 use crate::data_structures::{FileContent, Text};
@@ -19,6 +19,9 @@ impl Display for ExpertResult {
 }
 
 pub fn expert(path: &Path) -> ExpertResult {
+    if let Some(lang) = guess_by_filename(path) {
+        return ExpertResult::Kind(lang.to_string());
+    }
     let data = FileContent::new(path).unwrap();
     if data.is_empty() {
         return ExpertResult::Kind("Unknown file".to_string());
