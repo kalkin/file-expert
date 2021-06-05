@@ -64,17 +64,7 @@ fn generate_linguist_tests(out_dir: &OsString) {
             i = 1;
         }
 
-        let mut escaped_kind = kind
-            .replace(" ", "_")
-            .replace("-", "_")
-            .replace("+", "_plus_")
-            .replace("*", "_star_")
-            .replace("#", "_sharp_")
-            .replace("'", "_quote_")
-            .replace(".", "_dot_")
-            .replace("(", "_")
-            .replace(")", "_")
-            .to_lowercase();
+        let mut escaped_kind = escape_name(kind);
         if escaped_kind.as_bytes()[0].is_ascii_digit() {
             escaped_kind.insert(0, '_');
         }
@@ -95,6 +85,20 @@ fn generate_linguist_tests(out_dir: &OsString) {
 
         i += 1;
     }
+}
+
+fn escape_name(kind: &str) -> String {
+    kind
+        .replace(" ", "_")
+        .replace("-", "_")
+        .replace("+", "_plus_")
+        .replace("*", "_star_")
+        .replace("#", "_sharp_")
+        .replace("'", "_quote_")
+        .replace(".", "_dot_")
+        .replace("(", "_")
+        .replace(")", "_")
+        .to_lowercase()
 }
 
 fn generate_linguist_interpreters(out_dir: &OsString, languages: &Languages) {
