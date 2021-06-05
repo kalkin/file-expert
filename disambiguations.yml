@@ -1,0 +1,812 @@
+- extensions:
+  - '.1'
+  - '.2'
+  - '.3'
+  - '.4'
+  - '.5'
+  - '.6'
+  - '.7'
+  - '.8'
+  - '.9'
+  rules:
+  - and:
+    - MDOC_DATE_1
+    - MDOC_TITLE_1
+    - MDOC_HEADING_1
+    language: Roff Manpage
+  - and:
+    - MAN_TITLE_1
+    - MAN_HEADING_1
+    language: Roff Manpage
+  - language: Roff
+    or:
+    - ROFF_1
+- extensions:
+  - .1in
+  - .1m
+  - .1x
+  - .3in
+  - .3m
+  - .3p
+  - .3pm
+  - .3qt
+  - .3x
+  - .man
+  - .mdoc
+  rules:
+  - and:
+    - MDOC_DATE_1
+    - MDOC_TITLE_1
+    - MDOC_HEADING_1
+    language: Roff Manpage
+  - and:
+    - MAN_TITLE_1
+    - MAN_HEADING_1
+    language: Roff Manpage
+  - language: Roff
+- extensions:
+  - .al
+  rules:
+  - and:
+    - AL_1
+    language: AL
+  - language: Perl
+- extensions:
+  - .as
+  rules:
+  - language: ActionScript
+    or:
+    - ACTIONSCRIPT_1
+- extensions:
+  - .asc
+  rules:
+  - language: Public Key
+    or:
+    - PUBLIC_KEY_1
+  - language: AsciiDoc
+    or:
+    - ASCIIDOC_1
+  - language: AGS Script
+    or:
+    - AGS_SCRIPT_1
+- extensions:
+  - .asm
+  rules:
+  - language: Motorola 68K Assembly
+    or:
+    - M68K_1
+    - M68K_2
+    - M68K_3
+    - M68K_4
+    - M68K_5
+    - M68K_6
+    - M68K_7
+- extensions:
+  - .asy
+  rules:
+  - language: LTspice Symbol
+    or:
+    - LTSPICE_SYMBOL_1
+  - language: Asymptote
+- extensions:
+  - .bb
+  rules:
+  - language: BlitzBasic
+    or:
+    - BLITZBASIC_1
+  - language: BitBake
+    or:
+    - BITBAKE_1
+- extensions:
+  - .builds
+  rules:
+  - language: XML
+    or:
+    - XML_1
+- extensions:
+  - .ch
+  rules:
+  - language: xBase
+    or:
+    - XBASE_1
+- extensions:
+  - .cl
+  rules:
+  - language: Common Lisp
+    or:
+    - COMMON_LISP_1
+  - language: Cool
+    or:
+    - COOL_1
+  - language: OpenCL
+    or:
+    - OPENCL_1
+- extensions:
+  - .cls
+  rules:
+  - language: TeX
+    or:
+    - TEX_1
+  - language: ObjectScript
+    or:
+    - OBJECTSCRIPT_1
+- extensions:
+  - .cmp
+  rules:
+  - language: Gerber Image
+    or:
+    - GERBER_IMAGE_1
+- extensions:
+  - .cs
+  rules:
+  - language: Smalltalk
+    or:
+    - SMALLTALK_1
+  - language: C#
+    or:
+    - C_SHARP__1
+- extensions:
+  - .d
+  rules:
+  - language: D
+    or:
+    - D_1
+  - language: DTrace
+    or:
+    - DTRACE_1
+  - language: Makefile
+    or:
+    - MAKEFILE_1
+- extensions:
+  - .dsp
+  rules:
+  - language: Microsoft Developer Studio Project
+    or:
+    - MICROSOFT_DEVELOPER_STUDIO_PROJECT_1
+  - language: Faust
+    or:
+    - FAUST_1
+- extensions:
+  - .ecl
+  rules:
+  - language: ECLiPSe
+    or:
+    - ECLIPSE_1
+  - language: ECL
+    or:
+    - ECL_1
+- extensions:
+  - .es
+  rules:
+  - language: Erlang
+    or:
+    - ERLANG_1
+  - language: JavaScript
+    or:
+    - JAVASCRIPT_1
+- extensions:
+  - .f
+  rules:
+  - language: Forth
+    or:
+    - FORTH_1
+  - language: Filebench WML
+    or:
+    - FILEBENCH_WML_1
+  - language: Fortran
+    or:
+    - FORTRAN_1
+- extensions:
+  - .for
+  rules:
+  - language: Forth
+    or:
+    - FORTH_2
+  - language: Fortran
+    or:
+    - FORTRAN_1
+- extensions:
+  - .fr
+  rules:
+  - language: Forth
+    or:
+    - FORTH_3
+  - language: Frege
+    or:
+    - FREGE_1
+  - language: Text
+- extensions:
+  - .fs
+  rules:
+  - language: Forth
+    or:
+    - FORTH_4
+  - language: F#
+    or:
+    - F_SHARP__1
+  - language: GLSL
+    or:
+    - GLSL_1
+  - language: Filterscript
+    or:
+    - FILTERSCRIPT_1
+- extensions:
+  - .gd
+  rules:
+  - language: GAP
+    or:
+    - GAP_1
+  - language: GDScript
+    or:
+    - GDSCRIPT_1
+- extensions:
+  - .gml
+  rules:
+  - language: XML
+    or:
+    - XML_2
+  - language: Graph Modeling Language
+    or:
+    - GRAPH_MODELING_LANGUAGE_1
+  - language: Gerber Image
+    or:
+    - GERBER_IMAGE_2
+  - language: Game Maker Language
+- extensions:
+  - .gs
+  rules:
+  - language: GLSL
+    or:
+    - GLSL_2
+  - language: Gosu
+    or:
+    - GOSU_1
+  - language: Genie
+    or:
+    - GENIE_1
+- extensions:
+  - .h
+  rules:
+  - language: Objective-C
+    or:
+    - OBJECTIVEC_1
+  - language: C++
+    or:
+    - CPP_1
+    - CPP_2
+    - CPP_3
+    - CPP_4
+    - CPP_5
+    - CPP_6
+    - CPP_7
+- extensions:
+  - .hh
+  rules:
+  - language: Hack
+    or:
+    - HACK_1
+- extensions:
+  - .i
+  rules:
+  - language: Motorola 68K Assembly
+    or:
+    - M68K_1
+    - M68K_2
+    - M68K_3
+    - M68K_4
+    - M68K_5
+    - M68K_6
+    - M68K_7
+  - language: SWIG
+    or:
+    - SWIG_1
+- extensions:
+  - .ice
+  rules:
+  - language: JSON
+    or:
+    - JSON_1
+  - language: Slice
+- extensions:
+  - .inc
+  rules:
+  - language: Motorola 68K Assembly
+    or:
+    - M68K_1
+    - M68K_2
+    - M68K_3
+    - M68K_4
+    - M68K_5
+    - M68K_6
+    - M68K_7
+  - language: PHP
+    or:
+    - PHP_1
+  - language: SourcePawn
+    or:
+    - SOURCEPAWN_1
+  - language: NASL
+    or:
+    - NASL_1
+    - NASL_2
+    - NASL_3
+    - NASL_4
+    - NASL_5
+  - language: POV-Ray SDL
+    or:
+    - POV_RAY_SDL_1
+- extensions:
+  - .l
+  rules:
+  - language: Common Lisp
+    or:
+    - COMMON_LISP_2
+  - language: Lex
+    or:
+    - LEX_1
+  - language: Roff
+    or:
+    - ROFF_2
+  - language: PicoLisp
+    or:
+    - PICOLISP_1
+- extensions:
+  - .ls
+  rules:
+  - language: LoomScript
+    or:
+    - LOOMSCRIPT_1
+  - language: LiveScript
+- extensions:
+  - .lsp
+  - .lisp
+  rules:
+  - language: Common Lisp
+    or:
+    - COMMON_LISP_3
+  - language: NewLisp
+    or:
+    - NEWLISP_1
+- extensions:
+  - .m
+  rules:
+  - language: Objective-C
+    or:
+    - OBJECTIVEC_1
+  - language: Mercury
+    or:
+    - MERCURY_1
+  - language: MUF
+    or:
+    - MUF_1
+  - language: M
+    or:
+    - M_1
+  - and:
+    - MATHEMATICA_1
+    - MATHEMATICA_2
+    language: Mathematica
+  - language: MATLAB
+    or:
+    - MATLAB_1
+  - language: Limbo
+    or:
+    - LIMBO_1
+- extensions:
+  - .m4
+  rules:
+  - language: M4Sugar
+    or:
+    - M4SUGAR_1
+    - M4SUGAR_2
+  - language: M4
+- extensions:
+  - .mask
+  rules:
+  - language: Unity3D Asset
+    or:
+    - UNITY3D_ASSET_1
+- extensions:
+  - .md
+  rules:
+  - language: Markdown
+    or:
+    - MARKDOWN_1
+    - MARKDOWN_2
+  - language: GCC Machine Description
+    or:
+    - GCC_MACHINE_DESCRIPTION_1
+  - language: Markdown
+- extensions:
+  - .ml
+  rules:
+  - language: OCaml
+    or:
+    - OCAML_1
+  - language: Standard ML
+    or:
+    - STANDARD_ML_1
+- extensions:
+  - .mod
+  rules:
+  - language: XML
+    or:
+    - XML_3
+  - language: Modula-2
+    or:
+    - MODULA_2_1
+  - language: Linux Kernel Module
+- extensions:
+  - .ms
+  rules:
+  - language: Roff
+    or:
+    - ROFF_3
+  - and:
+    - UNIX_ASSEMBLY_1
+    language: Unix Assembly
+  - language: MAXScript
+- extensions:
+  - .n
+  rules:
+  - language: Roff
+    or:
+    - ROFF_4
+  - language: Nemerle
+    or:
+    - NEMERLE_1
+- extensions:
+  - .ncl
+  rules:
+  - language: XML
+    or:
+    - XML_4
+  - language: Gerber Image
+    or:
+    - GERBER_IMAGE_3
+  - language: Text
+    or:
+    - TEXT_1
+- extensions:
+  - .nl
+  rules:
+  - language: NL
+    or:
+    - NL_1
+  - language: NewLisp
+- extensions:
+  - .odin
+  rules:
+  - language: Object Data Instance Notation
+    or:
+    - OBJECT_DATA_INSTANCE_NOTATION_1
+  - language: Odin
+    or:
+    - ODIN_1
+- extensions:
+  - .p
+  rules:
+  - language: Gnuplot
+    or:
+    - GNUPLOT_1
+    - GNUPLOT_2
+  - language: OpenEdge ABL
+- extensions:
+  - .php
+  rules:
+  - language: Hack
+    or:
+    - HACK_2
+  - language: PHP
+    or:
+    - PHP_2
+- extensions:
+  - .pl
+  rules:
+  - language: Prolog
+    or:
+    - PROLOG_1
+  - language: Perl
+    or:
+    - PERL5_1
+  - language: Raku
+    or:
+    - PERL6_1
+- extensions:
+  - .plist
+  rules:
+  - language: XML Property List
+    or:
+    - XML_PROPERTY_LIST_1
+  - language: OpenStep Property List
+- extensions:
+  - .pm
+  rules:
+  - language: Perl
+    or:
+    - PERL5_1
+  - language: Raku
+    or:
+    - PERL6_1
+  - language: X PixMap
+    or:
+    - X_PIXMAP_1
+- extensions:
+  - .pod
+  rules:
+  - language: Pod 6
+    or:
+    - POD_6_1
+  - language: Pod
+- extensions:
+  - .pp
+  rules:
+  - language: Pascal
+    or:
+    - PASCAL_1
+  - language: Puppet
+    or:
+    - PUPPET_1
+- extensions:
+  - .pro
+  rules:
+  - language: Proguard
+    or:
+    - PROGUARD_1
+  - language: Prolog
+    or:
+    - PROLOG_2
+  - language: INI
+    or:
+    - INI_1
+  - and:
+    - QMAKE_1
+    - QMAKE_2
+    language: QMake
+  - language: IDL
+    or:
+    - IDL_1
+- extensions:
+  - .properties
+  rules:
+  - and:
+    - KEY_EQUALS_VALUE_1
+    - INI_2
+    language: INI
+  - and:
+    - KEY_EQUALS_VALUE_1
+    - JAVA_PROPERTIES_1
+    language: Java Properties
+  - language: INI
+    or:
+    - KEY_EQUALS_VALUE_1
+  - language: Java properties
+    or:
+    - JAVA_PROPERTIES_1
+- extensions:
+  - .q
+  rules:
+  - language: q
+    or:
+    - Q_1
+  - language: HiveQL
+    or:
+    - HIVEQL_1
+- extensions:
+  - .qs
+  rules:
+  - language: Q#
+    or:
+    - Q_SHARP__1
+  - language: Qt Script
+    or:
+    - QT_SCRIPT_1
+- extensions:
+  - .r
+  rules:
+  - language: Rebol
+    or:
+    - REBOL_1
+  - language: R
+    or:
+    - R_1
+- extensions:
+  - .re
+  rules:
+  - language: Reason
+    or:
+    - REASON_1
+    - REASON_2
+    - REASON_3
+  - language: C++
+    or:
+    - C_PLUS__PLUS__1
+    - C_PLUS__PLUS__2
+- extensions:
+  - .res
+  rules:
+  - language: ReScript
+    or:
+    - RESCRIPT_1
+    - RESCRIPT_2
+- extensions:
+  - .rno
+  rules:
+  - language: RUNOFF
+    or:
+    - RUNOFF_1
+  - language: Roff
+    or:
+    - ROFF_5
+- extensions:
+  - .rpy
+  rules:
+  - language: Python
+    or:
+    - PYTHON_1
+  - language: Ren'Py
+- extensions:
+  - .rs
+  rules:
+  - language: Rust
+    or:
+    - RUST_1
+  - language: RenderScript
+    or:
+    - RENDERSCRIPT_1
+  - language: XML
+    or:
+    - XML_5
+- extensions:
+  - .s
+  rules:
+  - language: Motorola 68K Assembly
+    or:
+    - M68K_1
+    - M68K_2
+    - M68K_3
+    - M68K_4
+    - M68K_5
+    - M68K_6
+    - M68K_7
+- extensions:
+  - .sc
+  rules:
+  - language: SuperCollider
+    or:
+    - SUPERCOLLIDER_1
+  - language: Scala
+    or:
+    - SCALA_1
+- extensions:
+  - .sol
+  rules:
+  - language: Solidity
+    or:
+    - SOLIDITY_1
+  - language: Gerber Image
+    or:
+    - GERBER_IMAGE_4
+- extensions:
+  - .sql
+  rules:
+  - language: PLpgSQL
+    or:
+    - PLPGSQL_1
+  - language: SQLPL
+    or:
+    - SQLPL_1
+  - language: PLSQL
+    or:
+    - PLSQL_1
+  - language: TSQL
+    or:
+    - TSQL_1
+  - language: SQL
+- extensions:
+  - .srt
+  rules:
+  - language: SubRip Text
+    or:
+    - SUBRIP_TEXT_1
+- extensions:
+  - .t
+  rules:
+  - language: Perl
+    or:
+    - PERL5_1
+  - language: Raku
+    or:
+    - RAKU_1
+  - language: Turing
+    or:
+    - TURING_1
+- extensions:
+  - .toc
+  rules:
+  - language: World of Warcraft Addon Data
+    or:
+    - WORLD_OF_WARCRAFT_ADDON_DATA_1
+  - language: TeX
+    or:
+    - TEX_2
+- extensions:
+  - .ts
+  rules:
+  - language: XML
+    or:
+    - XML_6
+  - language: TypeScript
+- extensions:
+  - .tst
+  rules:
+  - language: GAP
+    or:
+    - GAP_2
+  - language: Scilab
+- extensions:
+  - .tsx
+  rules:
+  - language: TSX
+    or:
+    - TSX_1
+  - language: XML
+    or:
+    - XML_7
+- extensions:
+  - .txt
+  rules:
+  - language: Vim Help File
+    or:
+    - VIM_HELP_FILE_1
+  - language: Text
+- extensions:
+  - .v
+  rules:
+  - language: Coq
+    or:
+    - COQ_1
+  - language: Verilog
+    or:
+    - VERILOG_1
+  - language: V
+    or:
+    - V_1
+- extensions:
+  - .vba
+  rules:
+  - language: Vim script
+    or:
+    - VIM_SCRIPT_1
+  - language: VBA
+- extensions:
+  - .w
+  rules:
+  - language: OpenEdge ABL
+    or:
+    - OPENEDGE_ABL_1
+  - language: CWeb
+    or:
+    - CWEB_1
+- extensions:
+  - .x
+  rules:
+  - language: DirectX 3D File
+    or:
+    - DIRECTX_3D_FILE_1
+  - language: RPC
+    or:
+    - RPC_1
+  - language: Logos
+    or:
+    - LOGOS_1
+  - language: Linker Script
+    or:
+    - LINKER_SCRIPT_1
+- extensions:
+  - .yy
+  rules:
+  - language: JSON
+    or:
+    - JSON_2
+  - language: Yacc

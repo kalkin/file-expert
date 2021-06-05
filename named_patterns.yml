@@ -1,0 +1,185 @@
+ACTIONSCRIPT_1: ^\s*(?:package(?:\s+[\w.]+)?\s+(?:{|$)|import\s+[\w.*]+\s*;|(?=.*?(?:intrinsic|extends))(intrinsic\s+)?class\s+[\w<>.]+(?:\s+extends\s+[\w<>.]+)?|(?:(?:public|protected|private|static)\s+)*(?:(?:var|const|local)\s+\w+\s*:\s*[\w<>.]+(?:\s*=.*)?\s*;|function\s+\w+\s*\((?:\s*\w+\s*:\s*[\w<>.]+\s*(,\s*\w+\s*:\s*[\w<>.]+\s*)*)?\)))
+AGS_SCRIPT_1: ^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])
+AL_1: \b(?i:(CODEUNIT|PAGE|PAGEEXTENSION|PAGECUSTOMIZATION|DOTNET|ENUM|ENUMEXTENSION|VALUE|QUERY|REPORT|TABLE|TABLEEXTENSION|XMLPORT|PROFILE|CONTROLADDIN))\b
+ASCIIDOC_1: ^[=-]+(\s|\n)|{{[A-Za-z]
+BITBAKE_1: ^\s*(# |include|require)\b
+BLITZBASIC_1: (<^\s*; |End Function)
+COMMON_LISP_1: '^\s*\((?i:defun|in-package|defpackage) '
+COMMON_LISP_2: \(def(un|macro)\s
+COMMON_LISP_3: '^\s*\((?i:defun|in-package|defpackage) '
+COOL_1: ^class
+COQ_1: (?:^|\s)(?:Proof|Qed)\.(?:$|\s)|(?:^|\s)Require[ \t]+(Import|Export)\s
+CPP_1: ^\s*#\s*include <(cstdint|string|vector|map|list|array|bitset|queue|stack|forward_list|unordered_map|unordered_set|(i|o|io)stream)>
+CPP_2: ^\s*template\s*<
+CPP_3: ^[ \t]*(try|constexpr)
+CPP_4: ^[ \t]*catch\s*\(
+CPP_5: ^[ \t]*(class|(using[ \t]+)?namespace)\s+\w+
+CPP_6: ^[ \t]*(private|public|protected):$
+CPP_7: std::\w+
+CWEB_1: ^@(<|\w+\.)
+C_PLUS__PLUS__1: ^\s*#(?:(?:if|ifdef|define|pragma)\s+\w|\s*include\s+<[^>]+>)
+C_PLUS__PLUS__2: ^\s*template\s*<
+C_SHARP__1: ^(\s*namespace\s*[\w\.]+\s*{|\s*\/\/)
+DIRECTX_3D_FILE_1: ^xof 030(2|3)(?:txt|bin|tzip|bzip)\b
+DTRACE_1: ^(\w+:\w*:\w*:\w*|BEGIN|END|provider\s+|(tick|profile)-\w+\s+{[^}]*}|#pragma\s+D\s+(option|attributes|depends_on)\s|#pragma\s+ident\s)
+D_1: ^module\s+[\w.]*\s*;|import\s+[\w\s,.:]*;|\w+\s+\w+\s*\(.*\)(?:\(.*\))?\s*{[^}]*}|unittest\s*(?:\(.*\))?\s*{[^}]*}
+ECLIPSE_1: ^[^#]+:-
+ECL_1: :=
+ERLANG_1: ^\s*(?:%%|main\s*\(.*?\)\s*->)
+FAUST_1: \bprocess\s*[(=]|\b(library|import)\s*\(\s*"|\bdeclare\s+(name|version|author|copyright|license)\s+"
+FILEBENCH_WML_1: flowop
+FILTERSCRIPT_1: '#include|#pragma\s+(rs|version)|__attribute__'
+FORTH_1: '^: '
+FORTH_2: '^: '
+FORTH_3: '^(: |also |new-device|previous )'
+FORTH_4: '^(: |new-device)'
+FORTRAN_1: ^(?i:[c*][^abd-z]|      (subroutine|program|end|data)\s|\s*!)
+FREGE_1: '^\s*(import|module|package|data|type) '
+F_SHARP__1: ^\s*(#light|import|let|module|namespace|open|type)
+GAP_1: \s*(Declare|BindGlobal|KeyDependentOperation)
+GAP_2: 'gap> '
+GCC_MACHINE_DESCRIPTION_1: ^(;;|\(define_)
+GDSCRIPT_1: \s*(extends|var|const|enum|func|class|signal|tool|yield|assert|onready)
+GENIE_1: ^\[indent=[0-9]+\]
+GERBER_IMAGE_1: ^[DGMT][0-9]{2}\*\r?\n
+GERBER_IMAGE_2: ^[DGMT][0-9]{2}\*$
+GERBER_IMAGE_3: ^[DGMT][0-9]{2}\*\r?\n
+GERBER_IMAGE_4: ^[DGMT][0-9]{2}\*\r?\n
+GLSL_1: ^\s*(#version|precision|uniform|varying|vec[234])
+GLSL_2: ^#version\s+[0-9]+\b
+GNUPLOT_1: ^s?plot\b
+GNUPLOT_2: ^set\s+(term|terminal|out|output|[xy]tics|[xy]label|[xy]range|style)\b
+GOSU_1: ^uses (java|gw)\.
+GRAPH_MODELING_LANGUAGE_1: (?i:^\s*(graph|node)\s+\[$)
+HACK_1: <\?hh
+HACK_2: <\?hh
+HIVEQL_1: (?i:SELECT\s+[\w*,]+\s+FROM|(CREATE|ALTER|DROP)\s(DATABASE|SCHEMA|TABLE))
+IDL_1: ^\s*function[ \w,]+$
+INI_1: last_client=
+INI_2: ^[;\[]
+JAVASCRIPT_1: (?m:\/\/|("|')use strict\1|export\s+default\s|\/\*.*?\*\/)
+JAVA_PROPERTIES_1: '^[^#!][^:]*:'
+JSON_1: \A\s*[{\[]
+JSON_2: \"modelName\"\:\s*\"GM
+KEY_EQUALS_VALUE_1: ^[^#!;][^=]*=
+LEX_1: ^(%[%{}]xs|<.*>)
+LIMBO_1: ^\w+\s*:\s*module\s*{
+LINKER_SCRIPT_1: OUTPUT_ARCH\(|OUTPUT_FORMAT\(|SECTIONS
+LOGOS_1: ^%(end|ctor|hook|group)\b
+LOOMSCRIPT_1: ^\s*package\s*[\w\.\/\*\s]*\s*{
+LTSPICE_SYMBOL_1: ^SymbolType[ \t]
+M4SUGAR_1: AC_DEFUN|AC_PREREQ|AC_INIT
+M4SUGAR_2: ^_?m4_
+M68K_1: (?im)\bmoveq(?:\.l)?\s+#(?:\$-?[0-9a-f]{1,3}|%[0-1]{1,8}|-?[0-9]{1,3}),\s*d[0-7]\b
+M68K_2: (?im)^\s*move(?:\.[bwl])?\s+(?:sr|usp),\s*[^\s]+
+M68K_3: (?im)^\s*move\.[bwl]\s+.*\b[ad]\d
+M68K_4: (?im)^\s*movem\.[bwl]\b
+M68K_5: (?im)^\s*move[mp](?:\.[wl])?\b
+M68K_6: (?im)^\s*btst\b
+M68K_7: (?im)^\s*dbra\b
+MAKEFILE_1: '([\/\\].*:\s+.*\s\\$|: \\$|^[ %]:|^[\w\s\/\\.]+\w+\.\w+\s*:\s+[\w\s\/\\.]+\w+\.\w+)'
+MAN_HEADING_1: ^[.'][ \t]*SH +(?:[^"\s]+|"[^"\s]+)
+MAN_TITLE_1: ^[.'][ \t]*TH +(?:[^"\s]+|"[^"]+") +"?(?:[1-9]|@[^\s@]+@)
+MARKDOWN_1: (^[-A-Za-z0-9=#!\*\[|>])|<\/
+MARKDOWN_2: \A\z
+MATHEMATICA_1: \(\*
+MATHEMATICA_2: \*\)$
+MATLAB_1: ^\s*%
+MDOC_DATE_1: ^[.'][ \t]*Dd +(?:[^"\s]+|"[^"]+")
+MDOC_HEADING_1: ^[.'][ \t]*Sh +(?:[^"\s]|"[^"]+")
+MDOC_TITLE_1: ^[.'][ \t]*Dt +(?:[^"\s]+|"[^"]+") +"?(?:[1-9]|@[^\s@]+@)
+MERCURY_1: :- module
+MICROSOFT_DEVELOPER_STUDIO_PROJECT_1: '# Microsoft Developer Studio Generated Build
+  File'
+MODULA_2_1: ^\s*(?i:MODULE|END) [\w\.]+;
+MUF_1: '^: '
+M_1: ^\s*;
+NASL_1: ^\s*include\s*\(\s*(?:"|')[\\/\w\-\.:\s]+\.(?:nasl|inc)\s*(?:"|')\s*\)\s*;
+NASL_2: ^\s*(?:global|local)_var\s+(?:\w+(?:\s*=\s*[\w\-"']+)?\s*)(?:,\s*\w+(?:\s*=\s*[\w\-"']+)?\s*)*+\s*;
+NASL_3: ^\s*namespace\s+\w+\s*{
+NASL_4: ^\s*object\s+\w+\s*(?:extends\s+\w+(?:::\w+)?)?\s*{
+NASL_5: ^\s*(?:public\s+|private\s+|\s*)function\s+\w+\s*\([\w\s,]*\)\s*{
+NEMERLE_1: ^(module|namespace|using)\s
+NEWLISP_1: '^\s*\(define '
+NL_1: '^(b|g)[0-9]+ '
+OBJECTIVEC_1: ^\s*(@(interface|class|protocol|property|end|synchronised|selector|implementation)\b|#import\s+.+\.h[">])
+OBJECTSCRIPT_1: ^Class\s
+OBJECT_DATA_INSTANCE_NOTATION_1: (?:^|<)\s*[A-Za-z0-9_]+\s*=\s*<
+OCAML_1: (^\s*module)|let rec |match\s+(\S+\s)+with
+ODIN_1: package\s+\w+|\b(?:im|ex)port\s*"[\w:./]+"|\w+\s*::\s*(?:proc|struct)\s*\(|^\s*//\s
+OPENCL_1: \/\* |\/\/ |^\}
+OPENEDGE_ABL_1: '&ANALYZE-SUSPEND _UIB-CODE-BLOCK _CUSTOM _DEFINITIONS'
+PASCAL_1: ^\s*end[.;]
+PERL5_1: \buse\s+(?:strict\b|v?5\.)
+PERL6_1: ^\s*(?:use\s+v6\b|\bmodule\b|\b(?:my\s+)?class\b)
+PHP_1: ^<\?(?:php)?
+PHP_2: <\?[^h]
+PICOLISP_1: ^\((de|class|rel|code|data|must)\s
+PLPGSQL_1: (?i:^\\i\b|AS\s+\$\$|LANGUAGE\s+'?plpgsql'?|BEGIN(\s+WORK)?\s*;)
+PLSQL_1: (?i:\$\$PLSQL_|XMLTYPE|systimestamp|\.nextval|CONNECT\s+BY|AUTHID\s+(DEFINER|CURRENT_USER)|constructor\W+function)
+POD_6_1: ^[\s&&[^\n]]*=(comment|begin pod|begin para|item\d+)
+POV_RAY_SDL_1: ^\s*#(declare|local|macro|while)\s
+PROGUARD_1: ^-(include\b.*\.pro$|keep\b|keepclassmembers\b|keepattributes\b)
+PROLOG_1: ^[^#]*:-
+PROLOG_2: ^[^\[#]+:-
+PUBLIC_KEY_1: '^(----[- ]BEGIN|ssh-(rsa|dss)) '
+PUPPET_1: ^\s+\w+\s+=>\s
+PYTHON_1: (?m:^(import|from|class|def)\s)
+QMAKE_1: HEADERS
+QMAKE_2: SOURCES
+QT_SCRIPT_1: (\w+\.prototype\.\w+|===|\bvar\b)
+Q_1: ((?i:[A-Z.][\w.]*:{)|(^|\n)\\(cd?|d|l|p|ts?) )
+Q_SHARP__1: ^((\/{2,3})?\s*(namespace|operation)\b)
+RAKU_1: ^\s*(?:use\s+v6\b|\bmodule\b|\bmy\s+class\b)
+REASON_1: ^\s*module\s+type\s
+REASON_2: ^\s*(?:include|open)\s+\w+\s*;\s*$
+REASON_3: ^\s*let\s+(?:module\s\w+\s*=\s*{|\w+:\s+.*=.*;\s*$)
+REBOL_1: (?i:\bRebol\b)
+RENDERSCRIPT_1: '#include|#pragma\s+(rs|version)|__attribute__'
+RESCRIPT_1: ^\s*(let|module|type)\s+\w*\s+=\s+
+RESCRIPT_2: ^\s*(?:include|open)\s+\w+\s*$
+ROFF_1: ^\.(?:[A-Za-z]{2}(?:\s|$)|\\")
+ROFF_2: ^\.[A-Za-z]{2}(\s|$)
+ROFF_3: ^[.'][A-Za-z]{2}(\s|$)
+ROFF_4: ^[.']
+ROFF_5: '^\.\\" '
+RPC_1: \b(program|version)\s+\w+\s*{|\bunion\s+\w+\s+switch\s*\(
+RUNOFF_1: (?i:^\.!|^\f|\f$|^\.end lit(?:eral)?\b|^\.[a-zA-Z].*?;\.[a-zA-Z](?:[; \t])|\^\*[^\s*][^*]*\\\*(?=$|\s)|^\.c;[
+  \t]*\w+)
+RUST_1: ^(use |fn |mod |pub |macro_rules|impl|#!?\[)
+R_1: <-|^\s*#
+SCALA_1: (^\s*import (scala|java)\.|^\s*class\b)
+SMALLTALK_1: '![\w\s]+methodsFor: '
+SOLIDITY_1: \bpragma\s+solidity\b|\b(?:abstract\s+)?contract\s+(?!\d)[a-zA-Z0-9$_]+(?:\s+is\s+(?:[a-zA-Z0-9$_][^\{]*?)?)?\s*\{
+SOURCEPAWN_1: ^public\s+(?:SharedPlugin(?:\s+|:)__pl_\w+\s*=(?:\s*{)?|(?:void\s+)?__pl_\w+_SetNTVOptional\(\)(?:\s*{)?)
+SQLPL_1: (?i:ALTER\s+MODULE|MODE\s+DB2SQL|\bSYS(CAT|PROC)\.|ASSOCIATE\s+RESULT\s+SET|\bEND!\s*$)
+STANDARD_ML_1: => |case\s+(\S+\s)+of
+SUBRIP_TEXT_1: ^(\d{2}:\d{2}:\d{2},\d{3})\s*(-->)\s*(\d{2}:\d{2}:\d{2},\d{3})$
+SUPERCOLLIDER_1: (?i:\^(this|super)\.|^\s*~\w+\s*=\.)
+SWIG_1: ^[ \t]*%[a-z_]+\b|^%[{}]$
+TEXT_1: THE_TITLE
+TEX_1: \\\w+{
+TEX_2: ^\\(contentsline|defcounter|beamer|boolfalse)
+TSQL_1: (?i:^\s*GO\b|BEGIN(\s+TRY|\s+CATCH)|OUTPUT\s+INSERTED|DECLARE\s+@|\[dbo\])
+TSX_1: ^\s*(import.+(from\s+|require\()['"]react|\/\/\/\s*<reference\s)
+TURING_1: ^\s*%[ \t]+|^\s*var\s+\w+(\s*:\s*\w+)?\s*:=\s*\w+
+UNITY3D_ASSET_1: tag:unity3d.com
+UNIX_ASSEMBLY_1: ^\s*\.(?:include\s|globa?l\s|[A-Za-z][_A-Za-z0-9]*:)
+VERILOG_1: ^[ \t]*module\s+[^\s()]+\s+\#?\(|^[ \t]*`(?:define|ifdef|ifndef|include|timescale)|^[
+  \t]*always[ \t]+@|^[ \t]*initial[ \t]+(begin|@)
+VIM_HELP_FILE_1: (?:(?:[ \t]|^)vi(?:m[<=>]?\d+|m)?|[ \t]ex)(?=:(?=[ \t]*set?[ \t][^\n:]+:)|:(?![
+  \t]* set?[ \t]))(?:(?:[ \t]|[ \t]*:[ \t]*)\w*(?:[ \t]*=(?:[^\\[ \t]]|\\.)*)?)*[[
+  \t]:](?:filetype|ft|syntax)[ \t]*=help(?=[ \t]|:|$)
+VIM_SCRIPT_1: ^UseVimball
+V_1: \$(?:if|else)[ \t]|^[ \t]*fn\s+[^\s()]+\(.*?\).*?\{|^[ \t]*for\s*\{
+WORLD_OF_WARCRAFT_ADDON_DATA_1: ^## |@no-lib-strip@
+XBASE_1: ^\s*#\s*(?i:if|ifdef|ifndef|define|command|xcommand|translate|xtranslate|include|pragma|undef)\b
+XML_1: ^(\s*)(?i:<Project|<Import|<Property|<?xml|xmlns)
+XML_2: (?i:^\s*(\<\?xml|xmlns))
+XML_3: '<!ENTITY '
+XML_4: ^\s*<\?xml\s+version
+XML_5: ^\s*<\?xml
+XML_6: <TS\b
+XML_7: (?i:^\s*<\?xml\s+version)
+XML_PROPERTY_LIST_1: <!DOCTYPE\s+plist
+X_PIXMAP_1: ^\s*\/\* XPM \*\/

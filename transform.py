@@ -1,84 +1,103 @@
 #!/usr/bin/env python3
-'''
-
-A helper script to generate prolog rules from GitHub linguist YAML data.
-
-There are four kind of rules which are generated from “./languages.yml” file.
-
-⒈ eilename(File, Language).
-⒉ extension(Extension, Language).
-⒊ heuristic(File, Ext, Language).
-⒋ interpreter(Interpreter, Language).
-'''
-
 import yaml
 
-
-def escape_name(txt: str) -> str:
-    ''' Escapes “'” character in language names '''
-    return "'" + txt.replace("'", "\\'") + "'"
+with open('heuristics.yml', 'r') as stream:
+    DATA = yaml.safe_load(stream)
 
 
-def escape_pattern(txt: str) -> str:
-    ''' Escapes characters in regex patterns '''
-    result = txt.replace("\\", "\\\\")
-    result = result.replace('"', '\\"')
-    return '"' + result + '"'
+def escape_name(name: str) -> str:
+    return name.replace(' ', '_') \
+        .replace(" ", "_") \
+        .replace("-", "_") \
+        .replace("+", "_plus_") \
+        .replace("*", "_star_") \
+        .replace("#", "_sharp_") \
+        .replace("'", "_quote_") \
+        .replace(".", "_dot_") \
+        .replace("(", "_") \
+        .replace(")", "_").upper()
 
 
-def pattern_match_rule(pattern) -> str:
-    ''' Generate one or multiple file:match_regex() rules. '''
-    if isinstance(pattern, list):
-        rules = [
-            '\t\t\tfile:match_regex(File, %s)' % escape_pattern(pat)
-            for pat in pattern
-        ]
-        return '\t\t(\n' + ';\n'.join(rules).strip(';\n') + '\n\t\t).'
-    return '\t\tfile:match_regex(File, %s), !.' % escape_pattern(pattern)
+NAMED_PATTERNS = {}
+LANG_REGEX_NUMBER = {}
+OLD_NAMED_TO_NEW = {}
+for key, value in DATA['named_patterns'].items():
+    if key not in LANG_REGEX_NUMBER:
+        LANG_REGEX_NUMBER[key] = 0
 
+    if isinstance(value, str):
+        value = [value]
 
-print(":- discontiguous extension/2.")
-print(":- discontiguous filename/2.")
-print(":- discontiguous interpreter/2.")
-with open("languages.yml", 'r') as lang_stream:
-    LANGS = yaml.safe_load(lang_stream)
-    for name, data in LANGS.items():
-        language = escape_name(name)
-        if 'extensions' in data:
-            for ext in data['extensions']:
-                ext = escape_name(ext)
-                print('extension(%s, %s).' % (ext, language))
-        if 'interpreters' in data:
-            for inter in data['interpreters']:
-                inter = escape_name(inter)
-                print('interpreter(%s, %s).' % (inter, language))
-        if 'filenames' in data:
-            for fname in data['filenames']:
-                file_name = escape_name(fname)
-                print('filename(%s, %s).' % (file_name, language))
+    i = LANG_REGEX_NUMBER[key]
+    if key not in OLD_NAMED_TO_NEW:
+        OLD_NAMED_TO_NEW[key] = []
+    for v in value:
+        i += 1
+        pattern_name = escape_name("%s_%d" % (key, i))
+        NAMED_PATTERNS[pattern_name] = v
+        OLD_NAMED_TO_NEW[key].append(pattern_name)
+    LANG_REGEX_NUMBER[key] = i
 
-with open("heuristics.yml", "r") as heuristic:
-    HEURISTIC = yaml.safe_load(heuristic)
-    DISAMBIGUATIONS = HEURISTIC['disambiguations']
-    NAMED_PATTERN = HEURISTIC['named_patterns']
-    for entries in DISAMBIGUATIONS:
-        for ext in entries['extensions']:
-            ext = escape_name(ext)
-            for rule in entries['rules']:
-                if isinstance(rule['language'], list):
-                    continue
-                lang = escape_name(rule['language'])
-                goal = 'heuristic(File, %s, %s)' % (ext, lang)
-                if 'named_pattern' in rule:
-                    pattern_name = rule['named_pattern']
-                    if isinstance(NAMED_PATTERN[pattern_name], str):
-                        goal += ':-\n' + pattern_match_rule(
-                            NAMED_PATTERN[pattern_name])
-                    elif isinstance(NAMED_PATTERN[pattern_name], list):
-                        goal += ':-\n'
-                        goal += pattern_match_rule(NAMED_PATTERN[pattern_name])
-                elif 'pattern' not in rule:
-                    continue
-                else:
-                    goal += ':-\n' + pattern_match_rule(rule['pattern'])
-                print(goal)
+DISAMBIGUATIONS = []
+for ext_rules in DATA['disambiguations']:
+    for rule in ext_rules['rules']:
+        lang = rule['language']
+
+        # handle the case when language is a list
+        # happens only for *.mod Linux Kernel Module & AMPL
+        if isinstance(lang, list):
+            lang = lang[0]
+            rule['language'] = lang
+
+        if lang not in LANG_REGEX_NUMBER:
+            LANG_REGEX_NUMBER[lang] = 0
+
+        rule['or'] = []
+        if 'pattern' in rule:
+            if isinstance(rule['pattern'], str):
+                rule['pattern'] = [rule['pattern']]
+
+            for p in rule['pattern']:
+                i = LANG_REGEX_NUMBER[lang]
+                i += 1
+                key = escape_name("%s_%d" % (lang, i))
+                NAMED_PATTERNS[key] = p
+                rule['or'].append(key)
+                LANG_REGEX_NUMBER[lang] = i
+            del rule['pattern']
+
+        if 'named_pattern' in rule:
+            if isinstance(rule['named_pattern'], str):
+                rule['named_pattern'] = [rule['named_pattern']]
+
+            for key in rule['named_pattern']:
+                names = OLD_NAMED_TO_NEW[key]
+                rule['or'] += names
+            del rule['named_pattern']
+        if not rule['or']:
+            del rule['or']
+
+        if 'and' in rule:
+            new_and = []
+            for obj in rule['and']:
+                if 'pattern' in obj:
+                    i = LANG_REGEX_NUMBER[lang]
+                    i+=1
+                    pattern_name = escape_name("%s_%d" % (lang, i))
+                    NAMED_PATTERNS[pattern_name] = obj['pattern']
+                    new_and.append(pattern_name)
+                    LANG_REGEX_NUMBER[lang] = i
+
+                if 'named_pattern' in obj:
+                    names = OLD_NAMED_TO_NEW[obj['named_pattern']]
+                    new_and += names
+
+            rule['and'] = new_and
+
+    DISAMBIGUATIONS.append(ext_rules)
+
+with open('disambiguations.yml', 'w') as stream:
+    yaml.safe_dump(DISAMBIGUATIONS, stream)
+
+with open('named_patterns.yml', 'w') as stream:
+    yaml.safe_dump(NAMED_PATTERNS, stream)
