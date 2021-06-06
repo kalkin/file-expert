@@ -22,6 +22,10 @@ impl Display for ExpertResult {
 }
 
 pub fn expert(path: &Path) -> ExpertResult {
+    if !path.exists() {
+        return ExpertResult::Kind("Missing file".to_string());
+    }
+
     if let Some(lang) = guess_by_filename(path) {
         return ExpertResult::Kind(lang.to_string());
     }
