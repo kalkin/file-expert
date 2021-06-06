@@ -26,6 +26,10 @@ pub fn expert(path: &Path) -> ExpertResult {
         return ExpertResult::Kind("Missing file".to_string());
     }
 
+    if path.metadata().unwrap().is_dir() {
+        return ExpertResult::Kind("Directory".to_string());
+    }
+
     if let Some(lang) = guess_by_filename(path) {
         return ExpertResult::Kind(lang.to_string());
     }
