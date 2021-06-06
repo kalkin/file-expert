@@ -27,6 +27,6 @@ pub fn  guess_by_modeline(content: &Text) -> Option<&'static String> {
 }
 
 pub fn guess_by_linguist_heuristic(content: &Text) -> Option<&'static str> {
-    let ext = content.path_buf.extension().unwrap().to_str().unwrap() ;
-    linguist_heuristic(&format!(".{}", ext), &content.body)
+    let ext = content.path_buf.extension().unwrap().to_str().unwrap();
+    linguist_heuristic(&format!(".{}", ext.to_lowercase()), &content.body)
 }
