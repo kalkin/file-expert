@@ -6,6 +6,7 @@ use std::path::Path;
 include!(concat!(env!("OUT_DIR"), "/linguist_interpreters.rs"));
 include!(concat!(env!("OUT_DIR"), "/linguist_aliases.rs"));
 include!(concat!(env!("OUT_DIR"), "/linguist_filenames.rs"));
+include!(concat!(env!("OUT_DIR"), "/linguist_heuristics.rs"));
 
 pub fn  guess_by_filename(path: &Path) -> Option<&'static String> {
     let filename = path.file_name().unwrap().to_str().unwrap();
@@ -23,4 +24,9 @@ pub fn  guess_by_modeline(content: &Text) -> Option<&'static String> {
         return ALIASES.get(alias);
     }
     None
+}
+
+pub fn guess_by_linguist_heuristic(content: &Text) -> Option<&'static str> {
+    let ext = content.path_buf.extension().unwrap().to_str().unwrap() ;
+    linguist_heuristic(&format!(".{}", ext), &content.body)
 }

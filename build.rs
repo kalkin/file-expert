@@ -21,6 +21,9 @@ fn main() {
     generate_linguist_interpreters(&out_dir, &languages);
     generate_linguist_aliases(&out_dir, &languages);
     generate_linguist_filenames(&out_dir, &languages);
+
+
+    generate_linguist_heuristics(&root_dir, &out_dir);
 }
 
 /// A combination of a file suffix and a Regex
@@ -37,6 +40,19 @@ struct Language {
 }
 
 type Languages = HashMap<String, Language>;
+
+#[derive(Debug, PartialEq, Deserialize, Serialize)]
+struct Rule {
+    language: String,
+    and: Option<Vec<String>>,
+    or: Option<Vec<String>>,
+}
+
+#[derive(Debug, PartialEq, Deserialize, Serialize)]
+struct ExtensionRules {
+    extensions: Vec<String>,
+    rules: Vec<Rule>,
+}
 
 fn parse_languages_yaml(file: &str) -> Languages {
     let f = std::fs::File::open(file).unwrap();
@@ -83,8 +99,11 @@ fn generate_linguist_tests(out_dir: &OsString) {
             "    let expected = ExpertResult::Kind(\"{}\".to_string());",
             kind
         )
-        .unwrap();
-        writeln!(output, "    assert_eq!(actual, expected);").unwrap();
+            .unwrap();
+        let mut short_name = kind.to_owned();
+        short_name.push('/');
+        short_name.push_str(Path::new(file).file_name().unwrap().to_str().unwrap());
+        writeln!(output, "    assert_eq!(actual, expected, \"Parsed {} as {{}}\", actual);", short_name).unwrap();
         writeln!(output, "}}\n").unwrap();
 
         i += 1;
@@ -116,7 +135,7 @@ fn generate_linguist_interpreters(out_dir: &OsString, languages: &Languages) {
         output,
         "    static ref INTERPRETERS: HashMap<String, String> = ["
     )
-    .unwrap();
+        .unwrap();
     for (name, lang) in languages {
         if let Some(interpreters) = &lang.interpreters {
             for interp in interpreters {
@@ -186,6 +205,89 @@ fn generate_linguist_filenames(out_dir: &OsString, languages: &Languages) {
         }
     }
     writeln!(output, "    ].iter().cloned().collect();").unwrap();
+    writeln!(output, "}}").unwrap();
+}
+
+fn generate_linguist_heuristics(root_dir: &str, out_dir: &OsString) {
+    let mut named_file = root_dir.to_owned();
+    named_file.push_str("/named_patterns.yml");
+
+    let mut heuristic_file = root_dir.to_owned();
+    heuristic_file.push_str("/disambiguations.yml");
+
+    let dest_path = Path::new(&out_dir).join("linguist_heuristics.rs");
+    let mut output = File::create(dest_path).unwrap();
+    {
+        writeln!(output, "use fancy_regex::Regex;\n").unwrap();
+        writeln!(output, "lazy_static! {{").unwrap();
+        let f = std::fs::File::open(Path::new(&named_file)).unwrap();
+        let data: HashMap<String, String> = serde_yaml::from_reader(f).unwrap();
+        for (name, value) in data {
+            writeln!(
+                output,
+                "    static ref {}: Regex = Regex::new(r#\"{}\"#).unwrap();", name, value
+            ).unwrap();
+        }
+        writeln!(output, "}}\n").unwrap();
+    }
+
+    writeln!(output, "fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {{").unwrap();
+
+    let f = std::fs::File::open(Path::new(&heuristic_file)).unwrap();
+    let data: Vec<ExtensionRules> = serde_yaml::from_reader(f).unwrap();
+    writeln!(output, "    match ext {{").unwrap();
+    for ext_rules in &data {
+        let mut noelse = false;
+        let match_line = ext_rules.extensions.iter().map(|e| format!("{:?}", e)).collect::<Vec<_>>().join(" | ");
+        writeln!(output, "    {}=> {{", match_line).unwrap();
+        let mut first = true;
+        for rule in &ext_rules.rules {
+            if first {
+                write!(output, "        if ").unwrap();
+                first = false;
+            } else if rule.and.is_none() && rule.or.is_none() {
+                writeln!(output, "        else {{").unwrap();
+            } else {
+                write!(output, "        else if ").unwrap()
+            }
+
+
+            let lang = &rule.language;
+
+            if let Some(and_rule) = &rule.and {
+                let tmp = and_rule.iter().map(|e| format!("{}.is_match(content).unwrap()", e)).collect::<Vec<_>>();
+                writeln!(output, "{} {{", tmp.join(" && ")).unwrap();
+                write!(output, "            Some({:?})", lang).unwrap();
+                write!(output, "        }}").unwrap();
+            }
+
+            if let Some(or_rule) = &rule.or {
+                let tmp = or_rule.iter().map(|e| format!("{}.is_match(content).unwrap()", e)).collect::<Vec<_>>();
+                writeln!(output, "{} {{", tmp.join(" && ")).unwrap();
+                write!(output, "            Some({:?})", lang).unwrap();
+                write!(output, "        }}").unwrap();
+            }
+            if rule.and.is_none() && rule.or.is_none() {
+                writeln!(output, "            Some({:?})", lang).unwrap();
+                writeln!(output, "        }}").unwrap();
+                noelse = true;
+                break;
+            }
+
+
+            write!(output, "\n").unwrap();
+        }
+        if !noelse {
+            writeln!(output, "        else {{").unwrap();
+            writeln!(output, "            None").unwrap();
+            writeln!(output, "        }}").unwrap();
+            // if let Some(and_rule) = ext_rules.rules.
+        }
+        writeln!(output, "    }},").unwrap();
+    }
+
+    writeln!(output, "        _ => None").unwrap();
+    writeln!(output, "    }}").unwrap();
     writeln!(output, "}}").unwrap();
 }
 

@@ -1,4 +1,4 @@
-use crate::heuristic::{guess_by_interpreter, guess_by_modeline, guess_by_filename};
+use crate::heuristic::{guess_by_interpreter, guess_by_modeline, guess_by_filename, guess_by_linguist_heuristic};
 use std::fmt::{Display, Formatter};
 use std::path::Path;
 use crate::data_structures::{FileContent, Text};
@@ -40,6 +40,9 @@ pub fn expert(path: &Path) -> ExpertResult {
         return ExpertResult::Kind(lang.to_string());
     }
 
+    if let Some(lang) = guess_by_linguist_heuristic(&content) {
+        return ExpertResult::Kind(lang.to_string());
+    }
 
     ExpertResult::Unknown
 }
