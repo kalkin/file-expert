@@ -1,7 +1,9 @@
-use crate::heuristic::{guess_by_interpreter, guess_by_modeline, guess_by_filename, guess_by_linguist_heuristic};
+use crate::data_structures::{FileContent, Text};
+use crate::heuristic::{
+    guess_by_filename, guess_by_interpreter, guess_by_linguist_heuristic, guess_by_modeline,
+};
 use std::fmt::{Display, Formatter};
 use std::path::Path;
-use crate::data_structures::{FileContent, Text};
 
 #[derive(Debug, Eq, PartialEq)]
 pub enum ExpertResult {

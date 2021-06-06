@@ -1,9 +1,9 @@
-#![recursion_limit="512"]
+#![recursion_limit = "512"]
 mod data_structures;
 mod expert;
 mod heuristic;
-mod shebang;
 mod modeline;
+mod shebang;
 
 use clap::{AppSettings, Arg, ArgMatches};
 use std::io;

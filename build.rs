@@ -22,7 +22,6 @@ fn main() {
     generate_linguist_aliases(&out_dir, &languages);
     generate_linguist_filenames(&out_dir, &languages);
 
-
     generate_linguist_heuristics(&root_dir, &out_dir);
 }
 
@@ -99,11 +98,16 @@ fn generate_linguist_tests(out_dir: &OsString) {
             "    let expected = ExpertResult::Kind(\"{}\".to_string());",
             kind
         )
-            .unwrap();
+        .unwrap();
         let mut short_name = kind.to_owned();
         short_name.push('/');
         short_name.push_str(Path::new(file).file_name().unwrap().to_str().unwrap());
-        writeln!(output, "    assert_eq!(actual, expected, \"Parsed {} as {{}}\", actual);", short_name).unwrap();
+        writeln!(
+            output,
+            "    assert_eq!(actual, expected, \"Parsed {} as {{}}\", actual);",
+            short_name
+        )
+        .unwrap();
         writeln!(output, "}}\n").unwrap();
 
         i += 1;
@@ -111,8 +115,7 @@ fn generate_linguist_tests(out_dir: &OsString) {
 }
 
 fn escape_name(kind: &str) -> String {
-    kind
-        .replace(" ", "_")
+    kind.replace(" ", "_")
         .replace("-", "_")
         .replace("+", "_plus_")
         .replace("*", "_star_")
@@ -135,7 +138,7 @@ fn generate_linguist_interpreters(out_dir: &OsString, languages: &Languages) {
         output,
         "    static ref INTERPRETERS: HashMap<String, String> = ["
     )
-        .unwrap();
+    .unwrap();
     for (name, lang) in languages {
         if let Some(interpreters) = &lang.interpreters {
             for interp in interpreters {
@@ -143,7 +146,8 @@ fn generate_linguist_interpreters(out_dir: &OsString, languages: &Languages) {
                     output,
                     "        ({:?}.to_string(), {:?}.to_string()),",
                     interp, name
-                ).unwrap();
+                )
+                .unwrap();
             }
         }
     }
@@ -161,20 +165,22 @@ fn generate_linguist_aliases(out_dir: &OsString, languages: &Languages) {
         output,
         "    static ref ALIASES: HashMap<String, String> = ["
     )
-        .unwrap();
+    .unwrap();
     for (name, lang) in languages {
         writeln!(
             output,
             "        ({:?}.to_string(), {:?}.to_string()),",
             name, name
-        ).unwrap();
+        )
+        .unwrap();
         if let Some(aliases) = &lang.aliases {
             for alias in aliases {
                 writeln!(
                     output,
                     "        ({:?}.to_string(), {:?}.to_string()),",
                     alias, name
-                ).unwrap();
+                )
+                .unwrap();
             }
         }
     }
@@ -192,7 +198,7 @@ fn generate_linguist_filenames(out_dir: &OsString, languages: &Languages) {
         output,
         "    static ref FILENAMES: HashMap<String, String> = ["
     )
-        .unwrap();
+    .unwrap();
     for (name, lang) in languages {
         if let Some(filenames) = &lang.filenames {
             for file in filenames {
@@ -200,7 +206,8 @@ fn generate_linguist_filenames(out_dir: &OsString, languages: &Languages) {
                     output,
                     "        ({:?}.to_string(), {:?}.to_string()),",
                     file, name
-                ).unwrap();
+                )
+                .unwrap();
             }
         }
     }
@@ -225,20 +232,31 @@ fn generate_linguist_heuristics(root_dir: &str, out_dir: &OsString) {
         for (name, value) in data {
             writeln!(
                 output,
-                "    static ref {}: Regex = Regex::new(r#\"{}\"#).unwrap();", name, value
-            ).unwrap();
+                "    static ref {}: Regex = Regex::new(r#\"{}\"#).unwrap();",
+                name, value
+            )
+            .unwrap();
         }
         writeln!(output, "}}\n").unwrap();
     }
 
-    writeln!(output, "fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {{").unwrap();
+    writeln!(
+        output,
+        "fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {{"
+    )
+    .unwrap();
 
     let f = std::fs::File::open(Path::new(&heuristic_file)).unwrap();
     let data: Vec<ExtensionRules> = serde_yaml::from_reader(f).unwrap();
     writeln!(output, "    match ext {{").unwrap();
     for ext_rules in &data {
         let mut noelse = false;
-        let match_line = ext_rules.extensions.iter().map(|e| format!("{:?}", e)).collect::<Vec<_>>().join(" | ");
+        let match_line = ext_rules
+            .extensions
+            .iter()
+            .map(|e| format!("{:?}", e))
+            .collect::<Vec<_>>()
+            .join(" | ");
         writeln!(output, "    {}=> {{", match_line).unwrap();
         let mut first = true;
         for rule in &ext_rules.rules {
@@ -251,18 +269,23 @@ fn generate_linguist_heuristics(root_dir: &str, out_dir: &OsString) {
                 write!(output, "        else if ").unwrap()
             }
 
-
             let lang = &rule.language;
 
             if let Some(and_rule) = &rule.and {
-                let tmp = and_rule.iter().map(|e| format!("{}.is_match(content).unwrap()", e)).collect::<Vec<_>>();
+                let tmp = and_rule
+                    .iter()
+                    .map(|e| format!("{}.is_match(content).unwrap()", e))
+                    .collect::<Vec<_>>();
                 writeln!(output, "{} {{", tmp.join(" && ")).unwrap();
                 write!(output, "            Some({:?})", lang).unwrap();
                 write!(output, "        }}").unwrap();
             }
 
             if let Some(or_rule) = &rule.or {
-                let tmp = or_rule.iter().map(|e| format!("{}.is_match(content).unwrap()", e)).collect::<Vec<_>>();
+                let tmp = or_rule
+                    .iter()
+                    .map(|e| format!("{}.is_match(content).unwrap()", e))
+                    .collect::<Vec<_>>();
                 writeln!(output, "{} {{", tmp.join(" && ")).unwrap();
                 write!(output, "            Some({:?})", lang).unwrap();
                 write!(output, "        }}").unwrap();
@@ -273,7 +296,6 @@ fn generate_linguist_heuristics(root_dir: &str, out_dir: &OsString) {
                 noelse = true;
                 break;
             }
-
 
             write!(output, "\n").unwrap();
         }

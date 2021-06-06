@@ -1,6 +1,6 @@
+use std::fs::File;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};
-use std::fs::File;
 
 pub struct FileContent(Vec<u8>, PathBuf);
 
@@ -51,7 +51,7 @@ impl From<FileContent> for Text {
             first_line,
             modelines,
             body,
-            path_buf: data.1
+            path_buf: data.1,
         }
     }
 }

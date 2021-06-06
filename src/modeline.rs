@@ -1,8 +1,9 @@
-use lazy_static::lazy_static;
 use fancy_regex::Regex;
+use lazy_static::lazy_static;
 
 lazy_static! {
-    static ref VI_REGEX: Regex = Regex::new(r#"\bvim?\b.*\b(?:filetype|ft)=(.+?)\b"#).expect("Valid Regex");
+    static ref VI_REGEX: Regex =
+        Regex::new(r#"\bvim?\b.*\b(?:filetype|ft)=(.+?)\b"#).expect("Valid Regex");
 }
 
 pub fn parse_modeline(line: &str) -> Option<&str> {
@@ -38,7 +39,6 @@ fn test() {
 
     let actual = parse_modeline("vim: noexpandtab: ft=perl6");
     assert_eq!(expected, actual);
-
 
     let actual = parse_modeline(":vim:tw=78:ts=8:ft=perl6:norl:fen:fdl=0:fdm=marker:");
     assert_eq!(expected, actual);
