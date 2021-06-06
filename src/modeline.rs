@@ -1,12 +1,12 @@
 use lazy_static::lazy_static;
-use regex::Regex;
+use fancy_regex::Regex;
 
 lazy_static! {
     static ref VI_REGEX: Regex = Regex::new(r#"\bvim?\b.*\b(?:filetype|ft)=(.+?)\b"#).expect("Valid Regex");
 }
 
 pub fn parse_modeline(line: &str) -> Option<&str> {
-    if let Some(caps) = VI_REGEX.captures(line) {
+    if let Some(caps) = VI_REGEX.captures(line).unwrap() {
         if let Some(m) = caps.get(1) {
             return Some(m.as_str());
         }
