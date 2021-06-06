@@ -26,9 +26,10 @@ impl FileContent {
 }
 
 pub struct Text {
-   pub first_line: String,
-   pub modelines: Vec<String>,
-   pub body: String,
+    pub first_line: String,
+    pub modelines: Vec<String>,
+    pub body: String,
+    pub path_buf: PathBuf,
 }
 
 impl From<FileContent> for Text {
@@ -50,6 +51,7 @@ impl From<FileContent> for Text {
             first_line,
             modelines,
             body,
+            path_buf: data.1
         }
     }
 }
