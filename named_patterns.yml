@@ -121,7 +121,6 @@ POD_6_1: ^[\s&&[^\n]]*=(comment|begin pod|begin para|item\d+)
 POV_RAY_SDL_1: ^\s*#(declare|local|macro|while)\s
 PROGUARD_1: ^-(include\b.*\.pro$|keep\b|keepclassmembers\b|keepattributes\b)
 PROLOG_1: ^[^#]*:-
-PROLOG_2: ^[^\[#]+:-
 PUBLIC_KEY_1: '^(----[- ]BEGIN|ssh-(rsa|dss)) '
 PUPPET_1: ^\s+\w+\s+=>\s
 PYTHON_1: (?m:^(import|from|class|def)\s)

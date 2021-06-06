@@ -367,7 +367,7 @@ disambiguations:
 - extensions: ['.pl']
   rules:
   - language: Prolog
-    pattern: '^[^#]*:-'
+    named_pattern: prolog
   - language: Perl
     named_pattern: perl5
   - language: Raku
@@ -401,7 +401,7 @@ disambiguations:
   - language: Proguard
     pattern: '^-(include\b.*\.pro$|keep\b|keepclassmembers\b|keepattributes\b)'
   - language: Prolog
-    pattern: '^[^\[#]+:-'
+    named_pattern: prolog
   - language: INI
     pattern: 'last_client='
   - language: QMake
@@ -614,3 +614,4 @@ named_patterns:
   objectivec: '^\s*(@(interface|class|protocol|property|end|synchronised|selector|implementation)\b|#import\s+.+\.h[">])'
   perl5: '\buse\s+(?:strict\b|v?5\.)'
   perl6: '^\s*(?:use\s+v6\b|\bmodule\b|\b(?:my\s+)?class\b)'
+  prolog: '^[^#]*:-'

@@ -555,7 +555,7 @@
     - PROGUARD_1
   - language: Prolog
     or:
-    - PROLOG_2
+    - PROLOG_1
   - language: INI
     or:
     - INI_1
