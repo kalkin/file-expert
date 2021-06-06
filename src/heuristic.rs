@@ -28,22 +28,11 @@ pub fn guess_by_modeline(content: &Text) -> Option<&'static String> {
     None
 }
 
-pub fn guess_by_linguist_heuristic(content: &Text) -> Option<&'static str> {
-    let ext = content.path_buf.extension().unwrap().to_str().unwrap();
-    linguist_heuristic(&format!(".{}", ext.to_lowercase()), &content.body)
+pub fn guess_by_linguist_heuristic(ext: &str, content: &Text) -> Option<&'static str> {
+    linguist_heuristic(&ext, &content.body)
 }
 
-pub fn guess_by_extensions(content: &Text) -> Option<&'static String> {
-    let ext = &format!(
-        ".{}",
-        content
-            .path_buf
-            .extension()
-            .unwrap()
-            .to_str()
-            .unwrap()
-            .to_lowercase()
-    );
+pub fn guess_by_extensions(ext: &str) -> Option<&'static String> {
     if EXTENSIONS.contains_key(ext) {
         return Some(&EXTENSIONS[ext]);
     }

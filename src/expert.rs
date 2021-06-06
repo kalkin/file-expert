@@ -51,12 +51,15 @@ pub fn expert(path: &Path) -> ExpertResult {
         return ExpertResult::Kind(lang.to_string());
     }
 
-    if let Some(lang) = guess_by_linguist_heuristic(&content) {
-        return ExpertResult::Kind(lang.to_string());
-    }
+    if let Some(tmp) = content.path_buf.extension() {
+        let ext = format!(".{}", tmp.to_str().unwrap().to_lowercase());
+        if let Some(lang) = guess_by_linguist_heuristic(&ext, &content) {
+            return ExpertResult::Kind(lang.to_string());
+        }
 
-    if let Some(lang) = guess_by_extensions(&content) {
-        return ExpertResult::Kind(lang.to_string());
+        if let Some(lang) = guess_by_extensions(&ext) {
+            return ExpertResult::Kind(lang.to_string());
+        }
     }
 
     ExpertResult::Unknown
