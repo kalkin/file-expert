@@ -20,6 +20,7 @@ fn main() {
 
     generate_linguist_interpreters(&out_dir, &languages);
     generate_linguist_aliases(&out_dir, &languages);
+    generate_linguist_uniq_extensions(&out_dir, &languages);
     generate_linguist_filenames(&out_dir, &languages);
 
     generate_linguist_heuristics(&root_dir, &out_dir);
@@ -182,6 +183,43 @@ fn generate_linguist_aliases(out_dir: &OsString, languages: &Languages) {
                 )
                 .unwrap();
             }
+        }
+    }
+    writeln!(output, "    ].iter().cloned().collect();").unwrap();
+    writeln!(output, "}}").unwrap();
+}
+
+fn generate_linguist_uniq_extensions(out_dir: &OsString, languages: &Languages) {
+    let dest_path = Path::new(&out_dir).join("linguist_extensions.rs");
+    let mut extensions: HashMap<String, Vec<String>> = HashMap::new();
+    let mut output = File::create(dest_path).unwrap();
+    for (name, lang) in languages {
+        if let Some(exts) = &lang.extensions {
+            for e in exts {
+                if !extensions.contains_key(e) {
+                    extensions.insert(e.to_owned(), vec![name.to_owned()]);
+                } else {
+                    extensions.get_mut(e).unwrap().push(name.to_owned());
+                }
+            }
+        }
+    }
+
+    writeln!(output, "lazy_static! {{").unwrap();
+
+    writeln!(
+        output,
+        "    static ref EXTENSIONS: HashMap<String, String> = ["
+    )
+    .unwrap();
+    for (ext, languages) in &extensions {
+        if languages.len() == 1 {
+            writeln!(
+                output,
+                "        ({:?}.to_string(), {:?}.to_string()),",
+                ext, languages[0]
+            )
+            .unwrap();
         }
     }
     writeln!(output, "    ].iter().cloned().collect();").unwrap();

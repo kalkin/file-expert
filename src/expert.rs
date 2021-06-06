@@ -1,6 +1,7 @@
 use crate::data_structures::{FileContent, Text};
 use crate::heuristic::{
-    guess_by_filename, guess_by_interpreter, guess_by_linguist_heuristic, guess_by_modeline,
+    guess_by_extensions, guess_by_filename, guess_by_interpreter, guess_by_linguist_heuristic,
+    guess_by_modeline,
 };
 use std::fmt::{Display, Formatter};
 use std::path::Path;
@@ -43,6 +44,10 @@ pub fn expert(path: &Path) -> ExpertResult {
     }
 
     if let Some(lang) = guess_by_linguist_heuristic(&content) {
+        return ExpertResult::Kind(lang.to_string());
+    }
+
+    if let Some(lang) = guess_by_extensions(&content) {
         return ExpertResult::Kind(lang.to_string());
     }
 
