@@ -29,7 +29,7 @@ fn main() {
     if matches.is_present("file") {
         for file in matches.values_of("file").unwrap() {
             let result = expert::expert(Path::new(file));
-            eprintln!("{}\t{}", file, result)
+            println!("{}\t{}", file, result)
         }
     } else {
         eprintln!("Reading from stdin");
@@ -38,7 +38,7 @@ fn main() {
             match line {
                 Ok(l) => {
                     let result = expert::expert(Path::new(&l));
-                    eprintln!("{}\t{}", l, result)
+                    println!("{}\t{}", l, result)
                 }
                 Err(_) => break,
             }
