@@ -777,6 +777,7 @@
   - language: HTML
     or:
     - HTML_1
+  - language: Smalltalk
 - extensions:
   - .t
   rules:
