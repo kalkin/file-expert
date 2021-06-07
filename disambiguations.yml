@@ -105,6 +105,12 @@
     or:
     - XML_1
 - extensions:
+  - .cake
+  rules:
+  - language: C#
+    or:
+    - C_SHARP__1
+- extensions:
   - .ch
   rules:
   - language: xBase

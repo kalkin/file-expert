@@ -20,7 +20,7 @@ CPP_7: std::\w+
 CWEB_1: ^@(<|\w+\.)
 C_PLUS__PLUS__1: ^\s*#(?:(?:if|ifdef|define|pragma)\s+\w|\s*include\s+<[^>]+>)
 C_PLUS__PLUS__2: ^\s*template\s*<
-C_SHARP__1: ^(\s*namespace\s*[\w\.]+\s*{|\s*\/\/)
+C_SHARP__1: ^\s*(?:namespace|using|\/\/)\s*[\w\.]+\s*
 DIRECTX_3D_FILE_1: ^xof 030(2|3)(?:txt|bin|tzip|bzip)\b
 DTRACE_1: ^(\w+:\w*:\w*:\w*|BEGIN|END|provider\s+|(tick|profile)-\w+\s+{[^}]*}|#pragma\s+D\s+(option|attributes|depends_on)\s|#pragma\s+ident\s)
 D_1: ^module\s+[\w.]*\s*;|import\s+[\w\s,.:]*;|\w+\s+\w+\s*\(.*\)(?:\(.*\))?\s*{[^}]*}|unittest\s*(?:\(.*\))?\s*{[^}]*}
