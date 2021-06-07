@@ -144,6 +144,12 @@
     or:
     - GERBER_IMAGE_1
 - extensions:
+  - .config
+  rules:
+  - language: XML
+    or:
+    - XML_5
+- extensions:
   - .cs
   rules:
   - language: Smalltalk
@@ -164,6 +170,18 @@
   - language: Makefile
     or:
     - MAKEFILE_1
+- extensions:
+  - .dist
+  rules:
+  - language: XML
+    or:
+    - XML_5
+- extensions:
+  - .dll.config
+  rules:
+  - language: XML
+    or:
+    - XML_8
 - extensions:
   - .dsp
   rules:
@@ -271,6 +289,12 @@
   - language: Genie
     or:
     - GENIE_1
+- extensions:
+  - .gst
+  rules:
+  - language: XML
+    or:
+    - XML_5
 - extensions:
   - .h
   rules:
@@ -435,6 +459,12 @@
     or:
     - STANDARD_ML_1
 - extensions:
+  - .mm
+  rules:
+  - language: XML
+    or:
+    - XML_8
+- extensions:
   - .mod
   rules:
   - language: XML
@@ -527,6 +557,12 @@
     or:
     - XML_PROPERTY_LIST_1
   - language: OpenStep Property List
+- extensions:
+  - .pluginspec
+  rules:
+  - language: XML
+    or:
+    - XML_8
 - extensions:
   - .pm
   rules:
@@ -637,6 +673,9 @@
     or:
     - RESCRIPT_1
     - RESCRIPT_2
+  - language: XML
+    or:
+    - XML_5
 - extensions:
   - .rno
   rules:
@@ -686,6 +725,12 @@
   - language: Scala
     or:
     - SCALA_1
+- extensions:
+  - .sch
+  rules:
+  - language: XML
+    or:
+    - XML_5
 - extensions:
   - .sol
   rules:
@@ -796,6 +841,12 @@
   - language: CWeb
     or:
     - CWEB_1
+- extensions:
+  - .workflow
+  rules:
+  - language: XML
+    or:
+    - XML_5
 - extensions:
   - .x
   rules:

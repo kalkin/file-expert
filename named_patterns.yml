@@ -181,5 +181,6 @@ XML_4: ^\s*<\?xml\s+version
 XML_5: ^\s*<\?xml
 XML_6: <TS\b
 XML_7: (?i:^\s*<\?xml\s+version)
+XML_8: ^\s*<\w+\b
 XML_PROPERTY_LIST_1: <!DOCTYPE\s+plist
 X_PIXMAP_1: ^\s*\/\* XPM \*\/
