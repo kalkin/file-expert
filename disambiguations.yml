@@ -318,6 +318,12 @@
     or:
     - HACK_1
 - extensions:
+  - .html.hl
+  rules:
+  - language: HTML
+    or:
+    - HTML_1
+- extensions:
   - .i
   rules:
   - language: Motorola 68K Assembly
@@ -367,6 +373,9 @@
   - language: POV-Ray SDL
     or:
     - POV_RAY_SDL_1
+  - language: HTML
+    or:
+    - HTML_1
 - extensions:
   - .l
   rules:
@@ -762,6 +771,12 @@
   - language: SubRip Text
     or:
     - SUBRIP_TEXT_1
+- extensions:
+  - .st
+  rules:
+  - language: HTML
+    or:
+    - HTML_1
 - extensions:
   - .t
   rules:

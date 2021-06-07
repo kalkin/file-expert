@@ -55,6 +55,7 @@ GRAPH_MODELING_LANGUAGE_1: (?i:^\s*(graph|node)\s+\[$)
 HACK_1: <\?hh
 HACK_2: <\?hh
 HIVEQL_1: (?i:SELECT\s+[\w*,]+\s+FROM|(CREATE|ALTER|DROP)\s(DATABASE|SCHEMA|TABLE))
+HTML_1: ^\s*</?(?i:html|head|title|body|span|div)\b
 IDL_1: ^\s*function[ \w,]+$
 INI_1: last_client=
 INI_2: ^[;\[]
