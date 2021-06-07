@@ -217,7 +217,7 @@ fn generate_linguist_uniq_extensions(out_dir: &OsString, languages: &Languages) 
             writeln!(
                 output,
                 "        ({:?}.to_string(), {:?}.to_string()),",
-                ext, languages[0]
+                ext.to_lowercase(), languages[0]
             )
             .unwrap();
         }
