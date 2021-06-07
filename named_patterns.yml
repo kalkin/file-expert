@@ -4,6 +4,7 @@ AL_1: \b(?i:(CODEUNIT|PAGE|PAGEEXTENSION|PAGECUSTOMIZATION|DOTNET|ENUM|ENUMEXTEN
 ASCIIDOC_1: ^[=-]+(\s|\n)|{{[A-Za-z]
 BITBAKE_1: ^\s*(# |include|require)\b
 BLITZBASIC_1: (<^\s*; |End Function)
+BRAINFUCK_1: (?:\+|>|<){4,}
 COMMON_LISP_1: '^\s*\((?i:defun|in-package|defpackage) '
 COMMON_LISP_2: \(def(un|macro)\s
 COMMON_LISP_3: '^\s*\((?i:defun|in-package|defpackage) '

@@ -811,3 +811,12 @@
     or:
     - JSON_2
   - language: Yacc
+
+# my extensions
+- extensions:
+  - .bf
+  - .b
+  rules:
+  - language: Brainfuck
+    or:
+      - BRAINFUCK_1
