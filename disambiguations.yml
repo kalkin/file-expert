@@ -894,3 +894,4 @@
   - language: Brainfuck
     or:
       - BRAINFUCK_1
+  - language: Beef
