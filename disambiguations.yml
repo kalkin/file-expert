@@ -150,6 +150,19 @@
     or:
     - XML_5
 - extensions:
+  - .cp
+  rules:
+  - language: C++
+    or:
+    - CPP_1
+    - CPP_2
+    - CPP_3
+    - CPP_4
+    - CPP_5
+    - CPP_6
+    - CPP_7
+
+- extensions:
   - .cs
   rules:
   - language: Smalltalk
@@ -317,6 +330,15 @@
   - language: Hack
     or:
     - HACK_1
+  - language: C++
+    or:
+    - CPP_1
+    - CPP_2
+    - CPP_3
+    - CPP_4
+    - CPP_5
+    - CPP_6
+    - CPP_7
 - extensions:
   - .html.hl
   rules:
@@ -373,9 +395,19 @@
   - language: POV-Ray SDL
     or:
     - POV_RAY_SDL_1
+  - language: C++
+    or:
+    - CPP_1
+    - CPP_2
+    - CPP_3
+    - CPP_4
+    - CPP_5
+    - CPP_6
+    - CPP_7
   - language: HTML
     or:
     - HTML_1
+  - language: C++
 - extensions:
   - .l
   rules:
@@ -777,6 +809,10 @@
   - language: HTML
     or:
     - HTML_1
+  - language: C++
+    or:
+    - C_PLUS__PLUS__1
+    - C_PLUS__PLUS__2
   - language: Smalltalk
 - extensions:
   - .t
