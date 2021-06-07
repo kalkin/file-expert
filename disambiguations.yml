@@ -280,6 +280,7 @@
     - CPP_5
     - CPP_6
     - CPP_7
+  - language: C
 - extensions:
   - .hh
   rules:
