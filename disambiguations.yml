@@ -57,6 +57,7 @@
   - language: ActionScript
     or:
     - ACTIONSCRIPT_1
+  - language: AngelScript
 - extensions:
   - .asc
   rules:
