@@ -217,7 +217,8 @@ fn generate_linguist_uniq_extensions(out_dir: &OsString, languages: &Languages) 
             writeln!(
                 output,
                 "        ({:?}.to_string(), {:?}.to_string()),",
-                ext.to_lowercase(), languages[0]
+                ext.to_lowercase(),
+                languages[0]
             )
             .unwrap();
         }
@@ -312,7 +313,7 @@ fn generate_linguist_heuristics(root_dir: &str, out_dir: &OsString) {
             if let Some(and_rule) = &rule.and {
                 let tmp = and_rule
                     .iter()
-                    .map(|e| format!("{}.is_match(content).unwrap()", e))
+                    .map(|e| format!("match_lines(&{}, &content)", e))
                     .collect::<Vec<_>>();
                 writeln!(output, "{} {{", tmp.join(" && ")).unwrap();
                 write!(output, "            Some({:?})", lang).unwrap();
@@ -322,7 +323,7 @@ fn generate_linguist_heuristics(root_dir: &str, out_dir: &OsString) {
             if let Some(or_rule) = &rule.or {
                 let tmp = or_rule
                     .iter()
-                    .map(|e| format!("{}.is_match(content).unwrap()", e))
+                    .map(|e| format!("match_lines(&{}, &content)", e))
                     .collect::<Vec<_>>();
                 writeln!(output, "{} {{", tmp.join(" && ")).unwrap();
                 write!(output, "            Some({:?})", lang).unwrap();
