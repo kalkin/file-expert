@@ -325,7 +325,7 @@ fn generate_linguist_heuristics(root_dir: &str, out_dir: &OsString) {
                     .iter()
                     .map(|e| format!("match_lines(&{}, &content)", e))
                     .collect::<Vec<_>>();
-                writeln!(output, "{} {{", tmp.join(" && ")).unwrap();
+                writeln!(output, "{} {{", tmp.join(" || ")).unwrap();
                 write!(output, "            Some({:?})", lang).unwrap();
                 write!(output, "        }}").unwrap();
             }
