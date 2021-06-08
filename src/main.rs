@@ -5,6 +5,7 @@ mod heuristic;
 mod linguist_extensions;
 mod linguist_interpreters;
 mod linguist_aliases;
+mod linguist_filenames;
 mod linguist_heuristics;
 mod modeline;
 mod shebang;

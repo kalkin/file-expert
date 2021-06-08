@@ -9,7 +9,9 @@ file_expert_SOURCES = lib/file.pl \
 EXTRA_DIST = transform.py named_patterns.yml languages.yml heuristics.yml @BKG_RPM_SPECFILE@.in
 CLEANFILES = @BKG_RPM_SPECFILE@
 
-generate-files: tests/linguist.rs src/linguist_heuristics.rs src/linguist_extensions.rs src/linguist_interpreters.rs src/linguist_aliases.rs
+generate-files: tests/linguist.rs src/linguist_heuristics.rs
+generate-files: src/linguist_extensions.rs src/linguist_interpreters.rs
+generate-files: src/linguist_aliases.rs src/linguist_filenames.rs
 
 %.rs: %.rs.php
 	$< > $@
@@ -27,6 +29,10 @@ src/linguist_interpreters.rs: src/linguist_interpreters.rs.php languages.yml
 	rustfmt $@
 
 src/linguist_aliases.rs: src/linguist_aliases.rs.php languages.yml
+	$< > $@
+	rustfmt $@
+
+src/linguist_filenames.rs: src/linguist_filenames.rs.php languages.yml
 	$< > $@
 	rustfmt $@
 

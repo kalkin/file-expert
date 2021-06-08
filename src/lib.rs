@@ -8,6 +8,7 @@ mod modeline;
 mod shebang;
 mod linguist_interpreters;
 mod linguist_aliases;
+mod linguist_filenames;
 
 pub use crate::expert::expert;
 pub use crate::expert::ExpertResult;
