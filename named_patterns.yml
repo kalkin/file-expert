@@ -1,3 +1,6 @@
+---
+APACHECONF_1: ^\s*<(?:VirtualHost|Directory)\b
+APEX_1: ^\s*(?:private|public|protected|global)\s+(?:(?:with|without) sharing\s+)?class\b
 ACTIONSCRIPT_1: ^\s*(?:package(?:\s+[\w.]+)?\s+(?:{|$)|import\s+[\w.*]+\s*;|(?=.*?(?:intrinsic|extends))(intrinsic\s+)?class\s+[\w<>.]+(?:\s+extends\s+[\w<>.]+)?|(?:(?:public|protected|private|static)\s+)*(?:(?:var|const|local)\s+\w+\s*:\s*[\w<>.]+(?:\s*=.*)?\s*;|function\s+\w+\s*\((?:\s*\w+\s*:\s*[\w<>.]+\s*(,\s*\w+\s*:\s*[\w<>.]+\s*)*)?\)))
 AGS_SCRIPT_1: ^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])
 AL_1: \b(?i:(CODEUNIT|PAGE|PAGEEXTENSION|PAGECUSTOMIZATION|DOTNET|ENUM|ENUMEXTENSION|VALUE|QUERY|REPORT|TABLE|TABLEEXTENSION|XMLPORT|PROFILE|CONTROLADDIN))\b
@@ -75,6 +78,7 @@ KEY_EQUALS_VALUE_1: ^[^#!;][^=]*=
 LEX_1: ^(%[%{}]xs|<.*>)
 LIMBO_1: ^\w+\s*:\s*module\s*{
 LINKER_SCRIPT_1: OUTPUT_ARCH\(|OUTPUT_FORMAT\(|SECTIONS
+LINUX_KERNEL_MODULE_1: ^.+\.ko
 LOGOS_1: ^%(end|ctor|hook|group)\b
 LOOMSCRIPT_1: ^\s*package\s*[\w\.\/\*\s]*\s*{
 LTSPICE_SYMBOL_1: ^SymbolType[ \t]
@@ -179,6 +183,7 @@ UNITY3D_ASSET_1: tag:unity3d.com
 UNIX_ASSEMBLY_1: ^\s*\.(?:include\s|globa?l\s|[A-Za-z][_A-Za-z0-9]*:)
 VERILOG_1: ^[ \t]*module\s+[^\s()]+\s+\#?\(|^[ \t]*`(?:define|ifdef|ifndef|include|timescale)|^[
   \t]*always[ \t]+@|^[ \t]*initial[ \t]+(begin|@)
+VBA_1: ^\s*End\s+(?:If|Sub|Function|Select|Enum|Property)
 VIM_HELP_FILE_1: (?:(?:[ \t]|^)vi(?:m[<=>]?\d+|m)?|[ \t]ex)(?=:(?=[ \t]*set?[ \t][^\n:]+:)|:(?![
   \t]* set?[ \t]))(?:(?:[ \t]|[ \t]*:[ \t]*)\w*(?:[ \t]*=(?:[^\\[ \t]]|\\.)*)?)*[[
   \t]:](?:filetype|ft|syntax)[ \t]*=help(?=[ \t]|:|$)

@@ -2,6 +2,7 @@ use fancy_regex::Regex;
 use lazy_static::lazy_static;
 
 lazy_static! {
+    static ref APACHECONF_1: Regex = Regex::new(r#"^\s*<(?:VirtualHost|Directory)\b"#).unwrap();
     static ref APEX_1: Regex = Regex::new(r#"^\s*(?:private|public|protected|global)\s+(?:(?:with|without) sharing\s+)?class\b"#).unwrap();
     static ref ACTIONSCRIPT_1: Regex = Regex::new(r#"^\s*(?:package(?:\s+[\w.]+)?\s+(?:{|$)|import\s+[\w.*]+\s*;|(?=.*?(?:intrinsic|extends))(intrinsic\s+)?class\s+[\w<>.]+(?:\s+extends\s+[\w<>.]+)?|(?:(?:public|protected|private|static)\s+)*(?:(?:var|const|local)\s+\w+\s*:\s*[\w<>.]+(?:\s*=.*)?\s*;|function\s+\w+\s*\((?:\s*\w+\s*:\s*[\w<>.]+\s*(,\s*\w+\s*:\s*[\w<>.]+\s*)*)?\)))"#).unwrap();
     static ref AGS_SCRIPT_1: Regex = Regex::new(r#"^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])"#).unwrap();
@@ -80,6 +81,7 @@ lazy_static! {
     static ref LEX_1: Regex = Regex::new(r#"^(%[%{}]xs|<.*>)"#).unwrap();
     static ref LIMBO_1: Regex = Regex::new(r#"^\w+\s*:\s*module\s*{"#).unwrap();
     static ref LINKER_SCRIPT_1: Regex = Regex::new(r#"OUTPUT_ARCH\(|OUTPUT_FORMAT\(|SECTIONS"#).unwrap();
+    static ref LINUX_KERNEL_MODULE_1: Regex = Regex::new(r#"^.+\.ko"#).unwrap();
     static ref LOGOS_1: Regex = Regex::new(r#"^%(end|ctor|hook|group)\b"#).unwrap();
     static ref LOOMSCRIPT_1: Regex = Regex::new(r#"^\s*package\s*[\w\.\/\*\s]*\s*{"#).unwrap();
     static ref LTSPICE_SYMBOL_1: Regex = Regex::new(r#"^SymbolType[ \t]"#).unwrap();
@@ -181,6 +183,7 @@ lazy_static! {
     static ref UNITY3D_ASSET_1: Regex = Regex::new(r#"tag:unity3d.com"#).unwrap();
     static ref UNIX_ASSEMBLY_1: Regex = Regex::new(r#"^\s*\.(?:include\s|globa?l\s|[A-Za-z][_A-Za-z0-9]*:)"#).unwrap();
     static ref VERILOG_1: Regex = Regex::new(r#"^[ \t]*module\s+[^\s()]+\s+\#?\(|^[ \t]*`(?:define|ifdef|ifndef|include|timescale)|^[ \t]*always[ \t]+@|^[ \t]*initial[ \t]+(begin|@)"#).unwrap();
+    static ref VBA_1: Regex = Regex::new(r#"^\s*End\s+(?:If|Sub|Function|Select|Enum|Property)"#).unwrap();
     static ref VIM_HELP_FILE_1: Regex = Regex::new(r#"(?:(?:[ \t]|^)vi(?:m[<=>]?\d+|m)?|[ \t]ex)(?=:(?=[ \t]*set?[ \t][^\n:]+:)|:(?![ \t]* set?[ \t]))(?:(?:[ \t]|[ \t]*:[ \t]*)\w*(?:[ \t]*=(?:[^\\[ \t]]|\\.)*)?)*[[ \t]:](?:filetype|ft|syntax)[ \t]*=help(?=[ \t]|:|$)"#).unwrap();
     static ref VIM_SCRIPT_1: Regex = Regex::new(r#"^UseVimball"#).unwrap();
     static ref V_1: Regex = Regex::new(r#"\$(?:if|else)[ \t]|^[ \t]*fn\s+[^\s()]+\(.*?\).*?\{|^[ \t]*for\s*\{"#).unwrap();
@@ -299,14 +302,14 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             if match_lines(&C_SHARP__1, &content) {
                 Some("C#")
             } else {
-                None
+                Some("CoffeeScript")
             }
         }
         ".ch" => {
             if match_lines(&XBASE_1, &content) {
                 Some("xBase")
             } else {
-                None
+                Some("Charity")
             }
         }
         ".cl" => {
@@ -327,20 +330,15 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("ObjectScript")
             } else if match_lines(&APEX_1, &content) {
                 Some("Apex")
+            } else if match_lines(&VBA_1, &content) {
+                Some("VBA")
             } else {
-                None
+                Some("OpenEdge ABL")
             }
         }
         ".cmp" => {
             if match_lines(&GERBER_IMAGE_1, &content) {
                 Some("Gerber Image")
-            } else {
-                None
-            }
-        }
-        ".config" => {
-            if match_lines(&XML_5, &content) {
-                Some("XML")
             } else {
                 None
             }
@@ -377,7 +375,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("D")
             }
         }
-        ".dist" => {
+        ".xml.dist" => {
             if match_lines(&XML_5, &content) {
                 Some("XML")
             } else {
@@ -442,7 +440,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             } else if match_lines(&FORTRAN_1, &content) {
                 Some("Fortran")
             } else {
-                None
+                Some("Formatted")
             }
         }
         ".fr" => {
@@ -512,7 +510,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             {
                 Some("Genie")
             } else {
-                None
+                Some("JavaScript")
             }
         }
         ".gst" => {
@@ -618,6 +616,8 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("C++")
             } else if match_lines(&HTML_1, &content) {
                 Some("HTML")
+            } else if match_lines(&PASCAL_1, &content) {
+                Some("Pascal")
             } else {
                 Some("C++")
             }
@@ -689,7 +689,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             if match_lines(&UNITY3D_ASSET_1, &content) {
                 Some("Unity3D Asset")
             } else {
-                None
+                Some("Mask")
             }
         }
         ".md" => {
@@ -714,7 +714,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             if match_lines(&XML_8, &content) {
                 Some("XML")
             } else {
-                None
+                Some("Objective-C++")
             }
         }
         ".mod" => {
@@ -722,8 +722,10 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("XML")
             } else if match_lines(&MODULA_2_1, &content) {
                 Some("Modula-2")
-            } else {
+            } else if match_lines(&LINUX_KERNEL_MODULE_1, &content) {
                 Some("Linux Kernel Module")
+            } else {
+                Some("AMPL")
             }
         }
         ".moo" => {
@@ -761,7 +763,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             } else if match_lines(&TEXT_1, &content) {
                 Some("Text")
             } else {
-                None
+                Some("NCL")
             }
         }
         ".nl" => {
@@ -818,7 +820,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             if match_lines(&XML_8, &content) {
                 Some("XML")
             } else {
-                None
+                Some("Ruby")
             }
         }
         ".pm" => {
@@ -1053,7 +1055,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             } else if match_lines(&TURING_1, &content) {
                 Some("Turing")
             } else {
-                None
+                Some("Terra")
             }
         }
         ".toc" => {
@@ -1113,6 +1115,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("VBA")
             }
         }
+        ".vhost" => {
+            if match_lines(&APACHECONF_1, &content) {
+                Some("ApacheConf")
+            } else {
+                Some("Nginx")
+            }
+        }
         ".w" => {
             if match_lines(&OPENEDGE_ABL_1, &content) {
                 Some("OpenEdge ABL")
@@ -1126,7 +1135,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             if match_lines(&XML_5, &content) {
                 Some("XML")
             } else {
-                None
+                Some("HCL")
             }
         }
         ".x" => {

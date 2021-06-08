@@ -117,12 +117,14 @@
   - language: C#
     or:
     - C_SHARP__1
+  - language: CoffeeScript
 - extensions:
   - .ch
   rules:
   - language: xBase
     or:
     - XBASE_1
+  - language: Charity
 - extensions:
   - .cl
   rules:
@@ -144,18 +146,19 @@
   - language: ObjectScript
     or:
     - OBJECTSCRIPT_1
+  - language: Apex
+    or:
+    - APEX_1
+  - language: VBA
+    or:
+    - VBA_1
+  - language: OpenEdge ABL
 - extensions:
   - .cmp
   rules:
   - language: Gerber Image
     or:
     - GERBER_IMAGE_1
-- extensions:
-  - .config
-  rules:
-  - language: XML
-    or:
-    - XML_5
 - extensions:
   - .cp
   rules:
@@ -189,7 +192,7 @@
     - MAKEFILE_1
   - language: D
 - extensions:
-  - .dist
+  - .xml.dist
   rules:
   - language: XML
     or:
@@ -255,6 +258,7 @@
   - language: Fortran
     or:
     - FORTRAN_1
+  - language: Formatted
 - extensions:
   - .fr
   rules:
@@ -330,6 +334,7 @@
     - GENIE_1
     - GENIE_2
     - GENIE_3
+  - language: JavaScript
 - extensions:
   - .gst
   rules:
@@ -436,7 +441,10 @@
   - language: HTML
     or:
     - HTML_1
-  - language: C++
+  - language: Pascal
+    or:
+    - PASCAL_1
+  - language: Assembly
 - extensions:
   - .j
   rules:
@@ -515,6 +523,7 @@
   - language: Unity3D Asset
     or:
     - UNITY3D_ASSET_1
+  - language: Mask
 - extensions:
   - .md
   rules:
@@ -541,6 +550,7 @@
   - language: XML
     or:
     - XML_8
+  - language: Objective-C++
 - extensions:
   - .mod
   rules:
@@ -551,6 +561,9 @@
     or:
     - MODULA_2_1
   - language: Linux Kernel Module
+    or:
+    - LINUX_KERNEL_MODULE_1
+  - language: AMPL
 - extensions:
   - .moo
   rules:
@@ -591,6 +604,7 @@
   - language: Text
     or:
     - TEXT_1
+  - language: NCL
 - extensions:
   - .nl
   rules:
@@ -649,6 +663,7 @@
   - language: XML
     or:
     - XML_8
+  - language: Ruby
 - extensions:
   - .pm
   rules:
@@ -895,6 +910,7 @@
   - language: Turing
     or:
     - TURING_1
+  - language: Terra
 - extensions:
   - .toc
   rules:
@@ -954,6 +970,13 @@
     - VIM_SCRIPT_1
   - language: VBA
 - extensions:
+  - .vhost
+  rules:
+  - language: ApacheConf
+    or:
+    - APACHECONF_1
+  - language: Nginx
+- extensions:
   - .w
   rules:
   - language: OpenEdge ABL
@@ -968,6 +991,7 @@
   - language: XML
     or:
     - XML_5
+  - language: HCL
 - extensions:
   - .x
   rules:
