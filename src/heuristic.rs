@@ -1,4 +1,5 @@
 use crate::data_structures::Text;
+use crate::linguist_heuristics::linguist_heuristic;
 use crate::modeline;
 use crate::shebang;
 use std::path::Path;
@@ -6,18 +7,7 @@ use std::path::Path;
 include!(concat!(env!("OUT_DIR"), "/linguist_interpreters.rs"));
 include!(concat!(env!("OUT_DIR"), "/linguist_aliases.rs"));
 include!(concat!(env!("OUT_DIR"), "/linguist_filenames.rs"));
-include!(concat!(env!("OUT_DIR"), "/linguist_heuristics.rs"));
 include!(concat!(env!("OUT_DIR"), "/linguist_extensions.rs"));
-
-fn match_lines(regex: &Regex, text: &str) -> bool {
-    let lines: Vec<&str> = text.lines().collect::<Vec<_>>();
-    for line in lines {
-        if regex.is_match(line).unwrap() {
-            return true;
-        }
-    }
-    return false;
-}
 
 pub fn guess_by_filename(path: &Path) -> Option<&'static String> {
     let filename = path.file_name().unwrap().to_str().unwrap();
