@@ -309,6 +309,8 @@
   - language: Genie
     or:
     - GENIE_1
+    - GENIE_2
+    - GENIE_3
 - extensions:
   - .gst
   rules:

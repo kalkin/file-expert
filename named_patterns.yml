@@ -44,6 +44,8 @@ GAP_2: 'gap> '
 GCC_MACHINE_DESCRIPTION_1: ^(;;|\(define_)
 GDSCRIPT_1: \s*(extends|var|const|enum|func|class|signal|tool|yield|assert|onready)
 GENIE_1: ^\[indent=[0-9]+\]
+GENIE_2: ^\t*(def|class|construct|init)\b
+GENIE_3: ^(init|import)\b
 GERBER_IMAGE_1: ^[DGMT][0-9]{2}\*\r?\n
 GERBER_IMAGE_2: ^[DGMT][0-9]{2}\*$
 GERBER_IMAGE_3: ^[DGMT][0-9]{2}\*\r?\n

@@ -49,6 +49,8 @@ lazy_static! {
     static ref GCC_MACHINE_DESCRIPTION_1: Regex = Regex::new(r#"^(;;|\(define_)"#).unwrap();
     static ref GDSCRIPT_1: Regex = Regex::new(r#"\s*(extends|var|const|enum|func|class|signal|tool|yield|assert|onready)"#).unwrap();
     static ref GENIE_1: Regex = Regex::new(r#"^\[indent=[0-9]+\]"#).unwrap();
+    static ref GENIE_2: Regex = Regex::new(r#"^\t*(def|class|construct|init)\b"#).unwrap();
+    static ref GENIE_3: Regex = Regex::new(r#"^(init|import)\b"#).unwrap();
     static ref GERBER_IMAGE_1: Regex = Regex::new(r#"^[DGMT][0-9]{2}\*\r?\n"#).unwrap();
     static ref GERBER_IMAGE_2: Regex = Regex::new(r#"^[DGMT][0-9]{2}\*$"#).unwrap();
     static ref GERBER_IMAGE_3: Regex = Regex::new(r#"^[DGMT][0-9]{2}\*\r?\n"#).unwrap();
@@ -479,7 +481,10 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("GLSL")
             } else if match_lines(&GOSU_1, &content) {
                 Some("Gosu")
-            } else if match_lines(&GENIE_1, &content) {
+            } else if match_lines(&GENIE_1, &content)
+                || match_lines(&GENIE_2, &content)
+                || match_lines(&GENIE_3, &content)
+            {
                 Some("Genie")
             } else {
                 None
