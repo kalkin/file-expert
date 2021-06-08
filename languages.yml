@@ -4062,8 +4062,8 @@ Parrot Assembly:
   - pasm
   extensions:
   - ".pasm"
-  interpreters:
-  - parrot
+  #interpreters:
+  #- parrot
   tm_scope: none
   ace_mode: text
   language_id: 279
@@ -4075,8 +4075,8 @@ Parrot Internal Representation:
   - pir
   extensions:
   - ".pir"
-  interpreters:
-  - parrot
+  #interpreters:
+  #- parrot
   ace_mode: text
   language_id: 280
 Pascal:
@@ -4211,8 +4211,8 @@ Pod:
   wrap: true
   extensions:
   - ".pod"
-  interpreters:
-  - perl
+  #interpreters:
+  #- perl
   tm_scope: none
   language_id: 288
 Pod 6:
@@ -4223,8 +4223,8 @@ Pod 6:
   extensions:
   - ".pod"
   - ".pod6"
-  interpreters:
-  - perl6
+  #interpreters:
+  #- perl6
   language_id: 155357471
 PogoScript:
   type: programming
@@ -4702,8 +4702,8 @@ ReScript:
   codemirror_mime_type: text/x-rustsrc
   extensions:
   - ".res"
-  interpreters:
-  - ocaml
+  #interpreters:
+  #- ocaml
   tm_scope: source.rescript
   language_id: 501875647
 Readline Config:
@@ -5694,8 +5694,8 @@ Terra:
   ace_mode: lua
   codemirror_mode: lua
   codemirror_mime_type: text/x-lua
-  interpreters:
-  - lua
+  #interpreters:
+  #- lua
   language_id: 371
 Texinfo:
   type: prose
