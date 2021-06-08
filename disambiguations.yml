@@ -99,6 +99,13 @@
     or:
     - BITBAKE_1
 - extensions:
+  - .brd
+  rules:
+  - language: Eagle
+    or:
+      - EAGLE_1
+  - language: KiCad Legacy Layout
+- extensions:
   - .builds
   rules:
   - language: XML
@@ -793,10 +800,16 @@
 - extensions:
   - .sch
   rules:
+  - language: Eagle
+    or:
+    - EAGLE_1
   - language: XML
     or:
     - XML_5
   - language: Scheme
+    or:
+      - SCHEME_1
+  - language: KiCad Schematic
 - extensions:
   - .sls
   rules:

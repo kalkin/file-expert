@@ -30,6 +30,7 @@ lazy_static! {
     static ref DIRECTX_3D_FILE_1: Regex = Regex::new(r#"^xof 030(2|3)(?:txt|bin|tzip|bzip)\b"#).unwrap();
     static ref DTRACE_1: Regex = Regex::new(r#"^(\w+:\w*:\w*:\w*|BEGIN|END|provider\s+|(tick|profile)-\w+\s+{[^}]*}|#pragma\s+D\s+(option|attributes|depends_on)\s|#pragma\s+ident\s)"#).unwrap();
     static ref D_1: Regex = Regex::new(r#"^module\s+[\w.]*\s*;|import\s+[\w\s,.:]*;|\w+\s+\w+\s*\(.*\)(?:\(.*\))?\s*{[^}]*}|unittest\s*(?:\(.*\))?\s*{[^}]*}"#).unwrap();
+    static ref EAGLE_1: Regex = Regex::new(r#"^\s*<!DOCTYPE\s+eagle\b"#).unwrap();
     static ref ECLIPSE_1: Regex = Regex::new(r#"^[^#]+:-"#).unwrap();
     static ref ECL_1: Regex = Regex::new(r#":="#).unwrap();
     static ref EIFFEL_1: Regex = Regex::new(r#"^(note|class|feature|end|inherit)"#).unwrap();
@@ -275,6 +276,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("BitBake")
             } else {
                 None
+            }
+        }
+        ".brd" => {
+            if match_lines(&EAGLE_1, &content) {
+                Some("Eagle")
+            } else {
+                Some("KiCad Legacy Layout")
             }
         }
         ".builds" => {
@@ -954,10 +962,14 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             }
         }
         ".sch" => {
-            if match_lines(&XML_5, &content) {
+            if match_lines(&EAGLE_1, &content) {
+                Some("Eagle")
+            } else if match_lines(&XML_5, &content) {
                 Some("XML")
-            } else {
+            } else if match_lines(&SCHEME_1, &content) {
                 Some("Scheme")
+            } else {
+                Some("KiCad Schematic")
             }
         }
         ".sls" => {

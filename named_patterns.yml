@@ -25,6 +25,7 @@ C_SHARP__1: ^\s*(?:namespace|using|\/\/)\s*[\w\.]+\s*
 DIRECTX_3D_FILE_1: ^xof 030(2|3)(?:txt|bin|tzip|bzip)\b
 DTRACE_1: ^(\w+:\w*:\w*:\w*|BEGIN|END|provider\s+|(tick|profile)-\w+\s+{[^}]*}|#pragma\s+D\s+(option|attributes|depends_on)\s|#pragma\s+ident\s)
 D_1: ^module\s+[\w.]*\s*;|import\s+[\w\s,.:]*;|\w+\s+\w+\s*\(.*\)(?:\(.*\))?\s*{[^}]*}|unittest\s*(?:\(.*\))?\s*{[^}]*}
+EAGLE_1: ^\s*<!DOCTYPE\s+eagle\b
 ECLIPSE_1: ^[^#]+:-
 ECL_1: :=
 EIFFEL_1: ^(note|class|feature|end|inherit)
