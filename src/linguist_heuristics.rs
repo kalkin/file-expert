@@ -7,6 +7,7 @@ lazy_static! {
     static ref AGS_SCRIPT_1: Regex = Regex::new(r#"^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])"#).unwrap();
     static ref AL_1: Regex = Regex::new(r#"\b(?i:(CODEUNIT|PAGE|PAGEEXTENSION|PAGECUSTOMIZATION|DOTNET|ENUM|ENUMEXTENSION|VALUE|QUERY|REPORT|TABLE|TABLEEXTENSION|XMLPORT|PROFILE|CONTROLADDIN))\b"#).unwrap();
     static ref ASCIIDOC_1: Regex = Regex::new(r#"^[=-]+(\s|\n)|{{[A-Za-z]"#).unwrap();
+    static ref BEEF_1: Regex = Regex::new(r#"\b(class|namespace|void|static)\b"#).unwrap();
     static ref BITBAKE_1: Regex = Regex::new(r#"^\s*(# |include|require)\b"#).unwrap();
     static ref BLITZBASIC_1: Regex = Regex::new(r#"(<^\s*; |End Function)"#).unwrap();
     static ref BRAINFUCK_1: Regex = Regex::new(r#"(?:\+|>|<){4,}"#).unwrap();
@@ -64,6 +65,7 @@ lazy_static! {
     static ref IDL_1: Regex = Regex::new(r#"^\s*function[ \w,]+$"#).unwrap();
     static ref INI_1: Regex = Regex::new(r#"last_client="#).unwrap();
     static ref INI_2: Regex = Regex::new(r#"^[;\[]"#).unwrap();
+    static ref JASMIN_1: Regex = Regex::new(r#"^\.\w+\b"#).unwrap();
     static ref JAVASCRIPT_1: Regex = Regex::new(r#"(?m:\/\/|(\"|')use strict\1|export\s+default\s|\/\*.*?\*\/)"#).unwrap();
     static ref JAVA_PROPERTIES_1: Regex = Regex::new(r#"^[^#!][^:]*:"#).unwrap();
     static ref JSON_1: Regex = Regex::new(r#"\A\s*[{\[]"#).unwrap();
@@ -582,6 +584,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("C++")
             }
         }
+        ".j" => {
+            if match_lines(&JASMIN_1, &content) {
+                Some("Jasmin")
+            } else {
+                Some("Objective-J")
+            }
+        }
         ".l" => {
             if match_lines(&COMMON_LISP_2, &content) {
                 Some("Common Lisp")
@@ -1073,11 +1082,20 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Yacc")
             }
         }
-        ".bf" | ".b" => {
+        ".bf" => {
+            if match_lines(&BRAINFUCK_1, &content) {
+                Some("Brainfuck")
+            } else if match_lines(&BEEF_1, &content) {
+                Some("Beef")
+            } else {
+                Some("HyPhy")
+            }
+        }
+        ".b" => {
             if match_lines(&BRAINFUCK_1, &content) {
                 Some("Brainfuck")
             } else {
-                Some("Beef")
+                Some("Limbo")
             }
         }
         _ => None,

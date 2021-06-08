@@ -409,6 +409,13 @@
     - HTML_1
   - language: C++
 - extensions:
+  - .j
+  rules:
+    - language: Jasmin
+      or:
+        - JASMIN_1
+    - language: Objective-J
+- extensions:
   - .l
   rules:
   - language: Common Lisp
@@ -925,9 +932,18 @@
 # my extensions
 - extensions:
   - .bf
-  - .b
   rules:
   - language: Brainfuck
     or:
       - BRAINFUCK_1
   - language: Beef
+    or:
+      - BEEF_1
+  - language: HyPhy
+- extensions:
+  - .b
+  rules:
+  - language: Brainfuck
+    or:
+      - BRAINFUCK_1
+  - language: Limbo

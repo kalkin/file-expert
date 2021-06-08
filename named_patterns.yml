@@ -2,6 +2,7 @@ ACTIONSCRIPT_1: ^\s*(?:package(?:\s+[\w.]+)?\s+(?:{|$)|import\s+[\w.*]+\s*;|(?=.
 AGS_SCRIPT_1: ^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])
 AL_1: \b(?i:(CODEUNIT|PAGE|PAGEEXTENSION|PAGECUSTOMIZATION|DOTNET|ENUM|ENUMEXTENSION|VALUE|QUERY|REPORT|TABLE|TABLEEXTENSION|XMLPORT|PROFILE|CONTROLADDIN))\b
 ASCIIDOC_1: ^[=-]+(\s|\n)|{{[A-Za-z]
+BEEF_1: \b(class|namespace|void|static)\b
 BITBAKE_1: ^\s*(# |include|require)\b
 BLITZBASIC_1: (<^\s*; |End Function)
 BRAINFUCK_1: (?:\+|>|<){4,}
@@ -59,6 +60,7 @@ HTML_1: ^\s*</?(?i:html|head|title|body|span|div)\b
 IDL_1: ^\s*function[ \w,]+$
 INI_1: last_client=
 INI_2: ^[;\[]
+JASMIN_1: ^\.\w+\b
 JAVASCRIPT_1: (?m:\/\/|("|')use strict\1|export\s+default\s|\/\*.*?\*\/)
 JAVA_PROPERTIES_1: '^[^#!][^:]*:'
 JSON_1: \A\s*[{\[]
