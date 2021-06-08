@@ -16,7 +16,6 @@ fn main() {
     languages_yml.push_str("/languages.yml");
     let languages = parse_languages_yaml(&languages_yml);
 
-    generate_linguist_aliases(&out_dir, &languages);
     generate_linguist_filenames(&out_dir, &languages);
 }
 
@@ -53,89 +52,11 @@ fn parse_languages_yaml(file: &str) -> Languages {
     serde_yaml::from_reader(f).unwrap()
 }
 
-fn generate_linguist_aliases(out_dir: &OsString, languages: &Languages) {
-    let dest_path = Path::new(&out_dir).join("linguist_aliases.rs");
-    let mut output = File::create(dest_path).unwrap();
-    writeln!(output, "use std::collections::HashMap;").unwrap();
-    writeln!(output, "use lazy_static::lazy_static;\n").unwrap();
-    writeln!(output).unwrap();
-    writeln!(output, "lazy_static! {{").unwrap();
-
-    writeln!(
-        output,
-        "    static ref ALIASES: HashMap<String, String> = ["
-    )
-    .unwrap();
-    for (name, lang) in languages {
-        writeln!(
-            output,
-            "        ({:?}.to_string(), {:?}.to_string()),",
-            name, name
-        )
-        .unwrap();
-        writeln!(
-            output,
-            "        ({:?}.to_string(), {:?}.to_string()),",
-            name.to_lowercase(),
-            name
-        )
-        .unwrap();
-        if let Some(aliases) = &lang.aliases {
-            for alias in aliases {
-                writeln!(
-                    output,
-                    "        ({:?}.to_string(), {:?}.to_string()),",
-                    alias, name
-                )
-                .unwrap();
-            }
-        }
-    }
-    writeln!(output, "    ].iter().cloned().collect();").unwrap();
-    writeln!(output, "}}").unwrap();
-}
-
-fn generate_linguist_uniq_extensions(out_dir: &OsString, languages: &Languages) {
-    let dest_path = Path::new(&out_dir).join("linguist_extensions.rs");
-    let mut extensions: HashMap<String, Vec<String>> = HashMap::new();
-    let mut output = File::create(dest_path).unwrap();
-    for (name, lang) in languages {
-        if let Some(exts) = &lang.extensions {
-            for e in exts {
-                if extensions.contains_key(e) {
-                    extensions.get_mut(e).unwrap().push(name.clone());
-                } else {
-                    extensions.insert(e.clone(), vec![name.clone()]);
-                }
-            }
-        }
-    }
-
-    writeln!(output, "lazy_static! {{").unwrap();
-
-    writeln!(
-        output,
-        "    static ref EXTENSIONS: HashMap<String, String> = ["
-    )
-    .unwrap();
-    for (ext, languages) in &extensions {
-        if languages.len() == 1 {
-            writeln!(
-                output,
-                "        ({:?}.to_string(), {:?}.to_string()),",
-                ext.to_lowercase(),
-                languages[0]
-            )
-            .unwrap();
-        }
-    }
-    writeln!(output, "    ].iter().cloned().collect();").unwrap();
-    writeln!(output, "}}").unwrap();
-}
-
 fn generate_linguist_filenames(out_dir: &OsString, languages: &Languages) {
     let dest_path = Path::new(&out_dir).join("linguist_filenames.rs");
     let mut output = File::create(dest_path).unwrap();
+    writeln!(output, "use std::collections::HashMap;").unwrap();
+    writeln!(output, "use lazy_static::lazy_static;\n").unwrap();
     writeln!(output).unwrap();
     writeln!(output, "lazy_static! {{").unwrap();
 

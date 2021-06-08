@@ -7,6 +7,7 @@ mod linguist_heuristics;
 mod modeline;
 mod shebang;
 mod linguist_interpreters;
+mod linguist_aliases;
 
 pub use crate::expert::expert;
 pub use crate::expert::ExpertResult;
