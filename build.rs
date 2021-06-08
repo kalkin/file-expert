@@ -7,12 +7,10 @@ use std::ffi::OsString;
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
-use walkdir::{DirEntry, WalkDir};
 
 fn main() {
     let out_dir = env::var_os("OUT_DIR").unwrap();
     let root_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
-    generate_linguist_tests(&out_dir);
 
     let mut languages_yml = root_dir.to_owned();
     languages_yml.push_str("/languages.yml");
@@ -57,75 +55,6 @@ struct ExtensionRules {
 fn parse_languages_yaml(file: &str) -> Languages {
     let f = std::fs::File::open(file).unwrap();
     serde_yaml::from_reader(f).unwrap()
-}
-
-fn generate_linguist_tests(out_dir: &OsString) {
-    let dest_path = Path::new(&out_dir).join("linguist_samples.rs");
-    let mut output = File::create(dest_path).unwrap();
-
-    let files = samples();
-    let mut cur = "".to_string();
-    let mut i = 1;
-
-    writeln!(output, "use std::path::Path;").unwrap();
-    writeln!(output, "use file_expert::expert;").unwrap();
-    writeln!(output, "use file_expert::ExpertResult;\n\n").unwrap();
-    for entry in files {
-        let entry_path = entry.path();
-        let file = entry_path.to_str().unwrap();
-        let mut parent = entry_path.parent().unwrap();
-        if parent.file_name().unwrap().to_str().unwrap() == "filenames" {
-            parent = parent.parent().unwrap();
-        }
-
-        let kind = parent.file_name().unwrap().to_str().unwrap();
-        if kind != &cur {
-            cur = kind.to_string();
-            i = 1;
-        }
-
-        let mut escaped_kind = escape_name(kind);
-        if escaped_kind.as_bytes()[0].is_ascii_digit() {
-            escaped_kind.insert(0, '_');
-        }
-
-        writeln!(output, "#[test]").unwrap();
-        writeln!(output, "#[allow(non_snake_case)]").unwrap();
-        writeln!(output, "fn {}_{}() {{", escaped_kind, i).unwrap();
-        writeln!(output, "    let path = Path::new(\"{}\");", file).unwrap();
-        writeln!(output, "    let actual = expert(&path);").unwrap();
-        writeln!(
-            output,
-            "    let expected = ExpertResult::Kind(\"{}\".to_string());",
-            kind
-        )
-        .unwrap();
-        let mut short_name = kind.to_owned();
-        short_name.push('/');
-        short_name.push_str(Path::new(file).file_name().unwrap().to_str().unwrap());
-        writeln!(
-            output,
-            "    assert_eq!(actual, expected, \"Parsed {} as {{}}\", actual);",
-            short_name
-        )
-        .unwrap();
-        writeln!(output, "}}\n").unwrap();
-
-        i += 1;
-    }
-}
-
-fn escape_name(kind: &str) -> String {
-    kind.replace(" ", "_")
-        .replace("-", "_")
-        .replace("+", "_plus_")
-        .replace("*", "_star_")
-        .replace("#", "_sharp_")
-        .replace("'", "_quote_")
-        .replace(".", "_dot_")
-        .replace("(", "_")
-        .replace(")", "_")
-        .to_lowercase()
 }
 
 fn generate_linguist_interpreters(out_dir: &OsString, languages: &Languages) {
@@ -350,13 +279,4 @@ fn generate_linguist_heuristics(root_dir: &str, out_dir: &OsString) {
     writeln!(output, "        _ => None").unwrap();
     writeln!(output, "    }}").unwrap();
     writeln!(output, "}}").unwrap();
-}
-
-fn samples() -> Vec<DirEntry> {
-    let in_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
-    WalkDir::new(format!("{}/../../file-expert/linguist/samples", in_dir))
-        .into_iter()
-        .map(|e| e.unwrap())
-        .filter(|e| !e.file_type().is_dir())
-        .collect::<Vec<_>>()
 }
