@@ -68,7 +68,11 @@ mod <?= $escaped_type ?> {
                 $i++;
             }
         } else {
-            print_test($type, $i, "$type/$filename");
+            if ($type === "Fstar") {
+                print_test('F*', $i, "$type/$filename");
+            } else {
+                print_test($type, $i, "$type/$filename");
+            }
             $i++;
         }
     }?>

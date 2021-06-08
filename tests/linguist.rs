@@ -9660,7 +9660,7 @@ mod fstar {
     fn test_0() {
         let path = Path::new(&"./samples/Fstar/Hacl.HKDF.fst");
         let actual = expert(&path);
-        let expected = ExpertResult::Kind("Fstar".to_string());
+        let expected = ExpertResult::Kind("F*".to_string());
         assert_eq!(actual, expected);
     }
 
@@ -9668,7 +9668,7 @@ mod fstar {
     fn test_1() {
         let path = Path::new(&"./samples/Fstar/Hacl.Spec.Bignum.Fmul.fst");
         let actual = expert(&path);
-        let expected = ExpertResult::Kind("Fstar".to_string());
+        let expected = ExpertResult::Kind("F*".to_string());
         assert_eq!(actual, expected);
     }
 }
