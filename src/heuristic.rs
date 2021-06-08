@@ -1,11 +1,11 @@
 use crate::data_structures::Text;
 use crate::linguist_extensions::EXTENSIONS;
 use crate::linguist_heuristics::linguist_heuristic;
+use crate::linguist_interpreters::INTERPRETERS;
 use crate::modeline;
 use crate::shebang;
 use std::path::Path;
 
-include!(concat!(env!("OUT_DIR"), "/linguist_interpreters.rs"));
 include!(concat!(env!("OUT_DIR"), "/linguist_aliases.rs"));
 include!(concat!(env!("OUT_DIR"), "/linguist_filenames.rs"));
 

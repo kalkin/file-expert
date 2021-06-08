@@ -16,7 +16,6 @@ fn main() {
     languages_yml.push_str("/languages.yml");
     let languages = parse_languages_yaml(&languages_yml);
 
-    generate_linguist_interpreters(&out_dir, &languages);
     generate_linguist_aliases(&out_dir, &languages);
     generate_linguist_filenames(&out_dir, &languages);
 }
@@ -54,37 +53,11 @@ fn parse_languages_yaml(file: &str) -> Languages {
     serde_yaml::from_reader(f).unwrap()
 }
 
-fn generate_linguist_interpreters(out_dir: &OsString, languages: &Languages) {
-    let dest_path = Path::new(&out_dir).join("linguist_interpreters.rs");
-    let mut output = File::create(dest_path).unwrap();
-    writeln!(output, "use std::collections::HashMap;").unwrap();
-    writeln!(output, "use lazy_static::lazy_static;\n").unwrap();
-    writeln!(output, "lazy_static! {{").unwrap();
-
-    writeln!(
-        output,
-        "    static ref INTERPRETERS: HashMap<String, String> = ["
-    )
-    .unwrap();
-    for (name, lang) in languages {
-        if let Some(interpreters) = &lang.interpreters {
-            for interp in interpreters {
-                writeln!(
-                    output,
-                    "        ({:?}.to_string(), {:?}.to_string()),",
-                    interp, name
-                )
-                .unwrap();
-            }
-        }
-    }
-    writeln!(output, "    ].iter().cloned().collect();").unwrap();
-    writeln!(output, "}}").unwrap();
-}
-
 fn generate_linguist_aliases(out_dir: &OsString, languages: &Languages) {
     let dest_path = Path::new(&out_dir).join("linguist_aliases.rs");
     let mut output = File::create(dest_path).unwrap();
+    writeln!(output, "use std::collections::HashMap;").unwrap();
+    writeln!(output, "use lazy_static::lazy_static;\n").unwrap();
     writeln!(output).unwrap();
     writeln!(output, "lazy_static! {{").unwrap();
 

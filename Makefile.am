@@ -22,5 +22,9 @@ src/linguist_extensions.rs: src/linguist_extensions.rs.php languages.yml
 	$< > $@
 	rustfmt $@
 
+src/linguist_interpreters.rs: src/linguist_interpreters.rs.php languages.yml
+	$< > $@
+	rustfmt $@
+
 @BKG_RPM_TEMPLATE@
 @BKG_DEPLOY_GENTOO@

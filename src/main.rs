@@ -3,6 +3,7 @@ mod data_structures;
 mod expert;
 mod heuristic;
 mod linguist_extensions;
+mod linguist_interpreters;
 mod linguist_heuristics;
 mod modeline;
 mod shebang;
