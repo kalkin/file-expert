@@ -48,6 +48,7 @@ lazy_static! {
     static ref F_SHARP__1: Regex = Regex::new(r#"^\s*(#light|import|let|module|namespace|open|type)"#).unwrap();
     static ref GAP_1: Regex = Regex::new(r#"\s*(Declare|BindGlobal|KeyDependentOperation)"#).unwrap();
     static ref GAP_2: Regex = Regex::new(r#"gap> "#).unwrap();
+    static ref GAP_3: Regex = Regex::new(r#"\s+:=\s+"#).unwrap();
     static ref GCC_MACHINE_DESCRIPTION_1: Regex = Regex::new(r#"^(;;|\(define_)"#).unwrap();
     static ref GDSCRIPT_1: Regex = Regex::new(r#"\s*(extends|var|const|enum|func|class|signal|tool|yield|assert|onready)"#).unwrap();
     static ref GENIE_1: Regex = Regex::new(r#"^\[indent=[0-9]+\]"#).unwrap();
@@ -472,6 +473,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("FLUX")
             } else {
                 Some("HLSL")
+            }
+        }
+        ".g" => {
+            if match_lines(&GAP_3, &content) {
+                Some("GAP")
+            } else {
+                Some("G-code")
             }
         }
         ".gd" => {

@@ -290,6 +290,13 @@
       - FLUX_1
     - language: HLSL
 - extensions:
+  - .g
+  rules:
+    - language: GAP
+      or:
+      - GAP_3
+    - language: G-code
+- extensions:
   - .gd
   rules:
   - language: GAP

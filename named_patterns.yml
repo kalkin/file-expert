@@ -43,6 +43,7 @@ FREGE_1: '^\s*(import|module|package|data|type) '
 F_SHARP__1: ^\s*(#light|import|let|module|namespace|open|type)
 GAP_1: \s*(Declare|BindGlobal|KeyDependentOperation)
 GAP_2: 'gap> '
+GAP_3: \s+:=\s+
 GCC_MACHINE_DESCRIPTION_1: ^(;;|\(define_)
 GDSCRIPT_1: \s*(extends|var|const|enum|func|class|signal|tool|yield|assert|onready)
 GENIE_1: ^\[indent=[0-9]+\]
