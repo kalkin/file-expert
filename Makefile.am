@@ -18,5 +18,9 @@ src/linguist_heuristics.rs: src/linguist_heuristics.rs.php disambiguations.yml n
 	$< > $@
 	rustfmt $@
 
+src/linguist_extensions.rs: src/linguist_extensions.rs.php languages.yml
+	$< > $@
+	rustfmt $@
+
 @BKG_RPM_TEMPLATE@
 @BKG_DEPLOY_GENTOO@

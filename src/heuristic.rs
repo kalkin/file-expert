@@ -1,4 +1,5 @@
 use crate::data_structures::Text;
+use crate::linguist_extensions::EXTENSIONS;
 use crate::linguist_heuristics::linguist_heuristic;
 use crate::modeline;
 use crate::shebang;
@@ -7,7 +8,6 @@ use std::path::Path;
 include!(concat!(env!("OUT_DIR"), "/linguist_interpreters.rs"));
 include!(concat!(env!("OUT_DIR"), "/linguist_aliases.rs"));
 include!(concat!(env!("OUT_DIR"), "/linguist_filenames.rs"));
-include!(concat!(env!("OUT_DIR"), "/linguist_extensions.rs"));
 
 pub fn guess_by_filename(path: &Path) -> Option<&'static String> {
     let filename = path.file_name().unwrap().to_str().unwrap();

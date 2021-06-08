@@ -18,7 +18,6 @@ fn main() {
 
     generate_linguist_interpreters(&out_dir, &languages);
     generate_linguist_aliases(&out_dir, &languages);
-    generate_linguist_uniq_extensions(&out_dir, &languages);
     generate_linguist_filenames(&out_dir, &languages);
 }
 
