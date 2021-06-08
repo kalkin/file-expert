@@ -872,7 +872,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             } else if match_lines(&KEY_EQUALS_VALUE_1, &content) {
                 Some("INI")
             } else if match_lines(&JAVA_PROPERTIES_1, &content) {
-                Some("Java properties")
+                Some("Java Properties")
             } else {
                 None
             }

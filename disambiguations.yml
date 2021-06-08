@@ -710,7 +710,7 @@
   - language: INI
     or:
     - KEY_EQUALS_VALUE_1
-  - language: Java properties
+  - language: Java Properties
     or:
     - JAVA_PROPERTIES_1
 - extensions:
