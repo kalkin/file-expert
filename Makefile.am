@@ -16,6 +16,7 @@ generate-files: tests/linguist.rs src/linguist_heuristics.rs
 
 src/linguist_heuristics.rs: src/linguist_heuristics.rs.php disambiguations.yml named_patterns.yml
 	$< > $@
+	rustfmt $@
 
 @BKG_RPM_TEMPLATE@
 @BKG_DEPLOY_GENTOO@
