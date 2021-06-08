@@ -368,14 +368,12 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             }
         }
         ".d" => {
-            if match_lines(&D_1, &content) {
-                Some("D")
-            } else if match_lines(&DTRACE_1, &content) {
+            if match_lines(&DTRACE_1, &content) {
                 Some("DTrace")
             } else if match_lines(&MAKEFILE_1, &content) {
                 Some("Makefile")
             } else {
-                None
+                Some("D")
             }
         }
         ".dist" => {

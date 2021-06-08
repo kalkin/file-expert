@@ -181,15 +181,13 @@
 - extensions:
   - .d
   rules:
-  - language: D
-    or:
-    - D_1
   - language: DTrace
     or:
     - DTRACE_1
   - language: Makefile
     or:
     - MAKEFILE_1
+  - language: D
 - extensions:
   - .dist
   rules:
