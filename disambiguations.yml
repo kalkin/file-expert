@@ -832,6 +832,16 @@
       - SCHEME_1
     - language: SaltStack
 - extensions:
+  - .spec
+  rules:
+  - language: RPM Spec
+    or:
+    - RPM_SPEC_1
+  - language: Python
+    or:
+    - PYTHON_1
+  - language: Ruby
+- extensions:
   - .sol
   rules:
   - language: Solidity

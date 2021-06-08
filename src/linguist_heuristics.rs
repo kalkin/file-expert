@@ -158,6 +158,7 @@ lazy_static! {
     static ref ROFF_4: Regex = Regex::new(r#"^[.']"#).unwrap();
     static ref ROFF_5: Regex = Regex::new(r#"^\.\\\" "#).unwrap();
     static ref RPC_1: Regex = Regex::new(r#"\b(program|version)\s+\w+\s*{|\bunion\s+\w+\s+switch\s*\("#).unwrap();
+    static ref RPM_SPEC_1: Regex = Regex::new(r#"\s*Name\:\s*\w+"#).unwrap();
     static ref RUNOFF_1: Regex = Regex::new(r#"(?i:^\.!|^\f|\f$|^\.end lit(?:eral)?\b|^\.[a-zA-Z].*?;\.[a-zA-Z](?:[; \t])|\^\*[^\s*][^*]*\\\*(?=$|\s)|^\.c;[ \t]*\w+)"#).unwrap();
     static ref RUST_1: Regex = Regex::new(r#"^(use |fn |mod |pub |macro_rules|impl|#!?\[)"#).unwrap();
     static ref R_1: Regex = Regex::new(r#"<-|^\s*#"#).unwrap();
@@ -993,6 +994,15 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Scheme")
             } else {
                 Some("SaltStack")
+            }
+        }
+        ".spec" => {
+            if match_lines(&RPM_SPEC_1, &content) {
+                Some("RPM Spec")
+            } else if match_lines(&PYTHON_1, &content) {
+                Some("Python")
+            } else {
+                Some("Ruby")
             }
         }
         ".sol" => {

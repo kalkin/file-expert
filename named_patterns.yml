@@ -154,6 +154,7 @@ ROFF_3: ^[.'][A-Za-z]{2}(\s|$)
 ROFF_4: ^[.']
 ROFF_5: '^\.\\" '
 RPC_1: \b(program|version)\s+\w+\s*{|\bunion\s+\w+\s+switch\s*\(
+RPM_SPEC_1: \s*Name\:\s*\w+
 RUNOFF_1: (?i:^\.!|^\f|\f$|^\.end lit(?:eral)?\b|^\.[a-zA-Z].*?;\.[a-zA-Z](?:[; \t])|\^\*[^\s*][^*]*\\\*(?=$|\s)|^\.c;[
   \t]*\w+)
 RUST_1: ^(use |fn |mod |pub |macro_rules|impl|#!?\[)
