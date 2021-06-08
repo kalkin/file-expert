@@ -27,6 +27,7 @@ DTRACE_1: ^(\w+:\w*:\w*:\w*|BEGIN|END|provider\s+|(tick|profile)-\w+\s+{[^}]*}|#
 D_1: ^module\s+[\w.]*\s*;|import\s+[\w\s,.:]*;|\w+\s+\w+\s*\(.*\)(?:\(.*\))?\s*{[^}]*}|unittest\s*(?:\(.*\))?\s*{[^}]*}
 ECLIPSE_1: ^[^#]+:-
 ECL_1: :=
+EIFFEL_1: ^(note|class|feature|end|inherit)
 ERLANG_1: ^\s*(?:%%|main\s*\(.*?\)\s*->)
 FAUST_1: \bprocess\s*[(=]|\b(library|import)\s*\(\s*"|\bdeclare\s+(name|version|author|copyright|license)\s+"
 FILEBENCH_WML_1: flowop

@@ -205,6 +205,13 @@
     or:
     - FAUST_1
 - extensions:
+  - .e
+  rules:
+    - language: Eiffel
+      or:
+      - EIFFEL_1
+    - language: E
+- extensions:
   - .ecl
   rules:
   - language: ECLiPSe

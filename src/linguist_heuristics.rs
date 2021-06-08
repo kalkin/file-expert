@@ -32,6 +32,7 @@ lazy_static! {
     static ref D_1: Regex = Regex::new(r#"^module\s+[\w.]*\s*;|import\s+[\w\s,.:]*;|\w+\s+\w+\s*\(.*\)(?:\(.*\))?\s*{[^}]*}|unittest\s*(?:\(.*\))?\s*{[^}]*}"#).unwrap();
     static ref ECLIPSE_1: Regex = Regex::new(r#"^[^#]+:-"#).unwrap();
     static ref ECL_1: Regex = Regex::new(r#":="#).unwrap();
+    static ref EIFFEL_1: Regex = Regex::new(r#"^(note|class|feature|end|inherit)"#).unwrap();
     static ref ERLANG_1: Regex = Regex::new(r#"^\s*(?:%%|main\s*\(.*?\)\s*->)"#).unwrap();
     static ref FAUST_1: Regex = Regex::new(r#"\bprocess\s*[(=]|\b(library|import)\s*\(\s*\"|\bdeclare\s+(name|version|author|copyright|license)\s+\""#).unwrap();
     static ref FILEBENCH_WML_1: Regex = Regex::new(r#"flowop"#).unwrap();
@@ -384,6 +385,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Faust")
             } else {
                 None
+            }
+        }
+        ".e" => {
+            if match_lines(&EIFFEL_1, &content) {
+                Some("Eiffel")
+            } else {
+                Some("E")
             }
         }
         ".ecl" => {
