@@ -97,10 +97,11 @@ MATLAB_1: ^\s*%
 MDOC_DATE_1: ^[.'][ \t]*Dd +(?:[^"\s]+|"[^"]+")
 MDOC_HEADING_1: ^[.'][ \t]*Sh +(?:[^"\s]|"[^"]+")
 MDOC_TITLE_1: ^[.'][ \t]*Dt +(?:[^"\s]+|"[^"]+") +"?(?:[1-9]|@[^\s@]+@)
-MERCURY_1: :- module
+MERCURY_1: :-\s+\w+
 MICROSOFT_DEVELOPER_STUDIO_PROJECT_1: '# Microsoft Developer Studio Generated Build
   File'
 MODULA_2_1: ^\s*(?i:MODULE|END) [\w\.]+;
+MOOCODE_1: ^\s*@\w+\s+
 MUF_1: '^: '
 M_1: ^\s*;
 NASL_1: ^\s*include\s*\(\s*(?:"|')[\\/\w\-\.:\s]+\.(?:nasl|inc)\s*(?:"|')\s*\)\s*;

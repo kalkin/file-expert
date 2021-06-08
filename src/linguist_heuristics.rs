@@ -102,9 +102,10 @@ lazy_static! {
     static ref MDOC_DATE_1: Regex = Regex::new(r#"^[.'][ \t]*Dd +(?:[^\"\s]+|\"[^\"]+\")"#).unwrap();
     static ref MDOC_HEADING_1: Regex = Regex::new(r#"^[.'][ \t]*Sh +(?:[^\"\s]|\"[^\"]+\")"#).unwrap();
     static ref MDOC_TITLE_1: Regex = Regex::new(r#"^[.'][ \t]*Dt +(?:[^\"\s]+|\"[^\"]+\") +\"?(?:[1-9]|@[^\s@]+@)"#).unwrap();
-    static ref MERCURY_1: Regex = Regex::new(r#":- module"#).unwrap();
+    static ref MERCURY_1: Regex = Regex::new(r#":-\s+\w+"#).unwrap();
     static ref MICROSOFT_DEVELOPER_STUDIO_PROJECT_1: Regex = Regex::new(r#"# Microsoft Developer Studio Generated Build File"#).unwrap();
     static ref MODULA_2_1: Regex = Regex::new(r#"^\s*(?i:MODULE|END) [\w\.]+;"#).unwrap();
+    static ref MOOCODE_1: Regex = Regex::new(r#"^\s*@\w+\s+"#).unwrap();
     static ref MUF_1: Regex = Regex::new(r#"^: "#).unwrap();
     static ref M_1: Regex = Regex::new(r#"^\s*;"#).unwrap();
     static ref NASL_1: Regex = Regex::new(r#"^\s*include\s*\(\s*(?:\"|')[\\/\w\-\.:\s]+\.(?:nasl|inc)\s*(?:\"|')\s*\)\s*;"#).unwrap();
@@ -716,6 +717,15 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Modula-2")
             } else {
                 Some("Linux Kernel Module")
+            }
+        }
+        ".moo" => {
+            if match_lines(&MOOCODE_1, &content) {
+                Some("Moocode")
+            } else if match_lines(&MERCURY_1, &content) {
+                Some("Mercury")
+            } else {
+                None
             }
         }
         ".ms" => {

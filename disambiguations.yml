@@ -547,6 +547,15 @@
     - MODULA_2_1
   - language: Linux Kernel Module
 - extensions:
+  - .moo
+  rules:
+  - language: Moocode
+    or:
+    - MOOCODE_1
+  - language: Mercury
+    or:
+    - MERCURY_1
+- extensions:
   - .ms
   rules:
   - language: Roff
