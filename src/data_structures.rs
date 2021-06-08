@@ -9,7 +9,7 @@ impl FileContent {
         let file = File::open(path)?;
         let data: Vec<u8> = file
             .bytes()
-            .take(4096)
+            .take(4096 * 4)
             .map(|r: Result<u8, _>| r.unwrap()) // or deal explicitly with failure!
             .collect();
 
