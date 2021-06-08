@@ -276,6 +276,13 @@
     or:
     - FILTERSCRIPT_1
 - extensions:
+  - .fx
+  rules:
+    - language: FLUX
+      or:
+      - FLUX_1
+    - language: HLSL
+- extensions:
   - .gd
   rules:
   - language: GAP
@@ -789,6 +796,14 @@
   - language: XML
     or:
     - XML_5
+  - language: Scheme
+- extensions:
+  - .sls
+  rules:
+    - language: Scheme
+      or:
+      - SCHEME_1
+    - language: SaltStack
 - extensions:
   - .sol
   rules:

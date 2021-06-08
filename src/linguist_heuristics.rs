@@ -37,6 +37,7 @@ lazy_static! {
     static ref FAUST_1: Regex = Regex::new(r#"\bprocess\s*[(=]|\b(library|import)\s*\(\s*\"|\bdeclare\s+(name|version|author|copyright|license)\s+\""#).unwrap();
     static ref FILEBENCH_WML_1: Regex = Regex::new(r#"flowop"#).unwrap();
     static ref FILTERSCRIPT_1: Regex = Regex::new(r#"#include|#pragma\s+(rs|version)|__attribute__"#).unwrap();
+    static ref FLUX_1: Regex = Regex::new(r#"^\s*(typedef|atomic)\b"#).unwrap();
     static ref FORTH_1: Regex = Regex::new(r#"^: "#).unwrap();
     static ref FORTH_2: Regex = Regex::new(r#"^: "#).unwrap();
     static ref FORTH_3: Regex = Regex::new(r#"^(: |also |new-device|previous )"#).unwrap();
@@ -158,6 +159,7 @@ lazy_static! {
     static ref RUST_1: Regex = Regex::new(r#"^(use |fn |mod |pub |macro_rules|impl|#!?\[)"#).unwrap();
     static ref R_1: Regex = Regex::new(r#"<-|^\s*#"#).unwrap();
     static ref SCALA_1: Regex = Regex::new(r#"(^\s*import (scala|java)\.|^\s*class\b)"#).unwrap();
+    static ref SCHEME_1: Regex = Regex::new(r#"^\s*\((?:define|let)"#).unwrap();
     static ref SMALLTALK_1: Regex = Regex::new(r#"![\w\s]+methodsFor: "#).unwrap();
     static ref SOLIDITY_1: Regex = Regex::new(r#"\bpragma\s+solidity\b|\b(?:abstract\s+)?contract\s+(?!\d)[a-zA-Z0-9$_]+(?:\s+is\s+(?:[a-zA-Z0-9$_][^\{]*?)?)?\s*\{"#).unwrap();
     static ref SOURCEPAWN_1: Regex = Regex::new(r#"^public\s+(?:SharedPlugin(?:\s+|:)__pl_\w+\s*=(?:\s*{)?|(?:void\s+)?__pl_\w+_SetNTVOptional\(\)(?:\s*{)?)"#).unwrap();
@@ -454,6 +456,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Filterscript")
             } else {
                 None
+            }
+        }
+        ".fx" => {
+            if match_lines(&FLUX_1, &content) {
+                Some("FLUX")
+            } else {
+                Some("HLSL")
             }
         }
         ".gd" => {
@@ -948,7 +957,14 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             if match_lines(&XML_5, &content) {
                 Some("XML")
             } else {
-                None
+                Some("Scheme")
+            }
+        }
+        ".sls" => {
+            if match_lines(&SCHEME_1, &content) {
+                Some("Scheme")
+            } else {
+                Some("SaltStack")
             }
         }
         ".sol" => {

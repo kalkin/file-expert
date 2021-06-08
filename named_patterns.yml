@@ -32,6 +32,7 @@ ERLANG_1: ^\s*(?:%%|main\s*\(.*?\)\s*->)
 FAUST_1: \bprocess\s*[(=]|\b(library|import)\s*\(\s*"|\bdeclare\s+(name|version|author|copyright|license)\s+"
 FILEBENCH_WML_1: flowop
 FILTERSCRIPT_1: '#include|#pragma\s+(rs|version)|__attribute__'
+FLUX_1: ^\s*(typedef|atomic)\b
 FORTH_1: '^: '
 FORTH_2: '^: '
 FORTH_3: '^(: |also |new-device|previous )'
@@ -155,6 +156,7 @@ RUNOFF_1: (?i:^\.!|^\f|\f$|^\.end lit(?:eral)?\b|^\.[a-zA-Z].*?;\.[a-zA-Z](?:[; 
 RUST_1: ^(use |fn |mod |pub |macro_rules|impl|#!?\[)
 R_1: <-|^\s*#
 SCALA_1: (^\s*import (scala|java)\.|^\s*class\b)
+SCHEME_1: ^\s*\((?:define|let)
 SMALLTALK_1: '![\w\s]+methodsFor: '
 SOLIDITY_1: \bpragma\s+solidity\b|\b(?:abstract\s+)?contract\s+(?!\d)[a-zA-Z0-9$_]+(?:\s+is\s+(?:[a-zA-Z0-9$_][^\{]*?)?)?\s*\{
 SOURCEPAWN_1: ^public\s+(?:SharedPlugin(?:\s+|:)__pl_\w+\s*=(?:\s*{)?|(?:void\s+)?__pl_\w+_SetNTVOptional\(\)(?:\s*{)?)
