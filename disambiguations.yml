@@ -317,6 +317,7 @@
   - language: XML
     or:
     - XML_5
+  - language: Gosu
 - extensions:
   - .h
   rules:

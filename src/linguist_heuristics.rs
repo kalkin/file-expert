@@ -494,7 +494,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             if match_lines(&XML_5, &content) {
                 Some("XML")
             } else {
-                None
+                Some("Gosu")
             }
         }
         ".h" => {
