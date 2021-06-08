@@ -101,6 +101,13 @@ fn generate_linguist_aliases(out_dir: &OsString, languages: &Languages) {
             name, name
         )
         .unwrap();
+        writeln!(
+            output,
+            "        ({:?}.to_string(), {:?}.to_string()),",
+            name.to_lowercase(),
+            name
+        )
+        .unwrap();
         if let Some(aliases) = &lang.aliases {
             for alias in aliases {
                 writeln!(
