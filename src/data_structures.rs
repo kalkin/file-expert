@@ -17,7 +17,7 @@ impl FileContent {
     }
 
     pub fn is_binary(&self) -> bool {
-        return self.0.iter().any(|i| i == &0u8);
+        return self.0.iter().any(|i| i == &0_u8);
     }
 
     pub fn is_empty(&self) -> bool {

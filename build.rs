@@ -12,7 +12,7 @@ fn main() {
     let out_dir = env::var_os("OUT_DIR").unwrap();
     let root_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
 
-    let mut languages_yml = root_dir.to_owned();
+    let mut languages_yml = root_dir;
     languages_yml.push_str("/languages.yml");
     let languages = parse_languages_yaml(&languages_yml);
 
@@ -86,7 +86,7 @@ fn generate_linguist_interpreters(out_dir: &OsString, languages: &Languages) {
 fn generate_linguist_aliases(out_dir: &OsString, languages: &Languages) {
     let dest_path = Path::new(&out_dir).join("linguist_aliases.rs");
     let mut output = File::create(dest_path).unwrap();
-    writeln!(output, "").unwrap();
+    writeln!(output).unwrap();
     writeln!(output, "lazy_static! {{").unwrap();
 
     writeln!(
@@ -123,10 +123,10 @@ fn generate_linguist_uniq_extensions(out_dir: &OsString, languages: &Languages) 
     for (name, lang) in languages {
         if let Some(exts) = &lang.extensions {
             for e in exts {
-                if !extensions.contains_key(e) {
-                    extensions.insert(e.to_owned(), vec![name.to_owned()]);
+                if extensions.contains_key(e) {
+                    extensions.get_mut(e).unwrap().push(name.clone());
                 } else {
-                    extensions.get_mut(e).unwrap().push(name.to_owned());
+                    extensions.insert(e.clone(), vec![name.clone()]);
                 }
             }
         }
@@ -157,7 +157,7 @@ fn generate_linguist_uniq_extensions(out_dir: &OsString, languages: &Languages) 
 fn generate_linguist_filenames(out_dir: &OsString, languages: &Languages) {
     let dest_path = Path::new(&out_dir).join("linguist_filenames.rs");
     let mut output = File::create(dest_path).unwrap();
-    writeln!(output, "").unwrap();
+    writeln!(output).unwrap();
     writeln!(output, "lazy_static! {{").unwrap();
 
     writeln!(
