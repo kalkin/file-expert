@@ -67,6 +67,7 @@ lazy_static! {
     static ref GRAPH_MODELING_LANGUAGE_1: Regex = Regex::new(r#"(?i:^\s*(graph|node)\s+\[$)"#).unwrap();
     static ref HACK_1: Regex = Regex::new(r#"<\?hh"#).unwrap();
     static ref HACK_2: Regex = Regex::new(r#"<\?hh"#).unwrap();
+    static ref HAPROXY_1: Regex = Regex::new(r#"^\s*(?:frontend|backend|listen)\s+(?:\w|\d)+"#).unwrap();
     static ref HIVEQL_1: Regex = Regex::new(r#"(?i:SELECT\s+[\w*,]+\s+FROM|(CREATE|ALTER|DROP)\s(DATABASE|SCHEMA|TABLE))"#).unwrap();
     static ref HTML_1: Regex = Regex::new(r#"^\s*</?(?i:html|head|title|body|span|div)\b"#).unwrap();
     static ref IDL_1: Regex = Regex::new(r#"^\s*function[ \w,]+$"#).unwrap();
@@ -102,6 +103,7 @@ lazy_static! {
     static ref MATHEMATICA_1: Regex = Regex::new(r#"\(\*"#).unwrap();
     static ref MATHEMATICA_2: Regex = Regex::new(r#"\*\)$"#).unwrap();
     static ref MATLAB_1: Regex = Regex::new(r#"^\s*%"#).unwrap();
+    static ref MATLAB_2: Regex = Regex::new(r#"^\s*end\b"#).unwrap();
     static ref MDOC_DATE_1: Regex = Regex::new(r#"^[.'][ \t]*Dd +(?:[^\"\s]+|\"[^\"]+\")"#).unwrap();
     static ref MDOC_HEADING_1: Regex = Regex::new(r#"^[.'][ \t]*Sh +(?:[^\"\s]|\"[^\"]+\")"#).unwrap();
     static ref MDOC_TITLE_1: Regex = Regex::new(r#"^[.'][ \t]*Dt +(?:[^\"\s]+|\"[^\"]+\") +\"?(?:[1-9]|@[^\s@]+@)"#).unwrap();
@@ -127,6 +129,9 @@ lazy_static! {
     static ref OPENCL_1: Regex = Regex::new(r#"\/\* |\/\/ |^\}"#).unwrap();
     static ref OPENEDGE_ABL_1: Regex = Regex::new(r#"&ANALYZE-SUSPEND _UIB-CODE-BLOCK _CUSTOM _DEFINITIONS"#).unwrap();
     static ref PASCAL_1: Regex = Regex::new(r#"^\s*end[.;]"#).unwrap();
+    static ref PAWN_1: Regex = Regex::new(r#"^\s*#include\s+<\w+>"#).unwrap();
+    static ref PAWN_2: Regex = Regex::new(r#"^\s*public\s+(?:\w|\d)+\("#).unwrap();
+    static ref PAWN_3: Regex = Regex::new(r#"^\s*stock\s+(?:\w|\d)+:"#).unwrap();
     static ref PERL5_1: Regex = Regex::new(r#"\buse\s+(?:strict\b|v?5\.)"#).unwrap();
     static ref PERL6_1: Regex = Regex::new(r#"^\s*(?:use\s+v6\b|\bmodule\b|\b(?:my\s+)?class\b)"#).unwrap();
     static ref PHP_1: Regex = Regex::new(r#"^<\?(?:php)?"#).unwrap();
@@ -141,6 +146,10 @@ lazy_static! {
     static ref PUBLIC_KEY_1: Regex = Regex::new(r#"^(----[- ]BEGIN|ssh-(rsa|dss)) "#).unwrap();
     static ref PUPPET_1: Regex = Regex::new(r#"^\s+\w+\s+=>\s"#).unwrap();
     static ref PYTHON_1: Regex = Regex::new(r#"(?m:^(import|from|class|def)\s)"#).unwrap();
+    static ref PYTHON_SPEC_1: Regex = Regex::new(r#"=\s*Analysis\("#).unwrap();
+    static ref PYTHON_SPEC_2: Regex = Regex::new(r#"=\s*PYZ\("#).unwrap();
+    static ref PYTHON_SPEC_3: Regex = Regex::new(r#"=\s*EXE\("#).unwrap();
+    static ref PYTHON_SPEC_4: Regex = Regex::new(r#"=\s*COLLECT\("#).unwrap();
     static ref QMAKE_1: Regex = Regex::new(r#"HEADERS"#).unwrap();
     static ref QMAKE_2: Regex = Regex::new(r#"SOURCES"#).unwrap();
     static ref QT_SCRIPT_1: Regex = Regex::new(r#"(\w+\.prototype\.\w+|===|\bvar\b)"#).unwrap();
@@ -305,6 +314,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("CoffeeScript")
             }
         }
+        ".cfg" => {
+            if match_lines(&HAPROXY_1, &content) {
+                Some("HAProxy")
+            } else {
+                Some("INI")
+            }
+        }
         ".ch" => {
             if match_lines(&XBASE_1, &content) {
                 Some("xBase")
@@ -354,7 +370,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             {
                 Some("C++")
             } else {
-                None
+                Some("Component Pascal")
             }
         }
         ".cs" => {
@@ -373,6 +389,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Makefile")
             } else {
                 Some("D")
+            }
+        }
+        ".ddl" => {
+            if match_lines(&PLSQL_1, &content) {
+                Some("PLSQL")
+            } else {
+                Some("SQL")
             }
         }
         ".xml.dist" => {
@@ -434,6 +457,15 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 None
             }
         }
+        ".fcgi" => {
+            if match_lines(&PHP_1, &content) {
+                Some("PHP")
+            } else if match_lines(&PYTHON_1, &content) {
+                Some("Python")
+            } else {
+                None
+            }
+        }
         ".for" => {
             if match_lines(&FORTH_2, &content) {
                 Some("Forth")
@@ -450,6 +482,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Frege")
             } else {
                 Some("Text")
+            }
+        }
+        ".frag" => {
+            if match_lines(&GLSL_1, &content) {
+                Some("GLSL")
+            } else {
+                Some("JavaScript")
             }
         }
         ".fs" => {
@@ -618,8 +657,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("HTML")
             } else if match_lines(&PASCAL_1, &content) {
                 Some("Pascal")
+            } else if match_lines(&PAWN_1, &content)
+                || match_lines(&PAWN_2, &content)
+                || match_lines(&PAWN_3, &content)
+            {
+                Some("Pawn")
             } else {
-                Some("C++")
+                Some("Assembly")
             }
         }
         ".j" => {
@@ -670,7 +714,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             } else if match_lines(&MATHEMATICA_1, &content) && match_lines(&MATHEMATICA_2, &content)
             {
                 Some("Mathematica")
-            } else if match_lines(&MATLAB_1, &content) {
+            } else if match_lines(&MATLAB_1, &content) || match_lines(&MATLAB_2, &content) {
                 Some("MATLAB")
             } else if match_lines(&LIMBO_1, &content) {
                 Some("Limbo")
@@ -762,8 +806,17 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Gerber Image")
             } else if match_lines(&TEXT_1, &content) {
                 Some("Text")
+            } else if match_lines(&GERBER_IMAGE_1, &content) {
+                Some("Gerber Image")
             } else {
                 Some("NCL")
+            }
+        }
+        ".nb" => {
+            if match_lines(&MATHEMATICA_1, &content) || match_lines(&MATHEMATICA_2, &content) {
+                Some("Mathematica")
+            } else {
+                Some("Text")
             }
         }
         ".nl" => {
@@ -848,6 +901,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Puppet")
             } else {
                 None
+            }
+        }
+        ".prc" => {
+            if match_lines(&PLSQL_1, &content) {
+                Some("PLSQL")
+            } else {
+                Some("SQL")
             }
         }
         ".pro" => {
@@ -980,6 +1040,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 None
             }
         }
+        ".scd" => {
+            if match_lines(&SUPERCOLLIDER_1, &content) {
+                Some("SuperCollider")
+            } else {
+                Some("Markdown")
+            }
+        }
         ".sch" => {
             if match_lines(&EAGLE_1, &content) {
                 Some("Eagle")
@@ -989,6 +1056,13 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
                 Some("Scheme")
             } else {
                 Some("KiCad Schematic")
+            }
+        }
+        ".shader" => {
+            if match_lines(&GLSL_1, &content) {
+                Some("GLSL")
+            } else {
+                Some("ShaderLab")
             }
         }
         ".sls" => {
@@ -1001,7 +1075,11 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
         ".spec" => {
             if match_lines(&RPM_SPEC_1, &content) {
                 Some("RPM Spec")
-            } else if match_lines(&PYTHON_1, &content) {
+            } else if match_lines(&PYTHON_SPEC_1, &content)
+                && match_lines(&PYTHON_SPEC_2, &content)
+                && match_lines(&PYTHON_SPEC_3, &content)
+                && match_lines(&PYTHON_SPEC_4, &content)
+            {
                 Some("Python")
             } else {
                 Some("Ruby")
@@ -1033,7 +1111,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
             if match_lines(&SUBRIP_TEXT_1, &content) {
                 Some("SubRip Text")
             } else {
-                None
+                Some("SRecode Template")
             }
         }
         ".st" => {

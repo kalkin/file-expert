@@ -119,6 +119,13 @@
     - C_SHARP__1
   - language: CoffeeScript
 - extensions:
+  - .cfg
+  rules:
+  - language: HAProxy
+    or:
+    - HAPROXY_1
+  - language: INI
+- extensions:
   - .ch
   rules:
   - language: xBase
@@ -171,7 +178,7 @@
     - CPP_5
     - CPP_6
     - CPP_7
-
+  - language: Component Pascal
 - extensions:
   - .cs
   rules:
@@ -191,6 +198,13 @@
     or:
     - MAKEFILE_1
   - language: D
+- extensions:
+  - .ddl
+  rules:
+  - language: PLSQL
+    or:
+    - PLSQL_1
+  - language: SQL
 - extensions:
   - .xml.dist
   rules:
@@ -250,6 +264,15 @@
     or:
     - FORTRAN_1
 - extensions:
+  - .fcgi
+  rules:
+  - language: PHP
+    or:
+    - PHP_1
+  - language: Python
+    or:
+    - PYTHON_1
+- extensions:
   - .for
   rules:
   - language: Forth
@@ -269,6 +292,13 @@
     or:
     - FREGE_1
   - language: Text
+- extensions:
+  - .frag
+  rules:
+  - language: GLSL
+    or:
+    - GLSL_1
+  - language: JavaScript
 - extensions:
   - .fs
   rules:
@@ -444,6 +474,11 @@
   - language: Pascal
     or:
     - PASCAL_1
+  - language: Pawn
+    or:
+    - PAWN_1
+    - PAWN_2
+    - PAWN_3
   - language: Assembly
 - extensions:
   - .j
@@ -506,6 +541,7 @@
   - language: MATLAB
     or:
     - MATLAB_1
+    - MATLAB_2
   - language: Limbo
     or:
     - LIMBO_1
@@ -604,7 +640,18 @@
   - language: Text
     or:
     - TEXT_1
+  - language: Gerber Image
+    or:
+    - GERBER_IMAGE_1
   - language: NCL
+- extensions:
+  - .nb
+  rules:
+  - language: Mathematica
+    or:
+    - MATHEMATICA_1
+    - MATHEMATICA_2
+  - language: Text
 - extensions:
   - .nl
   rules:
@@ -692,6 +739,13 @@
   - language: Puppet
     or:
     - PUPPET_1
+- extensions:
+  - .prc
+  rules:
+  - language: PLSQL
+    or:
+    - PLSQL_1
+  - language: SQL
 - extensions:
   - .pro
   rules:
@@ -827,6 +881,13 @@
     or:
     - SCALA_1
 - extensions:
+  - .scd
+  rules:
+  - language: SuperCollider
+    or:
+    - SUPERCOLLIDER_1
+  - language: Markdown
+- extensions:
   - .sch
   rules:
   - language: Eagle
@@ -837,15 +898,22 @@
     - XML_5
   - language: Scheme
     or:
-      - SCHEME_1
+    - SCHEME_1
   - language: KiCad Schematic
+- extensions:
+  - .shader
+  rules:
+  - language: GLSL
+    or:
+    - GLSL_1
+  - language: ShaderLab
 - extensions:
   - .sls
   rules:
-    - language: Scheme
-      or:
-      - SCHEME_1
-    - language: SaltStack
+  - language: Scheme
+    or:
+    - SCHEME_1
+  - language: SaltStack
 - extensions:
   - .spec
   rules:
@@ -853,8 +921,11 @@
     or:
     - RPM_SPEC_1
   - language: Python
-    or:
-    - PYTHON_1
+    and:
+    - PYTHON_SPEC_1
+    - PYTHON_SPEC_2
+    - PYTHON_SPEC_3
+    - PYTHON_SPEC_4
   - language: Ruby
 - extensions:
   - .sol
@@ -887,6 +958,7 @@
   - language: SubRip Text
     or:
     - SUBRIP_TEXT_1
+  - language: SRecode Template
 - extensions:
   - .st
   rules:

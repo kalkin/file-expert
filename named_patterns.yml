@@ -64,6 +64,7 @@ GOSU_1: ^uses (java|gw)\.
 GRAPH_MODELING_LANGUAGE_1: (?i:^\s*(graph|node)\s+\[$)
 HACK_1: <\?hh
 HACK_2: <\?hh
+HAPROXY_1: ^\s*(?:frontend|backend|listen)\s+(?:\w|\d)+
 HIVEQL_1: (?i:SELECT\s+[\w*,]+\s+FROM|(CREATE|ALTER|DROP)\s(DATABASE|SCHEMA|TABLE))
 HTML_1: ^\s*</?(?i:html|head|title|body|span|div)\b
 IDL_1: ^\s*function[ \w,]+$
@@ -99,6 +100,7 @@ MARKDOWN_2: \A\z
 MATHEMATICA_1: \(\*
 MATHEMATICA_2: \*\)$
 MATLAB_1: ^\s*%
+MATLAB_2: ^\s*end\b
 MDOC_DATE_1: ^[.'][ \t]*Dd +(?:[^"\s]+|"[^"]+")
 MDOC_HEADING_1: ^[.'][ \t]*Sh +(?:[^"\s]|"[^"]+")
 MDOC_TITLE_1: ^[.'][ \t]*Dt +(?:[^"\s]+|"[^"]+") +"?(?:[1-9]|@[^\s@]+@)
@@ -125,6 +127,9 @@ ODIN_1: package\s+\w+|\b(?:im|ex)port\s*"[\w:./]+"|\w+\s*::\s*(?:proc|struct)\s*
 OPENCL_1: \/\* |\/\/ |^\}
 OPENEDGE_ABL_1: '&ANALYZE-SUSPEND _UIB-CODE-BLOCK _CUSTOM _DEFINITIONS'
 PASCAL_1: ^\s*end[.;]
+PAWN_1: ^\s*#include\s+<\w+>
+PAWN_2: ^\s*public\s+(?:\w|\d)+\(
+PAWN_3: '^\s*stock\s+(?:\w|\d)+:'
 PERL5_1: \buse\s+(?:strict\b|v?5\.)
 PERL6_1: ^\s*(?:use\s+v6\b|\bmodule\b|\b(?:my\s+)?class\b)
 PHP_1: ^<\?(?:php)?
@@ -139,6 +144,10 @@ PROLOG_1: ^[^#]*:-
 PUBLIC_KEY_1: '^(----[- ]BEGIN|ssh-(rsa|dss)) '
 PUPPET_1: ^\s+\w+\s+=>\s
 PYTHON_1: (?m:^(import|from|class|def)\s)
+PYTHON_SPEC_1: =\s*Analysis\(
+PYTHON_SPEC_2: =\s*PYZ\(
+PYTHON_SPEC_3: =\s*EXE\(
+PYTHON_SPEC_4: =\s*COLLECT\(
 QMAKE_1: HEADERS
 QMAKE_2: SOURCES
 QT_SCRIPT_1: (\w+\.prototype\.\w+|===|\bvar\b)
