@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::prelude::*;
+use std::io::SeekFrom;
 use std::path::Path;
 
 pub enum Content {
@@ -36,6 +37,21 @@ impl Content {
                 .collect::<Vec<String>>();
             let mut modelines: Vec<String> = Vec::with_capacity(5);
             modelines.append(&mut body.iter().take(5).map(|s| s.to_string()).collect());
+            if amount_to_read < MAX_SIZE {
+                modelines.append(&mut body.iter().rev().take(5).map(|s| s.to_string()).collect())
+            } else {
+                file.seek(SeekFrom::End(-4096))?;
+                let mut tmp = vec![0_u8; 4096];
+                file.read_exact(&mut tmp)?;
+                let mut last_5_lines = String::from_utf8_lossy(&tmp)
+                    .lines()
+                    .rev()
+                    .take(5)
+                    .map(|s| s.to_string())
+                    .collect::<Vec<_>>();
+                modelines.append(&mut last_5_lines)
+            }
+
             Ok(Content::Text { modelines, body })
         }
     }
