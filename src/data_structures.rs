@@ -11,14 +11,19 @@ pub enum Content {
     Empty,
 }
 
+const MAX_SIZE: usize = 4096 * 32;
+
 impl Content {
     pub fn new(path: &Path) -> Result<Self, std::io::Error> {
-        let file = File::open(path)?;
-        let data: Vec<u8> = file
-            .bytes()
-            .take(4096 * 32)
-            .map(|r: Result<u8, _>| r.unwrap()) // or deal explicitly with failure!
-            .collect();
+        let mut file = File::open(path)?;
+        let file_size = file.metadata()?.len();
+        let amount_to_read = if file_size < MAX_SIZE as u64 {
+            file_size as usize
+        } else {
+            MAX_SIZE
+        };
+        let mut data: Vec<u8> = vec![0_u8; amount_to_read];
+        file.read_exact(&mut data)?;
         if data.is_empty() {
             Ok(Content::Empty)
         } else if Content::is_binary(&data) {
