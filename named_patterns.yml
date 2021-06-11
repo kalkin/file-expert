@@ -5,7 +5,7 @@ ACTIONSCRIPT_1: ^\s*(?:package(?:\s+[\w.]+)?\s+(?:{|$)|import\s+[\w.*]+\s*;|(?=.
 AGS_SCRIPT_1: ^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])
 AL_1: \b(?i:(CODEUNIT|PAGE|PAGEEXTENSION|PAGECUSTOMIZATION|DOTNET|ENUM|ENUMEXTENSION|VALUE|QUERY|REPORT|TABLE|TABLEEXTENSION|XMLPORT|PROFILE|CONTROLADDIN))\b
 ASCIIDOC_1: ^[=-]+(\s|\n)|{{[A-Za-z]
-BEEF_1: \b(class|namespace|void|static)\b
+BEEF_1: ^\s*(class|namespace|void|static)\b
 BITBAKE_1: ^\s*(# |include|require)\b
 BLITZBASIC_1: (<^\s*; |End Function)
 BRAINFUCK_1: (?:\+|>|<){4,}
@@ -47,21 +47,18 @@ F_SHARP__1: ^\s*(#light|import|let|module|namespace|open|type)
 GAP_1: \s*(Declare|BindGlobal|KeyDependentOperation)
 GAP_2: 'gap> '
 GAP_3: \s+:=\s+
-GCC_MACHINE_DESCRIPTION_1: ^(;;|\(define_)
+GCC_MACHINE_DESCRIPTION_1: "^(;;|\\(define_)"
 GDSCRIPT_1: \s*(extends|var|const|enum|func|class|signal|tool|yield|assert|onready)
 GENIE_1: ^\[indent=[0-9]+\]
 GENIE_2: ^\t*(def|class|construct|init)\b
 GENIE_3: ^(init|import)\b
-GERBER_IMAGE_1: ^[DGMT][0-9]{2}\*\r?\n
-GERBER_IMAGE_2: ^[DGMT][0-9]{2}\*$
-GERBER_IMAGE_3: ^[DGMT][0-9]{2}\*\r?\n
-GERBER_IMAGE_4: ^[DGMT][0-9]{2}\*\r?\n
+GERBER_IMAGE_1: "^[DGMT][0-9]{2}\\*$"
 GLSL_1: ^\s*(#version|precision|uniform|varying|vec[234])
 GLSL_2: ^#version\s+[0-9]+\b
 GNUPLOT_1: ^s?plot\b
 GNUPLOT_2: ^set\s+(term|terminal|out|output|[xy]tics|[xy]label|[xy]range|style)\b
 GOSU_1: ^uses (java|gw)\.
-GRAPH_MODELING_LANGUAGE_1: (?i:^\s*(graph|node)\s+\[$)
+GRAPH_MODELING_LANGUAGE_1: (?i:^\s*(graph|node)\b\s*\[?$)
 HACK_1: <\?hh
 HACK_2: <\?hh
 HAPROXY_1: ^\s*(?:frontend|backend|listen)\s+(?:\w|\d)+
@@ -74,14 +71,14 @@ JASMIN_1: ^\.\w+\b
 JAVASCRIPT_1: (?m:\/\/|("|')use strict\1|export\s+default\s|\/\*.*?\*\/)
 JAVA_PROPERTIES_1: '^[^#!][^:]*:'
 JSON_1: \A\s*[{\[]
-JSON_2: \"modelName\"\:\s*\"GM
+JSON_2: "\"modelName\"\\:\\s*\"GM"
 KEY_EQUALS_VALUE_1: ^[^#!;][^=]*=
 LEX_1: ^(%[%{}]xs|<.*>)
-LIMBO_1: ^\w+\s*:\s*module\s*{
+LIMBO_1: ^\w+\s*:\s*module\s*{?$
 LINKER_SCRIPT_1: OUTPUT_ARCH\(|OUTPUT_FORMAT\(|SECTIONS
 LINUX_KERNEL_MODULE_1: ^.+\.ko
 LOGOS_1: ^%(end|ctor|hook|group)\b
-LOOMSCRIPT_1: ^\s*package\s*[\w\.\/\*\s]*\s*{
+LOOMSCRIPT_1: ^\s*package\s*[\w\.\/\*\s]*\s*{?$
 LTSPICE_SYMBOL_1: ^SymbolType[ \t]
 M4SUGAR_1: AC_DEFUN|AC_PREREQ|AC_INIT
 M4SUGAR_2: ^_?m4_

@@ -8,7 +8,7 @@ lazy_static! {
     static ref AGS_SCRIPT_1: Regex = Regex::new(r#"^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])"#).unwrap();
     static ref AL_1: Regex = Regex::new(r#"\b(?i:(CODEUNIT|PAGE|PAGEEXTENSION|PAGECUSTOMIZATION|DOTNET|ENUM|ENUMEXTENSION|VALUE|QUERY|REPORT|TABLE|TABLEEXTENSION|XMLPORT|PROFILE|CONTROLADDIN))\b"#).unwrap();
     static ref ASCIIDOC_1: Regex = Regex::new(r#"^[=-]+(\s|\n)|{{[A-Za-z]"#).unwrap();
-    static ref BEEF_1: Regex = Regex::new(r#"\b(class|namespace|void|static)\b"#).unwrap();
+    static ref BEEF_1: Regex = Regex::new(r#"^\s*(class|namespace|void|static)\b"#).unwrap();
     static ref BITBAKE_1: Regex = Regex::new(r#"^\s*(# |include|require)\b"#).unwrap();
     static ref BLITZBASIC_1: Regex = Regex::new(r#"(<^\s*; |End Function)"#).unwrap();
     static ref BRAINFUCK_1: Regex = Regex::new(r#"(?:\+|>|<){4,}"#).unwrap();
@@ -55,16 +55,13 @@ lazy_static! {
     static ref GENIE_1: Regex = Regex::new(r#"^\[indent=[0-9]+\]"#).unwrap();
     static ref GENIE_2: Regex = Regex::new(r#"^\t*(def|class|construct|init)\b"#).unwrap();
     static ref GENIE_3: Regex = Regex::new(r#"^(init|import)\b"#).unwrap();
-    static ref GERBER_IMAGE_1: Regex = Regex::new(r#"^[DGMT][0-9]{2}\*\r?\n"#).unwrap();
-    static ref GERBER_IMAGE_2: Regex = Regex::new(r#"^[DGMT][0-9]{2}\*$"#).unwrap();
-    static ref GERBER_IMAGE_3: Regex = Regex::new(r#"^[DGMT][0-9]{2}\*\r?\n"#).unwrap();
-    static ref GERBER_IMAGE_4: Regex = Regex::new(r#"^[DGMT][0-9]{2}\*\r?\n"#).unwrap();
+    static ref GERBER_IMAGE_1: Regex = Regex::new(r#"^[DGMT][0-9]{2}\*$"#).unwrap();
     static ref GLSL_1: Regex = Regex::new(r#"^\s*(#version|precision|uniform|varying|vec[234])"#).unwrap();
     static ref GLSL_2: Regex = Regex::new(r#"^#version\s+[0-9]+\b"#).unwrap();
     static ref GNUPLOT_1: Regex = Regex::new(r#"^s?plot\b"#).unwrap();
     static ref GNUPLOT_2: Regex = Regex::new(r#"^set\s+(term|terminal|out|output|[xy]tics|[xy]label|[xy]range|style)\b"#).unwrap();
     static ref GOSU_1: Regex = Regex::new(r#"^uses (java|gw)\."#).unwrap();
-    static ref GRAPH_MODELING_LANGUAGE_1: Regex = Regex::new(r#"(?i:^\s*(graph|node)\s+\[$)"#).unwrap();
+    static ref GRAPH_MODELING_LANGUAGE_1: Regex = Regex::new(r#"(?i:^\s*(graph|node)\b\s*\[?$)"#).unwrap();
     static ref HACK_1: Regex = Regex::new(r#"<\?hh"#).unwrap();
     static ref HACK_2: Regex = Regex::new(r#"<\?hh"#).unwrap();
     static ref HAPROXY_1: Regex = Regex::new(r#"^\s*(?:frontend|backend|listen)\s+(?:\w|\d)+"#).unwrap();
@@ -77,14 +74,14 @@ lazy_static! {
     static ref JAVASCRIPT_1: Regex = Regex::new(r#"(?m:\/\/|(\"|')use strict\1|export\s+default\s|\/\*.*?\*\/)"#).unwrap();
     static ref JAVA_PROPERTIES_1: Regex = Regex::new(r#"^[^#!][^:]*:"#).unwrap();
     static ref JSON_1: Regex = Regex::new(r#"\A\s*[{\[]"#).unwrap();
-    static ref JSON_2: Regex = Regex::new(r#"\\"modelName\\"\:\s*\\"GM"#).unwrap();
+    static ref JSON_2: Regex = Regex::new(r#"\"modelName\"\:\s*\"GM"#).unwrap();
     static ref KEY_EQUALS_VALUE_1: Regex = Regex::new(r#"^[^#!;][^=]*="#).unwrap();
     static ref LEX_1: Regex = Regex::new(r#"^(%[%{}]xs|<.*>)"#).unwrap();
-    static ref LIMBO_1: Regex = Regex::new(r#"^\w+\s*:\s*module\s*{"#).unwrap();
+    static ref LIMBO_1: Regex = Regex::new(r#"^\w+\s*:\s*module\s*{?$"#).unwrap();
     static ref LINKER_SCRIPT_1: Regex = Regex::new(r#"OUTPUT_ARCH\(|OUTPUT_FORMAT\(|SECTIONS"#).unwrap();
     static ref LINUX_KERNEL_MODULE_1: Regex = Regex::new(r#"^.+\.ko"#).unwrap();
     static ref LOGOS_1: Regex = Regex::new(r#"^%(end|ctor|hook|group)\b"#).unwrap();
-    static ref LOOMSCRIPT_1: Regex = Regex::new(r#"^\s*package\s*[\w\.\/\*\s]*\s*{"#).unwrap();
+    static ref LOOMSCRIPT_1: Regex = Regex::new(r#"^\s*package\s*[\w\.\/\*\s]*\s*{?$"#).unwrap();
     static ref LTSPICE_SYMBOL_1: Regex = Regex::new(r#"^SymbolType[ \t]"#).unwrap();
     static ref M4SUGAR_1: Regex = Regex::new(r#"AC_DEFUN|AC_PREREQ|AC_INIT"#).unwrap();
     static ref M4SUGAR_2: Regex = Regex::new(r#"^_?m4_"#).unwrap();
@@ -532,7 +529,7 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
                 Some("XML")
             } else if match_lines(&GRAPH_MODELING_LANGUAGE_1, &content) {
                 Some("Graph Modeling Language")
-            } else if match_lines(&GERBER_IMAGE_2, &content) {
+            } else if match_lines(&GERBER_IMAGE_1, &content) {
                 Some("Gerber Image")
             } else {
                 Some("Game Maker Language")
@@ -737,9 +734,7 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
             }
         }
         ".md" => {
-            if match_lines(&MARKDOWN_1, &content) || match_lines(&MARKDOWN_2, &content) {
-                Some("Markdown")
-            } else if match_lines(&GCC_MACHINE_DESCRIPTION_1, &content) {
+            if match_lines(&GCC_MACHINE_DESCRIPTION_1, &content) {
                 Some("GCC Machine Description")
             } else {
                 Some("Markdown")
@@ -802,12 +797,10 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
         ".ncl" => {
             if match_lines(&XML_4, &content) {
                 Some("XML")
-            } else if match_lines(&GERBER_IMAGE_3, &content) {
+            } else if match_lines(&GERBER_IMAGE_1, &content) {
                 Some("Gerber Image")
             } else if match_lines(&TEXT_1, &content) {
                 Some("Text")
-            } else if match_lines(&GERBER_IMAGE_1, &content) {
-                Some("Gerber Image")
             } else {
                 Some("NCL")
             }
@@ -897,10 +890,8 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
         ".pp" => {
             if match_lines(&PASCAL_1, &content) {
                 Some("Pascal")
-            } else if match_lines(&PUPPET_1, &content) {
-                Some("Puppet")
             } else {
-                None
+                Some("Puppet")
             }
         }
         ".prc" => {
@@ -1088,7 +1079,7 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
         ".sol" => {
             if match_lines(&SOLIDITY_1, &content) {
                 Some("Solidity")
-            } else if match_lines(&GERBER_IMAGE_4, &content) {
+            } else if match_lines(&GERBER_IMAGE_1, &content) {
                 Some("Gerber Image")
             } else {
                 None

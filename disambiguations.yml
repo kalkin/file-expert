@@ -348,7 +348,7 @@
     - GRAPH_MODELING_LANGUAGE_1
   - language: Gerber Image
     or:
-    - GERBER_IMAGE_2
+    - GERBER_IMAGE_1
   - language: Game Maker Language
 - extensions:
   - .gs
@@ -563,10 +563,6 @@
 - extensions:
   - .md
   rules:
-  - language: Markdown
-    or:
-    - MARKDOWN_1
-    - MARKDOWN_2
   - language: GCC Machine Description
     or:
     - GCC_MACHINE_DESCRIPTION_1
@@ -636,13 +632,10 @@
     - XML_4
   - language: Gerber Image
     or:
-    - GERBER_IMAGE_3
+    - GERBER_IMAGE_1
   - language: Text
     or:
     - TEXT_1
-  - language: Gerber Image
-    or:
-    - GERBER_IMAGE_1
   - language: NCL
 - extensions:
   - .nb
@@ -737,8 +730,6 @@
     or:
     - PASCAL_1
   - language: Puppet
-    or:
-    - PUPPET_1
 - extensions:
   - .prc
   rules:
@@ -935,7 +926,7 @@
     - SOLIDITY_1
   - language: Gerber Image
     or:
-    - GERBER_IMAGE_4
+    - GERBER_IMAGE_1
 - extensions:
   - .sql
   rules:
