@@ -33,7 +33,7 @@ foreach ($PATTERNS as $name => $pattern):
 <?php
 $HEURISTICS = yaml_parse_file($HEURISTICS_FILE);
 ?>
-pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
+pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static str> {
     match ext {
 <?php
     foreach ($HEURISTICS as $extRules) :
@@ -85,8 +85,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
     _ => None
     }
 }
-fn match_lines(regex: &Regex, text: &str) -> bool {
-    let lines: Vec<&str> = text.lines().collect::<Vec<_>>();
+fn match_lines(regex: &Regex, lines: &Vec<String>) -> bool {
     for line in lines {
         if regex.is_match(line).unwrap() {
             return true;

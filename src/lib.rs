@@ -2,13 +2,13 @@
 mod data_structures;
 mod expert;
 mod heuristic;
+mod linguist_aliases;
 mod linguist_extensions;
+mod linguist_filenames;
 mod linguist_heuristics;
+mod linguist_interpreters;
 mod modeline;
 mod shebang;
-mod linguist_interpreters;
-mod linguist_aliases;
-mod linguist_filenames;
 
 pub use crate::expert::expert;
 pub use crate::expert::ExpertResult;

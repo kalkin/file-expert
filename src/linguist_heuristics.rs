@@ -209,7 +209,7 @@ lazy_static! {
     static ref XML_PROPERTY_LIST_1: Regex = Regex::new(r#"<!DOCTYPE\s+plist"#).unwrap();
     static ref X_PIXMAP_1: Regex = Regex::new(r#"^\s*\/\* XPM \*\/"#).unwrap();
 }
-pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
+pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static str> {
     match ext {
         ".1" | ".2" | ".3" | ".4" | ".5" | ".6" | ".7" | ".8" | ".9" => {
             if match_lines(&MDOC_DATE_1, &content)
@@ -1255,8 +1255,7 @@ pub fn linguist_heuristic(ext: &str, content: &str) -> Option<&'static str> {
         _ => None,
     }
 }
-fn match_lines(regex: &Regex, text: &str) -> bool {
-    let lines: Vec<&str> = text.lines().collect::<Vec<_>>();
+fn match_lines(regex: &Regex, lines: &Vec<String>) -> bool {
     for line in lines {
         if regex.is_match(line).unwrap() {
             return true;
