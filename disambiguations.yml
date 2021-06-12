@@ -427,10 +427,12 @@
 - extensions:
   - .ice
   rules:
+  - language: Slice
+    or:
+    - SLICE_1
   - language: JSON
     or:
     - JSON_1
-  - language: Slice
 - extensions:
   - .inc
   rules:

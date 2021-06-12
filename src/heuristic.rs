@@ -5,13 +5,13 @@ use crate::linguist_heuristics::linguist_heuristic;
 use crate::linguist_interpreters::INTERPRETERS;
 use crate::modeline;
 use crate::shebang;
-use std::path::Path;
 use fancy_regex::Regex;
 use lazy_static::lazy_static;
+use std::path::Path;
 
 lazy_static! {
-    static ref SKIP_REGEX : Regex = Regex::new(r#"^(?:#.*|\s*)"#).unwrap();
-    static ref EXEC_REGEX : Regex = Regex::new(r#"^\s*exec\s+(\w+)\s+.*$"#).unwrap();
+    static ref SKIP_REGEX: Regex = Regex::new(r#"^(?:#.*|\s*)"#).unwrap();
+    static ref EXEC_REGEX: Regex = Regex::new(r#"^\s*exec\s+(\w+)\s+.*$"#).unwrap();
 }
 
 pub fn guess_by_filename(path: &Path) -> Option<&'static String> {

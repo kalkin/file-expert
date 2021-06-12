@@ -171,6 +171,7 @@ RUST_1: ^(use |fn |mod |pub |macro_rules|impl|#!?\[)
 R_1: <-|^\s*#
 SCALA_1: (^\s*import (scala|java)\.|^\s*class\b)
 SCHEME_1: ^\s*\((?:define|let)
+SLICE_1:  ^\s*(module|struct|interface|sequence|enum)\s+\w+
 SMALLTALK_1: '![\w\s]+methodsFor: '
 SOLIDITY_1: \bpragma\s+solidity\b|\b(?:abstract\s+)?contract\s+(?!\d)[a-zA-Z0-9$_]+(?:\s+is\s+(?:[a-zA-Z0-9$_][^\{]*?)?)?\s*\{
 SOURCEPAWN_1: ^public\s+(?:SharedPlugin(?:\s+|:)__pl_\w+\s*=(?:\s*{)?|(?:void\s+)?__pl_\w+_SetNTVOptional\(\)(?:\s*{)?)

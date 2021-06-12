@@ -533,6 +533,7 @@ lazy_static! {
         (".mlir".to_string(), "MLIR".to_string()),
         (".mq4".to_string(), "MQL4".to_string()),
         (".mq5".to_string(), "MQL5".to_string()),
+        (".mqh".to_string(), "MQL5".to_string()),
         (".mtml".to_string(), "MTML".to_string()),
         (".muf".to_string(), "MUF".to_string()),
         (".m2".to_string(), "Macaulay2".to_string()),

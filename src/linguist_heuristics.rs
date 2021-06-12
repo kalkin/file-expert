@@ -172,6 +172,7 @@ lazy_static! {
     static ref R_1: Regex = Regex::new(r#"<-|^\s*#"#).unwrap();
     static ref SCALA_1: Regex = Regex::new(r#"(^\s*import (scala|java)\.|^\s*class\b)"#).unwrap();
     static ref SCHEME_1: Regex = Regex::new(r#"^\s*\((?:define|let)"#).unwrap();
+    static ref SLICE_1: Regex = Regex::new(r#"^\s*(module|struct|interface|sequence|enum)\s+\w+"#).unwrap();
     static ref SMALLTALK_1: Regex = Regex::new(r#"![\w\s]+methodsFor: "#).unwrap();
     static ref SOLIDITY_1: Regex = Regex::new(r#"\bpragma\s+solidity\b|\b(?:abstract\s+)?contract\s+(?!\d)[a-zA-Z0-9$_]+(?:\s+is\s+(?:[a-zA-Z0-9$_][^\{]*?)?)?\s*\{"#).unwrap();
     static ref SOURCEPAWN_1: Regex = Regex::new(r#"^public\s+(?:SharedPlugin(?:\s+|:)__pl_\w+\s*=(?:\s*{)?|(?:void\s+)?__pl_\w+_SetNTVOptional\(\)(?:\s*{)?)"#).unwrap();
@@ -612,10 +613,12 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
             }
         }
         ".ice" => {
-            if match_lines(&JSON_1, &content) {
+            if match_lines(&SLICE_1, &content) {
+                Some("Slice")
+            } else if match_lines(&JSON_1, &content) {
                 Some("JSON")
             } else {
-                Some("Slice")
+                None
             }
         }
         ".inc" => {
