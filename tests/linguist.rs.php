@@ -31,7 +31,7 @@ function print_test(String $type, int $i, String $path, array $skipped) {
     #[test]
     fn $testName() {
         let path = Path::new(&"./samples/$path");
-        let actual = expert(&path);
+        let actual = expert(&path).unwrap();
         let expected = ExpertResult::Kind("$type".to_string());
         assert_eq!(actual, expected);
     }

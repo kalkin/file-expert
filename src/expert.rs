@@ -21,44 +21,41 @@ impl Display for ExpertResult {
     }
 }
 
-pub fn expert(path: &Path) -> ExpertResult {
-    if !path.exists() {
-        return ExpertResult::Kind("Missing file".to_string());
-    }
-
-    if path.metadata().unwrap().is_dir() {
-        return ExpertResult::Kind("Directory".to_string());
+pub fn expert(path: &Path) -> Result<ExpertResult, std::io::Error> {
+    let metadata = path.metadata()?;
+    if metadata.is_dir() {
+        return Ok(ExpertResult::Kind("Directory".to_string()));
     }
 
     if let Some(lang) = guess_by_filename(path) {
-        return ExpertResult::Kind(lang.to_string());
+        return Ok(ExpertResult::Kind(lang.to_string()));
     }
-    let content = Content::new(path).unwrap();
+    let content = Content::new(path)?;
     match content {
-        Content::Binary(_) => return ExpertResult::Kind("Binary".to_string()),
-        Content::Empty => return ExpertResult::Kind("Unknown file".to_string()),
+        Content::Binary(_) => return Ok(ExpertResult::Kind("Binary".to_string())),
+        Content::Empty => return Ok(ExpertResult::Kind("Unknown file".to_string())),
         Content::Text { modelines, body } => {
             if let Some(interpreter) = guess_by_interpreter(&body) {
-                return ExpertResult::Kind(interpreter.to_string());
+                return Ok(ExpertResult::Kind(interpreter.to_string()));
             }
             if let Some(lang) = guess_by_modeline(&modelines) {
-                return ExpertResult::Kind(lang.to_string());
+                return Ok(ExpertResult::Kind(lang.to_string()));
             }
 
             if let Some(ext_vec) = extensions(&path) {
                 for ext in ext_vec {
                     if let Some(lang) = guess_by_linguist_heuristic(&ext, &body) {
-                        return ExpertResult::Kind(lang.to_string());
+                        return Ok(ExpertResult::Kind(lang.to_string()));
                     }
 
                     if let Some(lang) = guess_by_extensions(&ext) {
-                        return ExpertResult::Kind(lang.to_string());
+                        return Ok(ExpertResult::Kind(lang.to_string()));
                     }
                 }
             }
         }
     }
-    ExpertResult::Unknown
+    Ok(ExpertResult::Unknown)
 }
 
 fn extensions(path: &Path) -> Option<Vec<String>> {

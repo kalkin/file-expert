@@ -2,11 +2,11 @@
 mod data_structures;
 mod expert;
 mod heuristic;
-mod linguist_aliases;
 mod linguist_extensions;
+mod linguist_interpreters;
+mod linguist_aliases;
 mod linguist_filenames;
 mod linguist_heuristics;
-mod linguist_interpreters;
 mod modeline;
 mod shebang;
 
@@ -14,7 +14,6 @@ use clap::{AppSettings, Arg, ArgMatches};
 use std::io;
 use std::io::prelude::*;
 use std::path::Path;
-
 fn main() {
     let matches: ArgMatches = {
         let app = clap::app_from_crate!()
@@ -34,7 +33,12 @@ fn main() {
     if matches.is_present("file") {
         for file in matches.values_of("file").unwrap() {
             let result = expert::expert(Path::new(file));
-            println!("{}\t{}", file, result)
+            match result {
+                Ok(lang) =>
+                    println!("{}\t{}", file, lang),
+                Err(e) =>
+                    eprintln!("{}\t{}", file, e),
+            }
         }
     } else {
         eprintln!("Reading from stdin");
@@ -43,7 +47,12 @@ fn main() {
             match line {
                 Ok(l) => {
                     let result = expert::expert(Path::new(&l));
-                    println!("{}\t{}", l, result)
+                    match result {
+                        Ok(lang) =>
+                            println!("{}\t{}", l, lang),
+                        Err(e) =>
+                            eprintln!("{}\t{}", l, e),
+                    }
                 }
                 Err(_) => break,
             }
