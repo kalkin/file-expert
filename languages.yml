@@ -3208,6 +3208,7 @@ Makefile:
   - ".make"
   - ".mk"
   - ".mkfile"
+  - ".Makefile"
   filenames:
   - BSDmakefile
   - GNUmakefile
@@ -3215,6 +3216,7 @@ Makefile:
   - Makefile
   - Makefile.am
   - Makefile.boot
+  - Makefile.builder
   - Makefile.frag
   - Makefile.in
   - Makefile.inc
@@ -4444,6 +4446,7 @@ Python:
   - SConstruct
   - Snakefile
   - wscript
+  - __init__.py
   interpreters:
   - python
   - python2
@@ -5553,6 +5556,10 @@ Swift:
   codemirror_mode: swift
   codemirror_mime_type: text/x-swift
   language_id: 362
+Systemd:
+  type: data
+  extensions:
+  - ".service"
 SystemVerilog:
   type: programming
   color: "#DAE1C2"
@@ -5592,6 +5599,7 @@ TOML:
   - Gopkg.lock
   - Pipfile
   - poetry.lock
+  - alire.lock
   tm_scope: source.toml
   ace_mode: toml
   codemirror_mode: toml
@@ -5730,14 +5738,18 @@ Text:
   - ".ncl"
   - ".no"
   filenames:
+  - AUTHORS
   - CHANGELOG
   - COPYING
+  - COPYING.LESSER
   - COPYING.regex
   - COPYRIGHT.regex
   - FONTLOG
+  - HACKING
   - INSTALL
   - INSTALL.mysql
   - LICENSE
+  - LICENSE-GPL2
   - LICENSE.mysql
   - NEWS
   - README
@@ -5760,6 +5772,7 @@ Text:
   - test.me
   - use.mask
   - use.stable.mask
+  - version
   tm_scope: none
   ace_mode: text
   language_id: 372
@@ -6015,6 +6028,7 @@ Vim script:
   - viml
   - nvim
   extensions:
+  - ".vader"
   - ".vim"
   - ".vba"
   - ".vmb"
