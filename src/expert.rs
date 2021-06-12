@@ -30,10 +30,20 @@ pub fn expert(path: &Path) -> Result<ExpertResult, std::io::Error> {
     if let Some(lang) = guess_by_filename(path) {
         return Ok(ExpertResult::Kind(lang.to_string()));
     }
+    let optional_extensions = extensions(&path);
     let content = Content::new(path)?;
     match content {
         Content::Binary(_) => return Ok(ExpertResult::Kind("Binary".to_string())),
-        Content::Empty => return Ok(ExpertResult::Kind("Unknown file".to_string())),
+        Content::Empty => {
+            if let Some(ext_vec) = optional_extensions {
+                for ext in ext_vec {
+                    if let Some(lang) = guess_by_extensions(&ext) {
+                        return Ok(ExpertResult::Kind(lang.to_string()));
+                    }
+                }
+            }
+            return Ok(ExpertResult::Kind("Unknown file".to_string()));
+        }
         Content::Text { modelines, body } => {
             if let Some(interpreter) = guess_by_interpreter(&body) {
                 return Ok(ExpertResult::Kind(interpreter.to_string()));
@@ -42,7 +52,7 @@ pub fn expert(path: &Path) -> Result<ExpertResult, std::io::Error> {
                 return Ok(ExpertResult::Kind(lang.to_string()));
             }
 
-            if let Some(ext_vec) = extensions(&path) {
+            if let Some(ext_vec) = optional_extensions {
                 for ext in ext_vec {
                     if let Some(lang) = guess_by_linguist_heuristic(&ext, &body) {
                         return Ok(ExpertResult::Kind(lang.to_string()));
