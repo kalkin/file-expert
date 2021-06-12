@@ -29,7 +29,6 @@ fn main() {
             );
         app.get_matches()
     };
-    eprintln!("{:#?}", matches);
     if matches.is_present("file") {
         for file in matches.values_of("file").unwrap() {
             let result = expert::expert(Path::new(file));
@@ -41,7 +40,6 @@ fn main() {
             }
         }
     } else {
-        eprintln!("Reading from stdin");
         let stdin = io::stdin();
         for line in stdin.lock().lines() {
             match line {
