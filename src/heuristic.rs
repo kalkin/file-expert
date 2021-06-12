@@ -6,15 +6,41 @@ use crate::linguist_interpreters::INTERPRETERS;
 use crate::modeline;
 use crate::shebang;
 use std::path::Path;
+use fancy_regex::Regex;
+use lazy_static::lazy_static;
+
+lazy_static! {
+    static ref SKIP_REGEX : Regex = Regex::new(r#"^(?:#.*|\s*)"#).unwrap();
+    static ref EXEC_REGEX : Regex = Regex::new(r#"^\s*exec\s+(\w+)\s+.*$"#).unwrap();
+}
 
 pub fn guess_by_filename(path: &Path) -> Option<&'static String> {
     let filename = path.file_name().unwrap().to_str().unwrap();
     return FILENAMES.get(filename);
 }
 
-pub fn guess_by_interpreter(first_line: &str) -> Option<&'static String> {
-    if let Some(interpreter) = shebang::interpreter(&first_line) {
-        return INTERPRETERS.get(&interpreter);
+pub fn guess_by_interpreter(body: &Vec<String>) -> Option<&'static String> {
+    if let Some(interpreter) = shebang::interpreter(&body[0]) {
+        if let Some(language) = INTERPRETERS.get(&interpreter) {
+            if language == &"Shell" {
+                for line in &body[1..] {
+                    if let Ok(captures) = EXEC_REGEX.captures(line) {
+                        if let Some(caps) = captures {
+                            let interpreter = caps.get(1).unwrap().as_str();
+                            if INTERPRETERS.contains_key(interpreter) {
+                                return INTERPRETERS.get(interpreter);
+                            }
+                        } else {
+                            break;
+                        }
+                    } else if let Err(_) = SKIP_REGEX.is_match(line) {
+                        break;
+                    }
+                }
+            }
+
+            return Some(language);
+        }
     }
     None
 }

@@ -38,7 +38,7 @@ pub fn expert(path: &Path) -> ExpertResult {
         Content::Binary(_) => return ExpertResult::Kind("Binary".to_string()),
         Content::Empty => return ExpertResult::Kind("Unknown file".to_string()),
         Content::Text { modelines, body } => {
-            if let Some(interpreter) = guess_by_interpreter(&body[0]) {
+            if let Some(interpreter) = guess_by_interpreter(&body) {
                 return ExpertResult::Kind(interpreter.to_string());
             }
             if let Some(lang) = guess_by_modeline(&modelines) {
