@@ -117,6 +117,7 @@ NEMERLE_1: ^(module|namespace|using)\s
 NEWLISP_1: '^\s*\(define '
 NL_1: '^(b|g)[0-9]+ '
 OBJECTIVEC_1: ^\s*(@(interface|class|protocol|property|end|synchronised|selector|implementation)\b|#import\s+.+\.h[">])
+OBJECTIVEC_2: ^\s*#\s*(?:include|import)\s+<(?:CoreVideo|Foundation|Cocoa|CoreFoundation)/.*\.h>\s*$
 OBJECTSCRIPT_1: ^Class\s
 OBJECT_DATA_INSTANCE_NOTATION_1: (?:^|<)\s*[A-Za-z0-9_]+\s*=\s*<
 OCAML_1: (^\s*module)|let rec |match\s+(\S+\s)+with
@@ -127,7 +128,7 @@ PASCAL_1: ^\s*end[.;]
 PAWN_1: ^\s*#include\s+<\w+>
 PAWN_2: ^\s*public\s+(?:\w|\d)+\(
 PAWN_3: '^\s*stock\s+(?:\w|\d)+:'
-PERL5_1: \buse\s+(?:strict\b|v?5\.)
+PERL5_1: \buse\s+(?:strict\b|sigtrap\b|v?5\.)
 PERL6_1: ^\s*(?:use\s+v6\b|\bmodule\b|\b(?:my\s+)?class\b)
 PHP_1: ^<\?(?:php)?
 PHP_2: <\?[^h]

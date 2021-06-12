@@ -119,6 +119,7 @@ lazy_static! {
     static ref NEWLISP_1: Regex = Regex::new(r#"^\s*\(define "#).unwrap();
     static ref NL_1: Regex = Regex::new(r#"^(b|g)[0-9]+ "#).unwrap();
     static ref OBJECTIVEC_1: Regex = Regex::new(r#"^\s*(@(interface|class|protocol|property|end|synchronised|selector|implementation)\b|#import\s+.+\.h[\">])"#).unwrap();
+    static ref OBJECTIVEC_2: Regex = Regex::new(r#"^\s*#\s*(?:include|import)\s+<(?:CoreVideo|Foundation|Cocoa|CoreFoundation)/.*\.h>\s*$"#).unwrap();
     static ref OBJECTSCRIPT_1: Regex = Regex::new(r#"^Class\s"#).unwrap();
     static ref OBJECT_DATA_INSTANCE_NOTATION_1: Regex = Regex::new(r#"(?:^|<)\s*[A-Za-z0-9_]+\s*=\s*<"#).unwrap();
     static ref OCAML_1: Regex = Regex::new(r#"(^\s*module)|let rec |match\s+(\S+\s)+with"#).unwrap();
@@ -129,7 +130,7 @@ lazy_static! {
     static ref PAWN_1: Regex = Regex::new(r#"^\s*#include\s+<\w+>"#).unwrap();
     static ref PAWN_2: Regex = Regex::new(r#"^\s*public\s+(?:\w|\d)+\("#).unwrap();
     static ref PAWN_3: Regex = Regex::new(r#"^\s*stock\s+(?:\w|\d)+:"#).unwrap();
-    static ref PERL5_1: Regex = Regex::new(r#"\buse\s+(?:strict\b|v?5\.)"#).unwrap();
+    static ref PERL5_1: Regex = Regex::new(r#"\buse\s+(?:strict\b|sigtrap\b|v?5\.)"#).unwrap();
     static ref PERL6_1: Regex = Regex::new(r#"^\s*(?:use\s+v6\b|\bmodule\b|\b(?:my\s+)?class\b)"#).unwrap();
     static ref PHP_1: Regex = Regex::new(r#"^<\?(?:php)?"#).unwrap();
     static ref PHP_2: Regex = Regex::new(r#"<\?[^h]"#).unwrap();
@@ -703,7 +704,7 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
             }
         }
         ".m" => {
-            if match_lines(&OBJECTIVEC_1, &content) {
+            if match_lines(&OBJECTIVEC_1, &content) || match_lines(&OBJECTIVEC_2, &content) {
                 Some("Objective-C")
             } else if match_lines(&MERCURY_1, &content) {
                 Some("Mercury")
@@ -719,7 +720,7 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
             } else if match_lines(&LIMBO_1, &content) {
                 Some("Limbo")
             } else {
-                None
+                Some("M")
             }
         }
         ".m4" => {
@@ -749,7 +750,7 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
             } else if match_lines(&STANDARD_ML_1, &content) {
                 Some("Standard ML")
             } else {
-                None
+                Some("OCaml")
             }
         }
         ".mm" => {
