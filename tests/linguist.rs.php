@@ -1,5 +1,7 @@
 #!/usr/bin/env php
 <?php
+$SKIP_FILE = __DIR__ . '/../skipped.yml';
+$SKIPPED = yaml_parse_file($SKIP_FILE);
 
 function escape_name(String $text): String {
     if (is_numeric($text[0])) {
@@ -14,11 +16,20 @@ function escape_name(String $text): String {
     return strtolower($tmp);
 }
 
-function print_test(String $type, int $i, String $path) {
-echo <<<EOD
+function print_test(String $type, int $i, String $path, array $skipped) {
+    $ignore = "\n";
+    $testName = "test_$i";
+    if (isset($skipped[$type])) {
+        $name = basename($path);
+        if (in_array($name, $skipped[$type], true)) {
+            $ignore .= "#[ignore]\n";
+        }
+    }
 
+    echo <<<EOD
+    $ignore
     #[test]
-    fn test_$i() {
+    fn $testName() {
         let path = Path::new(&"./samples/$path");
         let actual = expert(&path);
         let expected = ExpertResult::Kind("$type".to_string());
@@ -56,25 +67,25 @@ mod <?= $escaped_type ?> {
 
 <?php
     $paths = new RecursiveDirectoryIterator($val, RecursiveDirectoryIterator::SKIP_DOTS);
-    $i = 0;
-    foreach ($paths as $p) {
-        $filename = basename($p);
-        if (is_dir($p)) {
-            $sub_dir = basename($p);
-            $sub = new RecursiveDirectoryIterator($p, RecursiveDirectoryIterator::SKIP_DOTS);
-            foreach ($sub as $sp) {
-                $filename = basename($sp);
-                print_test($type, $i, "$type/$sub_dir/$filename");
-                $i++;
-            }
-        } else {
-            if ($type === "Fstar") {
-                print_test('F*', $i, "$type/$filename");
-            } else {
-                print_test($type, $i, "$type/$filename");
-            }
+$i = 0;
+foreach ($paths as $p) {
+    $filename = basename($p);
+    if (is_dir($p)) {
+        $sub_dir = basename($p);
+        $sub = new RecursiveDirectoryIterator($p, RecursiveDirectoryIterator::SKIP_DOTS);
+        foreach ($sub as $sp) {
+            $filename = basename($sp);
+            print_test($type, $i, "$type/$sub_dir/$filename", $SKIPPED);
             $i++;
         }
-    }?>
+    } else {
+        if ($type === "Fstar") {
+            print_test('F*', $i, "$type/$filename", $SKIPPED);
+        } else {
+            print_test($type, $i, "$type/$filename", $SKIPPED);
+        }
+        $i++;
+    }
+}?>
 }
 <?php endforeach ?>

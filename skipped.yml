@@ -1,0 +1,25 @@
+---
+C++:
+  - Field.h
+  - initClasses.inc
+  - rpc.h
+INI:
+  - ms.properties
+Java Properties:
+  - libraries.properties
+JavaScript:
+  - merge.js
+Logos:
+  - string1.x
+MQL4:
+  - header-sample.mqh
+Perl:
+  - test-perl2.pl
+PLSQL:
+  - print_bool.prc
+SourcePawn:
+  - mfile.inc
+SQL:
+  - hostcache_set_state.inc
+SuperCollider:
+  - example.scd
