@@ -5726,6 +5726,7 @@ Text:
   - ".ncl"
   - ".no"
   filenames:
+  - CHANGELOG
   - COPYING
   - COPYING.regex
   - COPYRIGHT.regex
@@ -5735,10 +5736,12 @@ Text:
   - LICENSE
   - LICENSE.mysql
   - NEWS
+  - README
   - README.1ST
   - README.me
   - README.mysql
   - README.nss
+  - changelog
   - click.me
   - delete.me
   - go.mod
@@ -5749,6 +5752,7 @@ Text:
   - package.use.stable.mask
   - read.me
   - readme.1st
+  - readme
   - test.me
   - use.mask
   - use.stable.mask
