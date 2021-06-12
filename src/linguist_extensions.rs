@@ -285,6 +285,7 @@ lazy_static! {
             ".bdf".to_string(),
             "Glyph Bitmap Distribution Format".to_string()
         ),
+        (".gpr".to_string(), "GNAT Project Manager".to_string()),
         (".gp".to_string(), "Gnuplot".to_string()),
         (".gnu".to_string(), "Gnuplot".to_string()),
         (".gnuplot".to_string(), "Gnuplot".to_string()),

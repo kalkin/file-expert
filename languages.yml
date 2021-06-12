@@ -1914,6 +1914,10 @@ Glyph Bitmap Distribution Format:
   tm_scope: source.bdf
   ace_mode: text
   language_id: 997665271
+GNAT Project Manager:
+  type: programming
+  extensions:
+  - ".gpr"
 Gnuplot:
   type: programming
   color: "#f0a9f0"
