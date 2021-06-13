@@ -10,5 +10,5 @@ mod linguist_interpreters;
 mod modeline;
 mod shebang;
 
-pub use crate::expert::expert;
+pub use crate::expert::guess;
 pub use crate::expert::Guess;

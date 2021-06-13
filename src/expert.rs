@@ -21,7 +21,7 @@ impl Display for Guess {
     }
 }
 
-pub fn expert(path: &Path) -> Result<Guess, std::io::Error> {
+pub fn guess(path: &Path) -> Result<Guess, std::io::Error> {
     let metadata = path.metadata()?;
     if metadata.is_dir() {
         return Ok(Guess::Kind("Directory".to_string()));

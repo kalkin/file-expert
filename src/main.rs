@@ -36,7 +36,7 @@ fn main() {
     let mut exit_code = 0;
     if matches.is_present("file") {
         for file in matches.values_of("file").unwrap() {
-            let result = expert::expert(Path::new(file));
+            let result = expert::guess(Path::new(file));
             match result {
                 Ok(lang) => {
                     if let Guess::Unknown = lang {
@@ -56,7 +56,7 @@ fn main() {
         for line in stdin.lock().lines() {
             match line {
                 Ok(l) => {
-                    let result = expert::expert(Path::new(&l));
+                    let result = expert::guess(Path::new(&l));
                     match result {
                         Ok(lang) => {
                             if let Guess::Unknown = lang {

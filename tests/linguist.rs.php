@@ -31,7 +31,7 @@ function print_test(String $type, int $i, String $path, array $skipped) {
     #[test]
     fn $testName() {
         let path = Path::new(&"./samples/$path");
-        let actual = expert(&path).unwrap();
+        let actual = guess(&path).unwrap();
         let expected = Guess::Kind("$type".to_string());
         assert_eq!(actual, expected);
     }
@@ -63,7 +63,7 @@ if ($handle = opendir($SAMPLES_DIR)) {
 mod <?= $escaped_type ?> {
     use std::path::Path;
     use file_expert::Guess;
-    use file_expert::expert;
+    use file_expert::guess;
 
 <?php
     $paths = new RecursiveDirectoryIterator($val, RecursiveDirectoryIterator::SKIP_DOTS);
