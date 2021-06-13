@@ -27,7 +27,7 @@ use lazy_static::lazy_static;
 
 lazy_static! {
     pub static ref EXTENSIONS: HashMap<String, String> = [
-<?php foreach($UNIQ_EXTENSIONS as $ext => $lang) :?>
+<?php foreach ($UNIQ_EXTENSIONS as $ext => $lang) :?>
         ("<?= strtolower($ext) ?>".to_string(), "<?= $lang ?>".to_string()),
 <?php endforeach ?>
     ].iter().cloned().collect();

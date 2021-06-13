@@ -19,7 +19,7 @@ use lazy_static::lazy_static;
 
 lazy_static! {
     pub static ref INTERPRETERS: HashMap<String, String> = [
-<?php foreach($INTERPRETERS as $name => $lang) :?>
+<?php foreach ($INTERPRETERS as $name => $lang) :?>
         ("<?= $name ?>".to_string(), "<?= $lang ?>".to_string()),
 <?php endforeach ?>
     ].iter().cloned().collect();

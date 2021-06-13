@@ -3,7 +3,8 @@
 $SKIP_FILE = __DIR__ . '/../skipped.yml';
 $SKIPPED = yaml_parse_file($SKIP_FILE);
 
-function escape_name(String $text): String {
+function escape_name(string $text): string
+{
     if (is_numeric($text[0])) {
         $text = "_$text";
     }
@@ -16,7 +17,8 @@ function escape_name(String $text): String {
     return strtolower($tmp);
 }
 
-function print_test(String $type, int $i, String $path, array $skipped) {
+function print_test(string $type, int $i, string $path, array $skipped)
+{
     $ignore = "\n";
     $testName = "test_$i";
     if (isset($skipped[$type])) {
@@ -65,27 +67,27 @@ mod <?= $escaped_type ?> {
     use file_expert::Guess;
     use file_expert::guess;
 
-<?php
+    <?php
     $paths = new RecursiveDirectoryIterator($val, RecursiveDirectoryIterator::SKIP_DOTS);
-$i = 0;
-foreach ($paths as $p) {
-    $filename = basename($p);
-    if (is_dir($p)) {
-        $sub_dir = basename($p);
-        $sub = new RecursiveDirectoryIterator($p, RecursiveDirectoryIterator::SKIP_DOTS);
-        foreach ($sub as $sp) {
-            $filename = basename($sp);
-            print_test($type, $i, "$type/$sub_dir/$filename", $SKIPPED);
+    $i = 0;
+    foreach ($paths as $p) {
+        $filename = basename($p);
+        if (is_dir($p)) {
+            $sub_dir = basename($p);
+            $sub = new RecursiveDirectoryIterator($p, RecursiveDirectoryIterator::SKIP_DOTS);
+            foreach ($sub as $sp) {
+                $filename = basename($sp);
+                print_test($type, $i, "$type/$sub_dir/$filename", $SKIPPED);
+                $i++;
+            }
+        } else {
+            if ($type === "Fstar") {
+                print_test('F*', $i, "$type/$filename", $SKIPPED);
+            } else {
+                print_test($type, $i, "$type/$filename", $SKIPPED);
+            }
             $i++;
         }
-    } else {
-        if ($type === "Fstar") {
-            print_test('F*', $i, "$type/$filename", $SKIPPED);
-        } else {
-            print_test($type, $i, "$type/$filename", $SKIPPED);
-        }
-        $i++;
-    }
-}?>
+    }?>
 }
 <?php endforeach ?>
