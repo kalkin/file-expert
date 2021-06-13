@@ -32,7 +32,7 @@ function print_test(String $type, int $i, String $path, array $skipped) {
     fn $testName() {
         let path = Path::new(&"./samples/$path");
         let actual = expert(&path).unwrap();
-        let expected = ExpertResult::Kind("$type".to_string());
+        let expected = Guess::Kind("$type".to_string());
         assert_eq!(actual, expected);
     }
 
@@ -62,7 +62,7 @@ if ($handle = opendir($SAMPLES_DIR)) {
 
 mod <?= $escaped_type ?> {
     use std::path::Path;
-    use file_expert::ExpertResult;
+    use file_expert::Guess;
     use file_expert::expert;
 
 <?php

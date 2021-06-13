@@ -12,7 +12,7 @@ mod modeline;
 mod shebang;
 
 use clap::{AppSettings, Arg, ArgMatches};
-use expert::ExpertResult;
+use expert::Guess;
 use std::io;
 use std::io::prelude::*;
 use std::path::Path;
@@ -39,7 +39,7 @@ fn main() {
             let result = expert::expert(Path::new(file));
             match result {
                 Ok(lang) => {
-                    if let ExpertResult::Unknown = lang {
+                    if let Guess::Unknown = lang {
                         exit_code = 1
                     }
                     println!("{}\t{}", file, lang);
@@ -59,7 +59,7 @@ fn main() {
                     let result = expert::expert(Path::new(&l));
                     match result {
                         Ok(lang) => {
-                            if let ExpertResult::Unknown = lang {
+                            if let Guess::Unknown = lang {
                                 exit_code = 1
                             }
                             println!("{}\t{}", l, lang);

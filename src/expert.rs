@@ -7,65 +7,65 @@ use std::fmt::{Display, Formatter};
 use std::path::Path;
 
 #[derive(Debug, Eq, PartialEq)]
-pub enum ExpertResult {
+pub enum Guess {
     Kind(String),
     Unknown,
 }
 
-impl Display for ExpertResult {
+impl Display for Guess {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            ExpertResult::Kind(lang) => f.write_str(lang),
-            ExpertResult::Unknown => f.write_str("Unknown file"),
+            Guess::Kind(lang) => f.write_str(lang),
+            Guess::Unknown => f.write_str("Unknown file"),
         }
     }
 }
 
-pub fn expert(path: &Path) -> Result<ExpertResult, std::io::Error> {
+pub fn expert(path: &Path) -> Result<Guess, std::io::Error> {
     let metadata = path.metadata()?;
     if metadata.is_dir() {
-        return Ok(ExpertResult::Kind("Directory".to_string()));
+        return Ok(Guess::Kind("Directory".to_string()));
     }
 
     if let Some(lang) = guess_by_filename(path) {
-        return Ok(ExpertResult::Kind(lang.to_string()));
+        return Ok(Guess::Kind(lang.to_string()));
     }
     let optional_extensions = extensions(&path);
     let content = Content::new(path)?;
     match content {
-        Content::Binary(_) => return Ok(ExpertResult::Kind("Binary".to_string())),
+        Content::Binary(_) => return Ok(Guess::Kind("Binary".to_string())),
         Content::Empty => {
             if let Some(ext_vec) = optional_extensions {
                 for ext in ext_vec {
                     if let Some(lang) = guess_by_extensions(&ext) {
-                        return Ok(ExpertResult::Kind(lang.to_string()));
+                        return Ok(Guess::Kind(lang.to_string()));
                     }
                 }
             }
-            return Ok(ExpertResult::Kind("Unknown file".to_string()));
+            return Ok(Guess::Kind("Unknown file".to_string()));
         }
         Content::Text { modelines, body } => {
             if let Some(interpreter) = guess_by_interpreter(&body) {
-                return Ok(ExpertResult::Kind(interpreter.to_string()));
+                return Ok(Guess::Kind(interpreter.to_string()));
             }
             if let Some(lang) = guess_by_modeline(&modelines) {
-                return Ok(ExpertResult::Kind(lang.to_string()));
+                return Ok(Guess::Kind(lang.to_string()));
             }
 
             if let Some(ext_vec) = optional_extensions {
                 for ext in ext_vec {
                     if let Some(lang) = guess_by_linguist_heuristic(&ext, &body) {
-                        return Ok(ExpertResult::Kind(lang.to_string()));
+                        return Ok(Guess::Kind(lang.to_string()));
                     }
 
                     if let Some(lang) = guess_by_extensions(&ext) {
-                        return Ok(ExpertResult::Kind(lang.to_string()));
+                        return Ok(Guess::Kind(lang.to_string()));
                     }
                 }
             }
         }
     }
-    Ok(ExpertResult::Unknown)
+    Ok(Guess::Unknown)
 }
 
 fn extensions(path: &Path) -> Option<Vec<String>> {

@@ -11,4 +11,4 @@ mod modeline;
 mod shebang;
 
 pub use crate::expert::expert;
-pub use crate::expert::ExpertResult;
+pub use crate::expert::Guess;
