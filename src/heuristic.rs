@@ -15,14 +15,16 @@ lazy_static! {
 }
 
 pub fn guess_by_filename(path: &Path) -> Option<&'static String> {
-    let filename = path.file_name().unwrap().to_str().unwrap();
-    return FILENAMES.get(filename);
+    path.file_name()
+        .expect("Not ..")
+        .to_str()
+        .and_then(|f| FILENAMES.get(f))
 }
 
-pub fn guess_by_interpreter(body: &Vec<String>) -> Option<&'static String> {
+pub fn guess_by_interpreter(body: &[String]) -> Option<&'static String> {
     if let Some(interpreter) = shebang::interpreter(&body[0]) {
         if let Some(language) = INTERPRETERS.get(&interpreter) {
-            if language == &"Shell" {
+            if language == "Shell" {
                 for line in &body[1..] {
                     if let Ok(captures) = EXEC_REGEX.captures(line) {
                         if let Some(caps) = captures {
@@ -33,7 +35,7 @@ pub fn guess_by_interpreter(body: &Vec<String>) -> Option<&'static String> {
                         } else {
                             break;
                         }
-                    } else if let Err(_) = SKIP_REGEX.is_match(line) {
+                    } else if SKIP_REGEX.is_match(line).is_err() {
                         break;
                     }
                 }
@@ -45,7 +47,7 @@ pub fn guess_by_interpreter(body: &Vec<String>) -> Option<&'static String> {
     None
 }
 
-pub fn guess_by_modeline(modelines: &Vec<String>) -> Option<&'static String> {
+pub fn guess_by_modeline(modelines: &[String]) -> Option<&'static String> {
     for line in modelines {
         if let Some(alias) = modeline::parse(&line) {
             if ALIASES.contains_key(alias) {
@@ -56,7 +58,8 @@ pub fn guess_by_modeline(modelines: &Vec<String>) -> Option<&'static String> {
     None
 }
 
-pub fn guess_by_linguist_heuristic(ext: &str, body: &Vec<String>) -> Option<&'static str> {
+#[allow(clippy::module_name_repetitions)]
+pub fn guess_by_heuristic(ext: &str, body: &[String]) -> Option<&'static str> {
     linguist_heuristic(&ext, body)
 }
 

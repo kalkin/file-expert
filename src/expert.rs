@@ -21,6 +21,9 @@ impl Display for Guess {
     }
 }
 
+///
+/// # Errors
+/// Will return [`std::io::Error`] if there're issues with reading the file
 pub fn guess(path: &Path) -> Result<Guess, std::io::Error> {
     let metadata = path.metadata()?;
     if metadata.is_dir() {
@@ -83,7 +86,7 @@ fn extensions(path: &Path) -> Option<Vec<String>> {
                 return None;
             }
 
-            let mut ext2 = ext1.to_owned();
+            let mut ext2 = ext1.clone();
             let new_end = filename.len() - ext1.len();
             for c in filename[0..new_end].chars().rev() {
                 ext2.insert(0, c);

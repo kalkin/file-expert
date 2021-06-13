@@ -33,7 +33,11 @@ foreach ($PATTERNS as $name => $pattern):
 <?php
 $HEURISTICS = yaml_parse_file($HEURISTICS_FILE);
 ?>
-pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static str> {
+
+#[allow(clippy::too_many_lines)]
+#[allow(clippy::match_same_arms)]
+#[allow(clippy::if_same_then_else)]
+pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str> {
     match ext {
 <?php
     foreach ($HEURISTICS as $extRules) :
@@ -85,13 +89,13 @@ pub fn linguist_heuristic(ext: &str, content: &Vec<String>) -> Option<&'static s
     _ => None
     }
 }
-fn match_lines(regex: &Regex, lines: &Vec<String>) -> bool {
+fn match_lines(regex: &Regex, lines: &[String]) -> bool {
     for line in lines {
         if regex.is_match(line).unwrap() {
             return true;
         }
     }
-    return false;
+    false
 }
 
 
