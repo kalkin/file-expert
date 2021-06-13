@@ -47,7 +47,7 @@ pub fn guess_by_interpreter(body: &Vec<String>) -> Option<&'static String> {
 
 pub fn guess_by_modeline(modelines: &Vec<String>) -> Option<&'static String> {
     for line in modelines {
-        if let Some(alias) = modeline::parse_modeline(&line) {
+        if let Some(alias) = modeline::parse(&line) {
             if ALIASES.contains_key(alias) {
                 return ALIASES.get(alias);
             }

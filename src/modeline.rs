@@ -8,7 +8,7 @@ lazy_static! {
         Regex::new(r#"\s-\*-\s+(?:mode:\s+)?(\w+)\b.*\s-\*-"#).expect("Valid Regex");
 }
 
-pub fn parse_modeline(line: &str) -> Option<&str> {
+pub fn parse(line: &str) -> Option<&str> {
     if let Some(caps) = VI_REGEX.captures(line).unwrap() {
         if let Some(m) = caps.get(1) {
             return Some(m.as_str());
@@ -25,38 +25,38 @@ pub fn parse_modeline(line: &str) -> Option<&str> {
 fn vim_modeline() {
     let expected = Some("perl6");
 
-    let actual = parse_modeline("# vim: set ft=perl6");
+    let actual = parse("# vim: set ft=perl6");
     assert_eq!(expected, actual);
 
-    let actual = parse_modeline("/* vim: ft=perl6 */");
+    let actual = parse("/* vim: ft=perl6 */");
     assert_eq!(expected, actual);
 
-    let actual = parse_modeline("// vim:ft=perl6");
+    let actual = parse("// vim:ft=perl6");
     assert_eq!(expected, actual);
 
-    let actual = parse_modeline("(* vim: set filetype=perl6: *)");
+    let actual = parse("(* vim: set filetype=perl6: *)");
     assert_eq!(expected, actual);
 
-    let actual = parse_modeline("-- vim: filetype=perl6");
+    let actual = parse("-- vim: filetype=perl6");
     assert_eq!(expected, actual);
 
-    let actual = parse_modeline("vim: set filetype=perl6");
+    let actual = parse("vim: set filetype=perl6");
     assert_eq!(expected, actual);
 
-    let actual = parse_modeline("vim: noexpandtab: ft=perl6");
+    let actual = parse("vim: noexpandtab: ft=perl6");
     assert_eq!(expected, actual);
 
-    let actual = parse_modeline(":vim:tw=78:ts=8:ft=perl6:norl:fen:fdl=0:fdm=marker:");
+    let actual = parse(":vim:tw=78:ts=8:ft=perl6:norl:fen:fdl=0:fdm=marker:");
     assert_eq!(expected, actual);
 }
 
 #[test]
 fn emacs_modeline() {
     let expected = Some("Lisp");
-    let actual = parse_modeline("# -*- Lisp -*-");
+    let actual = parse("# -*- Lisp -*-");
     assert_eq!(expected, actual);
 
     let expected = Some("Lisp");
-    let actual = parse_modeline("# -*- mode: Lisp; eval: (auto-fill-mode 1); -*-");
+    let actual = parse("# -*- mode: Lisp; eval: (auto-fill-mode 1); -*-");
     assert_eq!(expected, actual);
 }
