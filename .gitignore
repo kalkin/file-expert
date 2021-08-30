@@ -44,3 +44,6 @@ m4/lt~obsolete.m4
 .mypy_cache/
 
 pkgs/
+
+debug/
+target/
