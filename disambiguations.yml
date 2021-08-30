@@ -82,6 +82,7 @@
     - M68K_5
     - M68K_6
     - M68K_7
+  - language: Assembly
 - extensions:
   - .asy
   rules:
@@ -443,6 +444,7 @@
   - language: SWIG
     or:
     - SWIG_1
+  - language: Assembly
 - extensions:
   - .ice
   rules:
@@ -893,6 +895,7 @@
     - M68K_5
     - M68K_6
     - M68K_7
+  - language: Unix Assembly
 - extensions:
   - .sc
   rules:

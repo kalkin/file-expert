@@ -283,7 +283,7 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
             {
                 Some("Motorola 68K Assembly")
             } else {
-                None
+                Some("Assembly")
             }
         }
         ".asy" => {
@@ -638,7 +638,7 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
             } else if match_lines(&SWIG_1, &content) {
                 Some("SWIG")
             } else {
-                None
+                Some("Assembly")
             }
         }
         ".ice" => {
@@ -1058,7 +1058,7 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
             {
                 Some("Motorola 68K Assembly")
             } else {
-                None
+                Some("Unix Assembly")
             }
         }
         ".sc" => {
