@@ -12,6 +12,7 @@ lazy_static! {
         (".browserslistrc".to_string(), "Browserslist".to_string()),
         ("browserslist".to_string(), "Browserslist".to_string()),
         ("CMakeLists.txt".to_string(), "CMake".to_string()),
+        ("CODEOWNERS".to_string(), "CODEOWNERS".to_string()),
         ("cabal.config".to_string(), "Cabal Config".to_string()),
         ("cabal.project".to_string(), "Cabal Config".to_string()),
         ("riemann.config".to_string(), "Clojure".to_string()),
@@ -41,6 +42,7 @@ lazy_static! {
         (".factor-rc".to_string(), "Factor".to_string()),
         ("Fakefile".to_string(), "Fancy".to_string()),
         (".gn".to_string(), "GN".to_string()),
+        ("Gemfile.lock".to_string(), "Gemfile.lock".to_string()),
         (".gitattributes".to_string(), "Git Attributes".to_string()),
         (".gitconfig".to_string(), "Git Config".to_string()),
         (".gitmodules".to_string(), "Git Config".to_string()),
@@ -168,6 +170,7 @@ lazy_static! {
             "language-subtag-registry.txt".to_string(),
             "Record Jar".to_string()
         ),
+        ("_redirects".to_string(), "Redirect Rules".to_string()),
         ("eqnrc".to_string(), "Roff".to_string()),
         ("mmn".to_string(), "Roff".to_string()),
         ("mmt".to_string(), "Roff".to_string()),
@@ -185,7 +188,6 @@ lazy_static! {
         ("Deliverfile".to_string(), "Ruby".to_string()),
         ("Fastfile".to_string(), "Ruby".to_string()),
         ("Gemfile".to_string(), "Ruby".to_string()),
-        ("Gemfile.lock".to_string(), "Ruby".to_string()),
         ("Guardfile".to_string(), "Ruby".to_string()),
         ("Jarfile".to_string(), "Ruby".to_string()),
         ("Mavenfile".to_string(), "Ruby".to_string()),
@@ -234,6 +236,7 @@ lazy_static! {
         ("zprofile".to_string(), "Shell".to_string()),
         ("zshenv".to_string(), "Shell".to_string()),
         ("zshrc".to_string(), "Shell".to_string()),
+        ("Singularity".to_string(), "Singularity".to_string()),
         ("BUCK".to_string(), "Starlark".to_string()),
         ("BUILD".to_string(), "Starlark".to_string()),
         ("BUILD.bazel".to_string(), "Starlark".to_string()),
@@ -334,6 +337,7 @@ lazy_static! {
         ("dir_colors".to_string(), "dircolors".to_string()),
         (".nanorc".to_string(), "nanorc".to_string()),
         ("nanorc".to_string(), "nanorc".to_string()),
+        ("robots.txt".to_string(), "robots.txt".to_string()),
     ]
     .iter()
     .cloned()

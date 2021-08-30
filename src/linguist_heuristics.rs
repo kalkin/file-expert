@@ -8,6 +8,7 @@ lazy_static! {
     static ref AGS_SCRIPT_1: Regex = Regex::new(r#"^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])"#).unwrap();
     static ref AL_1: Regex = Regex::new(r#"\b(?i:(CODEUNIT|PAGE|PAGEEXTENSION|PAGECUSTOMIZATION|DOTNET|ENUM|ENUMEXTENSION|VALUE|QUERY|REPORT|TABLE|TABLEEXTENSION|XMLPORT|PROFILE|CONTROLADDIN))\b"#).unwrap();
     static ref ASCIIDOC_1: Regex = Regex::new(r#"^[=-]+(\s|\n)|{{[A-Za-z]"#).unwrap();
+    static ref BASIC: Regex = Regex::new(r#"^\s*\d+"#).unwrap();
     static ref BEEF_1: Regex = Regex::new(r#"^\s*(class|namespace|void|static)\b"#).unwrap();
     static ref BITBAKE_1: Regex = Regex::new(r#"^\s*(# |include|require)\b"#).unwrap();
     static ref BLITZBASIC_1: Regex = Regex::new(r#"(<^\s*; |End Function)"#).unwrap();
@@ -40,6 +41,7 @@ lazy_static! {
     static ref FILEBENCH_WML_1: Regex = Regex::new(r#"flowop"#).unwrap();
     static ref FILTERSCRIPT_1: Regex = Regex::new(r#"#include|#pragma\s+(rs|version)|__attribute__"#).unwrap();
     static ref FLUX_1: Regex = Regex::new(r#"^\s*(typedef|atomic)\b"#).unwrap();
+    static ref FREE_BASIC: Regex = Regex::new(r#"^[ \t]*#(?:define|endif|endmacro|ifn?def|if|include|lang|macro)\s"#).unwrap();
     static ref FORTH_1: Regex = Regex::new(r#"^: "#).unwrap();
     static ref FORTH_2: Regex = Regex::new(r#"^: "#).unwrap();
     static ref FORTH_3: Regex = Regex::new(r#"^(: |also |new-device|previous )"#).unwrap();
@@ -75,7 +77,9 @@ lazy_static! {
     static ref JAVA_PROPERTIES_1: Regex = Regex::new(r#"^[^#!][^:]*:"#).unwrap();
     static ref JSON_1: Regex = Regex::new(r#"\A\s*[{\[]"#).unwrap();
     static ref JSON_2: Regex = Regex::new(r#"\"modelName\"\:\s*\"GM"#).unwrap();
+    static ref JSONIQ: Regex = Regex::new(r#"(^\s*(import\s+module|variable\s+\$\w+))"#).unwrap();
     static ref KEY_EQUALS_VALUE_1: Regex = Regex::new(r#"^[^#!;][^=]*="#).unwrap();
+    static ref KUSTO_1: Regex = Regex::new(r#"(^\|\s*(where|extend|project|limit|summarize))|(^\.\w+)"#).unwrap();
     static ref LEX_1: Regex = Regex::new(r#"^(%[%{}]xs|<.*>)"#).unwrap();
     static ref LIMBO_1: Regex = Regex::new(r#"^\w+\s*:\s*module\s*{?$"#).unwrap();
     static ref LINKER_SCRIPT_1: Regex = Regex::new(r#"OUTPUT_ARCH\(|OUTPUT_FORMAT\(|SECTIONS"#).unwrap();
@@ -174,11 +178,13 @@ lazy_static! {
     static ref SCALA_1: Regex = Regex::new(r#"(^\s*import (scala|java)\.|^\s*class\b)"#).unwrap();
     static ref SCHEME_1: Regex = Regex::new(r#"^\s*\((?:define|let)"#).unwrap();
     static ref SLICE_1: Regex = Regex::new(r#"^\s*(module|struct|interface|sequence|enum)\s+\w+"#).unwrap();
+    static ref SMALLTALK_2: Regex = Regex::new(r#"\A\s*[\[{(^\"'\w#]|[a-zA-Z_]\w*\s*:=\s*[a-zA-Z_]\w*|class\s*>>\s*[a-zA-Z_]\w*|^[a-zA-Z_]\w*\s+[a-zA-Z_]\w*:|^Class\s*{|if(?:True|False):\s*\["#).unwrap();
     static ref SMALLTALK_1: Regex = Regex::new(r#"![\w\s]+methodsFor: "#).unwrap();
     static ref SOLIDITY_1: Regex = Regex::new(r#"\bpragma\s+solidity\b|\b(?:abstract\s+)?contract\s+(?!\d)[a-zA-Z0-9$_]+(?:\s+is\s+(?:[a-zA-Z0-9$_][^\{]*?)?)?\s*\{"#).unwrap();
     static ref SOURCEPAWN_1: Regex = Regex::new(r#"^public\s+(?:SharedPlugin(?:\s+|:)__pl_\w+\s*=(?:\s*{)?|(?:void\s+)?__pl_\w+_SetNTVOptional\(\)(?:\s*{)?)"#).unwrap();
     static ref SQLPL_1: Regex = Regex::new(r#"(?i:ALTER\s+MODULE|MODE\s+DB2SQL|\bSYS(CAT|PROC)\.|ASSOCIATE\s+RESULT\s+SET|\bEND!\s*$)"#).unwrap();
     static ref STANDARD_ML_1: Regex = Regex::new(r#"=> |case\s+(\S+\s)+of"#).unwrap();
+    static ref STRING_TEMPLATE: Regex = Regex::new(r#"\$\w+[($]|(.)!\s*.+?\s*!\1|<!\s*.+?\s*!>|\[!\s*.+?\s*!\]|\{!\s*.+?\s*!\}"#).unwrap();
     static ref SUBRIP_TEXT_1: Regex = Regex::new(r#"^(\d{2}:\d{2}:\d{2},\d{3})\s*(-->)\s*(\d{2}:\d{2}:\d{2},\d{3})$"#).unwrap();
     static ref SUPERCOLLIDER_1: Regex = Regex::new(r#"(?i:\^(this|super)\.|^\s*~\w+\s*=\.)"#).unwrap();
     static ref SWIG_1: Regex = Regex::new(r#"^[ \t]*%[a-z_]+\b|^%[{}]$"#).unwrap();
@@ -198,7 +204,7 @@ lazy_static! {
     static ref WORLD_OF_WARCRAFT_ADDON_DATA_1: Regex = Regex::new(r#"^## |@no-lib-strip@"#).unwrap();
     static ref XBASE_1: Regex = Regex::new(r#"^\s*#\s*(?i:if|ifdef|ifndef|define|command|xcommand|translate|xtranslate|include|pragma|undef)\b"#).unwrap();
     static ref XML_1: Regex = Regex::new(r#"^(\s*)(?i:<Project|<Import|<Property|<?xml|xmlns)"#).unwrap();
-    static ref XML_2: Regex = Regex::new(r#"(?i:^\s*(\<\?xml|xmlns))"#).unwrap();
+    static ref XML_2: Regex = Regex::new(r#"(?i:^\s*(<\?xml|xmlns))"#).unwrap();
     static ref XML_3: Regex = Regex::new(r#"<!ENTITY "#).unwrap();
     static ref XML_4: Regex = Regex::new(r#"^\s*<\?xml\s+version"#).unwrap();
     static ref XML_5: Regex = Regex::new(r#"^\s*<\?xml"#).unwrap();
@@ -285,6 +291,15 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
                 Some("LTspice Symbol")
             } else {
                 Some("Asymptote")
+            }
+        }
+        ".bas" => {
+            if match_lines(&FREE_BASIC, &content) {
+                Some("FreeBasic")
+            } else if match_lines(&BASIC, &content) {
+                Some("BASIC")
+            } else {
+                Some("VBA")
             }
         }
         ".bb" => {
@@ -381,6 +396,15 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
                 Some("Smalltalk")
             } else if match_lines(&C_SHARP__1, &content) {
                 Some("C#")
+            } else {
+                None
+            }
+        }
+        ".csl" => {
+            if match_lines(&XML_2, &content) {
+                Some("XML")
+            } else if match_lines(&KUSTO_1, &content) {
+                Some("Kusto")
             } else {
                 None
             }
@@ -676,6 +700,13 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
                 Some("Jasmin")
             } else {
                 Some("Objective-J")
+            }
+        }
+        ".jq" => {
+            if match_lines(&JSONIQ, &content) {
+                Some("JSONiq")
+            } else {
+                Some("jq")
             }
         }
         ".l" => {
@@ -1114,14 +1145,12 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
             }
         }
         ".st" => {
-            if match_lines(&HTML_1, &content) {
-                Some("HTML")
-            } else if match_lines(&C_PLUS__PLUS__1, &content)
-                || match_lines(&C_PLUS__PLUS__2, &content)
-            {
-                Some("C++")
-            } else {
+            if match_lines(&STRING_TEMPLATE, &content) {
+                Some("StringTemplate")
+            } else if match_lines(&SMALLTALK_2, &content) {
                 Some("Smalltalk")
+            } else {
+                None
             }
         }
         ".t" => {

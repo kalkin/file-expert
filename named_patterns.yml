@@ -5,6 +5,7 @@ ACTIONSCRIPT_1: ^\s*(?:package(?:\s+[\w.]+)?\s+(?:{|$)|import\s+[\w.*]+\s*;|(?=.
 AGS_SCRIPT_1: ^(\/\/.+|((import|export)\s+)?(function|int|float|char)\s+((room|repeatedly|on|game)_)?([A-Za-z]+[A-Za-z_0-9]+)\s*[;\(])
 AL_1: \b(?i:(CODEUNIT|PAGE|PAGEEXTENSION|PAGECUSTOMIZATION|DOTNET|ENUM|ENUMEXTENSION|VALUE|QUERY|REPORT|TABLE|TABLEEXTENSION|XMLPORT|PROFILE|CONTROLADDIN))\b
 ASCIIDOC_1: ^[=-]+(\s|\n)|{{[A-Za-z]
+BASIC: ^\s*\d+
 BEEF_1: ^\s*(class|namespace|void|static)\b
 BITBAKE_1: ^\s*(# |include|require)\b
 BLITZBASIC_1: (<^\s*; |End Function)
@@ -37,6 +38,7 @@ FAUST_1: \bprocess\s*[(=]|\b(library|import)\s*\(\s*"|\bdeclare\s+(name|version|
 FILEBENCH_WML_1: flowop
 FILTERSCRIPT_1: '#include|#pragma\s+(rs|version)|__attribute__'
 FLUX_1: ^\s*(typedef|atomic)\b
+FREE_BASIC: ^[ \t]*#(?:define|endif|endmacro|ifn?def|if|include|lang|macro)\s
 FORTH_1: '^: '
 FORTH_2: '^: '
 FORTH_3: '^(: |also |new-device|previous )'
@@ -72,7 +74,9 @@ JAVASCRIPT_1: (?m:\/\/|("|')use strict\1|export\s+default\s|\/\*.*?\*\/)
 JAVA_PROPERTIES_1: '^[^#!][^:]*:'
 JSON_1: \A\s*[{\[]
 JSON_2: "\"modelName\"\\:\\s*\"GM"
+JSONIQ: (^\s*(import\s+module|variable\s+\$\w+))
 KEY_EQUALS_VALUE_1: ^[^#!;][^=]*=
+KUSTO_1: (^\|\s*(where|extend|project|limit|summarize))|(^\.\w+)
 LEX_1: ^(%[%{}]xs|<.*>)
 LIMBO_1: ^\w+\s*:\s*module\s*{?$
 LINKER_SCRIPT_1: OUTPUT_ARCH\(|OUTPUT_FORMAT\(|SECTIONS
@@ -173,11 +177,13 @@ R_1: <-|^\s*#
 SCALA_1: (^\s*import (scala|java)\.|^\s*class\b)
 SCHEME_1: ^\s*\((?:define|let)
 SLICE_1:  ^\s*(module|struct|interface|sequence|enum)\s+\w+
+SMALLTALK_2: '\A\s*[\[{(^"''\w#]|[a-zA-Z_]\w*\s*:=\s*[a-zA-Z_]\w*|class\s*>>\s*[a-zA-Z_]\w*|^[a-zA-Z_]\w*\s+[a-zA-Z_]\w*:|^Class\s*{|if(?:True|False):\s*\['
 SMALLTALK_1: '![\w\s]+methodsFor: '
 SOLIDITY_1: \bpragma\s+solidity\b|\b(?:abstract\s+)?contract\s+(?!\d)[a-zA-Z0-9$_]+(?:\s+is\s+(?:[a-zA-Z0-9$_][^\{]*?)?)?\s*\{
 SOURCEPAWN_1: ^public\s+(?:SharedPlugin(?:\s+|:)__pl_\w+\s*=(?:\s*{)?|(?:void\s+)?__pl_\w+_SetNTVOptional\(\)(?:\s*{)?)
 SQLPL_1: (?i:ALTER\s+MODULE|MODE\s+DB2SQL|\bSYS(CAT|PROC)\.|ASSOCIATE\s+RESULT\s+SET|\bEND!\s*$)
 STANDARD_ML_1: => |case\s+(\S+\s)+of
+STRING_TEMPLATE : '\$\w+[($]|(.)!\s*.+?\s*!\1|<!\s*.+?\s*!>|\[!\s*.+?\s*!\]|\{!\s*.+?\s*!\}'
 SUBRIP_TEXT_1: ^(\d{2}:\d{2}:\d{2},\d{3})\s*(-->)\s*(\d{2}:\d{2}:\d{2},\d{3})$
 SUPERCOLLIDER_1: (?i:\^(this|super)\.|^\s*~\w+\s*=\.)
 SWIG_1: ^[ \t]*%[a-z_]+\b|^%[{}]$
@@ -200,7 +206,7 @@ V_1: \$(?:if|else)[ \t]|^[ \t]*fn\s+[^\s()]+\(.*?\).*?\{|^[ \t]*for\s*\{
 WORLD_OF_WARCRAFT_ADDON_DATA_1: ^## |@no-lib-strip@
 XBASE_1: ^\s*#\s*(?i:if|ifdef|ifndef|define|command|xcommand|translate|xtranslate|include|pragma|undef)\b
 XML_1: ^(\s*)(?i:<Project|<Import|<Property|<?xml|xmlns)
-XML_2: (?i:^\s*(\<\?xml|xmlns))
+XML_2: (?i:^\s*(<\?xml|xmlns))
 XML_3: '<!ENTITY '
 XML_4: ^\s*<\?xml\s+version
 XML_5: ^\s*<\?xml

@@ -90,6 +90,16 @@
     - LTSPICE_SYMBOL_1
   - language: Asymptote
 - extensions:
+  - .bas
+  rules:
+  - language: FreeBasic
+    or:
+      - FREE_BASIC
+  - language: BASIC
+    or:
+      - BASIC
+  - language: VBA
+- extensions:
   - .bb
   rules:
   - language: BlitzBasic
@@ -188,6 +198,15 @@
   - language: C#
     or:
     - C_SHARP__1
+- extensions:
+  - .csl
+  rules:
+  - language: XML
+    or:
+    - XML_2
+  - language: Kusto
+    or:
+    - KUSTO_1
 - extensions:
   - .d
   rules:
@@ -489,6 +508,13 @@
       or:
         - JASMIN_1
     - language: Objective-J
+- extensions:
+  - .jq
+  rules:
+    - language: JSONiq
+      or:
+        - JSONIQ
+    - language: jq
 - extensions:
   - .l
   rules:
@@ -958,14 +984,12 @@
 - extensions:
   - .st
   rules:
-  - language: HTML
+  - language: StringTemplate
     or:
-    - HTML_1
-  - language: C++
-    or:
-    - C_PLUS__PLUS__1
-    - C_PLUS__PLUS__2
+    - STRING_TEMPLATE
   - language: Smalltalk
+    or:
+    - SMALLTALK_2
 - extensions:
   - .t
   rules:
