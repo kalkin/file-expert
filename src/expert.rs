@@ -1,6 +1,6 @@
 use crate::data_structures::Content;
 use crate::heuristic::{
-    guess_by_extensions, guess_by_filename, guess_by_interpreter, guess_by_linguist_heuristic,
+    guess_by_extensions, guess_by_filename, guess_by_heuristic, guess_by_interpreter,
     guess_by_modeline,
 };
 use std::fmt::{Display, Formatter};
@@ -57,7 +57,7 @@ pub fn guess(path: &Path) -> Result<Guess, std::io::Error> {
 
             if let Some(ext_vec) = optional_extensions {
                 for ext in ext_vec {
-                    if let Some(lang) = guess_by_linguist_heuristic(&ext, &body) {
+                    if let Some(lang) = guess_by_heuristic(&ext, &body) {
                         return Ok(Guess::Kind(lang.to_string()));
                     }
 
