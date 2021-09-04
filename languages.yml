@@ -3257,7 +3257,6 @@ Makefile:
   - ".make"
   - ".mk"
   - ".mkfile"
-  - ".Makefile"
   filenames:
   - BSDmakefile
   - GNUmakefile
@@ -6113,7 +6112,6 @@ Vim script:
   - viml
   - nvim
   extensions:
-  - ".vader"
   - ".vim"
   - ".vba"
   - ".vmb"
