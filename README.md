@@ -1,7 +1,7 @@
 # file-expert
 
 An expert system for recognizing file types, similar to GitHub/linguist, but
-written in Prolog.
+written in Rust.
 
 ## Usage
 
@@ -49,19 +49,13 @@ In production.
 
 ### Build Dependencies
 
-* Autoconf
-* Automake
-* SWI Prolog ≥ 8 (Tested with 8.0.2(?) and 8.2.1)
-* Python 3
-* PyYAML
+* cargo
 
 ### Installation
 
 ⒈ Checkout this repository `git clone https://github.com/kalkin/file-expert`.
 
-⒉ Run `autoreconf -i && ./configure --prefix=/usr && make` to build it.
-
-⒊ Install with `sudo make install`
+⒉ Run `cargo install --path .` to build and install it.
 
 ## Versioning
 
@@ -79,6 +73,9 @@ by the compiler update. While fixing it I noticed that the GitHub/linguist
 heuristics were refactored to a YAML file. This opened up the possibility to
 easily autogenerate the heuristics rules. So I started working on the Prolog
 implementation again.
+
+During the COVID-19 Summer in June 2021 I got proficient enough to rewrite this
+project in Rust. The main benefit is the sheer performance gain.
 
 ## License
 
