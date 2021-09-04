@@ -1,6 +1,6 @@
 [package]
 name = "file-expert"
-version = "0.1.0"
+version = "1.0.0-alpha.0"
 authors = ["Bahtiar `kalkin-` Gadimov <bahtiar@gadimov.de>"]
 edition = "2018"
 
