@@ -68,7 +68,7 @@ pub fn guess_by_interpreter(body: &[String]) -> Option<&'static String> {
 
 pub fn guess_by_modeline(modelines: &[String]) -> Option<&'static String> {
     for line in modelines {
-        if let Some(alias) = modeline::parse(&line) {
+        if let Some(alias) = modeline::parse(line) {
             if ALIASES.contains_key(alias) {
                 return ALIASES.get(alias);
             }
@@ -79,7 +79,7 @@ pub fn guess_by_modeline(modelines: &[String]) -> Option<&'static String> {
 
 #[allow(clippy::module_name_repetitions)]
 pub fn guess_by_heuristic(ext: &str, body: &[String]) -> Option<&'static str> {
-    linguist_heuristic(&ext, body)
+    linguist_heuristic(ext, body)
 }
 
 pub fn guess_by_extensions(ext: &str) -> Option<&'static String> {

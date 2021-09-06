@@ -89,7 +89,7 @@ foreach ($HEURISTICS as $extRules) :
         } else {
             $noelse = true;
         }
-        $patterns = array_map(fn($e) => "match_lines(&$e, &content)", $patterns);
+        $patterns = array_map(fn($e) => "match_lines(&$e, content)", $patterns);
 
         if (!empty($patterns) && !empty($joiner)) {
             echo implode($joiner, $patterns);

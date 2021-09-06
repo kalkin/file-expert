@@ -52,7 +52,7 @@ pub fn guess(path: &Path) -> Result<Guess, std::io::Error> {
     if let Some(lang) = guess_by_filename(path) {
         return Ok(Guess::Kind(lang.to_string()));
     }
-    let optional_extensions = extensions(&path);
+    let optional_extensions = extensions(path);
     let content = Content::new(path)?;
     match content {
         Content::Binary(_) => return Ok(Guess::Kind("Binary".to_string())),
