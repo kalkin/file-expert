@@ -58,7 +58,7 @@ impl Content {
             let mut modelines: Vec<String> = Vec::with_capacity(5);
             modelines.append(&mut body.iter().take(5).map(ToString::to_string).collect());
             if amount_to_read < MAX_SIZE {
-                modelines.append(&mut body.iter().rev().take(5).map(ToString::to_string).collect())
+                modelines.append(&mut body.iter().rev().take(5).map(ToString::to_string).collect());
             } else {
                 file.seek(SeekFrom::End(-4096))?;
                 let mut tmp = vec![0_u8; 4096];
@@ -69,7 +69,7 @@ impl Content {
                     .take(5)
                     .map(ToString::to_string)
                     .collect::<Vec<_>>();
-                modelines.append(&mut last_5_lines)
+                modelines.append(&mut last_5_lines);
             }
 
             Ok(Content::Text { modelines, body })
