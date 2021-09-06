@@ -46,7 +46,7 @@ fn main() {
             .setting(AppSettings::UnifiedHelpMessage)
             .arg(
                 Arg::new("file")
-                    .about("Module directory")
+                    .about("Files to identify")
                     .required(false)
                     .multiple_values(true),
             );
