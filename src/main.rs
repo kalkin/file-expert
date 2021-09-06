@@ -48,7 +48,7 @@ fn main() {
                 Arg::new("file")
                     .about("Module directory")
                     .required(false)
-                    .multiple(true),
+                    .multiple_values(true),
             );
         app.get_matches()
     };
@@ -59,7 +59,7 @@ fn main() {
             match result {
                 Ok(lang) => {
                     if let Guess::Unknown = lang {
-                        exit_code = 1
+                        exit_code = 1;
                     }
                     println!("{}\t{}", file, lang);
                 }
@@ -69,7 +69,6 @@ fn main() {
                 }
             }
         }
-        exit(exit_code);
     } else {
         let stdin = io::stdin();
         for line in stdin.lock().lines() {
@@ -79,7 +78,7 @@ fn main() {
                     match result {
                         Ok(lang) => {
                             if let Guess::Unknown = lang {
-                                exit_code = 1
+                                exit_code = 1;
                             }
                             println!("{}\t{}", l, lang);
                         }
@@ -92,6 +91,6 @@ fn main() {
                 Err(_) => break,
             }
         }
-        exit(exit_code);
     }
+    exit(exit_code);
 }
