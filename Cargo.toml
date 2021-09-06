@@ -19,6 +19,15 @@ categories = [
     "text-processing"
 ]
 
+include = [
+    "./Cargo.toml",
+    "./Cargo.lock",
+    "src/*.rs",
+    "README.md",
+    "CHANGELOG.md",
+    "COPYING.md",
+]
+
 [dependencies]
 clap = { version="=3.0.0-beta.4", default-features=false, features=["std", "cargo"] }
 lazy_static = "1.4.0"
