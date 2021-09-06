@@ -1,16 +1,12 @@
 Name:           file-expert
-Version:        0.13.1
+Version:        1.0.0~alpha.0
 Release:        1%{?dist}
 Summary:        Expert system for recognizing file types.
 License:        GPLv3
 
 URL:            https://github.com/kalkin/file-expert
 
-BuildRequires: python3
-BuildRequires: pl
-BuildRequires: python3-pyyaml
-
-Requires: pl
+BuildRequires: cargo
 
 %global debug_package %{nil}
 %define _builddir %(pwd)
@@ -36,8 +32,6 @@ autoreconf -i
 
 
 %check
-%{_rpmconfigdir}/check-rpaths
-make test
 
 
 %files
