@@ -6,6 +6,18 @@ edition = "2018"
 license = "AGPL-3.0-or-later"
 description = "Expert system for recognizing source code files, similar to GitHub/lingust."
 repository = "https://github.com/kalkin/file-expert"
+readme = "README.md"
+keywords = [
+    "linguist",
+    "linguist-heuristics",
+    "expert-system",
+    "source-code"
+]
+categories = [
+    "command-line-utilities",
+    "development-tools",
+    "text-processing"
+]
 
 [dependencies]
 clap = { version="=3.0.0-beta.4", default-features=false, features=["std", "cargo"] }
