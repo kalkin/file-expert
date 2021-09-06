@@ -1,5 +1,5 @@
 bin_PROGRAMS = file-expert
-file_expert_SOURCES = $(shell find @srcdir@/src -name *.rs)
+file_expert_SOURCES = $(shell find @srcdir@/src -name *.rs) Cargo.toml Cargo.lock
 
 CARGO_BUILD_FLAGS = $(CARGOFLAGS)
 CARGO_BUILD_FLAGS += --manifest-path=$(srcdir)/Cargo.toml
@@ -24,7 +24,7 @@ define CARGO_BUILD
 $(call RUN_CARGO,build)
 endef
 
-EXTRA_DIST = Cargo.toml Cargo.lock named_patterns.yml languages.yml heuristics.yml @BKG_RPM_SPECFILE@.in
+EXTRA_DIST = named_patterns.yml languages.yml heuristics.yml @BKG_RPM_SPECFILE@.in
 CLEANFILES = @BKG_RPM_SPECFILE@
 
 generate-files: tests/linguist.rs src/linguist_heuristics.rs
@@ -70,6 +70,23 @@ mostlyclean-local:
 clean-local:
 	rm -rf target
 
+.PHONY: check-local
+check-local: rust-code-style rust-clippy
+
+.PHONY: rust-clippy
+rust-clippy: $(shell git ls-files -- "*.rs" "*.toml")
+	$(INFO_CHECK)
+	cargo clippy $(CARGO_VERBOSE) \
+		-- -W clippy::all -W clippy::pedantic \
+		-A clippy::non_ascii_literal \
+		-A clippy::implicit_return \
+		-A clippy::expect-used \
+		-D warnings
+
+.PHONY: check-code-style
+rust-code-style: $(shell git ls-files -- "*.rs")
+	$(INFO_CHECK)
+	rustfmt $(CARGO_VERBOSE) $^ --check
 
 @BKG_RPM_TEMPLATE@
 @BKG_DEPLOY_GENTOO@
