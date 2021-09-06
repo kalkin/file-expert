@@ -1,7 +1,7 @@
 Name:           file-expert
 Version:        1.0.0~alpha.0
 Release:        1%{?dist}
-Summary:        Expert system for recognizing file types.
+Summary:        Expert system for recognizing source code files
 License:        GPLv3
 
 URL:            https://github.com/kalkin/file-expert
@@ -13,8 +13,8 @@ BuildRequires: cargo
 %define _sourcedir %(pwd)
 
 %description
-An expert system for recognizing file types, similar to GitHub/linguist, but
-written in Prolog.
+Expert system for recognizing source code files, similar to GitHub/linguist, but
+written in Rust.
 
 
 %prep

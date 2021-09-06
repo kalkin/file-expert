@@ -5,7 +5,7 @@ AC_CONFIG_MACRO_DIR([m4])
 
 BKG_ENABLE_XDG
 BKG_PACKAGE_GENTOO(["dev-util"])
-BKG_PACKAGE_INFO([Expert system for recognizing file types.])
+BKG_PACKAGE_INFO([Expert system for recognizing source code files])
 BKG_RPM
 
 AC_PATH_PROG(CARGO, cargo, "")
