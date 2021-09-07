@@ -61,9 +61,11 @@ tests/linguist.rs: tests/linguist.rs.php skipped.yml
 	$< > $@
 	rustfmt $@
 
-file-expert$(EXEEXT): $(SOURCES)
-	$(call CARGO_BUILD) --bin $@
-	mv $(builddir)/target/release/$(@F) $@
+file-expert$(EXEEXT): $(builddir)/target/release/file-expert
+	$(install_sh) -T -C $< $@
+
+$(builddir)/target/release/file-expert: $(SOURCES)
+	$(call CARGO_BUILD) --bin $(@F)
 
 mostlyclean-local:
 	$(call RUN_CARGO,clean)
