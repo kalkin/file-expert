@@ -87,5 +87,11 @@ rust-code-style: $(filter-out Cargo.lock,$(filter-out Cargo.toml,$(SOURCES)))
 	@$(INFO_CHECK)
 	rustfmt $(CARGO_VERBOSE) $^ --check
 
+.PHONY: coverage
+coverage: CARGO_BUILD_FLAGS = $(filter-out $(CARGO_VERBOSE),$(CARGOFLAGS))
+coverage:
+	@$(INFO_CHECK)
+	$(call RUN_CARGO,tarpaulin) -o html
+
 @BKG_RPM_TEMPLATE@
 @BKG_DEPLOY_GENTOO@
