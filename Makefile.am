@@ -73,7 +73,7 @@ clean-local:
 check-local: rust-code-style rust-clippy
 
 .PHONY: rust-clippy
-rust-clippy: $(shell git ls-files -- "*.rs" "*.toml")
+rust-clippy: $(SOURCES)
 	@$(INFO_CHECK)
 	$(call RUN_CARGO,clippy) \
 		-- -W clippy::all -W clippy::pedantic \
