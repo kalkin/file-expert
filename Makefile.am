@@ -1,6 +1,8 @@
 bin_PROGRAMS = file-expert
 file_expert_SOURCES = $(shell find @srcdir@/src -name *.rs) Cargo.toml Cargo.lock
 
+-include ../output.mk
+
 CARGO_VERBOSE := $(shell test "$(V)" != "1" && echo "-q")
 CARGO_BUILD_FLAGS = $(CARGOFLAGS) $(CARGO_VERBOSE)
 CARGO_BUILD_FLAGS += --manifest-path=$(srcdir)/Cargo.toml
@@ -15,17 +17,6 @@ DISTCLEANFILES = @BKG_RPM_SPECFILE@
 # in that case)
 define RUN_CARGO
 $(if $(findstring n,$(filter-out --%, $(MAKEFLAGS))),,+)$(CARGO) $(1) $(CARGO_BUILD_FLAGS)
-endef
-
-# This function is intended to be called by:
-#
-#   $(call CARGO_BUILD,EXTRA_ENV_VAR1=X EXTRA_ENV_VAR2=Y ...)
-#
-# but, given the idiosyncracies of make, can also be called without arguments:
-#
-#   $(call CARGO_BUILD)
-define CARGO_BUILD
-$(call RUN_CARGO,build)
 endef
 
 EXTRA_DIST = named_patterns.yml languages.yml heuristics.yml @BKG_RPM_SPECFILE@.in
@@ -66,9 +57,11 @@ file-expert$(EXEEXT): $(builddir)/target/release/file-expert
 	$(install_sh) -T -C $< $@
 
 $(builddir)/target/release/file-expert: $(SOURCES)
-	$(call CARGO_BUILD) --bin $(@F)
+	@$(INFO_BUILD)
+	$(call RUN_CARGO,build) --bin $(@F)
 
 mostlyclean-local:
+	@$(INFO_CLEAN)
 	$(call RUN_CARGO,clean)
 
 clean-local:
@@ -79,7 +72,7 @@ check-local: rust-code-style rust-clippy
 
 .PHONY: rust-clippy
 rust-clippy: $(shell git ls-files -- "*.rs" "*.toml")
-	$(INFO_CHECK)
+	@$(INFO_CHECK)
 	$(call RUN_CARGO,clippy) \
 		-- -W clippy::all -W clippy::pedantic \
 		-A clippy::non_ascii_literal \
