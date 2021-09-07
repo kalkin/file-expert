@@ -1,7 +1,8 @@
 bin_PROGRAMS = file-expert
 file_expert_SOURCES = $(shell find @srcdir@/src -name *.rs) Cargo.toml Cargo.lock
 
-CARGO_BUILD_FLAGS = $(CARGOFLAGS)
+CARGO_VERBOSE := $(shell test "$(V)" != "1" && echo "-q")
+CARGO_BUILD_FLAGS = $(CARGOFLAGS) $(CARGO_VERBOSE)
 CARGO_BUILD_FLAGS += --manifest-path=$(srcdir)/Cargo.toml
 CARGO_BUILD_FLAGS += --target-dir=$(builddir)/target
 CARGO_BUILD_FLAGS += --release
@@ -79,7 +80,7 @@ check-local: rust-code-style rust-clippy
 .PHONY: rust-clippy
 rust-clippy: $(shell git ls-files -- "*.rs" "*.toml")
 	$(INFO_CHECK)
-	$(call RUN_CARGO,clippy) $(CARGO_VERBOSE) \
+	$(call RUN_CARGO,clippy) \
 		-- -W clippy::all -W clippy::pedantic \
 		-A clippy::non_ascii_literal \
 		-A clippy::implicit_return \
