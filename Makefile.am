@@ -86,9 +86,9 @@ rust-clippy: $(shell git ls-files -- "*.rs" "*.toml")
 		-A clippy::expect-used \
 		-D warnings
 
-.PHONY: check-code-style
-rust-code-style: $(shell git ls-files -- "*.rs")
-	$(INFO_CHECK)
+.PHONY: rust-code-style
+rust-code-style: $(filter-out Cargo.lock,$(filter-out Cargo.toml,$(SOURCES)))
+	@$(INFO_CHECK)
 	rustfmt $(CARGO_VERBOSE) $^ --check
 
 @BKG_RPM_TEMPLATE@
