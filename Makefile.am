@@ -69,7 +69,6 @@ $(builddir)/target/release/file-expert: $(SOURCES)
 
 mostlyclean-local:
 	$(call RUN_CARGO,clean)
-	rm -fv $(builddir)/file-expert$(EXEEXT)
 
 clean-local:
 	rm -rf target
