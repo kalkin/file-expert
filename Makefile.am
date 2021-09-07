@@ -79,7 +79,7 @@ check-local: rust-code-style rust-clippy
 .PHONY: rust-clippy
 rust-clippy: $(shell git ls-files -- "*.rs" "*.toml")
 	$(INFO_CHECK)
-	cargo clippy $(CARGO_VERBOSE) \
+	$(call RUN_CARGO,clippy) $(CARGO_VERBOSE) \
 		-- -W clippy::all -W clippy::pedantic \
 		-A clippy::non_ascii_literal \
 		-A clippy::implicit_return \
