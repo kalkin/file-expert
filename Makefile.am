@@ -6,6 +6,9 @@ CARGO_BUILD_FLAGS += --manifest-path=$(srcdir)/Cargo.toml
 CARGO_BUILD_FLAGS += --target-dir=$(builddir)/target
 CARGO_BUILD_FLAGS += --release
 
+CLEANFILES = file-expert$(EXEEXT)
+DISTCLEANFILES = @BKG_RPM_SPECFILE@
+
 # We use the + prefix to pass down the jobserver fds to cargo, but we
 # don't use the prefix when make -n is used, so that cargo doesn't run
 # in that case)
@@ -25,7 +28,6 @@ $(call RUN_CARGO,build)
 endef
 
 EXTRA_DIST = named_patterns.yml languages.yml heuristics.yml @BKG_RPM_SPECFILE@.in
-CLEANFILES = @BKG_RPM_SPECFILE@
 
 generate-files: tests/linguist.rs src/linguist_heuristics.rs
 generate-files: src/linguist_extensions.rs src/linguist_interpreters.rs
