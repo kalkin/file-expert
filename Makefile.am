@@ -6,10 +6,12 @@ file_expert_SOURCES = $(shell find @srcdir@/src -name *.rs) Cargo.toml Cargo.loc
 
 CARGO_VERBOSE ::= $(shell test "$(V)" != "1" && echo "-q")
 
+CARGO_TARGET_DIR ?= $(builddir)/target
 CARGO_BUILD_FLAGS = $(CARGOFLAGS) $(CARGO_VERBOSE)
 CARGO_BUILD_FLAGS += --manifest-path=$(srcdir)/Cargo.toml
-CARGO_BUILD_FLAGS += --target-dir=$(builddir)/target
-CARGO_BUILD_FLAGS += --release
+CARGO_BUILD_FLAGS += --target-dir=
+CARGO_BUILD_FLAGS += $(if $(CARGO_FAST_BUILD),,--release)
+_TARGET_PROFILE_DIR ::= $(CARGO_TARGET_DIR)/$(if $(CARGO_FAST_BUILD),debug,release)
 
 CLEANFILES = file-expert$(EXEEXT)
 DISTCLEANFILES = @BKG_RPM_SPECFILE@
@@ -55,10 +57,10 @@ tests/linguist.rs: tests/linguist.rs.php skipped.yml
 	$< > $@
 	rustfmt $@
 
-file-expert$(EXEEXT): $(builddir)/target/release/file-expert
+file-expert$(EXEEXT): $(_TARGET_PROFILE_DIR)/file-expert
 	$(install_sh) -T -C $< $@
 
-$(builddir)/target/release/file-expert: $(SOURCES)
+$(_TARGET_PROFILE_DIR)/file-expert: $(SOURCES)
 	@$(INFO_BUILD)
 	$(call RUN_CARGO,build) --bin $(@F)
 
