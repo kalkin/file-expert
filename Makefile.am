@@ -4,7 +4,7 @@ file_expert_SOURCES = $(shell find @srcdir@/src -name *.rs) Cargo.toml Cargo.loc
 -include ../verbose.mk
 -include ../output.mk
 
-CARGO_VERBOSE := $(shell test "$(V)" != "1" && echo "-q")
+CARGO_VERBOSE ::= $(shell test "$(V)" != "1" && echo "-q")
 
 CARGO_BUILD_FLAGS = $(CARGOFLAGS) $(CARGO_VERBOSE)
 CARGO_BUILD_FLAGS += --manifest-path=$(srcdir)/Cargo.toml
