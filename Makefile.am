@@ -9,7 +9,7 @@ CARGO_VERBOSE ::= $(shell test "$(V)" != "1" && echo "-q")
 CARGO_TARGET_DIR ?= $(builddir)/target
 CARGO_BUILD_FLAGS = $(CARGOFLAGS) $(CARGO_VERBOSE)
 CARGO_BUILD_FLAGS += --manifest-path=$(srcdir)/Cargo.toml
-CARGO_BUILD_FLAGS += --target-dir=
+CARGO_BUILD_FLAGS += --target-dir=$(CARGO_TARGET_DIR)
 CARGO_BUILD_FLAGS += $(if $(CARGO_FAST_BUILD),,--release)
 _TARGET_PROFILE_DIR ::= $(CARGO_TARGET_DIR)/$(if $(CARGO_FAST_BUILD),debug,release)
 
