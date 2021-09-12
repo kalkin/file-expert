@@ -20,7 +20,7 @@ DISTCLEANFILES = @BKG_RPM_SPECFILE@
 # don't use the prefix when make -n is used, so that cargo doesn't run
 # in that case)
 define RUN_CARGO
-$(if $(findstring n,$(filter-out --%, $(MAKEFLAGS))),,+)$(CARGO) $(1) $(CARGO_BUILD_FLAGS)
+$(if $(findstring n,$(filter-out --%, $(MAKEFLAGS))),,+)$(call V_TOOL,CARGO,,$(1)) $(CARGO) $(1) $(CARGO_BUILD_FLAGS)
 endef
 
 EXTRA_DIST = named_patterns.yml languages.yml heuristics.yml @BKG_RPM_SPECFILE@.in
@@ -77,7 +77,6 @@ check-local: rust-code-style rust-clippy
 
 .PHONY: rust-clippy
 rust-clippy: $(SOURCES)
-	@$(INFO_CHECK)
 	$(call RUN_CARGO,clippy) \
 		-- -W clippy::all -W clippy::pedantic \
 		-A clippy::non_ascii_literal \
@@ -87,13 +86,11 @@ rust-clippy: $(SOURCES)
 
 .PHONY: rust-code-style
 rust-code-style: $(filter-out Cargo.lock,$(filter-out Cargo.toml,$(SOURCES)))
-	@$(INFO_CHECK)
-	rustfmt $(CARGO_VERBOSE) $^ --check
+	$(call V_TOOL,RUSTFMT,,$?)rustfmt $(CARGO_VERBOSE) $^ --check
 
 .PHONY: coverage
 coverage: CARGO_BUILD_FLAGS = $(filter-out $(CARGO_VERBOSE),$(CARGOFLAGS))
 coverage:
-	@$(INFO_CHECK)
 	$(call RUN_CARGO,tarpaulin) -o html
 
 @BKG_RPM_TEMPLATE@
