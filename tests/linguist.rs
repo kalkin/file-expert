@@ -8512,6 +8512,20 @@ mod stan {
     }
 }
 
+mod soong {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Soong/filenames/Android.bp");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Soong".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod filterscript {
     use file_expert::guess;
     use file_expert::Guess;
