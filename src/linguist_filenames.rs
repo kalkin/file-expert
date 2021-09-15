@@ -309,6 +309,10 @@ lazy_static! {
         ("use.mask".to_string(), "Text".to_string()),
         ("use.stable.mask".to_string(), "Text".to_string()),
         ("version".to_string(), "Text".to_string()),
+        (
+            ".tm_properties".to_string(),
+            "TextMate Properties".to_string()
+        ),
         (".exrc".to_string(), "Vim script".to_string()),
         (".gvimrc".to_string(), "Vim script".to_string()),
         (".nvimrc".to_string(), "Vim script".to_string()),

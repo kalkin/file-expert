@@ -5908,6 +5908,18 @@ Text:
   tm_scope: none
   ace_mode: text
   language_id: 372
+TextMate Properties:
+  type: data
+  color: "#df66e4"
+  aliases:
+  - tm-properties
+  filenames:
+  - ".tm_properties"
+  ace_mode: properties
+  codemirror_mode: properties
+  codemirror_mime_type: text/x-properties
+  tm_scope: source.tm-properties
+  language_id: 981795023
 Textile:
   type: prose
   ace_mode: textile

@@ -485,6 +485,14 @@ lazy_static! {
         ("fundamental".to_string(), "Text".to_string()),
         ("plain text".to_string(), "Text".to_string()),
         ("text".to_string(), "Text".to_string()),
+        (
+            "tm-properties".to_string(),
+            "TextMate Properties".to_string()
+        ),
+        (
+            "textmate properties".to_string(),
+            "TextMate Properties".to_string()
+        ),
         ("tl".to_string(), "Type Language".to_string()),
         ("type language".to_string(), "Type Language".to_string()),
         ("ts".to_string(), "TypeScript".to_string()),
