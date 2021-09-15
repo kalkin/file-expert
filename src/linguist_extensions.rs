@@ -662,6 +662,7 @@ lazy_static! {
         (".oxygene".to_string(), "Oxygene".to_string()),
         (".oz".to_string(), "Oz".to_string()),
         (".p4".to_string(), "P4".to_string()),
+        (".pegjs".to_string(), "PEG.js".to_string()),
         (".aw".to_string(), "PHP".to_string()),
         (".ctp".to_string(), "PHP".to_string()),
         (".php3".to_string(), "PHP".to_string()),

@@ -5665,6 +5665,20 @@ mod xc {
     }
 }
 
+mod peg_dot_js {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/PEG.js/rfc5988.pegjs");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("PEG.js".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod limbo {
     use file_expert::guess;
     use file_expert::Guess;
