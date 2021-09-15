@@ -468,6 +468,7 @@ lazy_static! {
         (".cjs".to_string(), "JavaScript".to_string()),
         (".es6".to_string(), "JavaScript".to_string()),
         (".jake".to_string(), "JavaScript".to_string()),
+        (".javascript".to_string(), "JavaScript".to_string()),
         (".jsb".to_string(), "JavaScript".to_string()),
         (".jscad".to_string(), "JavaScript".to_string()),
         (".jsfl".to_string(), "JavaScript".to_string()),
