@@ -587,8 +587,6 @@ lazy_static! {
         (".maxproj".to_string(), "Max".to_string()),
         (".mxt".to_string(), "Max".to_string()),
         (".pat".to_string(), "Max".to_string()),
-        (".mediawiki".to_string(), "MediaWiki".to_string()),
-        (".wiki".to_string(), "MediaWiki".to_string()),
         (".metal".to_string(), "Metal".to_string()),
         (
             ".sln".to_string(),
@@ -983,6 +981,9 @@ lazy_static! {
         (".wat".to_string(), "WebAssembly".to_string()),
         (".webidl".to_string(), "WebIDL".to_string()),
         (".vtt".to_string(), "WebVTT".to_string()),
+        (".mediawiki".to_string(), "Wikitext".to_string()),
+        (".wiki".to_string(), "Wikitext".to_string()),
+        (".wikitext".to_string(), "Wikitext".to_string()),
         (".reg".to_string(), "Windows Registry Entries".to_string()),
         (".wlk".to_string(), "Wollok".to_string()),
         (".xbm".to_string(), "X BitMap".to_string()),

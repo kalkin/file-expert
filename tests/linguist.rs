@@ -666,6 +666,28 @@ mod c {
     }
 }
 
+mod wikitext {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Wikitext/mediawiki.mediawiki");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Wikitext".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Wikitext/README.wiki");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Wikitext".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod abap {
     use file_expert::guess;
     use file_expert::Guess;
@@ -8097,28 +8119,6 @@ mod ampl {
         let path = Path::new(&"./samples/AMPL/CT2.mod");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("AMPL".to_string());
-        assert_eq!(actual, expected);
-    }
-}
-
-mod mediawiki {
-    use file_expert::guess;
-    use file_expert::Guess;
-    use std::path::Path;
-
-    #[test]
-    fn test_0() {
-        let path = Path::new(&"./samples/MediaWiki/mediawiki.mediawiki");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("MediaWiki".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_1() {
-        let path = Path::new(&"./samples/MediaWiki/README.wiki");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("MediaWiki".to_string());
         assert_eq!(actual, expected);
     }
 }
