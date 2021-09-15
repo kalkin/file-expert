@@ -29,6 +29,7 @@ lazy_static! {
         (".asddls".to_string(), "ABAP CDS".to_string()),
         (".abnf".to_string(), "ABNF".to_string()),
         (".ash".to_string(), "AGS Script".to_string()),
+        (".aidl".to_string(), "AIDL".to_string()),
         (".ampl".to_string(), "AMPL".to_string()),
         (".g4".to_string(), "ANTLR".to_string()),
         (".apib".to_string(), "API Blueprint".to_string()),

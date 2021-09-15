@@ -11111,6 +11111,28 @@ mod fortran {
     }
 }
 
+mod aidl {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/AIDL/IVoid.aidl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("AIDL".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/AIDL/ExtendableParcelable.aidl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("AIDL".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod elixir {
     use file_expert::guess;
     use file_expert::Guess;

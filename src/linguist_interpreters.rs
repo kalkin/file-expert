@@ -22,6 +22,7 @@ use std::collections::HashMap;
 
 lazy_static! {
     pub static ref INTERPRETERS: HashMap<String, String> = [
+        ("aidl".to_string(), "AIDL".to_string()),
         ("apl".to_string(), "APL".to_string()),
         ("aplx".to_string(), "APL".to_string()),
         ("dyalog".to_string(), "APL".to_string()),
