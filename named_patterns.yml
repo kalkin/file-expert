@@ -15,6 +15,7 @@ COMMON_LISP_2: \(def(un|macro)\s
 COMMON_LISP_3: '^\s*\((?i:defun|in-package|defpackage) '
 COOL_1: ^class
 COQ_1: (?:^|\s)(?:Proof|Qed)\.(?:$|\s)|(?:^|\s)Require[ \t]+(Import|Export)\s
+CUE_SHEET_1: '^\s*TRACK\s\d+\s.*$'
 CPP_1: ^\s*#\s*include <(cstdint|string|vector|map|list|array|bitset|queue|stack|forward_list|unordered_map|unordered_set|(i|o|io)stream)>
 CPP_2: ^\s*template\s*<
 CPP_3: ^[ \t]*(try|constexpr)

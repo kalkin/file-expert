@@ -37,6 +37,7 @@ lazy_static! {
     static ref COMMON_LISP_3: Regex = Regex::new(r#"^\s*\((?i:defun|in-package|defpackage) "#).unwrap();
     static ref COOL_1: Regex = Regex::new(r#"^class"#).unwrap();
     static ref COQ_1: Regex = Regex::new(r#"(?:^|\s)(?:Proof|Qed)\.(?:$|\s)|(?:^|\s)Require[ \t]+(Import|Export)\s"#).unwrap();
+    static ref CUE_SHEET_1: Regex = Regex::new(r#"^\s*TRACK\s\d+\s.*$"#).unwrap();
     static ref CPP_1: Regex = Regex::new(r#"^\s*#\s*include <(cstdint|string|vector|map|list|array|bitset|queue|stack|forward_list|unordered_map|unordered_set|(i|o|io)stream)>"#).unwrap();
     static ref CPP_2: Regex = Regex::new(r#"^\s*template\s*<"#).unwrap();
     static ref CPP_3: Regex = Regex::new(r#"^[ \t]*(try|constexpr)"#).unwrap();
@@ -426,6 +427,13 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
                 Some("Kusto")
             } else {
                 None
+            }
+        }
+        ".cue" => {
+            if match_lines(&CUE_SHEET_1, content) {
+                Some("Cue Sheet")
+            } else {
+                Some("CUE")
             }
         }
         ".d" => {

@@ -209,6 +209,13 @@
     or:
     - KUSTO_1
 - extensions:
+  - .cue
+  rules:
+  - language: Cue Sheet
+    or:
+    - CUE_SHEET_1
+  - language: CUE
+- extensions:
   - .d
   rules:
   - language: DTrace

@@ -7082,6 +7082,28 @@ mod lark {
     }
 }
 
+mod cue_sheet {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Cue Sheet/sample2.cue");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Cue Sheet".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Cue Sheet/sample1.cue");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Cue Sheet".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod gn {
     use file_expert::guess;
     use file_expert::Guess;
@@ -10888,6 +10910,28 @@ mod eclipse {
         let path = Path::new(&"./samples/ECLiPSe/or-constraint.ecl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("ECLiPSe".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
+mod cue {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/CUE/github-workflow.cue");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("CUE".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/CUE/kube.cue");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("CUE".to_string());
         assert_eq!(actual, expected);
     }
 }
