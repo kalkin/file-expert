@@ -966,6 +966,7 @@ lazy_static! {
         (".vhw".to_string(), "VHDL".to_string()),
         (".vala".to_string(), "Vala".to_string()),
         (".vapi".to_string(), "Vala".to_string()),
+        (".vdf".to_string(), "Valve Data Format".to_string()),
         (".veo".to_string(), "Verilog".to_string()),
         (".snip".to_string(), "Vim Snippet".to_string()),
         (".snippet".to_string(), "Vim Snippet".to_string()),

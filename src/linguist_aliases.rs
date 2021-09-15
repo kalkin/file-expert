@@ -509,6 +509,12 @@ lazy_static! {
             "VBA".to_string()
         ),
         ("vba".to_string(), "VBA".to_string()),
+        ("keyvalues".to_string(), "Valve Data Format".to_string()),
+        ("vdf".to_string(), "Valve Data Format".to_string()),
+        (
+            "valve data format".to_string(),
+            "Valve Data Format".to_string()
+        ),
         ("vimhelp".to_string(), "Vim Help File".to_string()),
         ("vim help file".to_string(), "Vim Help File".to_string()),
         ("SnipMate".to_string(), "Vim Snippet".to_string()),
