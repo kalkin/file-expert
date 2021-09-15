@@ -513,6 +513,7 @@
   - language: Pascal
     or:
     - PASCAL_1
+    - PASCAL_2
   - language: Pawn
     or:
     - PAWN_1
@@ -778,6 +779,7 @@
   - language: Pascal
     or:
     - PASCAL_1
+    - PASCAL_2
   - language: Puppet
 - extensions:
   - .prc

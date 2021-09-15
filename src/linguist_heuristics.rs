@@ -152,7 +152,8 @@ lazy_static! {
     static ref ODIN_1: Regex = Regex::new(r#"package\s+\w+|\b(?:im|ex)port\s*\"[\w:./]+\"|\w+\s*::\s*(?:proc|struct)\s*\(|^\s*//\s"#).unwrap();
     static ref OPENCL_1: Regex = Regex::new(r#"\/\* |\/\/ |^\}"#).unwrap();
     static ref OPENEDGE_ABL_1: Regex = Regex::new(r#"&ANALYZE-SUSPEND _UIB-CODE-BLOCK _CUSTOM _DEFINITIONS"#).unwrap();
-    static ref PASCAL_1: Regex = Regex::new(r#"^\s*end[.;]"#).unwrap();
+    static ref PASCAL_1: Regex = Regex::new(r#"^\s*end[.;]\s*$"#).unwrap();
+    static ref PASCAL_2: Regex = Regex::new(r#"(?i:^\s*{\$(?:mode|ifdef|undef|define)[ ]+[a-z0-9_]+})"#).unwrap();
     static ref PAWN_1: Regex = Regex::new(r#"^\s*#include\s+<\w+>"#).unwrap();
     static ref PAWN_2: Regex = Regex::new(r#"^\s*public\s+(?:\w|\d)+\("#).unwrap();
     static ref PAWN_3: Regex = Regex::new(r#"^\s*stock\s+(?:\w|\d)+:"#).unwrap();
@@ -722,7 +723,7 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
                 Some("C++")
             } else if match_lines(&HTML_1, content) {
                 Some("HTML")
-            } else if match_lines(&PASCAL_1, content) {
+            } else if match_lines(&PASCAL_1, content) || match_lines(&PASCAL_2, content) {
                 Some("Pascal")
             } else if match_lines(&PAWN_1, content)
                 || match_lines(&PAWN_2, content)
@@ -964,7 +965,7 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
             }
         }
         ".pp" => {
-            if match_lines(&PASCAL_1, content) {
+            if match_lines(&PASCAL_1, content) || match_lines(&PASCAL_2, content) {
                 Some("Pascal")
             } else {
                 Some("Puppet")

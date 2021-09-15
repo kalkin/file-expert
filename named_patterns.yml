@@ -131,7 +131,8 @@ OCAML_1: (^\s*module)|let rec |match\s+(\S+\s)+with
 ODIN_1: package\s+\w+|\b(?:im|ex)port\s*"[\w:./]+"|\w+\s*::\s*(?:proc|struct)\s*\(|^\s*//\s
 OPENCL_1: \/\* |\/\/ |^\}
 OPENEDGE_ABL_1: '&ANALYZE-SUSPEND _UIB-CODE-BLOCK _CUSTOM _DEFINITIONS'
-PASCAL_1: ^\s*end[.;]
+PASCAL_1: ^\s*end[.;]\s*$
+PASCAL_2: '(?i:^\s*{\$(?:mode|ifdef|undef|define)[ ]+[a-z0-9_]+})'
 PAWN_1: ^\s*#include\s+<\w+>
 PAWN_2: ^\s*public\s+(?:\w|\d)+\(
 PAWN_3: '^\s*stock\s+(?:\w|\d)+:'
