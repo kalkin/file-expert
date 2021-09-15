@@ -17,6 +17,8 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 //
+
+// TODO Add handling for multiline `/usr/bin/env\nexec ruby` shebangs
 pub fn interpreter(first_line: &str) -> Option<String> {
     if !first_line.starts_with("#!") {
         return None;
@@ -44,17 +46,10 @@ pub fn interpreter(first_line: &str) -> Option<String> {
     if line.len() == start {
         return None;
     }
-    let mut interpreter = String::new();
-    for c in line[start..].chars() {
-        if c == ' ' {
-            break;
-        }
-        interpreter.push(c);
-    }
-    if !interpreter.is_empty() {
-        return Some(interpreter);
-    }
-    None
+    return line[start..]
+        .split(' ')
+        .map(std::string::ToString::to_string)
+        .find(|s| !s.starts_with('-') && !s.is_empty() && !s.contains('='));
 }
 
 #[cfg(test)]
@@ -70,5 +65,36 @@ mod test {
         assert_eq!(interpreter("#!/var/foo/bin/python"), None);
         assert_eq!(interpreter("#! /sbin/"), None);
         assert_eq!(interpreter("#! /sbin/ -fr"), None);
+        assert_eq!(interpreter("#!/usr/bin/env perl"), Some("perl".to_string()));
+        assert_eq!(
+            interpreter("#!/usr/bin/env  perl"),
+            Some("perl".to_string())
+        );
+        assert_eq!(
+            interpreter("#!/usr/bin/env  perl -n"),
+            Some("perl".to_string())
+        );
+        assert_eq!(
+            interpreter("#!/usr/bin/env -vS ruby -w -Ilib:test"),
+            Some("ruby".to_string())
+        );
+        assert_eq!(
+            interpreter("#!/usr/bin/env -vS ruby -wKU"),
+            Some("ruby".to_string())
+        );
+        assert_eq!(
+            interpreter("#!/usr/bin/env --split-string sed -f"),
+            Some("sed".to_string())
+        );
+        assert_eq!(
+            interpreter("#!/usr/bin/env -S GH_TOKEN=ghp_*** deno run --allow-net"),
+            Some("deno".to_string())
+        );
+        assert_eq!(
+            interpreter(
+                "#! /usr/bin/env A=003 B=149 C=150 D=xzd E=base64 F=tar G=gz H=head I=tail sh"
+            ),
+            Some("sh".to_string())
+        );
     }
 }
