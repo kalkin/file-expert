@@ -220,7 +220,7 @@ lazy_static! {
     static ref UNIX_ASSEMBLY_1: Regex = Regex::new(r#"^\s*\.(?:include\s|globa?l\s|[A-Za-z][_A-Za-z0-9]*:)"#).unwrap();
     static ref VERILOG_1: Regex = Regex::new(r#"^[ \t]*module\s+[^\s()]+\s+\#?\(|^[ \t]*`(?:define|ifdef|ifndef|include|timescale)|^[ \t]*always[ \t]+@|^[ \t]*initial[ \t]+(begin|@)"#).unwrap();
     static ref VBA_1: Regex = Regex::new(r#"^\s*End\s+(?:If|Sub|Function|Select|Enum|Property)"#).unwrap();
-    static ref VIM_HELP_FILE_1: Regex = Regex::new(r#"(?:(?:[ \t]|^)vi(?:m[<=>]?\d+|m)?|[ \t]ex)(?=:(?=[ \t]*set?[ \t][^\n:]+:)|:(?![ \t]* set?[ \t]))(?:(?:[ \t]|[ \t]*:[ \t]*)\w*(?:[ \t]*=(?:[^\\[ \t]]|\\.)*)?)*[[ \t]:](?:filetype|ft|syntax)[ \t]*=help(?=[ \t]|:|$)"#).unwrap();
+    static ref VIM_HELP_FILE_1: Regex = Regex::new(r#"(?:(?:^|[ \t])(?:vi|Vi(?=m))(?:m[<=>]?[0-9]+|m)?|[ \t]ex)(?=:(?=[ \t]*set?[ \t][^\r\n:]+:)|:(?![ \t]*set?[ \t]))(?:(?:[ \t]*:[ \t]*|[ \t])\w*(?:[ \t]*=(?:[^\\\s]|\\.)*)?)*[ \t:](?:filetype|ft|syntax)[ \t]*=(help)(?=$|\s|:)"#).unwrap();
     static ref VIM_SCRIPT_1: Regex = Regex::new(r#"^UseVimball"#).unwrap();
     static ref V_1: Regex = Regex::new(r#"\$(?:if|else)[ \t]|^[ \t]*fn\s+[^\s()]+\(.*?\).*?\{|^[ \t]*for\s*\{"#).unwrap();
     static ref WORLD_OF_WARCRAFT_ADDON_DATA_1: Regex = Regex::new(r#"^## |@no-lib-strip@"#).unwrap();

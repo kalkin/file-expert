@@ -6165,6 +6165,7 @@ Verilog:
 Vim Help File:
   type: prose
   aliases:
+  - help
   - vimhelp
   extensions:
   - ".txt"

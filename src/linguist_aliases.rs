@@ -515,6 +515,7 @@ lazy_static! {
             "valve data format".to_string(),
             "Valve Data Format".to_string()
         ),
+        ("help".to_string(), "Vim Help File".to_string()),
         ("vimhelp".to_string(), "Vim Help File".to_string()),
         ("vim help file".to_string(), "Vim Help File".to_string()),
         ("SnipMate".to_string(), "Vim Snippet".to_string()),

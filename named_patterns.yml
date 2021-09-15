@@ -201,9 +201,7 @@ UNIX_ASSEMBLY_1: ^\s*\.(?:include\s|globa?l\s|[A-Za-z][_A-Za-z0-9]*:)
 VERILOG_1: ^[ \t]*module\s+[^\s()]+\s+\#?\(|^[ \t]*`(?:define|ifdef|ifndef|include|timescale)|^[
   \t]*always[ \t]+@|^[ \t]*initial[ \t]+(begin|@)
 VBA_1: ^\s*End\s+(?:If|Sub|Function|Select|Enum|Property)
-VIM_HELP_FILE_1: (?:(?:[ \t]|^)vi(?:m[<=>]?\d+|m)?|[ \t]ex)(?=:(?=[ \t]*set?[ \t][^\n:]+:)|:(?![
-  \t]* set?[ \t]))(?:(?:[ \t]|[ \t]*:[ \t]*)\w*(?:[ \t]*=(?:[^\\[ \t]]|\\.)*)?)*[[
-  \t]:](?:filetype|ft|syntax)[ \t]*=help(?=[ \t]|:|$)
+VIM_HELP_FILE_1: '(?:(?:^|[ \t])(?:vi|Vi(?=m))(?:m[<=>]?[0-9]+|m)?|[ \t]ex)(?=:(?=[ \t]*set?[ \t][^\r\n:]+:)|:(?![ \t]*set?[ \t]))(?:(?:[ \t]*:[ \t]*|[ \t])\w*(?:[ \t]*=(?:[^\\\s]|\\.)*)?)*[ \t:](?:filetype|ft|syntax)[ \t]*=(help)(?=$|\s|:)'
 VIM_SCRIPT_1: ^UseVimball
 V_1: \$(?:if|else)[ \t]|^[ \t]*fn\s+[^\s()]+\(.*?\).*?\{|^[ \t]*for\s*\{
 WORLD_OF_WARCRAFT_ADDON_DATA_1: ^## |@no-lib-strip@
