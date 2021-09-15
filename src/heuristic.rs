@@ -70,7 +70,13 @@ pub fn guess_by_modeline(modelines: &[String]) -> Option<&'static String> {
     for line in modelines {
         if let Some(alias) = modeline::parse(line) {
             if ALIASES.contains_key(alias) {
-                return ALIASES.get(alias);
+                if let Some(result) = ALIASES.get(alias) {
+                    // WORKAROUND: Vimball files modeline will not reflect their filetype.
+                    if result == "Vim Help File" && modelines.iter().any(|x| x == "UseVimball") {
+                        return ALIASES.get("vim script");
+                    }
+                    return Some(result);
+                }
             }
         }
     }
