@@ -450,6 +450,8 @@ lazy_static! {
         ("rb".to_string(), "Ruby".to_string()),
         ("rbx".to_string(), "Ruby".to_string()),
         ("ruby".to_string(), "Ruby".to_string()),
+        ("rs".to_string(), "Rust".to_string()),
+        ("rust".to_string(), "Rust".to_string()),
         ("saltstate".to_string(), "SaltStack".to_string()),
         ("salt".to_string(), "SaltStack".to_string()),
         ("saltstack".to_string(), "SaltStack".to_string()),

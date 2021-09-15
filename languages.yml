@@ -5066,6 +5066,8 @@ Ruby:
   language_id: 326
 Rust:
   type: programming
+  aliases:
+    - rs
   color: "#dea584"
   extensions:
   - ".rs"
