@@ -87,6 +87,7 @@ lazy_static! {
         ("ROOT".to_string(), "Isabelle ROOT".to_string()),
         (".arcconfig".to_string(), "JSON".to_string()),
         (".htmlhintrc".to_string(), "JSON".to_string()),
+        (".imgbotconfig".to_string(), "JSON".to_string()),
         (".tern-config".to_string(), "JSON".to_string()),
         (".tern-project".to_string(), "JSON".to_string()),
         (".watchmanconfig".to_string(), "JSON".to_string()),

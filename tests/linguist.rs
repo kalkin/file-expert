@@ -15046,7 +15046,7 @@ mod json {
 
     #[test]
     fn test_16() {
-        let path = Path::new(&"./samples/JSON/product.json");
+        let path = Path::new(&"./samples/JSON/filenames/.imgbotconfig");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
         assert_eq!(actual, expected);
@@ -15054,7 +15054,7 @@ mod json {
 
     #[test]
     fn test_17() {
-        let path = Path::new(&"./samples/JSON/manifest.webapp");
+        let path = Path::new(&"./samples/JSON/product.json");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
         assert_eq!(actual, expected);
@@ -15062,7 +15062,7 @@ mod json {
 
     #[test]
     fn test_18() {
-        let path = Path::new(&"./samples/JSON/terraform.tfstate.backup");
+        let path = Path::new(&"./samples/JSON/manifest.webapp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
         assert_eq!(actual, expected);
@@ -15070,7 +15070,7 @@ mod json {
 
     #[test]
     fn test_19() {
-        let path = Path::new(&"./samples/JSON/small.tfstate");
+        let path = Path::new(&"./samples/JSON/terraform.tfstate.backup");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
         assert_eq!(actual, expected);
@@ -15078,7 +15078,7 @@ mod json {
 
     #[test]
     fn test_20() {
-        let path = Path::new(&"./samples/JSON/Material_Alpha_01.gltf");
+        let path = Path::new(&"./samples/JSON/small.tfstate");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
         assert_eq!(actual, expected);
@@ -15086,7 +15086,7 @@ mod json {
 
     #[test]
     fn test_21() {
-        let path = Path::new(&"./samples/JSON/GMS2_Project.yyp");
+        let path = Path::new(&"./samples/JSON/Material_Alpha_01.gltf");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
         assert_eq!(actual, expected);
@@ -15094,7 +15094,7 @@ mod json {
 
     #[test]
     fn test_22() {
-        let path = Path::new(&"./samples/JSON/http_response.avsc");
+        let path = Path::new(&"./samples/JSON/GMS2_Project.yyp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
         assert_eq!(actual, expected);
@@ -15102,7 +15102,7 @@ mod json {
 
     #[test]
     fn test_23() {
-        let path = Path::new(&"./samples/JSON/schema.json");
+        let path = Path::new(&"./samples/JSON/http_response.avsc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
         assert_eq!(actual, expected);
@@ -15110,6 +15110,14 @@ mod json {
 
     #[test]
     fn test_24() {
+        let path = Path::new(&"./samples/JSON/schema.json");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_25() {
         let path = Path::new(&"./samples/JSON/pack.mcmeta");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
