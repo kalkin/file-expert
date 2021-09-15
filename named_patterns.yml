@@ -39,7 +39,9 @@ FAUST_1: \bprocess\s*[(=]|\b(library|import)\s*\(\s*"|\bdeclare\s+(name|version|
 FILEBENCH_WML_1: flowop
 FILTERSCRIPT_1: '#include|#pragma\s+(rs|version)|__attribute__'
 FLUX_1: ^\s*(typedef|atomic)\b
+FLUENT: '^-?[a-zA-Z][a-zA-Z0-9_-]* *=|\{\$-?[a-zA-Z][-\w]*(?:\.[a-zA-Z][-\w]*)?\}'
 FREE_BASIC: ^[ \t]*#(?:define|endif|endmacro|ifn?def|if|include|lang|macro)\s
+FREE_MARKER: '^(?:<|[a-zA-Z-][a-zA-Z0-9_-]+[ \t]+\w)|\${\w+[^\n]*?}|^[ \t]*(?:<#--.*?-->|<#([a-z]+)(?=\s|>)[^>]*>.*?</#\1>|\[#--.*?--\]|\[#([a-z]+)(?=\s|\])[^\]]*\].*?\[#\2\])'
 FORTH_1: '^: '
 FORTH_2: '^: '
 FORTH_3: '^(: |also |new-device|previous )'

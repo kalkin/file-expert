@@ -342,6 +342,15 @@
     or:
     - FILTERSCRIPT_1
 - extensions:
+  - .ftl
+  rules:
+  - language: FreeMarker
+    or:
+    - FREE_MARKER
+  - language: Fluent
+    or:
+    - FLUENT
+- extensions:
   - .fx
   rules:
     - language: FLUX

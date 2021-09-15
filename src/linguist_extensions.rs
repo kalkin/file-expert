@@ -252,7 +252,6 @@ lazy_static! {
         (".f08".to_string(), "Fortran Free Form".to_string()),
         (".f95".to_string(), "Fortran Free Form".to_string()),
         (".bi".to_string(), "FreeBasic".to_string()),
-        (".ftl".to_string(), "FreeMarker".to_string()),
         (".fut".to_string(), "Futhark".to_string()),
         (".cnc".to_string(), "G-code".to_string()),
         (".gco".to_string(), "G-code".to_string()),

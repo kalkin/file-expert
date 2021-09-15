@@ -61,7 +61,9 @@ lazy_static! {
     static ref FILEBENCH_WML_1: Regex = Regex::new(r#"flowop"#).unwrap();
     static ref FILTERSCRIPT_1: Regex = Regex::new(r#"#include|#pragma\s+(rs|version)|__attribute__"#).unwrap();
     static ref FLUX_1: Regex = Regex::new(r#"^\s*(typedef|atomic)\b"#).unwrap();
+    static ref FLUENT: Regex = Regex::new(r#"^-?[a-zA-Z][a-zA-Z0-9_-]* *=|\{\$-?[a-zA-Z][-\w]*(?:\.[a-zA-Z][-\w]*)?\}"#).unwrap();
     static ref FREE_BASIC: Regex = Regex::new(r#"^[ \t]*#(?:define|endif|endmacro|ifn?def|if|include|lang|macro)\s"#).unwrap();
+    static ref FREE_MARKER: Regex = Regex::new(r#"^(?:<|[a-zA-Z-][a-zA-Z0-9_-]+[ \t]+\w)|\${\w+[^\n]*?}|^[ \t]*(?:<#--.*?-->|<#([a-z]+)(?=\s|>)[^>]*>.*?</#\1>|\[#--.*?--\]|\[#([a-z]+)(?=\s|\])[^\]]*\].*?\[#\2\])"#).unwrap();
     static ref FORTH_1: Regex = Regex::new(r#"^: "#).unwrap();
     static ref FORTH_2: Regex = Regex::new(r#"^: "#).unwrap();
     static ref FORTH_3: Regex = Regex::new(r#"^(: |also |new-device|previous )"#).unwrap();
@@ -554,6 +556,15 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
                 Some("GLSL")
             } else if match_lines(&FILTERSCRIPT_1, content) {
                 Some("Filterscript")
+            } else {
+                None
+            }
+        }
+        ".ftl" => {
+            if match_lines(&FREE_MARKER, content) {
+                Some("FreeMarker")
+            } else if match_lines(&FLUENT, content) {
+                Some("Fluent")
             } else {
                 None
             }

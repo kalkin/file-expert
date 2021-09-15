@@ -934,6 +934,52 @@ mod kit {
     }
 }
 
+mod fluent {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Fluent/simple.ftl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Fluent".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Fluent/call_expressions.ftl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Fluent".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
+        let path = Path::new(&"./samples/Fluent/gecko_strings.ftl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Fluent".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_3() {
+        let path = Path::new(&"./samples/Fluent/select_indent.ftl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Fluent".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_4() {
+        let path = Path::new(&"./samples/Fluent/callee_expressions.ftl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Fluent".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod rpc {
     use file_expert::guess;
     use file_expert::Guess;
@@ -18563,6 +18609,20 @@ mod odin {
         let path = Path::new(&"./samples/Odin/sample.odin");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Odin".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
+mod valve_data_format {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Valve Data Format/gameinfo.vdf");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Valve Data Format".to_string());
         assert_eq!(actual, expected);
     }
 }
