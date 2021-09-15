@@ -103,6 +103,10 @@ lazy_static! {
         (".jshintrc".to_string(), "JSON with Comments".to_string()),
         (".jslintrc".to_string(), "JSON with Comments".to_string()),
         (
+            "api-extractor.json".to_string(),
+            "JSON with Comments".to_string()
+        ),
+        (
             "devcontainer.json".to_string(),
             "JSON with Comments".to_string()
         ),
