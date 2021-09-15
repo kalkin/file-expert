@@ -13826,6 +13826,28 @@ mod openstep_property_list {
     }
 }
 
+mod fennel {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Fennel/repl.fnl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Fennel".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Fennel/utils.fnl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Fennel".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod asn_dot_1 {
     use file_expert::guess;
     use file_expert::Guess;

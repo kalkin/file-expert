@@ -240,6 +240,7 @@ lazy_static! {
         (".fy".to_string(), "Fancy".to_string()),
         (".fancypack".to_string(), "Fancy".to_string()),
         (".fan".to_string(), "Fantom".to_string()),
+        (".fnl".to_string(), "Fennel".to_string()),
         (".eam.fs".to_string(), "Formatted".to_string()),
         (".fth".to_string(), "Forth".to_string()),
         (".4th".to_string(), "Forth".to_string()),

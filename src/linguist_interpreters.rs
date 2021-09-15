@@ -51,6 +51,7 @@ lazy_static! {
         ("rune".to_string(), "E".to_string()),
         ("elixir".to_string(), "Elixir".to_string()),
         ("escript".to_string(), "Erlang".to_string()),
+        ("fennel".to_string(), "Fennel".to_string()),
         ("gn".to_string(), "GN".to_string()),
         ("gerbv".to_string(), "Gerber Image".to_string()),
         ("gerbview".to_string(), "Gerber Image".to_string()),
