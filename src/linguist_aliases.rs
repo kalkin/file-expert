@@ -452,6 +452,12 @@ lazy_static! {
         ("ruby".to_string(), "Ruby".to_string()),
         ("rs".to_string(), "Rust".to_string()),
         ("rust".to_string(), "Rust".to_string()),
+        (
+            "SELinux Kernel Policy Language".to_string(),
+            "SELinux Policy".to_string()
+        ),
+        ("sepolicy".to_string(), "SELinux Policy".to_string()),
+        ("selinux policy".to_string(), "SELinux Policy".to_string()),
         ("saltstate".to_string(), "SaltStack".to_string()),
         ("salt".to_string(), "SaltStack".to_string()),
         ("saltstack".to_string(), "SaltStack".to_string()),
