@@ -6,7 +6,7 @@ License:        GPLv3
 
 URL:            https://github.com/kalkin/file-expert
 
-BuildRequires: cargo
+BuildRequires: cargo clippy rustfmt autoconf automake make
 
 %global debug_package %{nil}
 %define _builddir %(pwd)
