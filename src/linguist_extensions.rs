@@ -566,6 +566,7 @@ lazy_static! {
         (".m2".to_string(), "Macaulay2".to_string()),
         (".mak".to_string(), "Makefile".to_string()),
         (".make".to_string(), "Makefile".to_string()),
+        (".makefile".to_string(), "Makefile".to_string()),
         (".mk".to_string(), "Makefile".to_string()),
         (".mkfile".to_string(), "Makefile".to_string()),
         (".mako".to_string(), "Mako".to_string()),
