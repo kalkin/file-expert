@@ -921,6 +921,7 @@ lazy_static! {
         (".txl".to_string(), "TXL".to_string()),
         (".tcl".to_string(), "Tcl".to_string()),
         (".adp".to_string(), "Tcl".to_string()),
+        (".tcl.in".to_string(), "Tcl".to_string()),
         (".tm".to_string(), "Tcl".to_string()),
         (".tcsh".to_string(), "Tcsh".to_string()),
         (".csh".to_string(), "Tcsh".to_string()),

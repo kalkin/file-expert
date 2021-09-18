@@ -18705,7 +18705,7 @@ mod tcl {
 
     #[test]
     fn test_0() {
-        let path = Path::new(&"./samples/Tcl/filenames/owh");
+        let path = Path::new(&"./samples/Tcl/init.tcl.in");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Tcl".to_string());
         assert_eq!(actual, expected);
@@ -18713,7 +18713,7 @@ mod tcl {
 
     #[test]
     fn test_1() {
-        let path = Path::new(&"./samples/Tcl/filenames/starfield");
+        let path = Path::new(&"./samples/Tcl/filenames/owh");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Tcl".to_string());
         assert_eq!(actual, expected);
@@ -18721,7 +18721,7 @@ mod tcl {
 
     #[test]
     fn test_2() {
-        let path = Path::new(&"./samples/Tcl/stream-0.1.tm");
+        let path = Path::new(&"./samples/Tcl/filenames/starfield");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Tcl".to_string());
         assert_eq!(actual, expected);
@@ -18729,6 +18729,14 @@ mod tcl {
 
     #[test]
     fn test_3() {
+        let path = Path::new(&"./samples/Tcl/stream-0.1.tm");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Tcl".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_4() {
         let path = Path::new(&"./samples/Tcl/xdgbasedir-0.3.tm");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Tcl".to_string());
