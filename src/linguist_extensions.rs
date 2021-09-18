@@ -341,6 +341,7 @@ lazy_static! {
         (".fxh".to_string(), "HLSL".to_string()),
         (".hlsli".to_string(), "HLSL".to_string()),
         (".html".to_string(), "HTML".to_string()),
+        (".hta".to_string(), "HTML".to_string()),
         (".htm".to_string(), "HTML".to_string()),
         (".html.hl".to_string(), "HTML".to_string()),
         (".xht".to_string(), "HTML".to_string()),

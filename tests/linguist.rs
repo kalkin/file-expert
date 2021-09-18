@@ -1077,7 +1077,7 @@ mod html {
 
     #[test]
     fn test_3() {
-        let path = Path::new(&"./samples/HTML/pkgdown.html");
+        let path = Path::new(&"./samples/HTML/Crear_logo.hta");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("HTML".to_string());
         assert_eq!(actual, expected);
@@ -1085,7 +1085,7 @@ mod html {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/HTML/pages.html");
+        let path = Path::new(&"./samples/HTML/pkgdown.html");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("HTML".to_string());
         assert_eq!(actual, expected);
