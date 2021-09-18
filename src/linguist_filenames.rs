@@ -77,6 +77,7 @@ lazy_static! {
         (".eleventyignore".to_string(), "Ignore List".to_string()),
         (".eslintignore".to_string(), "Ignore List".to_string()),
         (".gitignore".to_string(), "Ignore List".to_string()),
+        (".markdownlintignore".to_string(), "Ignore List".to_string()),
         (".nodemonignore".to_string(), "Ignore List".to_string()),
         (".npmignore".to_string(), "Ignore List".to_string()),
         (".prettierignore".to_string(), "Ignore List".to_string()),

@@ -307,7 +307,7 @@ mod ignore_list {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.cvsignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.markdownlintignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -315,7 +315,7 @@ mod ignore_list {
 
     #[test]
     fn test_5() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.bzrignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.cvsignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -323,7 +323,7 @@ mod ignore_list {
 
     #[test]
     fn test_6() {
-        let path = Path::new(&"./samples/Ignore List/filenames/gitignore_global");
+        let path = Path::new(&"./samples/Ignore List/filenames/.bzrignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -331,7 +331,7 @@ mod ignore_list {
 
     #[test]
     fn test_7() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.nodemonignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/gitignore_global");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -339,7 +339,7 @@ mod ignore_list {
 
     #[test]
     fn test_8() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.dockerignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.nodemonignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -347,7 +347,7 @@ mod ignore_list {
 
     #[test]
     fn test_9() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.eleventyignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.dockerignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -355,7 +355,7 @@ mod ignore_list {
 
     #[test]
     fn test_10() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.npmignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.eleventyignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -363,7 +363,7 @@ mod ignore_list {
 
     #[test]
     fn test_11() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.vscodeignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.npmignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -371,7 +371,7 @@ mod ignore_list {
 
     #[test]
     fn test_12() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.prettierignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.vscodeignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -379,7 +379,7 @@ mod ignore_list {
 
     #[test]
     fn test_13() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.eslintignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.prettierignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -387,7 +387,7 @@ mod ignore_list {
 
     #[test]
     fn test_14() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.atomignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.eslintignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -395,7 +395,7 @@ mod ignore_list {
 
     #[test]
     fn test_15() {
-        let path = Path::new(&"./samples/Ignore List/filenames/.babelignore");
+        let path = Path::new(&"./samples/Ignore List/filenames/.atomignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
         assert_eq!(actual, expected);
@@ -403,6 +403,14 @@ mod ignore_list {
 
     #[test]
     fn test_16() {
+        let path = Path::new(&"./samples/Ignore List/filenames/.babelignore");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ignore List".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_17() {
         let path = Path::new(&"./samples/Ignore List/filenames/.stylelintignore");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ignore List".to_string());
