@@ -267,6 +267,9 @@ lazy_static! {
         ),
         ("ksy".to_string(), "Kaitai Struct".to_string()),
         ("kaitai struct".to_string(), "Kaitai Struct".to_string()),
+        ("kak".to_string(), "KakouneScript".to_string()),
+        ("kakscript".to_string(), "KakouneScript".to_string()),
+        ("kakounescript".to_string(), "KakouneScript".to_string()),
         ("pcbnew".to_string(), "KiCad Layout".to_string()),
         ("kicad layout".to_string(), "KiCad Layout".to_string()),
         (

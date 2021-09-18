@@ -498,6 +498,7 @@ lazy_static! {
         (".ipynb".to_string(), "Jupyter Notebook".to_string()),
         (".krl".to_string(), "KRL".to_string()),
         (".ksy".to_string(), "Kaitai Struct".to_string()),
+        (".kak".to_string(), "KakouneScript".to_string()),
         (".kicad_pcb".to_string(), "KiCad Layout".to_string()),
         (".kicad_mod".to_string(), "KiCad Layout".to_string()),
         (".kicad_wks".to_string(), "KiCad Layout".to_string()),

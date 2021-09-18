@@ -4019,6 +4019,36 @@ mod freemarker {
     }
 }
 
+mod kakounescript {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/KakouneScript/doc.kak");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("KakouneScript".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/KakouneScript/filenames/kakrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("KakouneScript".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
+        let path = Path::new(&"./samples/KakouneScript/c-family.kak");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("KakouneScript".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod ren_quote_py {
     use file_expert::guess;
     use file_expert::Guess;

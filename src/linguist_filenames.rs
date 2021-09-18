@@ -125,6 +125,7 @@ lazy_static! {
         ("tslint.json".to_string(), "JSON with Comments".to_string()),
         ("Jakefile".to_string(), "JavaScript".to_string()),
         ("Notebook".to_string(), "Jupyter Notebook".to_string()),
+        ("kakrc".to_string(), "KakouneScript".to_string()),
         ("fp-lib-table".to_string(), "KiCad Layout".to_string()),
         ("Lexer.x".to_string(), "Lex".to_string()),
         ("lexer.x".to_string(), "Lex".to_string()),
