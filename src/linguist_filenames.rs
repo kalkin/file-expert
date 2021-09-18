@@ -86,6 +86,7 @@ lazy_static! {
         ("gitignore-global".to_string(), "Ignore List".to_string()),
         ("gitignore_global".to_string(), "Ignore List".to_string()),
         ("ROOT".to_string(), "Isabelle ROOT".to_string()),
+        ("MANIFEST.MF".to_string(), "JAR Manifest".to_string()),
         (".arcconfig".to_string(), "JSON".to_string()),
         (".auto-changelog".to_string(), "JSON".to_string()),
         (".c8rc".to_string(), "JSON".to_string()),
