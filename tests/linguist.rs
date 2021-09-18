@@ -1093,6 +1093,22 @@ mod html {
 
     #[test]
     fn test_5() {
+        let path = Path::new(&"./samples/HTML/wehaveoddjobs.hta");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("HTML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_6() {
+        let path = Path::new(&"./samples/HTML/pages.html");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("HTML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_7() {
         let path = Path::new(&"./samples/HTML/index.html.hl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("HTML".to_string());
@@ -2491,6 +2507,20 @@ mod red {
         let path = Path::new(&"./samples/Red/example.reds");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Red".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
+mod go_checksums {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Go Checksums/filenames/go.sum");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Go Checksums".to_string());
         assert_eq!(actual, expected);
     }
 }
@@ -6865,6 +6895,20 @@ mod assembly {
         let path = Path::new(&"./samples/Assembly/forth.nasm");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Assembly".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
+mod go_module {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Go Module/filenames/go.mod");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Go Module".to_string());
         assert_eq!(actual, expected);
     }
 }

@@ -184,6 +184,12 @@ lazy_static! {
         ("git config".to_string(), "Git Config".to_string()),
         ("golang".to_string(), "Go".to_string()),
         ("go".to_string(), "Go".to_string()),
+        ("go.sum".to_string(), "Go Checksums".to_string()),
+        ("go sum".to_string(), "Go Checksums".to_string()),
+        ("go checksums".to_string(), "Go Checksums".to_string()),
+        ("go.mod".to_string(), "Go Module".to_string()),
+        ("go mod".to_string(), "Go Module".to_string()),
+        ("go module".to_string(), "Go Module".to_string()),
         ("gf".to_string(), "Grammatical Framework".to_string()),
         (
             "grammatical framework".to_string(),
