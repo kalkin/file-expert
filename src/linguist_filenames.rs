@@ -302,7 +302,6 @@ lazy_static! {
         ("LICENSE.mysql".to_string(), "Text".to_string()),
         ("NEWS".to_string(), "Text".to_string()),
         ("README".to_string(), "Text".to_string()),
-        ("README.1ST".to_string(), "Text".to_string()),
         ("README.me".to_string(), "Text".to_string()),
         ("README.mysql".to_string(), "Text".to_string()),
         ("README.nss".to_string(), "Text".to_string()),
