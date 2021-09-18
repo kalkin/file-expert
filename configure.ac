@@ -13,6 +13,13 @@ if test x"${CARGO}" = x""; then
     AC_MSG_ERROR([Please install cargo])
 fi
 
+AC_CACHE_CHECK([for php with yaml support], [ac_cv_path_PHP],
+AC_PATH_PROGS_FEATURE_CHECK([PHP], [php],
+    [[php -r 'yaml_parse("");' \
+        && ac_cv_path_PHP="$ac_path_PHP" ac_path_PHP_found=:]],
+    [AC_MSG_ERROR([Please install php with yaml support (I'm sorry)])]))
+AC_SUBST([PHP], [$ac_cv_path_PHP])
+
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
 

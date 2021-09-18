@@ -7,6 +7,7 @@ License:        GPLv3
 URL:            https://github.com/kalkin/file-expert
 
 BuildRequires: cargo clippy rustfmt autoconf automake make
+BuildRequires: php php-pecl-yaml
 
 %global debug_package %{nil}
 %define _builddir %(pwd)

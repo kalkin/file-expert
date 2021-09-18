@@ -23,14 +23,17 @@ define RUN_CARGO
 $(if $(findstring n,$(filter-out --%, $(MAKEFLAGS))),,+)$(call V_TOOL,CARGO,,$(1)) $(CARGO) $(1) $(CARGO_BUILD_FLAGS)
 endef
 
-EXTRA_DIST = named_patterns.yml languages.yml heuristics.yml @BKG_RPM_SPECFILE@.in
+YAML_FILES = named_patterns.yml languages.yml heuristics.yml skipped.yml
+
+EXTRA_DIST = $(YAML_FILES) @BKG_RPM_SPECFILE@.in
 EXTRA_DIST += $(shell find @srcdir@/src -name *.php)
 
+.PHONY: generate-files
 generate-files: tests/linguist.rs src/linguist_heuristics.rs
 generate-files: src/linguist_extensions.rs src/linguist_interpreters.rs
 generate-files: src/linguist_aliases.rs src/linguist_filenames.rs
 
-src/%.rs: src/%.rs.php
+%.rs: %.rs.php $(YAML_FILES)
 	$< > $@
 	rustfmt $@
 
