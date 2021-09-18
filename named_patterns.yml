@@ -185,6 +185,9 @@ SMALLTALK_2: '\A\s*[\[{(^"''\w#]|[a-zA-Z_]\w*\s*:=\s*[a-zA-Z_]\w*|class\s*>>\s*[
 SMALLTALK_1: '![\w\s]+methodsFor: '
 SOLIDITY_1: \bpragma\s+solidity\b|\b(?:abstract\s+)?contract\s+(?!\d)[a-zA-Z0-9$_]+(?:\s+is\s+(?:[a-zA-Z0-9$_][^\{]*?)?)?\s*\{
 SOURCEPAWN_1: ^public\s+(?:SharedPlugin(?:\s+|:)__pl_\w+\s*=(?:\s*{)?|(?:void\s+)?__pl_\w+_SetNTVOptional\(\)(?:\s*{)?)
+SOURCEPAWN_2: '^methodmap\s+\w+\s+<\s+\w+'
+SOURCEPAWN_3: '^\s*MarkNativeAsOptional\s*\('
+
 SQLPL_1: (?i:ALTER\s+MODULE|MODE\s+DB2SQL|\bSYS(CAT|PROC)\.|ASSOCIATE\s+RESULT\s+SET|\bEND!\s*$)
 STANDARD_ML_1: => |case\s+(\S+\s)+of
 STRING_TEMPLATE : '\$\w+[($]|(.)!\s*.+?\s*!\1|<!\s*.+?\s*!>|\[!\s*.+?\s*!\]|\{!\s*.+?\s*!\}'

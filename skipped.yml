@@ -17,8 +17,6 @@ Perl:
   - test-perl2.pl
 PLSQL:
   - print_bool.prc
-SourcePawn:
-  - mfile.inc
 SQL:
   - hostcache_set_state.inc
 SuperCollider:

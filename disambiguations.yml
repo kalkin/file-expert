@@ -488,6 +488,8 @@
   - language: SourcePawn
     or:
     - SOURCEPAWN_1
+    - SOURCEPAWN_2
+    - SOURCEPAWN_3
   - language: NASL
     or:
     - NASL_1

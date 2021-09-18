@@ -13455,7 +13455,7 @@ mod pawn {
 
     #[test]
     fn test_3() {
-        let path = Path::new(&"./samples/Pawn/Check.inc");
+        let path = Path::new(&"./samples/Pawn/mfile.inc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Pawn".to_string());
         assert_eq!(actual, expected);
@@ -13463,7 +13463,7 @@ mod pawn {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/Pawn/fixes.inc");
+        let path = Path::new(&"./samples/Pawn/Check.inc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Pawn".to_string());
         assert_eq!(actual, expected);
@@ -13471,6 +13471,14 @@ mod pawn {
 
     #[test]
     fn test_5() {
+        let path = Path::new(&"./samples/Pawn/fixes.inc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Pawn".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_6() {
         let path = Path::new(&"./samples/Pawn/foo.sma");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Pawn".to_string());
@@ -20122,10 +20130,17 @@ mod sourcepawn {
         assert_eq!(actual, expected);
     }
 
-    #[ignore]
     #[test]
     fn test_1() {
-        let path = Path::new(&"./samples/SourcePawn/mfile.inc");
+        let path = Path::new(&"./samples/SourcePawn/shavit.inc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("SourcePawn".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
+        let path = Path::new(&"./samples/SourcePawn/bhopstats.inc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("SourcePawn".to_string());
         assert_eq!(actual, expected);

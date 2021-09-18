@@ -205,6 +205,8 @@ lazy_static! {
     static ref SMALLTALK_1: Regex = Regex::new(r#"![\w\s]+methodsFor: "#).unwrap();
     static ref SOLIDITY_1: Regex = Regex::new(r#"\bpragma\s+solidity\b|\b(?:abstract\s+)?contract\s+(?!\d)[a-zA-Z0-9$_]+(?:\s+is\s+(?:[a-zA-Z0-9$_][^\{]*?)?)?\s*\{"#).unwrap();
     static ref SOURCEPAWN_1: Regex = Regex::new(r#"^public\s+(?:SharedPlugin(?:\s+|:)__pl_\w+\s*=(?:\s*{)?|(?:void\s+)?__pl_\w+_SetNTVOptional\(\)(?:\s*{)?)"#).unwrap();
+    static ref SOURCEPAWN_2: Regex = Regex::new(r#"^methodmap\s+\w+\s+<\s+\w+"#).unwrap();
+    static ref SOURCEPAWN_3: Regex = Regex::new(r#"^\s*MarkNativeAsOptional\s*\("#).unwrap();
     static ref SQLPL_1: Regex = Regex::new(r#"(?i:ALTER\s+MODULE|MODE\s+DB2SQL|\bSYS(CAT|PROC)\.|ASSOCIATE\s+RESULT\s+SET|\bEND!\s*$)"#).unwrap();
     static ref STANDARD_ML_1: Regex = Regex::new(r#"=> |case\s+(\S+\s)+of"#).unwrap();
     static ref STRING_TEMPLATE: Regex = Regex::new(r#"\$\w+[($]|(.)!\s*.+?\s*!\1|<!\s*.+?\s*!>|\[!\s*.+?\s*!\]|\{!\s*.+?\s*!\}"#).unwrap();
@@ -701,7 +703,10 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
                 Some("Motorola 68K Assembly")
             } else if match_lines(&PHP_1, content) {
                 Some("PHP")
-            } else if match_lines(&SOURCEPAWN_1, content) {
+            } else if match_lines(&SOURCEPAWN_1, content)
+                || match_lines(&SOURCEPAWN_2, content)
+                || match_lines(&SOURCEPAWN_3, content)
+            {
                 Some("SourcePawn")
             } else if match_lines(&NASL_1, content)
                 || match_lines(&NASL_2, content)
