@@ -83,7 +83,7 @@ AGS Script:
   extensions:
   - ".asc"
   - ".ash"
-  tm_scope: source.c++
+  tm_scope: source.nut
   ace_mode: c_cpp
   codemirror_mode: clike
   codemirror_mime_type: text/x-c++src
