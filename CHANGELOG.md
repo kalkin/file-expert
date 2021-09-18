@@ -5,6 +5,51 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - 2021-09-18
+
+### Added
+
+- Support Jest Snapshots (github/linguist#5567)
+- Support for Go Module and Go Checksum files (github/linguist#5504)
+- JAR Manifest file (github/linguist#5505)
+- `.markdownlintignore` to Ignore List filenames
+- `.tcl.in` file extension (github/linguist#5517)
+- Support `.makefile` extension (github/linguist#5526)
+- three JSON filenames (github/linguist#5496)
+- Astro language (github/linguist#5462)
+- Support for Kakoune Script (github/linguist#5058)
+- Extend Pascal heuristic (github/linguist#5143)
+- Shebang parser handle env arguments & variables
+- ".jav" to list of Java extensions (github/linguist#5397)
+- Fennel (#5441)
+- `.javascript` file extension (github/linguist#5414)
+- PEG.js language (github/linguist#5376)
+- support for Fluent, disambiguate from FreeMarker (github/linguist#5341)
+- Valve Data Format Language (github/linguist#5330)
+- @microsoft/api-extractor.json file to JSONC (github/linguist#5374)
+- imgbotconfig to JSON filenames (github/linguist#5375)
+- support for TextMate property files (github/linguist#5364)
+- Android.bp file language for Soong (github/linguist#5361)
+- SELinux Kernel Policy Language and Common Intermediate Language (github/linguist#5332)
+- support for CUE language & Cue Sheet (github/linguist#5312)
+- Android Interface Definition Language (github/linguist#5325)
+- rs alias for rust (github/linguist#5321)
+- Register `.hta` as an HTML extension (github/linguist#5533)
+
+### Changed
+
+- Remove duplicate README.1st (github/linguist#5504)
+- Capitalize Vim Script (github/linguist#5532)
+- Improve SourcePawn heuristics (github/linguist#5479)
+- Separate Cython from Python (github/linguist#5462)
+- Rename language entry for e-mail files (github/linguist#5437)
+- Add colors for Awk and regular expression source (github/linguist#5392)
+- Rename MediaWiki to Wikitext (github/linguist#5295)
+
+### Fixed
+
+- Handle VimBall files containing vim help modeline
+
 ## [v1.0.0-alpha.0] - 2021-09-06
 
 ### Changed
