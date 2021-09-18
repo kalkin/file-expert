@@ -2672,8 +2672,11 @@ JSON:
   - ".yyp"
   filenames:
   - ".arcconfig"
+  - ".auto-changelog"
+  - ".c8rc"
   - ".htmlhintrc"
   - ".imgbotconfig"
+  - ".nycrc"
   - ".tern-config"
   - ".tern-project"
   - ".watchmanconfig"
