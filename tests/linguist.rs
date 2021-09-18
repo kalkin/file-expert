@@ -6911,6 +6911,76 @@ mod fantom {
     }
 }
 
+mod vim_script {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Vim Script/filenames/.vimrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Vim Script".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Vim Script/filenames/.exrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Vim Script".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
+        let path = Path::new(&"./samples/Vim Script/filenames/_vimrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Vim Script".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_3() {
+        let path = Path::new(&"./samples/Vim Script/filenames/.nvimrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Vim Script".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_4() {
+        let path = Path::new(&"./samples/Vim Script/filenames/.gvimrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Vim Script".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_5() {
+        let path = Path::new(&"./samples/Vim Script/textobj-rubyblock.vba");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Vim Script".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_6() {
+        let path = Path::new(&"./samples/Vim Script/todo.vmb");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Vim Script".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_7() {
+        let path = Path::new(&"./samples/Vim Script/solarized.vim");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Vim Script".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod purescript {
     use file_expert::guess;
     use file_expert::Guess;
@@ -11130,76 +11200,6 @@ mod m {
         let path = Path::new(&"./samples/M/base64.m");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("M".to_string());
-        assert_eq!(actual, expected);
-    }
-}
-
-mod vim_script {
-    use file_expert::guess;
-    use file_expert::Guess;
-    use std::path::Path;
-
-    #[test]
-    fn test_0() {
-        let path = Path::new(&"./samples/Vim script/filenames/.vimrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Vim script".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_1() {
-        let path = Path::new(&"./samples/Vim script/filenames/.exrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Vim script".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_2() {
-        let path = Path::new(&"./samples/Vim script/filenames/_vimrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Vim script".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_3() {
-        let path = Path::new(&"./samples/Vim script/filenames/.nvimrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Vim script".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_4() {
-        let path = Path::new(&"./samples/Vim script/filenames/.gvimrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Vim script".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_5() {
-        let path = Path::new(&"./samples/Vim script/textobj-rubyblock.vba");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Vim script".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_6() {
-        let path = Path::new(&"./samples/Vim script/todo.vmb");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Vim script".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_7() {
-        let path = Path::new(&"./samples/Vim script/solarized.vim");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Vim script".to_string());
         assert_eq!(actual, expected);
     }
 }
