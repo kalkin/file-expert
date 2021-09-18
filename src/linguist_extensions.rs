@@ -69,6 +69,7 @@ lazy_static! {
         (".aj".to_string(), "AspectJ".to_string()),
         (".a51".to_string(), "Assembly".to_string()),
         (".nasm".to_string(), "Assembly".to_string()),
+        (".astro".to_string(), "Astro".to_string()),
         (".aug".to_string(), "Augeas".to_string()),
         (".ahk".to_string(), "AutoHotkey".to_string()),
         (".ahkl".to_string(), "AutoHotkey".to_string()),

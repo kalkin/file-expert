@@ -8675,6 +8675,20 @@ mod zephir {
     }
 }
 
+mod astro {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Astro/index.astro");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Astro".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod slim {
     use file_expert::guess;
     use file_expert::Guess;
