@@ -487,6 +487,7 @@ lazy_static! {
         (".xsjs".to_string(), "JavaScript".to_string()),
         (".xsjslib".to_string(), "JavaScript".to_string()),
         (".js.erb".to_string(), "JavaScript+ERB".to_string()),
+        (".snap".to_string(), "Jest Snapshot".to_string()),
         (".jinja".to_string(), "Jinja".to_string()),
         (".j2".to_string(), "Jinja".to_string()),
         (".jinja2".to_string(), "Jinja".to_string()),

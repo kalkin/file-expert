@@ -11270,6 +11270,20 @@ mod m {
     }
 }
 
+mod jest_snapshot {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Jest Snapshot/css.test.tsx.snap");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Jest Snapshot".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod blitzmax {
     use file_expert::guess;
     use file_expert::Guess;
