@@ -30,31 +30,7 @@ generate-files: tests/linguist.rs src/linguist_heuristics.rs
 generate-files: src/linguist_extensions.rs src/linguist_interpreters.rs
 generate-files: src/linguist_aliases.rs src/linguist_filenames.rs
 
-%.rs: %.rs.php
-	$< > $@
-	rustfmt $@
-
-src/linguist_heuristics.rs: src/linguist_heuristics.rs.php disambiguations.yml named_patterns.yml
-	$< > $@
-	rustfmt $@
-
-src/linguist_extensions.rs: src/linguist_extensions.rs.php languages.yml
-	$< > $@
-	rustfmt $@
-
-src/linguist_interpreters.rs: src/linguist_interpreters.rs.php languages.yml
-	$< > $@
-	rustfmt $@
-
-src/linguist_aliases.rs: src/linguist_aliases.rs.php languages.yml
-	$< > $@
-	rustfmt $@
-
-src/linguist_filenames.rs: src/linguist_filenames.rs.php languages.yml
-	$< > $@
-	rustfmt $@
-
-tests/linguist.rs: tests/linguist.rs.php skipped.yml
+src/%.rs: src/%.rs.php
 	$< > $@
 	rustfmt $@
 
