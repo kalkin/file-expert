@@ -52,7 +52,13 @@ clean-local:
 	rm -rf target
 
 .PHONY: check-local
-check-local: rust-code-style rust-clippy
+check-local: rust-code-style rust-clippy rust-test
+
+.PHONY: rust-test
+rust-test: $(SOURCES)
+rust-test: $(if $(wildcard samples/*),tests/linguist.rs)
+	mkdir -p $(@D)
+	$(call RUN_CARGO,test)
 
 .PHONY: rust-clippy
 rust-clippy: $(SOURCES)
