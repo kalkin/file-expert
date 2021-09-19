@@ -1,7 +1,7 @@
 # file-expert
 
-An expert system for recognizing source code file types, similar to GitHub/linguist, but
-written in Rust.
+An expert system for recognizing source file, similar to
+[GitHub/linguist](https://github.com/github/linguist), but written in Rust.
 
 ## Usage
 
