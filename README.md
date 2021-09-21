@@ -41,21 +41,25 @@ run-tests       Shell
 transform.py    Python
 ```
 
-## Current State
-
-In production.
-
-## Getting Started
+## Installation
 
 ### Build Dependencies
 
 * cargo
 
-### Installation
+### Via Cargo
+
+`carg install file-expert`
+
+#### From Source
 
 ⒈ Checkout this repository `git clone https://github.com/kalkin/file-expert`.
 
 ⒉ Run `cargo install --path .` to build and install it.
+
+## Current State
+
+In production.
 
 ## Versioning
 
