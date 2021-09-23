@@ -32,3 +32,6 @@ include = [
 clap = { version="=3.0.0-beta.4", default-features=false, features=["std", "cargo"] }
 lazy_static = "1.4.0"
 fancy-regex = "^0.7"
+
+[profile.release]
+lto = "fat"
