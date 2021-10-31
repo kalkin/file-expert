@@ -40,6 +40,7 @@ lazy_static! {
             "Cloud Firestore Security Rules".to_string()
         ),
         ("Cakefile".to_string(), "CoffeeScript".to_string()),
+        ("Containerfile".to_string(), "Dockerfile".to_string()),
         ("Dockerfile".to_string(), "Dockerfile".to_string()),
         (".editorconfig".to_string(), "EditorConfig".to_string()),
         ("mix.lock".to_string(), "Elixir".to_string()),

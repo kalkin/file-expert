@@ -241,6 +241,7 @@ lazy_static! {
         ("udiff".to_string(), "Diff".to_string()),
         ("directx 3d file".to_string(), "DirectX 3D File".to_string()),
         ("dockerfile".to_string(), "Dockerfile".to_string()),
+        ("Containerfile".to_string(), "Dockerfile".to_string()),
         ("dogescript".to_string(), "Dogescript".to_string()),
         ("dylan".to_string(), "Dylan".to_string()),
         ("e".to_string(), "E".to_string()),
