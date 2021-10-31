@@ -54,7 +54,10 @@ if ($handle = opendir($SAMPLES_DIR)) {
 } else {
     print("Failed to open samples dir: $SAMPLES_DIR\n");
     exit(1);
-}?>
+}
+
+sort($types);
+?>
 //
 // Copyright (c) 2018-2020 Bahtiar `kalkin-` Gadimov.
 //
