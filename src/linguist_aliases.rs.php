@@ -5,6 +5,11 @@ $LANGUAGES = yaml_parse_file($LANGUAGES_FILE);
 
 $ALIAS_TO_LANG = [];
 foreach ($LANGUAGES as $lang => $data) {
+    $lowerCaseAlias = strtolower($lang);
+    if ($lowerCaseAlias !== $lang) {
+        $ALIAS_TO_LANG[$lowerCaseAlias] = $lang;
+    }
+
     if (!isset($data['aliases'])) {
         continue;
     }
@@ -15,7 +20,6 @@ foreach ($LANGUAGES as $lang => $data) {
         }
         $ALIAS_TO_LANG[$alias] = $lang;
     }
-    $ALIAS_TO_LANG[strtolower($lang)] = $lang;
 }
 ?>
 //
