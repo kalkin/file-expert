@@ -21,7 +21,7 @@ use lazy_static::lazy_static;
 use std::collections::HashMap;
 
 lazy_static! {
-    pub static ref ALIASES: HashMap<String, String> = [
+    pub static ref MODELINE_ALIASES: HashMap<String, String> = [
         ("ags".to_string(), "AGS Script".to_string()),
         ("ags script".to_string(), "AGS Script".to_string()),
         ("aspx".to_string(), "ASP.NET".to_string()),

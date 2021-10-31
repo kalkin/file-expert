@@ -17,7 +17,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 //
-use crate::linguist_aliases::ALIASES;
+use crate::linguist_aliases::MODELINE_ALIASES;
 use crate::linguist_extensions::EXTENSIONS;
 use crate::linguist_filenames::FILENAMES;
 use crate::linguist_heuristics::linguist_heuristic;
@@ -69,11 +69,11 @@ pub fn guess_by_interpreter(body: &[String]) -> Option<&'static String> {
 pub fn guess_by_modeline(modelines: &[String]) -> Option<&'static String> {
     for line in modelines {
         if let Some(alias) = modeline::parse(line) {
-            if ALIASES.contains_key(alias) {
-                if let Some(result) = ALIASES.get(alias) {
+            if MODELINE_ALIASES.contains_key(alias) {
+                if let Some(result) = MODELINE_ALIASES.get(alias) {
                     // WORKAROUND: Vimball files modeline will not reflect their filetype.
                     if result == "Vim Help File" && modelines.iter().any(|x| x == "UseVimball") {
-                        return ALIASES.get("vim script");
+                        return MODELINE_ALIASES.get("vim script");
                     }
                     return Some(result);
                 }
