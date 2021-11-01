@@ -2439,14 +2439,6 @@ mod cmake {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/CMake/filenames/CMakeLists.txt");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("CMake".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_5() {
         let path = Path::new(&"./samples/CMake/sample2.cmake");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("CMake".to_string());
@@ -2454,8 +2446,16 @@ mod cmake {
     }
 
     #[test]
-    fn test_6() {
+    fn test_5() {
         let path = Path::new(&"./samples/CMake/sample1.cmake");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("CMake".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_6() {
+        let path = Path::new(&"./samples/CMake/filenames/CMakeLists.txt");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("CMake".to_string());
         assert_eq!(actual, expected);
@@ -4639,38 +4639,6 @@ mod erlang {
 
     #[test]
     fn test_6() {
-        let path = Path::new(&"./samples/Erlang/filenames/rebar.config.lock");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Erlang".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_7() {
-        let path = Path::new(&"./samples/Erlang/filenames/Emakefile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Erlang".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_8() {
-        let path = Path::new(&"./samples/Erlang/filenames/rebar.config");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Erlang".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_9() {
-        let path = Path::new(&"./samples/Erlang/filenames/rebar.lock");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Erlang".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_10() {
         let path = Path::new(&"./samples/Erlang/single-context.es");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Erlang".to_string());
@@ -4678,7 +4646,7 @@ mod erlang {
     }
 
     #[test]
-    fn test_11() {
+    fn test_7() {
         let path = Path::new(&"./samples/Erlang/170-os-daemons.es");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Erlang".to_string());
@@ -4686,7 +4654,7 @@ mod erlang {
     }
 
     #[test]
-    fn test_12() {
+    fn test_8() {
         let path = Path::new(&"./samples/Erlang/factorial");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Erlang".to_string());
@@ -4694,8 +4662,40 @@ mod erlang {
     }
 
     #[test]
-    fn test_13() {
+    fn test_9() {
         let path = Path::new(&"./samples/Erlang/lfe_scan.xrl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Erlang".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_10() {
+        let path = Path::new(&"./samples/Erlang/filenames/rebar.config.lock");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Erlang".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_11() {
+        let path = Path::new(&"./samples/Erlang/filenames/Emakefile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Erlang".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_12() {
+        let path = Path::new(&"./samples/Erlang/filenames/rebar.config");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Erlang".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_13() {
+        let path = Path::new(&"./samples/Erlang/filenames/rebar.lock");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Erlang".to_string());
         assert_eq!(actual, expected);
@@ -5753,14 +5753,6 @@ mod gn {
 
     #[test]
     fn test_5() {
-        let path = Path::new(&"./samples/GN/filenames/.gn");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("GN".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_6() {
         let path = Path::new(&"./samples/GN/android-rules.gni");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GN".to_string());
@@ -5768,7 +5760,7 @@ mod gn {
     }
 
     #[test]
-    fn test_7() {
+    fn test_6() {
         let path = Path::new(&"./samples/GN/ios-rules.gni");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GN".to_string());
@@ -5776,7 +5768,7 @@ mod gn {
     }
 
     #[test]
-    fn test_8() {
+    fn test_7() {
         let path = Path::new(&"./samples/GN/icu.gn");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GN".to_string());
@@ -5784,7 +5776,7 @@ mod gn {
     }
 
     #[test]
-    fn test_9() {
+    fn test_8() {
         let path = Path::new(&"./samples/GN/gcc_toolchain.gni");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GN".to_string());
@@ -5792,8 +5784,16 @@ mod gn {
     }
 
     #[test]
-    fn test_10() {
+    fn test_9() {
         let path = Path::new(&"./samples/GN/BUILD.3.gn");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("GN".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_10() {
+        let path = Path::new(&"./samples/GN/filenames/.gn");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GN".to_string());
         assert_eq!(actual, expected);
@@ -6139,7 +6139,7 @@ mod git_config {
 
     #[test]
     fn test_0() {
-        let path = Path::new(&"./samples/Git Config/filenames/.gitmodules");
+        let path = Path::new(&"./samples/Git Config/aliases.gitconfig");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Git Config".to_string());
         assert_eq!(actual, expected);
@@ -6147,7 +6147,7 @@ mod git_config {
 
     #[test]
     fn test_1() {
-        let path = Path::new(&"./samples/Git Config/filenames/.gitconfig");
+        let path = Path::new(&"./samples/Git Config/filenames/.gitmodules");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Git Config".to_string());
         assert_eq!(actual, expected);
@@ -6155,7 +6155,7 @@ mod git_config {
 
     #[test]
     fn test_2() {
-        let path = Path::new(&"./samples/Git Config/aliases.gitconfig");
+        let path = Path::new(&"./samples/Git Config/filenames/.gitconfig");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Git Config".to_string());
         assert_eq!(actual, expected);
@@ -7071,14 +7071,6 @@ mod groovy {
 
     #[test]
     fn test_3() {
-        let path = Path::new(&"./samples/Groovy/filenames/Jenkinsfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Groovy".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_4() {
         let path = Path::new(&"./samples/Groovy/template.grt");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Groovy".to_string());
@@ -7086,8 +7078,16 @@ mod groovy {
     }
 
     #[test]
-    fn test_5() {
+    fn test_4() {
         let path = Path::new(&"./samples/Groovy/build.gvy");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Groovy".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_5() {
+        let path = Path::new(&"./samples/Groovy/filenames/Jenkinsfile");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Groovy".to_string());
         assert_eq!(actual, expected);
@@ -8061,14 +8061,6 @@ mod ini {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/INI/filenames/buildozer.spec");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("INI".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_5() {
         let path = Path::new(&"./samples/INI/defaults.properties");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("INI".to_string());
@@ -8077,7 +8069,7 @@ mod ini {
 
     #[ignore]
     #[test]
-    fn test_6() {
+    fn test_5() {
         let path = Path::new(&"./samples/INI/ms.properties");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("INI".to_string());
@@ -8085,8 +8077,16 @@ mod ini {
     }
 
     #[test]
-    fn test_7() {
+    fn test_6() {
         let path = Path::new(&"./samples/INI/ultimate-temp-controller.pro");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("INI".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_7() {
+        let path = Path::new(&"./samples/INI/filenames/buildozer.spec");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("INI".to_string());
         assert_eq!(actual, expected);
@@ -8495,78 +8495,6 @@ mod json {
 
     #[test]
     fn test_8() {
-        let path = Path::new(&"./samples/JSON/filenames/.tern-project");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_9() {
-        let path = Path::new(&"./samples/JSON/filenames/.arcconfig");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_10() {
-        let path = Path::new(&"./samples/JSON/filenames/mcmod.info");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_11() {
-        let path = Path::new(&"./samples/JSON/filenames/.tern-config");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_12() {
-        let path = Path::new(&"./samples/JSON/filenames/composer.lock");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_13() {
-        let path = Path::new(&"./samples/JSON/filenames/.htmlhintrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_14() {
-        let path = Path::new(&"./samples/JSON/filenames/Pipfile.lock");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_15() {
-        let path = Path::new(&"./samples/JSON/filenames/.watchmanconfig");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_16() {
-        let path = Path::new(&"./samples/JSON/filenames/.imgbotconfig");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_17() {
         let path = Path::new(&"./samples/JSON/product.json");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
@@ -8574,7 +8502,7 @@ mod json {
     }
 
     #[test]
-    fn test_18() {
+    fn test_9() {
         let path = Path::new(&"./samples/JSON/manifest.webapp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
@@ -8582,7 +8510,7 @@ mod json {
     }
 
     #[test]
-    fn test_19() {
+    fn test_10() {
         let path = Path::new(&"./samples/JSON/terraform.tfstate.backup");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
@@ -8590,7 +8518,7 @@ mod json {
     }
 
     #[test]
-    fn test_20() {
+    fn test_11() {
         let path = Path::new(&"./samples/JSON/small.tfstate");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
@@ -8598,7 +8526,7 @@ mod json {
     }
 
     #[test]
-    fn test_21() {
+    fn test_12() {
         let path = Path::new(&"./samples/JSON/Material_Alpha_01.gltf");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
@@ -8606,7 +8534,7 @@ mod json {
     }
 
     #[test]
-    fn test_22() {
+    fn test_13() {
         let path = Path::new(&"./samples/JSON/GMS2_Project.yyp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
@@ -8614,7 +8542,7 @@ mod json {
     }
 
     #[test]
-    fn test_23() {
+    fn test_14() {
         let path = Path::new(&"./samples/JSON/http_response.avsc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
@@ -8622,7 +8550,7 @@ mod json {
     }
 
     #[test]
-    fn test_24() {
+    fn test_15() {
         let path = Path::new(&"./samples/JSON/schema.json");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
@@ -8630,8 +8558,80 @@ mod json {
     }
 
     #[test]
-    fn test_25() {
+    fn test_16() {
         let path = Path::new(&"./samples/JSON/pack.mcmeta");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_17() {
+        let path = Path::new(&"./samples/JSON/filenames/.tern-project");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_18() {
+        let path = Path::new(&"./samples/JSON/filenames/.arcconfig");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_19() {
+        let path = Path::new(&"./samples/JSON/filenames/mcmod.info");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_20() {
+        let path = Path::new(&"./samples/JSON/filenames/.tern-config");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_21() {
+        let path = Path::new(&"./samples/JSON/filenames/composer.lock");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_22() {
+        let path = Path::new(&"./samples/JSON/filenames/.htmlhintrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_23() {
+        let path = Path::new(&"./samples/JSON/filenames/Pipfile.lock");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_24() {
+        let path = Path::new(&"./samples/JSON/filenames/.watchmanconfig");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_25() {
+        let path = Path::new(&"./samples/JSON/filenames/.imgbotconfig");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON".to_string());
         assert_eq!(actual, expected);
@@ -8701,86 +8701,6 @@ mod json_with_comments {
 
     #[test]
     fn test_7() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/.jscsrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_8() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/tslint.json");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_9() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/.eslintrc.json");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_10() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/devcontainer.json");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_11() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/language-configuration.json");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_12() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/.jslintrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_13() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/tsconfig.json");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_14() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/.babelrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_15() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/.jshintrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_16() {
-        let path = Path::new(&"./samples/JSON with Comments/filenames/jsconfig.json");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("JSON with Comments".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_17() {
         let path = Path::new(&"./samples/JSON with Comments/AMPL.sublime-build");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON with Comments".to_string());
@@ -8788,7 +8708,7 @@ mod json_with_comments {
     }
 
     #[test]
-    fn test_18() {
+    fn test_8() {
         let path = Path::new(&"./samples/JSON with Comments/Dart.sublime-project");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON with Comments".to_string());
@@ -8796,7 +8716,7 @@ mod json_with_comments {
     }
 
     #[test]
-    fn test_19() {
+    fn test_9() {
         let path = Path::new(&"./samples/JSON with Comments/JavaDoc Add Line.sublime-macro");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON with Comments".to_string());
@@ -8804,7 +8724,7 @@ mod json_with_comments {
     }
 
     #[test]
-    fn test_20() {
+    fn test_10() {
         let path = Path::new(&"./samples/JSON with Comments/RunBuild.sublime-macro");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON with Comments".to_string());
@@ -8812,7 +8732,7 @@ mod json_with_comments {
     }
 
     #[test]
-    fn test_21() {
+    fn test_11() {
         let path = Path::new(&"./samples/JSON with Comments/jade.sublime-completions");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON with Comments".to_string());
@@ -8820,8 +8740,88 @@ mod json_with_comments {
     }
 
     #[test]
-    fn test_22() {
+    fn test_12() {
         let path = Path::new(&"./samples/JSON with Comments/Default (Linux).sublime-mousemap");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_13() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/.jscsrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_14() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/tslint.json");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_15() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/.eslintrc.json");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_16() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/devcontainer.json");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_17() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/language-configuration.json");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_18() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/.jslintrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_19() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/tsconfig.json");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_20() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/.babelrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_21() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/.jshintrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("JSON with Comments".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_22() {
+        let path = Path::new(&"./samples/JSON with Comments/filenames/jsconfig.json");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("JSON with Comments".to_string());
         assert_eq!(actual, expected);
@@ -9744,14 +9744,6 @@ mod kicad_layout {
 
     #[test]
     fn test_10() {
-        let path = Path::new(&"./samples/KiCad Layout/filenames/fp-lib-table");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("KiCad Layout".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_11() {
         let path = Path::new(&"./samples/KiCad Layout/C_Disc_D3_P2.5.kicad_mod");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("KiCad Layout".to_string());
@@ -9759,7 +9751,7 @@ mod kicad_layout {
     }
 
     #[test]
-    fn test_12() {
+    fn test_11() {
         let path = Path::new(&"./samples/KiCad Layout/Pin_Header_Straight_2x20.kicad_mod");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("KiCad Layout".to_string());
@@ -9767,7 +9759,7 @@ mod kicad_layout {
     }
 
     #[test]
-    fn test_13() {
+    fn test_12() {
         let path = Path::new(&"./samples/KiCad Layout/Logo_Poncho.kicad_mod");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("KiCad Layout".to_string());
@@ -9775,7 +9767,7 @@ mod kicad_layout {
     }
 
     #[test]
-    fn test_14() {
+    fn test_13() {
         let path = Path::new(&"./samples/KiCad Layout/Fiducial_1mm.kicad_mod");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("KiCad Layout".to_string());
@@ -9783,8 +9775,16 @@ mod kicad_layout {
     }
 
     #[test]
-    fn test_15() {
+    fn test_14() {
         let path = Path::new(&"./samples/KiCad Layout/simonShield.kicad_pcb");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("KiCad Layout".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_15() {
+        let path = Path::new(&"./samples/KiCad Layout/filenames/fp-lib-table");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("KiCad Layout".to_string());
         assert_eq!(actual, expected);
@@ -10268,14 +10268,6 @@ mod linker_script {
 
     #[test]
     fn test_0() {
-        let path = Path::new(&"./samples/Linker Script/filenames/ld.script");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Linker Script".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_1() {
         let path = Path::new(&"./samples/Linker Script/vmlinux.lds");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Linker Script".to_string());
@@ -10283,7 +10275,7 @@ mod linker_script {
     }
 
     #[test]
-    fn test_2() {
+    fn test_1() {
         let path = Path::new(&"./samples/Linker Script/link.ld");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Linker Script".to_string());
@@ -10291,8 +10283,16 @@ mod linker_script {
     }
 
     #[test]
-    fn test_3() {
+    fn test_2() {
         let path = Path::new(&"./samples/Linker Script/inject.x");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Linker Script".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_3() {
+        let path = Path::new(&"./samples/Linker Script/filenames/ld.script");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Linker Script".to_string());
         assert_eq!(actual, expected);
@@ -10537,14 +10537,6 @@ mod lua {
 
     #[test]
     fn test_2() {
-        let path = Path::new(&"./samples/Lua/filenames/.luacheckrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Lua".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_3() {
         let path = Path::new(&"./samples/Lua/wsapi.fcgi");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Lua".to_string());
@@ -10552,7 +10544,7 @@ mod lua {
     }
 
     #[test]
-    fn test_4() {
+    fn test_3() {
         let path = Path::new(&"./samples/Lua/h-counter.pd_lua");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Lua".to_string());
@@ -10560,7 +10552,7 @@ mod lua {
     }
 
     #[test]
-    fn test_5() {
+    fn test_4() {
         let path = Path::new(&"./samples/Lua/treegen.p8");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Lua".to_string());
@@ -10568,8 +10560,16 @@ mod lua {
     }
 
     #[test]
-    fn test_6() {
+    fn test_5() {
         let path = Path::new(&"./samples/Lua/luatexts-0.1.2-1.rockspec");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Lua".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_6() {
+        let path = Path::new(&"./samples/Lua/filenames/.luacheckrc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Lua".to_string());
         assert_eq!(actual, expected);
@@ -10867,7 +10867,7 @@ mod m4sugar {
 
     #[test]
     fn test_1() {
-        let path = Path::new(&"./samples/M4Sugar/filenames/configure.ac");
+        let path = Path::new(&"./samples/M4Sugar/ax_ruby_devel.m4");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("M4Sugar".to_string());
         assert_eq!(actual, expected);
@@ -10875,7 +10875,7 @@ mod m4sugar {
 
     #[test]
     fn test_2() {
-        let path = Path::new(&"./samples/M4Sugar/ax_ruby_devel.m4");
+        let path = Path::new(&"./samples/M4Sugar/filenames/configure.ac");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("M4Sugar".to_string());
         assert_eq!(actual, expected);
@@ -11410,78 +11410,6 @@ mod makefile {
 
     #[test]
     fn test_1() {
-        let path = Path::new(&"./samples/Makefile/filenames/Makefile.boot");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Makefile".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_2() {
-        let path = Path::new(&"./samples/Makefile/filenames/makefile.sco");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Makefile".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_3() {
-        let path = Path::new(&"./samples/Makefile/filenames/Kbuild");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Makefile".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_4() {
-        let path = Path::new(&"./samples/Makefile/filenames/Makefile.wat");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Makefile".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_5() {
-        let path = Path::new(&"./samples/Makefile/filenames/Makefile.frag");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Makefile".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_6() {
-        let path = Path::new(&"./samples/Makefile/filenames/Makefile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Makefile".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_7() {
-        let path = Path::new(&"./samples/Makefile/filenames/mkfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Makefile".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_8() {
-        let path = Path::new(&"./samples/Makefile/filenames/BSDmakefile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Makefile".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_9() {
-        let path = Path::new(&"./samples/Makefile/filenames/Makefile.inc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Makefile".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_10() {
         let path = Path::new(&"./samples/Makefile/foo.o.d");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Makefile".to_string());
@@ -11489,8 +11417,80 @@ mod makefile {
     }
 
     #[test]
-    fn test_11() {
+    fn test_2() {
         let path = Path::new(&"./samples/Makefile/file-icons.make");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Makefile".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_3() {
+        let path = Path::new(&"./samples/Makefile/filenames/Makefile.boot");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Makefile".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_4() {
+        let path = Path::new(&"./samples/Makefile/filenames/makefile.sco");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Makefile".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_5() {
+        let path = Path::new(&"./samples/Makefile/filenames/Kbuild");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Makefile".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_6() {
+        let path = Path::new(&"./samples/Makefile/filenames/Makefile.wat");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Makefile".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_7() {
+        let path = Path::new(&"./samples/Makefile/filenames/Makefile.frag");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Makefile".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_8() {
+        let path = Path::new(&"./samples/Makefile/filenames/Makefile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Makefile".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_9() {
+        let path = Path::new(&"./samples/Makefile/filenames/mkfile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Makefile".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_10() {
+        let path = Path::new(&"./samples/Makefile/filenames/BSDmakefile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Makefile".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_11() {
+        let path = Path::new(&"./samples/Makefile/filenames/Makefile.inc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Makefile".to_string());
         assert_eq!(actual, expected);
@@ -11544,14 +11544,6 @@ mod markdown {
 
     #[test]
     fn test_5() {
-        let path = Path::new(&"./samples/Markdown/filenames/contents.lr");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Markdown".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_6() {
         let path = Path::new(&"./samples/Markdown/sway.5.scd");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Markdown".to_string());
@@ -11559,7 +11551,7 @@ mod markdown {
     }
 
     #[test]
-    fn test_7() {
+    fn test_6() {
         let path = Path::new(&"./samples/Markdown/tender.md");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Markdown".to_string());
@@ -11567,7 +11559,7 @@ mod markdown {
     }
 
     #[test]
-    fn test_8() {
+    fn test_7() {
         let path = Path::new(&"./samples/Markdown/csharp6.workbook");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Markdown".to_string());
@@ -11575,7 +11567,7 @@ mod markdown {
     }
 
     #[test]
-    fn test_9() {
+    fn test_8() {
         let path = Path::new(&"./samples/Markdown/README.mdown");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Markdown".to_string());
@@ -11583,8 +11575,16 @@ mod markdown {
     }
 
     #[test]
-    fn test_10() {
+    fn test_9() {
         let path = Path::new(&"./samples/Markdown/sample.mdx");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Markdown".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_10() {
+        let path = Path::new(&"./samples/Markdown/filenames/contents.lr");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Markdown".to_string());
         assert_eq!(actual, expected);
@@ -12836,7 +12836,7 @@ mod nextflow {
 
     #[test]
     fn test_2() {
-        let path = Path::new(&"./samples/Nextflow/filenames/nextflow.config");
+        let path = Path::new(&"./samples/Nextflow/blast.nf");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Nextflow".to_string());
         assert_eq!(actual, expected);
@@ -12844,7 +12844,7 @@ mod nextflow {
 
     #[test]
     fn test_3() {
-        let path = Path::new(&"./samples/Nextflow/blast.nf");
+        let path = Path::new(&"./samples/Nextflow/filenames/nextflow.config");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Nextflow".to_string());
         assert_eq!(actual, expected);
@@ -12920,7 +12920,7 @@ mod nim {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/Nim/filenames/nim.cfg");
+        let path = Path::new(&"./samples/Nim/foo.nim");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Nim".to_string());
         assert_eq!(actual, expected);
@@ -12928,7 +12928,7 @@ mod nim {
 
     #[test]
     fn test_5() {
-        let path = Path::new(&"./samples/Nim/foo.nim");
+        let path = Path::new(&"./samples/Nim/filenames/nim.cfg");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Nim".to_string());
         assert_eq!(actual, expected);
@@ -13968,30 +13968,6 @@ mod php {
 
     #[test]
     fn test_9() {
-        let path = Path::new(&"./samples/PHP/filenames/.php_cs");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("PHP".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_10() {
-        let path = Path::new(&"./samples/PHP/filenames/.php");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("PHP".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_11() {
-        let path = Path::new(&"./samples/PHP/filenames/.php_cs.dist");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("PHP".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_12() {
         let path = Path::new(&"./samples/PHP/prefix.fcgi");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("PHP".to_string());
@@ -13999,7 +13975,7 @@ mod php {
     }
 
     #[test]
-    fn test_13() {
+    fn test_10() {
         let path = Path::new(&"./samples/PHP/drupal.php");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("PHP".to_string());
@@ -14007,7 +13983,7 @@ mod php {
     }
 
     #[test]
-    fn test_14() {
+    fn test_11() {
         let path = Path::new(&"./samples/PHP/Controller.php");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("PHP".to_string());
@@ -14015,7 +13991,7 @@ mod php {
     }
 
     #[test]
-    fn test_15() {
+    fn test_12() {
         let path = Path::new(&"./samples/PHP/php-script");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("PHP".to_string());
@@ -14023,7 +13999,7 @@ mod php {
     }
 
     #[test]
-    fn test_16() {
+    fn test_13() {
         let path = Path::new(&"./samples/PHP/Client.php");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("PHP".to_string());
@@ -14031,7 +14007,7 @@ mod php {
     }
 
     #[test]
-    fn test_17() {
+    fn test_14() {
         let path = Path::new(&"./samples/PHP/php2");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("PHP".to_string());
@@ -14039,8 +14015,32 @@ mod php {
     }
 
     #[test]
-    fn test_18() {
+    fn test_15() {
         let path = Path::new(&"./samples/PHP/exception.zep.php");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("PHP".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_16() {
+        let path = Path::new(&"./samples/PHP/filenames/.php_cs");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("PHP".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_17() {
+        let path = Path::new(&"./samples/PHP/filenames/.php");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("PHP".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_18() {
+        let path = Path::new(&"./samples/PHP/filenames/.php_cs.dist");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("PHP".to_string());
         assert_eq!(actual, expected);
@@ -14803,38 +14803,6 @@ mod perl {
 
     #[test]
     fn test_9() {
-        let path = Path::new(&"./samples/Perl/filenames/Makefile.PL");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Perl".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_10() {
-        let path = Path::new(&"./samples/Perl/filenames/ack");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Perl".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_11() {
-        let path = Path::new(&"./samples/Perl/filenames/cpanfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Perl".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_12() {
-        let path = Path::new(&"./samples/Perl/filenames/Rexfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Perl".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_13() {
         let path = Path::new(&"./samples/Perl/Any.pm");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14842,7 +14810,7 @@ mod perl {
     }
 
     #[test]
-    fn test_14() {
+    fn test_10() {
         let path = Path::new(&"./samples/Perl/perl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14850,7 +14818,7 @@ mod perl {
     }
 
     #[test]
-    fn test_15() {
+    fn test_11() {
         let path = Path::new(&"./samples/Perl/Request.pm");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14858,7 +14826,7 @@ mod perl {
     }
 
     #[test]
-    fn test_16() {
+    fn test_12() {
         let path = Path::new(&"./samples/Perl/fib.pl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14866,7 +14834,7 @@ mod perl {
     }
 
     #[test]
-    fn test_17() {
+    fn test_13() {
         let path = Path::new(&"./samples/Perl/test-perl.pl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14874,7 +14842,7 @@ mod perl {
     }
 
     #[test]
-    fn test_18() {
+    fn test_14() {
         let path = Path::new(&"./samples/Perl/Response.pm");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14882,7 +14850,7 @@ mod perl {
     }
 
     #[test]
-    fn test_19() {
+    fn test_15() {
         let path = Path::new(&"./samples/Perl/oo2.pl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14890,7 +14858,7 @@ mod perl {
     }
 
     #[test]
-    fn test_20() {
+    fn test_16() {
         let path = Path::new(&"./samples/Perl/perl-test.t");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14898,7 +14866,7 @@ mod perl {
     }
 
     #[test]
-    fn test_21() {
+    fn test_17() {
         let path = Path::new(&"./samples/Perl/feedgnuplot");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14906,7 +14874,7 @@ mod perl {
     }
 
     #[test]
-    fn test_22() {
+    fn test_18() {
         let path = Path::new(&"./samples/Perl/index.fcgi");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
@@ -14915,8 +14883,40 @@ mod perl {
 
     #[ignore]
     #[test]
-    fn test_23() {
+    fn test_19() {
         let path = Path::new(&"./samples/Perl/test-perl2.pl");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Perl".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_20() {
+        let path = Path::new(&"./samples/Perl/filenames/Makefile.PL");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Perl".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_21() {
+        let path = Path::new(&"./samples/Perl/filenames/ack");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Perl".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_22() {
+        let path = Path::new(&"./samples/Perl/filenames/cpanfile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Perl".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_23() {
+        let path = Path::new(&"./samples/Perl/filenames/Rexfile");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Perl".to_string());
         assert_eq!(actual, expected);
@@ -15960,22 +15960,6 @@ mod python {
 
     #[test]
     fn test_15() {
-        let path = Path::new(&"./samples/Python/filenames/DEPS");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Python".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_16() {
-        let path = Path::new(&"./samples/Python/filenames/.gclient");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Python".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_17() {
         let path = Path::new(&"./samples/Python/standalone.gypi");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Python".to_string());
@@ -15983,7 +15967,7 @@ mod python {
     }
 
     #[test]
-    fn test_18() {
+    fn test_16() {
         let path = Path::new(&"./samples/Python/MoveEye.pyde");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Python".to_string());
@@ -15991,7 +15975,7 @@ mod python {
     }
 
     #[test]
-    fn test_19() {
+    fn test_17() {
         let path = Path::new(&"./samples/Python/argparse.pyi");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Python".to_string());
@@ -15999,7 +15983,7 @@ mod python {
     }
 
     #[test]
-    fn test_20() {
+    fn test_18() {
         let path = Path::new(&"./samples/Python/Cinema4DPythonPlugin.pyp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Python".to_string());
@@ -16007,7 +15991,7 @@ mod python {
     }
 
     #[test]
-    fn test_21() {
+    fn test_19() {
         let path = Path::new(&"./samples/Python/py3.py3");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Python".to_string());
@@ -16015,8 +15999,24 @@ mod python {
     }
 
     #[test]
-    fn test_22() {
+    fn test_20() {
         let path = Path::new(&"./samples/Python/tornado-httpserver.py");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Python".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_21() {
+        let path = Path::new(&"./samples/Python/filenames/DEPS");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Python".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_22() {
+        let path = Path::new(&"./samples/Python/filenames/.gclient");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Python".to_string());
         assert_eq!(actual, expected);
@@ -16196,7 +16196,7 @@ mod r {
 
     #[test]
     fn test_6() {
-        let path = Path::new(&"./samples/R/filenames/expr-dist");
+        let path = Path::new(&"./samples/R/import.r");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("R".to_string());
         assert_eq!(actual, expected);
@@ -16204,7 +16204,7 @@ mod r {
 
     #[test]
     fn test_7() {
-        let path = Path::new(&"./samples/R/import.r");
+        let path = Path::new(&"./samples/R/filenames/expr-dist");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("R".to_string());
         assert_eq!(actual, expected);
@@ -17436,102 +17436,6 @@ mod ruby {
 
     #[test]
     fn test_17() {
-        let path = Path::new(&"./samples/Ruby/filenames/.pryrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_18() {
-        let path = Path::new(&"./samples/Ruby/filenames/.irbrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_19() {
-        let path = Path::new(&"./samples/Ruby/filenames/Podfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_20() {
-        let path = Path::new(&"./samples/Ruby/filenames/Dangerfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_21() {
-        let path = Path::new(&"./samples/Ruby/filenames/Rakefile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_22() {
-        let path = Path::new(&"./samples/Ruby/filenames/Snapfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_23() {
-        let path = Path::new(&"./samples/Ruby/filenames/.simplecov");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_24() {
-        let path = Path::new(&"./samples/Ruby/filenames/Deliverfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_25() {
-        let path = Path::new(&"./samples/Ruby/filenames/Fastfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_26() {
-        let path = Path::new(&"./samples/Ruby/filenames/Brewfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_27() {
-        let path = Path::new(&"./samples/Ruby/filenames/Appraisals");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_28() {
-        let path = Path::new(&"./samples/Ruby/filenames/Capfile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Ruby".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_29() {
         let path = Path::new(&"./samples/Ruby/inflector.rb");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ruby".to_string());
@@ -17539,7 +17443,7 @@ mod ruby {
     }
 
     #[test]
-    fn test_30() {
+    fn test_18() {
         let path = Path::new(&"./samples/Ruby/gem_loader.rbi");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ruby".to_string());
@@ -17547,7 +17451,7 @@ mod ruby {
     }
 
     #[test]
-    fn test_31() {
+    fn test_19() {
         let path = Path::new(&"./samples/Ruby/resque.rb");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ruby".to_string());
@@ -17555,7 +17459,7 @@ mod ruby {
     }
 
     #[test]
-    fn test_32() {
+    fn test_20() {
         let path = Path::new(&"./samples/Ruby/ruby");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ruby".to_string());
@@ -17563,7 +17467,7 @@ mod ruby {
     }
 
     #[test]
-    fn test_33() {
+    fn test_21() {
         let path = Path::new(&"./samples/Ruby/mdata_server.fcgi");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ruby".to_string());
@@ -17571,8 +17475,104 @@ mod ruby {
     }
 
     #[test]
-    fn test_34() {
+    fn test_22() {
         let path = Path::new(&"./samples/Ruby/foo.rb");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_23() {
+        let path = Path::new(&"./samples/Ruby/filenames/.pryrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_24() {
+        let path = Path::new(&"./samples/Ruby/filenames/.irbrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_25() {
+        let path = Path::new(&"./samples/Ruby/filenames/Podfile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_26() {
+        let path = Path::new(&"./samples/Ruby/filenames/Dangerfile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_27() {
+        let path = Path::new(&"./samples/Ruby/filenames/Rakefile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_28() {
+        let path = Path::new(&"./samples/Ruby/filenames/Snapfile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_29() {
+        let path = Path::new(&"./samples/Ruby/filenames/.simplecov");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_30() {
+        let path = Path::new(&"./samples/Ruby/filenames/Deliverfile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_31() {
+        let path = Path::new(&"./samples/Ruby/filenames/Fastfile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_32() {
+        let path = Path::new(&"./samples/Ruby/filenames/Brewfile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_33() {
+        let path = Path::new(&"./samples/Ruby/filenames/Appraisals");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Ruby".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_34() {
+        let path = Path::new(&"./samples/Ruby/filenames/Capfile");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Ruby".to_string());
         assert_eq!(actual, expected);
@@ -18449,254 +18449,6 @@ mod shell {
 
     #[test]
     fn test_10() {
-        let path = Path::new(&"./samples/Shell/filenames/zlogin");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_11() {
-        let path = Path::new(&"./samples/Shell/filenames/.zlogout");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_12() {
-        let path = Path::new(&"./samples/Shell/filenames/.login");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_13() {
-        let path = Path::new(&"./samples/Shell/filenames/.cshrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_14() {
-        let path = Path::new(&"./samples/Shell/filenames/zprofile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_15() {
-        let path = Path::new(&"./samples/Shell/filenames/zlogout");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_16() {
-        let path = Path::new(&"./samples/Shell/filenames/.env");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_17() {
-        let path = Path::new(&"./samples/Shell/filenames/.profile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_18() {
-        let path = Path::new(&"./samples/Shell/filenames/.bashrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_19() {
-        let path = Path::new(&"./samples/Shell/filenames/.env.example");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_20() {
-        let path = Path::new(&"./samples/Shell/filenames/9fs");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_21() {
-        let path = Path::new(&"./samples/Shell/filenames/.zprofile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_22() {
-        let path = Path::new(&"./samples/Shell/filenames/.zshrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_23() {
-        let path = Path::new(&"./samples/Shell/filenames/zshenv");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_24() {
-        let path = Path::new(&"./samples/Shell/filenames/bash_aliases");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_25() {
-        let path = Path::new(&"./samples/Shell/filenames/.bash_aliases");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_26() {
-        let path = Path::new(&"./samples/Shell/filenames/.bash_logout");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_27() {
-        let path = Path::new(&"./samples/Shell/filenames/man");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_28() {
-        let path = Path::new(&"./samples/Shell/filenames/profile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_29() {
-        let path = Path::new(&"./samples/Shell/filenames/bash_logout");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_30() {
-        let path = Path::new(&"./samples/Shell/filenames/login");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_31() {
-        let path = Path::new(&"./samples/Shell/filenames/bash_profile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_32() {
-        let path = Path::new(&"./samples/Shell/filenames/zshrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_33() {
-        let path = Path::new(&"./samples/Shell/filenames/.bash_profile");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_34() {
-        let path = Path::new(&"./samples/Shell/filenames/bashrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_35() {
-        let path = Path::new(&"./samples/Shell/filenames/gradlew");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_36() {
-        let path = Path::new(&"./samples/Shell/filenames/.flaskenv");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_37() {
-        let path = Path::new(&"./samples/Shell/filenames/cshrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_38() {
-        let path = Path::new(&"./samples/Shell/filenames/PKGBUILD");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_39() {
-        let path = Path::new(&"./samples/Shell/filenames/.zlogin");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_40() {
-        let path = Path::new(&"./samples/Shell/filenames/.zshenv");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Shell".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_41() {
         let path = Path::new(&"./samples/Shell/valid-shebang.tool");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Shell".to_string());
@@ -18704,7 +18456,7 @@ mod shell {
     }
 
     #[test]
-    fn test_42() {
+    fn test_11() {
         let path = Path::new(&"./samples/Shell/build.command");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Shell".to_string());
@@ -18712,7 +18464,7 @@ mod shell {
     }
 
     #[test]
-    fn test_43() {
+    fn test_12() {
         let path = Path::new(&"./samples/Shell/script.bash");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Shell".to_string());
@@ -18720,7 +18472,7 @@ mod shell {
     }
 
     #[test]
-    fn test_44() {
+    fn test_13() {
         let path = Path::new(&"./samples/Shell/default.env");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Shell".to_string());
@@ -18728,7 +18480,7 @@ mod shell {
     }
 
     #[test]
-    fn test_45() {
+    fn test_14() {
         let path = Path::new(&"./samples/Shell/rbenv-sh-shell.sh");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Shell".to_string());
@@ -18736,7 +18488,7 @@ mod shell {
     }
 
     #[test]
-    fn test_46() {
+    fn test_15() {
         let path = Path::new(&"./samples/Shell/zsh");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Shell".to_string());
@@ -18744,7 +18496,7 @@ mod shell {
     }
 
     #[test]
-    fn test_47() {
+    fn test_16() {
         let path = Path::new(&"./samples/Shell/bash");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Shell".to_string());
@@ -18752,8 +18504,256 @@ mod shell {
     }
 
     #[test]
-    fn test_48() {
+    fn test_17() {
         let path = Path::new(&"./samples/Shell/settime.cgi");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_18() {
+        let path = Path::new(&"./samples/Shell/filenames/zlogin");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_19() {
+        let path = Path::new(&"./samples/Shell/filenames/.zlogout");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_20() {
+        let path = Path::new(&"./samples/Shell/filenames/.login");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_21() {
+        let path = Path::new(&"./samples/Shell/filenames/.cshrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_22() {
+        let path = Path::new(&"./samples/Shell/filenames/zprofile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_23() {
+        let path = Path::new(&"./samples/Shell/filenames/zlogout");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_24() {
+        let path = Path::new(&"./samples/Shell/filenames/.env");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_25() {
+        let path = Path::new(&"./samples/Shell/filenames/.profile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_26() {
+        let path = Path::new(&"./samples/Shell/filenames/.bashrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_27() {
+        let path = Path::new(&"./samples/Shell/filenames/.env.example");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_28() {
+        let path = Path::new(&"./samples/Shell/filenames/9fs");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_29() {
+        let path = Path::new(&"./samples/Shell/filenames/.zprofile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_30() {
+        let path = Path::new(&"./samples/Shell/filenames/.zshrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_31() {
+        let path = Path::new(&"./samples/Shell/filenames/zshenv");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_32() {
+        let path = Path::new(&"./samples/Shell/filenames/bash_aliases");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_33() {
+        let path = Path::new(&"./samples/Shell/filenames/.bash_aliases");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_34() {
+        let path = Path::new(&"./samples/Shell/filenames/.bash_logout");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_35() {
+        let path = Path::new(&"./samples/Shell/filenames/man");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_36() {
+        let path = Path::new(&"./samples/Shell/filenames/profile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_37() {
+        let path = Path::new(&"./samples/Shell/filenames/bash_logout");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_38() {
+        let path = Path::new(&"./samples/Shell/filenames/login");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_39() {
+        let path = Path::new(&"./samples/Shell/filenames/bash_profile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_40() {
+        let path = Path::new(&"./samples/Shell/filenames/zshrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_41() {
+        let path = Path::new(&"./samples/Shell/filenames/.bash_profile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_42() {
+        let path = Path::new(&"./samples/Shell/filenames/bashrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_43() {
+        let path = Path::new(&"./samples/Shell/filenames/gradlew");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_44() {
+        let path = Path::new(&"./samples/Shell/filenames/.flaskenv");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_45() {
+        let path = Path::new(&"./samples/Shell/filenames/cshrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_46() {
+        let path = Path::new(&"./samples/Shell/filenames/PKGBUILD");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_47() {
+        let path = Path::new(&"./samples/Shell/filenames/.zlogin");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Shell".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_48() {
+        let path = Path::new(&"./samples/Shell/filenames/.zshenv");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Shell".to_string());
         assert_eq!(actual, expected);
@@ -19289,7 +19289,7 @@ mod starlark {
 
     #[test]
     fn test_0() {
-        let path = Path::new(&"./samples/Starlark/filenames/BUILD");
+        let path = Path::new(&"./samples/Starlark/closure_js_binary.bzl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Starlark".to_string());
         assert_eq!(actual, expected);
@@ -19297,7 +19297,7 @@ mod starlark {
 
     #[test]
     fn test_1() {
-        let path = Path::new(&"./samples/Starlark/filenames/BUCK");
+        let path = Path::new(&"./samples/Starlark/filenames/BUILD");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Starlark".to_string());
         assert_eq!(actual, expected);
@@ -19305,7 +19305,7 @@ mod starlark {
 
     #[test]
     fn test_2() {
-        let path = Path::new(&"./samples/Starlark/filenames/WORKSPACE");
+        let path = Path::new(&"./samples/Starlark/filenames/BUCK");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Starlark".to_string());
         assert_eq!(actual, expected);
@@ -19313,7 +19313,7 @@ mod starlark {
 
     #[test]
     fn test_3() {
-        let path = Path::new(&"./samples/Starlark/filenames/Tiltfile");
+        let path = Path::new(&"./samples/Starlark/filenames/WORKSPACE");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Starlark".to_string());
         assert_eq!(actual, expected);
@@ -19321,7 +19321,7 @@ mod starlark {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/Starlark/filenames/BUILD.bazel");
+        let path = Path::new(&"./samples/Starlark/filenames/Tiltfile");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Starlark".to_string());
         assert_eq!(actual, expected);
@@ -19329,7 +19329,7 @@ mod starlark {
 
     #[test]
     fn test_5() {
-        let path = Path::new(&"./samples/Starlark/closure_js_binary.bzl");
+        let path = Path::new(&"./samples/Starlark/filenames/BUILD.bazel");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Starlark".to_string());
         assert_eq!(actual, expected);
@@ -20341,134 +20341,6 @@ mod text {
 
     #[test]
     fn test_6() {
-        let path = Path::new(&"./samples/Text/filenames/keep.me");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_7() {
-        let path = Path::new(&"./samples/Text/filenames/click.me");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_8() {
-        let path = Path::new(&"./samples/Text/filenames/README.me");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_9() {
-        let path = Path::new(&"./samples/Text/filenames/package.mask");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_10() {
-        let path = Path::new(&"./samples/Text/filenames/use.mask");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_11() {
-        let path = Path::new(&"./samples/Text/filenames/delete.me");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_12() {
-        let path = Path::new(&"./samples/Text/filenames/LICENSE.mysql");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_13() {
-        let path = Path::new(&"./samples/Text/filenames/README.nss");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_14() {
-        let path = Path::new(&"./samples/Text/filenames/use.stable.mask");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_15() {
-        let path = Path::new(&"./samples/Text/filenames/readme.1st");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_16() {
-        let path = Path::new(&"./samples/Text/filenames/README.mysql");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_17() {
-        let path = Path::new(&"./samples/Text/filenames/read.me");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_18() {
-        let path = Path::new(&"./samples/Text/filenames/test.me");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_19() {
-        let path = Path::new(&"./samples/Text/filenames/COPYING.regex");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_20() {
-        let path = Path::new(&"./samples/Text/filenames/package.use.stable.mask");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_21() {
-        let path = Path::new(&"./samples/Text/filenames/package.use.mask");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("Text".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_22() {
         let path = Path::new(&"./samples/Text/foo.txt");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Text".to_string());
@@ -20476,7 +20348,7 @@ mod text {
     }
 
     #[test]
-    fn test_23() {
+    fn test_7() {
         let path = Path::new(&"./samples/Text/readme.txt");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Text".to_string());
@@ -20484,7 +20356,7 @@ mod text {
     }
 
     #[test]
-    fn test_24() {
+    fn test_8() {
         let path = Path::new(&"./samples/Text/zonalAve-help.ncl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Text".to_string());
@@ -20492,8 +20364,136 @@ mod text {
     }
 
     #[test]
-    fn test_25() {
+    fn test_9() {
         let path = Path::new(&"./samples/Text/messages.fr");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_10() {
+        let path = Path::new(&"./samples/Text/filenames/keep.me");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_11() {
+        let path = Path::new(&"./samples/Text/filenames/click.me");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_12() {
+        let path = Path::new(&"./samples/Text/filenames/README.me");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_13() {
+        let path = Path::new(&"./samples/Text/filenames/package.mask");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_14() {
+        let path = Path::new(&"./samples/Text/filenames/use.mask");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_15() {
+        let path = Path::new(&"./samples/Text/filenames/delete.me");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_16() {
+        let path = Path::new(&"./samples/Text/filenames/LICENSE.mysql");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_17() {
+        let path = Path::new(&"./samples/Text/filenames/README.nss");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_18() {
+        let path = Path::new(&"./samples/Text/filenames/use.stable.mask");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_19() {
+        let path = Path::new(&"./samples/Text/filenames/readme.1st");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_20() {
+        let path = Path::new(&"./samples/Text/filenames/README.mysql");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_21() {
+        let path = Path::new(&"./samples/Text/filenames/read.me");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_22() {
+        let path = Path::new(&"./samples/Text/filenames/test.me");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_23() {
+        let path = Path::new(&"./samples/Text/filenames/COPYING.regex");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_24() {
+        let path = Path::new(&"./samples/Text/filenames/package.use.stable.mask");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Text".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_25() {
+        let path = Path::new(&"./samples/Text/filenames/package.use.mask");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Text".to_string());
         assert_eq!(actual, expected);
@@ -21141,7 +21141,7 @@ mod vim_script {
 
     #[test]
     fn test_2() {
-        let path = Path::new(&"./samples/Vim Script/filenames/.vimrc");
+        let path = Path::new(&"./samples/Vim Script/todo.vmb");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Vim Script".to_string());
         assert_eq!(actual, expected);
@@ -21149,7 +21149,7 @@ mod vim_script {
 
     #[test]
     fn test_3() {
-        let path = Path::new(&"./samples/Vim Script/filenames/.nvimrc");
+        let path = Path::new(&"./samples/Vim Script/filenames/.vimrc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Vim Script".to_string());
         assert_eq!(actual, expected);
@@ -21157,7 +21157,7 @@ mod vim_script {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/Vim Script/filenames/.gvimrc");
+        let path = Path::new(&"./samples/Vim Script/filenames/.nvimrc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Vim Script".to_string());
         assert_eq!(actual, expected);
@@ -21165,7 +21165,7 @@ mod vim_script {
 
     #[test]
     fn test_5() {
-        let path = Path::new(&"./samples/Vim Script/filenames/.exrc");
+        let path = Path::new(&"./samples/Vim Script/filenames/.gvimrc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Vim Script".to_string());
         assert_eq!(actual, expected);
@@ -21173,7 +21173,7 @@ mod vim_script {
 
     #[test]
     fn test_6() {
-        let path = Path::new(&"./samples/Vim Script/filenames/_vimrc");
+        let path = Path::new(&"./samples/Vim Script/filenames/.exrc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Vim Script".to_string());
         assert_eq!(actual, expected);
@@ -21181,7 +21181,7 @@ mod vim_script {
 
     #[test]
     fn test_7() {
-        let path = Path::new(&"./samples/Vim Script/todo.vmb");
+        let path = Path::new(&"./samples/Vim Script/filenames/_vimrc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("Vim Script".to_string());
         assert_eq!(actual, expected);
@@ -22115,14 +22115,6 @@ mod xml {
 
     #[test]
     fn test_35() {
-        let path = Path::new(&"./samples/XML/filenames/.cproject");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("XML".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_36() {
         let path = Path::new(&"./samples/XML/water.tsx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22130,7 +22122,7 @@ mod xml {
     }
 
     #[test]
-    fn test_37() {
+    fn test_36() {
         let path = Path::new(&"./samples/XML/System.Buffers.pkgproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22138,7 +22130,7 @@ mod xml {
     }
 
     #[test]
-    fn test_38() {
+    fn test_37() {
         let path = Path::new(&"./samples/XML/pt_BR.ts");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22146,7 +22138,7 @@ mod xml {
     }
 
     #[test]
-    fn test_39() {
+    fn test_38() {
         let path = Path::new(&"./samples/XML/01_top.ncl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22154,7 +22146,7 @@ mod xml {
     }
 
     #[test]
-    fn test_40() {
+    fn test_39() {
         let path = Path::new(&"./samples/XML/point-3.2.gml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22162,7 +22154,7 @@ mod xml {
     }
 
     #[test]
-    fn test_41() {
+    fn test_40() {
         let path = Path::new(&"./samples/XML/example-sharedproj.shproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22170,7 +22162,7 @@ mod xml {
     }
 
     #[test]
-    fn test_42() {
+    fn test_41() {
         let path = Path::new(&"./samples/XML/GMOculus.project.gmx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22178,7 +22170,7 @@ mod xml {
     }
 
     #[test]
-    fn test_43() {
+    fn test_42() {
         let path = Path::new(&"./samples/XML/battlescribe.gst");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22186,7 +22178,7 @@ mod xml {
     }
 
     #[test]
-    fn test_44() {
+    fn test_43() {
         let path = Path::new(&"./samples/XML/src.builds");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22194,7 +22186,7 @@ mod xml {
     }
 
     #[test]
-    fn test_45() {
+    fn test_44() {
         let path = Path::new(&"./samples/XML/csproj-sample.csproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22202,7 +22194,7 @@ mod xml {
     }
 
     #[test]
-    fn test_46() {
+    fn test_45() {
         let path = Path::new(&"./samples/XML/Example.mdpolicy");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22210,7 +22202,7 @@ mod xml {
     }
 
     #[test]
-    fn test_47() {
+    fn test_46() {
         let path = Path::new(&"./samples/XML/module.ivy");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22218,7 +22210,7 @@ mod xml {
     }
 
     #[test]
-    fn test_48() {
+    fn test_47() {
         let path = Path::new(&"./samples/XML/HITSP_C32.sch");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22226,7 +22218,7 @@ mod xml {
     }
 
     #[test]
-    fn test_49() {
+    fn test_48() {
         let path = Path::new(&"./samples/XML/Strings.resx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22234,7 +22226,7 @@ mod xml {
     }
 
     #[test]
-    fn test_50() {
+    fn test_49() {
         let path = Path::new(&"./samples/XML/configdef.cscfg");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22242,7 +22234,7 @@ mod xml {
     }
 
     #[test]
-    fn test_51() {
+    fn test_50() {
         let path = Path::new(&"./samples/XML/Storyboard.storyboard");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22250,7 +22242,7 @@ mod xml {
     }
 
     #[test]
-    fn test_52() {
+    fn test_51() {
         let path = Path::new(&"./samples/XML/MDM.admx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22258,7 +22250,7 @@ mod xml {
     }
 
     #[test]
-    fn test_53() {
+    fn test_52() {
         let path = Path::new(&"./samples/XML/point-3.1.gml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22266,7 +22258,7 @@ mod xml {
     }
 
     #[test]
-    fn test_54() {
+    fn test_53() {
         let path = Path::new(&"./samples/XML/racoon.mjml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22274,7 +22266,7 @@ mod xml {
     }
 
     #[test]
-    fn test_55() {
+    fn test_54() {
         let path = Path::new(&"./samples/XML/libsomething.dll.config");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22282,7 +22274,7 @@ mod xml {
     }
 
     #[test]
-    fn test_56() {
+    fn test_55() {
         let path = Path::new(&"./samples/XML/sample.nuspec");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22290,7 +22282,7 @@ mod xml {
     }
 
     #[test]
-    fn test_57() {
+    fn test_56() {
         let path = Path::new(&"./samples/XML/NDepends_Example.ndproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22298,7 +22290,7 @@ mod xml {
     }
 
     #[test]
-    fn test_58() {
+    fn test_57() {
         let path = Path::new(&"./samples/XML/net_docfile.xml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22306,7 +22298,7 @@ mod xml {
     }
 
     #[test]
-    fn test_59() {
+    fn test_58() {
         let path = Path::new(&"./samples/XML/phpunit.xml.dist");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22314,7 +22306,7 @@ mod xml {
     }
 
     #[test]
-    fn test_60() {
+    fn test_59() {
         let path = Path::new(&"./samples/XML/wixdemo.wixproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22322,7 +22314,7 @@ mod xml {
     }
 
     #[test]
-    fn test_61() {
+    fn test_60() {
         let path = Path::new(&"./samples/XML/cloudconfig.cscfg");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22330,7 +22322,7 @@ mod xml {
     }
 
     #[test]
-    fn test_62() {
+    fn test_61() {
         let path = Path::new(&"./samples/XML/tei-odd-sample.odd");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22338,7 +22330,7 @@ mod xml {
     }
 
     #[test]
-    fn test_63() {
+    fn test_62() {
         let path = Path::new(&"./samples/XML/xquery-tutorial.xspec");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22346,7 +22338,7 @@ mod xml {
     }
 
     #[test]
-    fn test_64() {
+    fn test_63() {
         let path = Path::new(&"./samples/XML/Application.xib");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22354,7 +22346,7 @@ mod xml {
     }
 
     #[test]
-    fn test_65() {
+    fn test_64() {
         let path = Path::new(&"./samples/XML/WebElement.rs");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22362,7 +22354,7 @@ mod xml {
     }
 
     #[test]
-    fn test_66() {
+    fn test_65() {
         let path = Path::new(&"./samples/XML/MainView.ux");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
@@ -22370,8 +22362,16 @@ mod xml {
     }
 
     #[test]
-    fn test_67() {
+    fn test_66() {
         let path = Path::new(&"./samples/XML/Default.props");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("XML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_67() {
+        let path = Path::new(&"./samples/XML/filenames/.cproject");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22647,46 +22647,6 @@ mod yaml {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/YAML/filenames/.gemrc");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("YAML".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_5() {
-        let path = Path::new(&"./samples/YAML/filenames/.clang-tidy");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("YAML".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_6() {
-        let path = Path::new(&"./samples/YAML/filenames/.clang-format");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("YAML".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_7() {
-        let path = Path::new(&"./samples/YAML/filenames/yarn.lock");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("YAML".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_8() {
-        let path = Path::new(&"./samples/YAML/filenames/glide.lock");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("YAML".to_string());
-        assert_eq!(actual, expected);
-    }
-
-    #[test]
-    fn test_9() {
         let path = Path::new(&"./samples/YAML/expected-floating-point-literal.mir");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("YAML".to_string());
@@ -22694,7 +22654,7 @@ mod yaml {
     }
 
     #[test]
-    fn test_10() {
+    fn test_5() {
         let path = Path::new(&"./samples/YAML/HexInspect.sublime-syntax");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("YAML".to_string());
@@ -22702,8 +22662,48 @@ mod yaml {
     }
 
     #[test]
-    fn test_11() {
+    fn test_6() {
         let path = Path::new(&"./samples/YAML/vcr_cassette.yml");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("YAML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_7() {
+        let path = Path::new(&"./samples/YAML/filenames/.gemrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("YAML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_8() {
+        let path = Path::new(&"./samples/YAML/filenames/.clang-tidy");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("YAML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_9() {
+        let path = Path::new(&"./samples/YAML/filenames/.clang-format");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("YAML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_10() {
+        let path = Path::new(&"./samples/YAML/filenames/yarn.lock");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("YAML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_11() {
+        let path = Path::new(&"./samples/YAML/filenames/glide.lock");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("YAML".to_string());
         assert_eq!(actual, expected);

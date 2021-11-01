@@ -3,6 +3,8 @@
 $SKIP_FILE = __DIR__ . '/../skipped.yml';
 $SKIPPED = yaml_parse_file($SKIP_FILE);
 
+const SAMPLES_DIR = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'samples';
+
 function escape_name(string $text): string
 {
     if (is_numeric($text[0])) {
@@ -17,16 +19,17 @@ function escape_name(string $text): string
     return strtolower($tmp);
 }
 
-function print_test(string $type, int $i, string $path, array $skipped)
+function print_test(string $type, int $i, SplFileInfo $info, array $skipped)
 {
     $ignore = "\n";
     $testName = "test_$i";
     if (isset($skipped[$type])) {
-        $name = basename($path);
+        $name = $info->getBasename();
         if (in_array($name, $skipped[$type], true)) {
             $ignore .= "#[ignore]\n";
         }
     }
+    $path = explode(realpath(SAMPLES_DIR) . DIRECTORY_SEPARATOR, $info->getPathname(), 2)[1];
 
     echo <<<EOD
     $ignore
@@ -41,22 +44,38 @@ function print_test(string $type, int $i, string $path, array $skipped)
 EOD;
 }
 
-$SAMPLES_DIR = __DIR__ . '/../samples';
-
-$types = [];
-if ($handle = opendir($SAMPLES_DIR)) {
-    while (false !== ($entry = readdir($handle))) {
-        if ($entry != "." && $entry != ".." && is_dir("$SAMPLES_DIR/$entry")) {
-            $types[] = "$SAMPLES_DIR/$entry";
-        }
-    }
-    closedir($handle);
-} else {
-    print("Failed to open samples dir: $SAMPLES_DIR\n");
-    exit(1);
+/**
+ * Returns all sample files sorted by path
+ *
+ * @return SplFileInfo[]
+ */
+function getSampleFiles(): array {
+    $dirIterator = new RecursiveDirectoryIterator(realpath(SAMPLES_DIR), RecursiveDirectoryIterator::SKIP_DOTS);
+    $iterator  = new RecursiveIteratorIterator($dirIterator);
+    $sampleFiles = array_values(iterator_to_array($iterator));
+    usort($sampleFiles, static fn(SplFileInfo $a, SplFileInfo $b):int => $a->getPath() <=> $b->getPath());
+    return array_filter($sampleFiles, static fn(SplFileInfo $info): bool => !$info->isDir());
 }
 
-sort($types);
+/**
+ * @param SplFileInfo[] $sampleFiles
+ *
+ * @return array<string,SplFileInfo[]>
+ */
+function buildLangSamplesTree(array $sampleFiles): array {
+    $result = [];
+    foreach($sampleFiles as $info) {
+        assert($info instanceof SplFileInfo);
+        $path = $info->getPath();
+        $lang = explode(DIRECTORY_SEPARATOR, explode(realpath(SAMPLES_DIR) . DIRECTORY_SEPARATOR, $path, 2)[1], 2)[0];
+        $result[$lang][] = $info;
+    }
+    return $result;
+}
+
+
+$languages = buildLangSamplesTree(getSampleFiles());
+
 ?>
 //
 // Copyright (c) 2018-2020 Bahtiar `kalkin-` Gadimov.
@@ -80,8 +99,7 @@ sort($types);
 #![cfg(test)]
 #![allow(non_snake_case)]
 
-<?php foreach ($types as $val) : ?>
-    <?php $type = basename($val) ?>
+<?php foreach ($languages as $type => $infos) : ?>
     <?php $escaped_type = escape_name($type); ?>
 
 mod <?= $escaped_type ?> {
@@ -90,25 +108,13 @@ mod <?= $escaped_type ?> {
     use file_expert::guess;
 
     <?php
-    $paths = new RecursiveDirectoryIterator($val, RecursiveDirectoryIterator::SKIP_DOTS);
-    $i = 0;
-    foreach ($paths as $p) {
-        $filename = basename($p);
-        if (is_dir($p)) {
-            $sub_dir = basename($p);
-            $sub = new RecursiveDirectoryIterator($p, RecursiveDirectoryIterator::SKIP_DOTS);
-            foreach ($sub as $sp) {
-                $filename = basename($sp);
-                print_test($type, $i, "$type/$sub_dir/$filename", $SKIPPED);
-                $i++;
-            }
+    foreach ($infos as $i => $info) {
+        assert($info instanceof SplFileInfo);
+        $filename = $info->getBasename();
+        if ($type === "Fstar") {
+            print_test('F*', $i, $info, $SKIPPED);
         } else {
-            if ($type === "Fstar") {
-                print_test('F*', $i, "$type/$filename", $SKIPPED);
-            } else {
-                print_test($type, $i, "$type/$filename", $SKIPPED);
-            }
-            $i++;
+            print_test($type, $i, $info, $SKIPPED);
         }
     }?>
 }
