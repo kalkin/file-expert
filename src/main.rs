@@ -40,13 +40,12 @@ use std::process::exit;
 fn main() {
     let matches: ArgMatches = {
         let app = clap::app_from_crate!()
-            .about("Expert system for recognizing file types")
+            .override_help("Expert system for recognizing file types")
             .setting(AppSettings::DontCollapseArgsInUsage)
-            .setting(AppSettings::HelpRequired)
-            .setting(AppSettings::UnifiedHelpMessage)
+            .setting(AppSettings::HelpExpected)
             .arg(
                 Arg::new("file")
-                    .about("Files to identify")
+                    .help("Files to identify")
                     .required(false)
                     .multiple_values(true),
             );
