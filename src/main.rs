@@ -30,27 +30,28 @@ mod linguist_interpreters;
 mod modeline;
 mod shebang;
 
-use clap::{AppSettings, Arg, ArgMatches};
+use clap::{App, AppSettings, Arg, ArgMatches};
 use expert::Guess;
 use std::io;
 use std::io::prelude::*;
 use std::path::Path;
 use std::process::exit;
 
+fn app() -> App<'static> {
+    clap::app_from_crate!()
+        .override_help("Expert system for recognizing file types")
+        .setting(AppSettings::DontCollapseArgsInUsage)
+        .setting(AppSettings::HelpExpected)
+        .arg(
+            Arg::new("file")
+                .help("Files to identify")
+                .required(false)
+                .multiple_values(true),
+        )
+}
+
 fn main() {
-    let matches: ArgMatches = {
-        let app = clap::app_from_crate!()
-            .override_help("Expert system for recognizing file types")
-            .setting(AppSettings::DontCollapseArgsInUsage)
-            .setting(AppSettings::HelpExpected)
-            .arg(
-                Arg::new("file")
-                    .help("Files to identify")
-                    .required(false)
-                    .multiple_values(true),
-            );
-        app.get_matches()
-    };
+    let matches: ArgMatches = app().get_matches();
     let mut exit_code = 0;
     if matches.is_present("file") {
         for file in matches.values_of("file").unwrap() {
@@ -92,4 +93,9 @@ fn main() {
         }
     }
     exit(exit_code);
+}
+
+#[test]
+fn verify_app() {
+    app().debug_assert();
 }
