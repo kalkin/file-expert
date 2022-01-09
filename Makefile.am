@@ -47,8 +47,6 @@ $(_TARGET_PROFILE_DIR)/file-expert: $(SOURCES)
 mostlyclean-local:
 	@$(INFO_CLEAN)
 	-$(call RUN_CARGO,clean)
-
-clean-local:
 	rm -rf target
 
 .PHONY: check-local
