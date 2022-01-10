@@ -14,6 +14,7 @@ CARGO_BUILD_FLAGS += $(if $(CARGO_FAST_BUILD),,--release)
 _TARGET_PROFILE_DIR ::= $(CARGO_TARGET_DIR)/$(if $(CARGO_FAST_BUILD),debug,release)
 
 CLEANFILES = file-expert$(EXEEXT)
+DISTCLEANFILES = @BKG_RPM_SPECFILE@
 
 # We use the + prefix to pass down the jobserver fds to cargo, but we
 # don't use the prefix when make -n is used, so that cargo doesn't run
