@@ -18,6 +18,7 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 //
 #![cfg(test)]
+#![cfg(not(tarpaulin_include))]
 #![allow(non_snake_case)]
 
 mod _1c_enterprise {

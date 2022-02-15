@@ -127,6 +127,7 @@ fn extensions(path: &Path) -> Option<Vec<String>> {
 }
 
 #[cfg(test)]
+#[cfg(not(tarpaulin_include))]
 #[test]
 fn test_extensions() {
     let path = Path::new("foo/bar.js");

@@ -53,6 +53,7 @@ pub fn interpreter(first_line: &str) -> Option<String> {
 }
 
 #[cfg(test)]
+#[cfg(not(tarpaulin_include))]
 mod test {
     use crate::shebang::interpreter;
 
