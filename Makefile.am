@@ -73,7 +73,8 @@ rust-code-style: $(filter-out Cargo.lock,$(filter-out Cargo.toml,$(SOURCES)))
 
 .PHONY: coverage
 coverage: CARGO_BUILD_FLAGS = $(filter-out $(CARGO_VERBOSE),$(CARGOFLAGS))
-coverage:
+coverage: $(SOURCES)
+coverage: $(if $(wildcard samples/*),tests/linguist.rs)
 	$(call RUN_CARGO,tarpaulin) -o html
 
 @BKG_RPM_TEMPLATE@
