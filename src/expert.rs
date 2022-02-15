@@ -31,6 +31,7 @@ pub enum Guess {
     Unknown,
 }
 
+#[cfg(not(tarpaulin_include))]
 impl Display for Guess {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
