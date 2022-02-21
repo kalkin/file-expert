@@ -30,18 +30,18 @@ mod linguist_interpreters;
 mod modeline;
 mod shebang;
 
-use clap::{App, AppSettings, Arg, ArgMatches};
+use clap::{Arg, ArgMatches};
 use expert::Guess;
 use std::io;
 use std::io::prelude::*;
 use std::path::Path;
 use std::process::exit;
 
-fn app() -> App<'static> {
-    clap::app_from_crate!()
+fn app() -> clap::Command<'static> {
+    clap::command!()
         .override_help("Expert system for recognizing file types")
-        .setting(AppSettings::DontCollapseArgsInUsage)
-        .setting(AppSettings::HelpExpected)
+        .help_expected(true)
+        .dont_collapse_args_in_usage(true)
         .arg(
             Arg::new("file")
                 .help("Files to identify")
