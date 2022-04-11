@@ -45,7 +45,7 @@ $(_TARGET_PROFILE_DIR)/file-expert: $(SOURCES)
 	$(call RUN_CARGO,build) --bin $(@F)
 
 mostlyclean-local:
-	@$(INFO_CLEAN)
+	$(V_CLEAN)
 	-$(call RUN_CARGO,clean)
 	rm -rf target
 
