@@ -31,7 +31,7 @@ include = [
 [dependencies]
 clap = { version="^3.0.0", default-features=false, features=["std", "cargo"] }
 lazy_static = "1.4.0"
-fancy-regex = "^0.7"
+fancy-regex = "^0.10"
 
 [profile.release]
 lto = "fat"
