@@ -744,6 +744,7 @@ lazy_static! {
         (".pde".to_string(), "Processing".to_string()),
         (".prolog".to_string(), "Prolog".to_string()),
         (".yap".to_string(), "Prolog".to_string()),
+        (".pml".to_string(), "Promela".to_string()),
         (".spin".to_string(), "Propeller Spin".to_string()),
         (".proto".to_string(), "Protocol Buffer".to_string()),
         (".pub".to_string(), "Public Key".to_string()),

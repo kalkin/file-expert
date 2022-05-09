@@ -746,6 +746,7 @@ lazy_static! {
         ("processing".to_string(), "Processing".to_string()),
         ("proguard".to_string(), "Proguard".to_string()),
         ("prolog".to_string(), "Prolog".to_string()),
+        ("promela".to_string(), "Promela".to_string()),
         ("propeller spin".to_string(), "Propeller Spin".to_string()),
         ("protocol buffer".to_string(), "Protocol Buffer".to_string()),
         ("protobuf".to_string(), "Protocol Buffer".to_string()),

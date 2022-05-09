@@ -15590,6 +15590,68 @@ mod prolog {
     }
 }
 
+mod promela {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Promela/Supervisor.pml");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Promela".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Promela/Session.pml");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Promela".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
+        let path = Path::new(&"./samples/Promela/Thread.pml");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Promela".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_3() {
+        let path = Path::new(&"./samples/Promela/attacker_4_FINITE.pml");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Promela".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_4() {
+        let path = Path::new(&"./samples/Promela/TCP.pml");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Promela".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_5() {
+        let path = Path::new(&"./samples/Promela/bare_signals.pml");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Promela".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_6() {
+        let path = Path::new(&"./samples/Promela/ex.1.pml");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Promela".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod propeller_spin {
     use file_expert::guess;
     use file_expert::Guess;
