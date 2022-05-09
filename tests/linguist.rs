@@ -4369,6 +4369,20 @@ mod eagle {
     }
 }
 
+mod earthly {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Earthly/filenames/Earthfile");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Earthly".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod easybuild {
     use file_expert::guess;
     use file_expert::Guess;

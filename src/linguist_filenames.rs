@@ -42,6 +42,7 @@ lazy_static! {
         ("Cakefile".to_string(), "CoffeeScript".to_string()),
         ("Containerfile".to_string(), "Dockerfile".to_string()),
         ("Dockerfile".to_string(), "Dockerfile".to_string()),
+        ("Earthfile".to_string(), "Earthly".to_string()),
         (".editorconfig".to_string(), "EditorConfig".to_string()),
         ("mix.lock".to_string(), "Elixir".to_string()),
         (".abbrev_defs".to_string(), "Emacs Lisp".to_string()),
