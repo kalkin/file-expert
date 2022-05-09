@@ -352,6 +352,7 @@ lazy_static! {
         (".xhtml".to_string(), "HTML".to_string()),
         (".ecr".to_string(), "HTML+ECR".to_string()),
         (".eex".to_string(), "HTML+EEX".to_string()),
+        (".html.heex".to_string(), "HTML+EEX".to_string()),
         (".html.leex".to_string(), "HTML+EEX".to_string()),
         (".erb".to_string(), "HTML+ERB".to_string()),
         (".erb.deface".to_string(), "HTML+ERB".to_string()),

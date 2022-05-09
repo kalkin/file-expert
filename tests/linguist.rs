@@ -7408,7 +7408,7 @@ mod html_plus_eex {
 
     #[test]
     fn test_0() {
-        let path = Path::new(&"./samples/HTML+EEX/live_component.html.leex");
+        let path = Path::new(&"./samples/HTML+EEX/live_component.html.heex");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("HTML+EEX".to_string());
         assert_eq!(actual, expected);
@@ -7416,6 +7416,14 @@ mod html_plus_eex {
 
     #[test]
     fn test_1() {
+        let path = Path::new(&"./samples/HTML+EEX/live_component.html.leex");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("HTML+EEX".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
         let path = Path::new(&"./samples/HTML+EEX/index.html.eex");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("HTML+EEX".to_string());
