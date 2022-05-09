@@ -275,6 +275,7 @@ lazy_static! {
         ("zprofile".to_string(), "Shell".to_string()),
         ("zshenv".to_string(), "Shell".to_string()),
         ("zshrc".to_string(), "Shell".to_string()),
+        (".shellcheckrc".to_string(), "ShellCheck Config".to_string()),
         ("Singularity".to_string(), "Singularity".to_string()),
         ("Android.bp".to_string(), "Soong".to_string()),
         ("BUCK".to_string(), "Starlark".to_string()),

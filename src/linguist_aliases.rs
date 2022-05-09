@@ -887,6 +887,11 @@ lazy_static! {
         ("shell-script".to_string(), "Shell".to_string()),
         ("bash".to_string(), "Shell".to_string()),
         ("zsh".to_string(), "Shell".to_string()),
+        (
+            "shellcheck config".to_string(),
+            "ShellCheck Config".to_string()
+        ),
+        ("shellcheckrc".to_string(), "ShellCheck Config".to_string()),
         ("shellsession".to_string(), "ShellSession".to_string()),
         ("bash session".to_string(), "ShellSession".to_string()),
         ("console".to_string(), "ShellSession".to_string()),

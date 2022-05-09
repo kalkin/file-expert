@@ -18883,6 +18883,20 @@ mod shell {
     }
 }
 
+mod shellcheck_config {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/ShellCheck Config/filenames/.shellcheckrc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("ShellCheck Config".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod shellsession {
     use file_expert::guess;
     use file_expert::Guess;
