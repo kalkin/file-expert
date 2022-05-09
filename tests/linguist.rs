@@ -21890,7 +21890,7 @@ mod xml {
 
     #[test]
     fn test_1() {
-        let path = Path::new(&"./samples/XML/real-estate.mjml");
+        let path = Path::new(&"./samples/XML/demo.hzp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21898,7 +21898,7 @@ mod xml {
 
     #[test]
     fn test_2() {
-        let path = Path::new(&"./samples/XML/nproj-sample.nproj");
+        let path = Path::new(&"./samples/XML/real-estate.mjml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21906,7 +21906,7 @@ mod xml {
 
     #[test]
     fn test_3() {
-        let path = Path::new(&"./samples/XML/fsproj-sample.fsproj");
+        let path = Path::new(&"./samples/XML/nproj-sample.nproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21914,7 +21914,7 @@ mod xml {
 
     #[test]
     fn test_4() {
-        let path = Path::new(&"./samples/XML/holobloc-sample.res");
+        let path = Path::new(&"./samples/XML/fsproj-sample.fsproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21922,7 +21922,7 @@ mod xml {
 
     #[test]
     fn test_5() {
-        let path = Path::new(&"./samples/XML/CSharpVSPackage.vstemplate");
+        let path = Path::new(&"./samples/XML/holobloc-sample.res");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21930,7 +21930,7 @@ mod xml {
 
     #[test]
     fn test_6() {
-        let path = Path::new(&"./samples/XML/vcxproj-sample.vcxproj.filters");
+        let path = Path::new(&"./samples/XML/CSharpVSPackage.vstemplate");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21938,7 +21938,7 @@ mod xml {
 
     #[test]
     fn test_7() {
-        let path = Path::new(&"./samples/XML/MyApp.ux");
+        let path = Path::new(&"./samples/XML/vcxproj-sample.vcxproj.filters");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21946,7 +21946,7 @@ mod xml {
 
     #[test]
     fn test_8() {
-        let path = Path::new(&"./samples/XML/receiver.ncl");
+        let path = Path::new(&"./samples/XML/MyApp.ux");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21954,7 +21954,7 @@ mod xml {
 
     #[test]
     fn test_9() {
-        let path = Path::new(&"./samples/XML/translation_en3.ts");
+        let path = Path::new(&"./samples/XML/receiver.ncl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21962,7 +21962,7 @@ mod xml {
 
     #[test]
     fn test_10() {
-        let path = Path::new(&"./samples/XML/example.ccproj");
+        let path = Path::new(&"./samples/XML/translation_en3.ts");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21970,7 +21970,7 @@ mod xml {
 
     #[test]
     fn test_11() {
-        let path = Path::new(&"./samples/XML/obj_control.object.gmx");
+        let path = Path::new(&"./samples/XML/example.ccproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21978,7 +21978,7 @@ mod xml {
 
     #[test]
     fn test_12() {
-        let path = Path::new(&"./samples/XML/pt_BR.xml");
+        let path = Path::new(&"./samples/XML/obj_control.object.gmx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21986,7 +21986,7 @@ mod xml {
 
     #[test]
     fn test_13() {
-        let path = Path::new(&"./samples/XML/sample.targets");
+        let path = Path::new(&"./samples/XML/pt_BR.xml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -21994,7 +21994,7 @@ mod xml {
 
     #[test]
     fn test_14() {
-        let path = Path::new(&"./samples/XML/chrome.natvis");
+        let path = Path::new(&"./samples/XML/sample.targets");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22002,7 +22002,7 @@ mod xml {
 
     #[test]
     fn test_15() {
-        let path = Path::new(&"./samples/XML/Case.workflow");
+        let path = Path::new(&"./samples/XML/chrome.natvis");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22010,7 +22010,7 @@ mod xml {
 
     #[test]
     fn test_16() {
-        let path = Path::new(&"./samples/XML/JSBrowser.jsproj");
+        let path = Path::new(&"./samples/XML/Case.workflow");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22018,7 +22018,7 @@ mod xml {
 
     #[test]
     fn test_17() {
-        let path = Path::new(&"./samples/XML/FXMLSample.fxml");
+        let path = Path::new(&"./samples/XML/JSBrowser.jsproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22026,7 +22026,7 @@ mod xml {
 
     #[test]
     fn test_18() {
-        let path = Path::new(&"./samples/XML/some-ideas.mm");
+        let path = Path::new(&"./samples/XML/FXMLSample.fxml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22034,7 +22034,7 @@ mod xml {
 
     #[test]
     fn test_19() {
-        let path = Path::new(&"./samples/XML/msbuild-example.proj");
+        let path = Path::new(&"./samples/XML/some-ideas.mm");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22042,7 +22042,7 @@ mod xml {
 
     #[test]
     fn test_20() {
-        let path = Path::new(&"./samples/XML/vcxproj-sample.vcxproj");
+        let path = Path::new(&"./samples/XML/msbuild-example.proj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22050,7 +22050,7 @@ mod xml {
 
     #[test]
     fn test_21() {
-        let path = Path::new(&"./samples/XML/XmlIO.pluginspec");
+        let path = Path::new(&"./samples/XML/vcxproj-sample.vcxproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22058,7 +22058,7 @@ mod xml {
 
     #[test]
     fn test_22() {
-        let path = Path::new(&"./samples/XML/source.extension.vsixmanifest");
+        let path = Path::new(&"./samples/XML/XmlIO.pluginspec");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22066,7 +22066,7 @@ mod xml {
 
     #[test]
     fn test_23() {
-        let path = Path::new(&"./samples/XML/dependency-example.depproj");
+        let path = Path::new(&"./samples/XML/source.extension.vsixmanifest");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22074,7 +22074,7 @@ mod xml {
 
     #[test]
     fn test_24() {
-        let path = Path::new(&"./samples/XML/clouddef.csdef");
+        let path = Path::new(&"./samples/XML/dependency-example.depproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22082,7 +22082,7 @@ mod xml {
 
     #[test]
     fn test_25() {
-        let path = Path::new(&"./samples/XML/vbproj-sample.vbproj");
+        let path = Path::new(&"./samples/XML/clouddef.csdef");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22090,7 +22090,7 @@ mod xml {
 
     #[test]
     fn test_26() {
-        let path = Path::new(&"./samples/XML/intellij.iml");
+        let path = Path::new(&"./samples/XML/vbproj-sample.vbproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22098,7 +22098,7 @@ mod xml {
 
     #[test]
     fn test_27() {
-        let path = Path::new(&"./samples/XML/xhtml-struct-1.mod");
+        let path = Path::new(&"./samples/XML/intellij.iml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22106,7 +22106,7 @@ mod xml {
 
     #[test]
     fn test_28() {
-        let path = Path::new(&"./samples/XML/Demo.sfproj");
+        let path = Path::new(&"./samples/XML/xhtml-struct-1.mod");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22114,7 +22114,7 @@ mod xml {
 
     #[test]
     fn test_29() {
-        let path = Path::new(&"./samples/XML/main.ncl");
+        let path = Path::new(&"./samples/XML/Demo.sfproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22122,7 +22122,7 @@ mod xml {
 
     #[test]
     fn test_30() {
-        let path = Path::new(&"./samples/XML/namespace-strict.sch");
+        let path = Path::new(&"./samples/XML/main.ncl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22130,7 +22130,7 @@ mod xml {
 
     #[test]
     fn test_31() {
-        let path = Path::new(&"./samples/XML/psd-data.xmp");
+        let path = Path::new(&"./samples/XML/namespace-strict.sch");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22138,7 +22138,7 @@ mod xml {
 
     #[test]
     fn test_32() {
-        let path = Path::new(&"./samples/XML/MDM.adml");
+        let path = Path::new(&"./samples/XML/psd-data.xmp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22146,7 +22146,7 @@ mod xml {
 
     #[test]
     fn test_33() {
-        let path = Path::new(&"./samples/XML/oasis-table.sch");
+        let path = Path::new(&"./samples/XML/MDM.adml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22154,7 +22154,7 @@ mod xml {
 
     #[test]
     fn test_34() {
-        let path = Path::new(&"./samples/XML/module.ant");
+        let path = Path::new(&"./samples/XML/oasis-table.sch");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22162,7 +22162,7 @@ mod xml {
 
     #[test]
     fn test_35() {
-        let path = Path::new(&"./samples/XML/water.tsx");
+        let path = Path::new(&"./samples/XML/module.ant");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22170,7 +22170,7 @@ mod xml {
 
     #[test]
     fn test_36() {
-        let path = Path::new(&"./samples/XML/System.Buffers.pkgproj");
+        let path = Path::new(&"./samples/XML/water.tsx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22178,7 +22178,7 @@ mod xml {
 
     #[test]
     fn test_37() {
-        let path = Path::new(&"./samples/XML/pt_BR.ts");
+        let path = Path::new(&"./samples/XML/System.Buffers.pkgproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22186,7 +22186,7 @@ mod xml {
 
     #[test]
     fn test_38() {
-        let path = Path::new(&"./samples/XML/01_top.ncl");
+        let path = Path::new(&"./samples/XML/pt_BR.ts");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22194,7 +22194,7 @@ mod xml {
 
     #[test]
     fn test_39() {
-        let path = Path::new(&"./samples/XML/point-3.2.gml");
+        let path = Path::new(&"./samples/XML/01_top.ncl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22202,7 +22202,7 @@ mod xml {
 
     #[test]
     fn test_40() {
-        let path = Path::new(&"./samples/XML/example-sharedproj.shproj");
+        let path = Path::new(&"./samples/XML/point-3.2.gml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22210,7 +22210,7 @@ mod xml {
 
     #[test]
     fn test_41() {
-        let path = Path::new(&"./samples/XML/GMOculus.project.gmx");
+        let path = Path::new(&"./samples/XML/example-sharedproj.shproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22218,7 +22218,7 @@ mod xml {
 
     #[test]
     fn test_42() {
-        let path = Path::new(&"./samples/XML/battlescribe.gst");
+        let path = Path::new(&"./samples/XML/GMOculus.project.gmx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22226,7 +22226,7 @@ mod xml {
 
     #[test]
     fn test_43() {
-        let path = Path::new(&"./samples/XML/src.builds");
+        let path = Path::new(&"./samples/XML/battlescribe.gst");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22234,7 +22234,7 @@ mod xml {
 
     #[test]
     fn test_44() {
-        let path = Path::new(&"./samples/XML/csproj-sample.csproj");
+        let path = Path::new(&"./samples/XML/src.builds");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22242,7 +22242,7 @@ mod xml {
 
     #[test]
     fn test_45() {
-        let path = Path::new(&"./samples/XML/Example.mdpolicy");
+        let path = Path::new(&"./samples/XML/csproj-sample.csproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22250,7 +22250,7 @@ mod xml {
 
     #[test]
     fn test_46() {
-        let path = Path::new(&"./samples/XML/module.ivy");
+        let path = Path::new(&"./samples/XML/Example.mdpolicy");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22258,7 +22258,7 @@ mod xml {
 
     #[test]
     fn test_47() {
-        let path = Path::new(&"./samples/XML/HITSP_C32.sch");
+        let path = Path::new(&"./samples/XML/module.ivy");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22266,7 +22266,7 @@ mod xml {
 
     #[test]
     fn test_48() {
-        let path = Path::new(&"./samples/XML/Strings.resx");
+        let path = Path::new(&"./samples/XML/HITSP_C32.sch");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22274,7 +22274,7 @@ mod xml {
 
     #[test]
     fn test_49() {
-        let path = Path::new(&"./samples/XML/configdef.cscfg");
+        let path = Path::new(&"./samples/XML/Strings.resx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22282,7 +22282,7 @@ mod xml {
 
     #[test]
     fn test_50() {
-        let path = Path::new(&"./samples/XML/Storyboard.storyboard");
+        let path = Path::new(&"./samples/XML/configdef.cscfg");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22290,7 +22290,7 @@ mod xml {
 
     #[test]
     fn test_51() {
-        let path = Path::new(&"./samples/XML/MDM.admx");
+        let path = Path::new(&"./samples/XML/Storyboard.storyboard");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22298,7 +22298,7 @@ mod xml {
 
     #[test]
     fn test_52() {
-        let path = Path::new(&"./samples/XML/point-3.1.gml");
+        let path = Path::new(&"./samples/XML/MDM.admx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22306,7 +22306,7 @@ mod xml {
 
     #[test]
     fn test_53() {
-        let path = Path::new(&"./samples/XML/racoon.mjml");
+        let path = Path::new(&"./samples/XML/point-3.1.gml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22314,7 +22314,7 @@ mod xml {
 
     #[test]
     fn test_54() {
-        let path = Path::new(&"./samples/XML/libsomething.dll.config");
+        let path = Path::new(&"./samples/XML/racoon.mjml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22322,7 +22322,7 @@ mod xml {
 
     #[test]
     fn test_55() {
-        let path = Path::new(&"./samples/XML/sample.nuspec");
+        let path = Path::new(&"./samples/XML/libsomething.dll.config");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22330,7 +22330,7 @@ mod xml {
 
     #[test]
     fn test_56() {
-        let path = Path::new(&"./samples/XML/NDepends_Example.ndproj");
+        let path = Path::new(&"./samples/XML/sample.nuspec");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22338,7 +22338,7 @@ mod xml {
 
     #[test]
     fn test_57() {
-        let path = Path::new(&"./samples/XML/net_docfile.xml");
+        let path = Path::new(&"./samples/XML/NDepends_Example.ndproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22346,7 +22346,7 @@ mod xml {
 
     #[test]
     fn test_58() {
-        let path = Path::new(&"./samples/XML/phpunit.xml.dist");
+        let path = Path::new(&"./samples/XML/net_docfile.xml");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22354,7 +22354,7 @@ mod xml {
 
     #[test]
     fn test_59() {
-        let path = Path::new(&"./samples/XML/wixdemo.wixproj");
+        let path = Path::new(&"./samples/XML/phpunit.xml.dist");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22362,7 +22362,7 @@ mod xml {
 
     #[test]
     fn test_60() {
-        let path = Path::new(&"./samples/XML/cloudconfig.cscfg");
+        let path = Path::new(&"./samples/XML/wixdemo.wixproj");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22370,7 +22370,7 @@ mod xml {
 
     #[test]
     fn test_61() {
-        let path = Path::new(&"./samples/XML/tei-odd-sample.odd");
+        let path = Path::new(&"./samples/XML/cloudconfig.cscfg");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22378,7 +22378,7 @@ mod xml {
 
     #[test]
     fn test_62() {
-        let path = Path::new(&"./samples/XML/xquery-tutorial.xspec");
+        let path = Path::new(&"./samples/XML/tei-odd-sample.odd");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22386,7 +22386,7 @@ mod xml {
 
     #[test]
     fn test_63() {
-        let path = Path::new(&"./samples/XML/Application.xib");
+        let path = Path::new(&"./samples/XML/xquery-tutorial.xspec");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22394,7 +22394,7 @@ mod xml {
 
     #[test]
     fn test_64() {
-        let path = Path::new(&"./samples/XML/WebElement.rs");
+        let path = Path::new(&"./samples/XML/Application.xib");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22402,7 +22402,7 @@ mod xml {
 
     #[test]
     fn test_65() {
-        let path = Path::new(&"./samples/XML/MainView.ux");
+        let path = Path::new(&"./samples/XML/WebElement.rs");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22410,7 +22410,7 @@ mod xml {
 
     #[test]
     fn test_66() {
-        let path = Path::new(&"./samples/XML/Default.props");
+        let path = Path::new(&"./samples/XML/MainView.ux");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());
         assert_eq!(actual, expected);
@@ -22418,6 +22418,14 @@ mod xml {
 
     #[test]
     fn test_67() {
+        let path = Path::new(&"./samples/XML/Default.props");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("XML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_68() {
         let path = Path::new(&"./samples/XML/filenames/.cproject");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("XML".to_string());

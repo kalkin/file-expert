@@ -1030,6 +1030,7 @@ lazy_static! {
         (".glade".to_string(), "XML".to_string()),
         (".gmx".to_string(), "XML".to_string()),
         (".grxml".to_string(), "XML".to_string()),
+        (".hzp".to_string(), "XML".to_string()),
         (".iml".to_string(), "XML".to_string()),
         (".ivy".to_string(), "XML".to_string()),
         (".jelly".to_string(), "XML".to_string()),
