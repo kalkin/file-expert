@@ -32,11 +32,11 @@ mod shebang;
 
 use clap::{Arg, ArgMatches};
 use expert::Guess;
-use update_informer::{registry, Check};
 use std::io;
 use std::io::prelude::*;
 use std::path::Path;
 use std::process::exit;
+use update_informer::{registry, Check};
 
 fn app() -> clap::Command<'static> {
     clap::command!()
@@ -61,7 +61,7 @@ fn main() {
         );
         if let Ok(Some(version)) = informer.check_version() {
             eprintln!("New version {} is available", version);
-            eprintln!("Update with: cargo install {}", "file-expert");
+            eprintln!("Update with: cargo install file-expert");
         }
     }
     let mut exit_code = 0;
