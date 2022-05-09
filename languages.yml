@@ -2533,6 +2533,7 @@ INI:
   - ".pro"
   - ".properties"
   filenames:
+  - ".flake8"
   - buildozer.spec
   tm_scope: source.ini
   aliases:

@@ -8130,6 +8130,14 @@ mod ini {
         let expected = Guess::Kind("INI".to_string());
         assert_eq!(actual, expected);
     }
+
+    #[test]
+    fn test_8() {
+        let path = Path::new(&"./samples/INI/filenames/.flake8");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("INI".to_string());
+        assert_eq!(actual, expected);
+    }
 }
 
 mod idris {

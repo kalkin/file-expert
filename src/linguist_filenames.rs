@@ -71,6 +71,7 @@ lazy_static! {
         ("go.mod".to_string(), "Go Module".to_string()),
         ("Jenkinsfile".to_string(), "Groovy".to_string()),
         ("haproxy.cfg".to_string(), "HAProxy".to_string()),
+        (".flake8".to_string(), "INI".to_string()),
         ("buildozer.spec".to_string(), "INI".to_string()),
         (".atomignore".to_string(), "Ignore List".to_string()),
         (".babelignore".to_string(), "Ignore List".to_string()),
