@@ -981,6 +981,7 @@ lazy_static! {
         (".vdf".to_string(), "Valve Data Format".to_string()),
         (".veo".to_string(), "Verilog".to_string()),
         (".vim".to_string(), "Vim Script".to_string()),
+        (".vimrc".to_string(), "Vim Script".to_string()),
         (".vmb".to_string(), "Vim Script".to_string()),
         (".snip".to_string(), "Vim Snippet".to_string()),
         (".snippet".to_string(), "Vim Snippet".to_string()),
