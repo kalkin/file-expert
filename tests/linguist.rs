@@ -22688,7 +22688,7 @@ mod yaml {
 
     #[test]
     fn test_9() {
-        let path = Path::new(&"./samples/YAML/filenames/.clang-format");
+        let path = Path::new(&"./samples/YAML/filenames/CITATION.cff");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("YAML".to_string());
         assert_eq!(actual, expected);
@@ -22696,7 +22696,7 @@ mod yaml {
 
     #[test]
     fn test_10() {
-        let path = Path::new(&"./samples/YAML/filenames/yarn.lock");
+        let path = Path::new(&"./samples/YAML/filenames/.clang-format");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("YAML".to_string());
         assert_eq!(actual, expected);
@@ -22704,6 +22704,14 @@ mod yaml {
 
     #[test]
     fn test_11() {
+        let path = Path::new(&"./samples/YAML/filenames/yarn.lock");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("YAML".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_12() {
         let path = Path::new(&"./samples/YAML/filenames/glide.lock");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("YAML".to_string());
