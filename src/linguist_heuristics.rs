@@ -134,6 +134,7 @@ lazy_static! {
     static ref MICROSOFT_DEVELOPER_STUDIO_PROJECT_1: Regex = Regex::new(r#"# Microsoft Developer Studio Generated Build File"#).unwrap();
     static ref MODULA_2_1: Regex = Regex::new(r#"^\s*(?i:MODULE|END) [\w\.]+;"#).unwrap();
     static ref MOOCODE_1: Regex = Regex::new(r#"^\s*@\w+\s+"#).unwrap();
+    static ref MOTOKO: Regex = Regex::new(r#"\b(func|shared)\b"#).unwrap();
     static ref MUF_1: Regex = Regex::new(r#"^: "#).unwrap();
     static ref M_1: Regex = Regex::new(r#"^\s*;"#).unwrap();
     static ref NASL_1: Regex = Regex::new(r#"^\s*include\s*\(\s*(?:\"|')[\\/\w\-\.:\s]+\.(?:nasl|inc)\s*(?:\"|')\s*\)\s*;"#).unwrap();
@@ -847,6 +848,13 @@ pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str>
                 Some("Linux Kernel Module")
             } else {
                 Some("AMPL")
+            }
+        }
+        ".mo" => {
+            if match_lines(&MOTOKO, content) {
+                Some("Motoko")
+            } else {
+                Some("Modelica")
             }
         }
         ".moo" => {

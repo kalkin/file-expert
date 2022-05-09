@@ -607,7 +607,6 @@ lazy_static! {
         (".druby".to_string(), "Mirah".to_string()),
         (".duby".to_string(), "Mirah".to_string()),
         (".mirah".to_string(), "Mirah".to_string()),
-        (".mo".to_string(), "Modelica".to_string()),
         (".i3".to_string(), "Modula-3".to_string()),
         (".ig".to_string(), "Modula-3".to_string()),
         (".m3".to_string(), "Modula-3".to_string()),

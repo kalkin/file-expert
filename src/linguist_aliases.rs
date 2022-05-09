@@ -602,6 +602,7 @@ lazy_static! {
         ("monkey".to_string(), "Monkey".to_string()),
         ("moocode".to_string(), "Moocode".to_string()),
         ("moonscript".to_string(), "MoonScript".to_string()),
+        ("motoko".to_string(), "Motoko".to_string()),
         (
             "motorola 68k assembly".to_string(),
             "Motorola 68K Assembly".to_string()

@@ -113,6 +113,7 @@ MICROSOFT_DEVELOPER_STUDIO_PROJECT_1: '# Microsoft Developer Studio Generated Bu
   File'
 MODULA_2_1: ^\s*(?i:MODULE|END) [\w\.]+;
 MOOCODE_1: ^\s*@\w+\s+
+MOTOKO: '\b(func|shared)\b'
 MUF_1: '^: '
 M_1: ^\s*;
 NASL_1: ^\s*include\s*\(\s*(?:"|')[\\/\w\-\.:\s]+\.(?:nasl|inc)\s*(?:"|')\s*\)\s*;

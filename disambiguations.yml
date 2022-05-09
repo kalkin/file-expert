@@ -649,6 +649,13 @@
     - LINUX_KERNEL_MODULE_1
   - language: AMPL
 - extensions:
+  - .mo
+  rules:
+  - language: Motoko
+    or:
+    - MOTOKO
+  - language: Modelica
+- extensions:
   - .moo
   rules:
   - language: Moocode

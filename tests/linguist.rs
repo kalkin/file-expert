@@ -12254,6 +12254,28 @@ mod moonscript {
     }
 }
 
+mod motoko {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Motoko/erc20.mo");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Motoko".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Motoko/queue.mo");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Motoko".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod motorola_68k_assembly {
     use file_expert::guess;
     use file_expert::Guess;
