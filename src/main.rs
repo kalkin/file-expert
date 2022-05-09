@@ -32,6 +32,7 @@ mod shebang;
 
 use clap::{Arg, ArgMatches};
 use expert::Guess;
+use update_informer::{registry, Check};
 use std::io;
 use std::io::prelude::*;
 use std::path::Path;
@@ -52,6 +53,17 @@ fn app() -> clap::Command<'static> {
 
 fn main() {
     let matches: ArgMatches = app().get_matches();
+    {
+        let informer = update_informer::new(
+            registry::Crates,
+            env!("CARGO_PKG_NAME"),
+            env!("CARGO_PKG_VERSION"),
+        );
+        if let Ok(Some(version)) = informer.check_version() {
+            eprintln!("New version {} is available", version);
+            eprintln!("Update with: cargo install {}", "file-expert");
+        }
+    }
     let mut exit_code = 0;
     if matches.is_present("file") {
         for file in matches.values_of("file").unwrap() {
