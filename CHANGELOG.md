@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v1.1.0] - 2022-05-09
+
+### Added
+
+- Inform the user about new version released
+- kshrc to Shell (github/linguist#5685)
+- `.html.heex` extension for `HTML+EEX` language  (github/linguist#5671)
+- C++ module interface .ixx extension (github/linguist#5680)
+- `.flake8` as INI file (github/linguist#5669)
+- Support for ShellCheck config files (github/linguist#5667)
+- `.vimrc` to supported Vim Script extensions (github/linguist#5666)
+- Support for Earthly language (github/linguist#5613)
+- Support for Promela (github/linguist#5659)
+- `.hzp` as an XML extension (github/linguist#5626)
+- Motoko (github/linguist#5611)
+- EJS template file extensions (github/linguist#5591)
+- Common raytracer shader extensions (github/linguist#5566)
+- Support for `CITATION` manifests (github/linguist#5577)
+- Support for Containerfile (github/linguist#5588)
+- Update installation instructions
+
+### Changed
+
+- Use LTO full when compiling the release
+
+### Fixed
+
+- modeline: Add aliases for downcase language string
+
 ## [1.0.0] - 2021-09-18
 
 ### Added
