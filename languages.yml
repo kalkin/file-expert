@@ -5641,6 +5641,7 @@ Shell:
   - ".env"
   - ".env.example"
   - ".flaskenv"
+  - ".kshrc"
   - ".login"
   - ".profile"
   - ".zlogin"
@@ -5656,6 +5657,7 @@ Shell:
   - bashrc
   - cshrc
   - gradlew
+  - kshrc
   - login
   - man
   - profile
