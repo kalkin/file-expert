@@ -5620,7 +5620,7 @@ mod glsl {
 
     #[test]
     fn test_5() {
-        let path = Path::new(&"./samples/GLSL/islandScene.shader");
+        let path = Path::new(&"./samples/GLSL/miss.rmiss");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5628,7 +5628,7 @@ mod glsl {
 
     #[test]
     fn test_6() {
-        let path = Path::new(&"./samples/GLSL/shader.fp");
+        let path = Path::new(&"./samples/GLSL/islandScene.shader");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5636,7 +5636,7 @@ mod glsl {
 
     #[test]
     fn test_7() {
-        let path = Path::new(&"./samples/GLSL/islandScene.glsl");
+        let path = Path::new(&"./samples/GLSL/shader.fp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5644,7 +5644,7 @@ mod glsl {
 
     #[test]
     fn test_8() {
-        let path = Path::new(&"./samples/GLSL/recurse1.frag");
+        let path = Path::new(&"./samples/GLSL/islandScene.glsl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5652,7 +5652,7 @@ mod glsl {
 
     #[test]
     fn test_9() {
-        let path = Path::new(&"./samples/GLSL/myvertex.vrx");
+        let path = Path::new(&"./samples/GLSL/recurse1.frag");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5660,7 +5660,7 @@ mod glsl {
 
     #[test]
     fn test_10() {
-        let path = Path::new(&"./samples/GLSL/recurse1.fs");
+        let path = Path::new(&"./samples/GLSL/myvertex.vrx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5668,7 +5668,7 @@ mod glsl {
 
     #[test]
     fn test_11() {
-        let path = Path::new(&"./samples/GLSL/SyLens.shader");
+        let path = Path::new(&"./samples/GLSL/recurse1.fs");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5676,7 +5676,7 @@ mod glsl {
 
     #[test]
     fn test_12() {
-        let path = Path::new(&"./samples/GLSL/pntriangles.tese");
+        let path = Path::new(&"./samples/GLSL/SyLens.shader");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5684,7 +5684,7 @@ mod glsl {
 
     #[test]
     fn test_13() {
-        let path = Path::new(&"./samples/GLSL/SimpleLighting.gl2.frag");
+        let path = Path::new(&"./samples/GLSL/pntriangles.tese");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5692,7 +5692,7 @@ mod glsl {
 
     #[test]
     fn test_14() {
-        let path = Path::new(&"./samples/GLSL/blend_120.glslf");
+        let path = Path::new(&"./samples/GLSL/closesthit.rchit");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());
         assert_eq!(actual, expected);
@@ -5700,6 +5700,22 @@ mod glsl {
 
     #[test]
     fn test_15() {
+        let path = Path::new(&"./samples/GLSL/SimpleLighting.gl2.frag");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("GLSL".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_16() {
+        let path = Path::new(&"./samples/GLSL/blend_120.glslf");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("GLSL".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_17() {
         let path = Path::new(&"./samples/GLSL/extrude_normals.gs");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("GLSL".to_string());

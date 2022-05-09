@@ -275,6 +275,8 @@ lazy_static! {
         (".glslf".to_string(), "GLSL".to_string()),
         (".glslv".to_string(), "GLSL".to_string()),
         (".gshader".to_string(), "GLSL".to_string()),
+        (".rchit".to_string(), "GLSL".to_string()),
+        (".rmiss".to_string(), "GLSL".to_string()),
         (".tesc".to_string(), "GLSL".to_string()),
         (".tese".to_string(), "GLSL".to_string()),
         (".vert".to_string(), "GLSL".to_string()),
