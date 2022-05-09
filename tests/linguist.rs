@@ -2045,7 +2045,7 @@ mod c_plus__plus_ {
 
     #[test]
     fn test_10() {
-        let path = Path::new(&"./samples/C++/PackageInfoParser.cpp");
+        let path = Path::new(&"./samples/C++/module.ixx");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
         assert_eq!(actual, expected);
@@ -2053,7 +2053,7 @@ mod c_plus__plus_ {
 
     #[test]
     fn test_11() {
-        let path = Path::new(&"./samples/C++/hello.ino");
+        let path = Path::new(&"./samples/C++/PackageInfoParser.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
         assert_eq!(actual, expected);
@@ -2061,6 +2061,14 @@ mod c_plus__plus_ {
 
     #[test]
     fn test_12() {
+        let path = Path::new(&"./samples/C++/hello.ino");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("C++".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_13() {
         let path = Path::new(&"./samples/C++/scanner.cc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2069,7 +2077,7 @@ mod c_plus__plus_ {
 
     #[ignore]
     #[test]
-    fn test_13() {
+    fn test_14() {
         let path = Path::new(&"./samples/C++/initClasses.inc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2077,7 +2085,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_14() {
+    fn test_15() {
         let path = Path::new(&"./samples/C++/Types.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2085,7 +2093,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_15() {
+    fn test_16() {
         let path = Path::new(&"./samples/C++/hello.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2093,7 +2101,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_16() {
+    fn test_17() {
         let path = Path::new(&"./samples/C++/env.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2101,7 +2109,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_17() {
+    fn test_18() {
         let path = Path::new(&"./samples/C++/gdsdbreader.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2109,7 +2117,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_18() {
+    fn test_19() {
         let path = Path::new(&"./samples/C++/crypter.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2117,7 +2125,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_19() {
+    fn test_20() {
         let path = Path::new(&"./samples/C++/srs_app_ingest.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2125,7 +2133,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_20() {
+    fn test_21() {
         let path = Path::new(&"./samples/C++/protocol-buffer.pb.cc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2133,7 +2141,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_21() {
+    fn test_22() {
         let path = Path::new(&"./samples/C++/scanner.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2141,7 +2149,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_22() {
+    fn test_23() {
         let path = Path::new(&"./samples/C++/json_writer.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2149,7 +2157,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_23() {
+    fn test_24() {
         let path = Path::new(&"./samples/C++/bar.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2157,7 +2165,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_24() {
+    fn test_25() {
         let path = Path::new(&"./samples/C++/v8.cc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2165,7 +2173,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_25() {
+    fn test_26() {
         let path = Path::new(&"./samples/C++/CsvStreamer.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2173,7 +2181,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_26() {
+    fn test_27() {
         let path = Path::new(&"./samples/C++/key.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2181,7 +2189,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_27() {
+    fn test_28() {
         let path = Path::new(&"./samples/C++/metrics.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2189,7 +2197,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_28() {
+    fn test_29() {
         let path = Path::new(&"./samples/C++/json_reader.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2197,7 +2205,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_29() {
+    fn test_30() {
         let path = Path::new(&"./samples/C++/constexpr_header.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2205,7 +2213,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_30() {
+    fn test_31() {
         let path = Path::new(&"./samples/C++/cvsignore.re");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2213,7 +2221,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_31() {
+    fn test_32() {
         let path = Path::new(&"./samples/C++/octave_changer.ino");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2221,7 +2229,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_32() {
+    fn test_33() {
         let path = Path::new(&"./samples/C++/runtime-compiler.cc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2229,7 +2237,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_33() {
+    fn test_34() {
         let path = Path::new(&"./samples/C++/bar.hpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2237,7 +2245,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_34() {
+    fn test_35() {
         let path = Path::new(&"./samples/C++/wrapper_inner.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2245,7 +2253,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_35() {
+    fn test_36() {
         let path = Path::new(&"./samples/C++/v8.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2253,7 +2261,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_36() {
+    fn test_37() {
         let path = Path::new(&"./samples/C++/program.cp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2261,7 +2269,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_37() {
+    fn test_38() {
         let path = Path::new(&"./samples/C++/ThreadedQueue.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2269,7 +2277,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_38() {
+    fn test_39() {
         let path = Path::new(&"./samples/C++/16F88.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2277,7 +2285,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_39() {
+    fn test_40() {
         let path = Path::new(&"./samples/C++/utils.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2285,7 +2293,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_40() {
+    fn test_41() {
         let path = Path::new(&"./samples/C++/protocol-buffer.pb.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2293,7 +2301,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_41() {
+    fn test_42() {
         let path = Path::new(&"./samples/C++/libcanister.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2301,7 +2309,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_42() {
+    fn test_43() {
         let path = Path::new(&"./samples/C++/main.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2309,7 +2317,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_43() {
+    fn test_44() {
         let path = Path::new(&"./samples/C++/env.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2317,7 +2325,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_44() {
+    fn test_45() {
         let path = Path::new(&"./samples/C++/ClasspathVMSystemProperties.inc");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2325,7 +2333,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_45() {
+    fn test_46() {
         let path = Path::new(&"./samples/C++/Math.inl");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2333,7 +2341,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_46() {
+    fn test_47() {
         let path = Path::new(&"./samples/C++/graphics.cpp");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2341,7 +2349,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_47() {
+    fn test_48() {
         let path = Path::new(&"./samples/C++/Memory16F88.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());
@@ -2349,7 +2357,7 @@ mod c_plus__plus_ {
     }
 
     #[test]
-    fn test_48() {
+    fn test_49() {
         let path = Path::new(&"./samples/C++/hello.grpc.pb.h");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("C++".to_string());

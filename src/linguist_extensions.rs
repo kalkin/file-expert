@@ -111,6 +111,7 @@ lazy_static! {
         (".inl".to_string(), "C++".to_string()),
         (".ino".to_string(), "C++".to_string()),
         (".ipp".to_string(), "C++".to_string()),
+        (".ixx".to_string(), "C++".to_string()),
         (".tcc".to_string(), "C++".to_string()),
         (".tpp".to_string(), "C++".to_string()),
         (".c-objdump".to_string(), "C-ObjDump".to_string()),
