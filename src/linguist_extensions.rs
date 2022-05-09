@@ -212,6 +212,7 @@ lazy_static! {
         (".eclxml".to_string(), "ECL".to_string()),
         (".ejs".to_string(), "EJS".to_string()),
         (".ect".to_string(), "EJS".to_string()),
+        (".ejs.t".to_string(), "EJS".to_string()),
         (".jst".to_string(), "EJS".to_string()),
         (".eq".to_string(), "EQ".to_string()),
         (".eb".to_string(), "Easybuild".to_string()),

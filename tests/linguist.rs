@@ -4286,7 +4286,7 @@ mod ejs {
 
     #[test]
     fn test_1() {
-        let path = Path::new(&"./samples/EJS/admin_index.jst");
+        let path = Path::new(&"./samples/EJS/modules.ejs.t");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("EJS".to_string());
         assert_eq!(actual, expected);
@@ -4294,7 +4294,7 @@ mod ejs {
 
     #[test]
     fn test_2() {
-        let path = Path::new(&"./samples/EJS/dash.ejs");
+        let path = Path::new(&"./samples/EJS/admin_index.jst");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("EJS".to_string());
         assert_eq!(actual, expected);
@@ -4302,6 +4302,14 @@ mod ejs {
 
     #[test]
     fn test_3() {
+        let path = Path::new(&"./samples/EJS/dash.ejs");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("EJS".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_4() {
         let path = Path::new(&"./samples/EJS/page.ejs");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("EJS".to_string());
