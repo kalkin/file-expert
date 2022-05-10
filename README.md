@@ -49,7 +49,7 @@ transform.py    Python
 
 ### Via Cargo
 
-`carg install file-expert`
+`cargo install file-expert`
 
 #### From Source
 
