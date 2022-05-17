@@ -317,6 +317,7 @@ lazy_static! {
         ("gedcom".to_string(), "GEDCOM".to_string()),
         ("glsl".to_string(), "GLSL".to_string()),
         ("gn".to_string(), "GN".to_string()),
+        ("gsc".to_string(), "GSC".to_string()),
         (
             "game maker language".to_string(),
             "Game Maker Language".to_string()

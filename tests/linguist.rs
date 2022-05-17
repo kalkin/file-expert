@@ -5899,6 +5899,60 @@ mod gn {
     }
 }
 
+mod gsc {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/GSC/array_override_common.gsc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("GSC".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/GSC/zm_init.gsc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("GSC".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
+        let path = Path::new(&"./samples/GSC/_spiderbot_ride.csc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("GSC".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_3() {
+        let path = Path::new(&"./samples/GSC/struct.gsc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("GSC".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_4() {
+        let path = Path::new(&"./samples/GSC/array_override_common.gsh");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("GSC".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_5() {
+        let path = Path::new(&"./samples/GSC/math_shared.gsc");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("GSC".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod game_maker_language {
     use file_expert::guess;
     use file_expert::Guess;
