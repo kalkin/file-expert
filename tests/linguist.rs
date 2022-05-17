@@ -15918,6 +15918,28 @@ mod protocol_buffer {
     }
 }
 
+mod protocol_buffer_text_format {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Protocol Buffer Text Format/schema.pbtxt");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Protocol Buffer Text Format".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Protocol Buffer Text Format/cudnn_benchmarks.textproto");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Protocol Buffer Text Format".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod public_key {
     use file_expert::guess;
     use file_expert::Guess;

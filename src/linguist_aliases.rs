@@ -760,6 +760,18 @@ lazy_static! {
             "Protocol Buffers".to_string(),
             "Protocol Buffer".to_string()
         ),
+        (
+            "protocol buffer text format".to_string(),
+            "Protocol Buffer Text Format".to_string()
+        ),
+        (
+            "text proto".to_string(),
+            "Protocol Buffer Text Format".to_string()
+        ),
+        (
+            "protobuf text format".to_string(),
+            "Protocol Buffer Text Format".to_string()
+        ),
         ("public key".to_string(), "Public Key".to_string()),
         ("pug".to_string(), "Pug".to_string()),
         ("puppet".to_string(), "Puppet".to_string()),

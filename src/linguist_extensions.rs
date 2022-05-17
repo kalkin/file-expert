@@ -753,6 +753,14 @@ lazy_static! {
         (".pml".to_string(), "Promela".to_string()),
         (".spin".to_string(), "Propeller Spin".to_string()),
         (".proto".to_string(), "Protocol Buffer".to_string()),
+        (
+            ".textproto".to_string(),
+            "Protocol Buffer Text Format".to_string()
+        ),
+        (
+            ".pbtxt".to_string(),
+            "Protocol Buffer Text Format".to_string()
+        ),
         (".pub".to_string(), "Public Key".to_string()),
         (".jade".to_string(), "Pug".to_string()),
         (".pug".to_string(), "Pug".to_string()),
