@@ -309,6 +309,7 @@ lazy_static! {
         (".feature".to_string(), "Gherkin".to_string()),
         (".story".to_string(), "Gherkin".to_string()),
         (".gitconfig".to_string(), "Git Config".to_string()),
+        (".gleam".to_string(), "Gleam".to_string()),
         (".glf".to_string(), "Glyph".to_string()),
         (
             ".bdf".to_string(),

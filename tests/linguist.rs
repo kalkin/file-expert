@@ -6231,6 +6231,28 @@ mod git_config {
     }
 }
 
+mod gleam {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Gleam/websocket.gleam");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Gleam".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Gleam/contributor.gleam");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Gleam".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod glyph_bitmap_distribution_format {
     use file_expert::guess;
     use file_expert::Guess;

@@ -337,6 +337,7 @@ lazy_static! {
         ("git config".to_string(), "Git Config".to_string()),
         ("gitconfig".to_string(), "Git Config".to_string()),
         ("gitmodules".to_string(), "Git Config".to_string()),
+        ("gleam".to_string(), "Gleam".to_string()),
         ("glyph".to_string(), "Glyph".to_string()),
         (
             "glyph bitmap distribution format".to_string(),
