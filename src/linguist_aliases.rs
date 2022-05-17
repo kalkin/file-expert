@@ -258,6 +258,7 @@ lazy_static! {
         ("eq".to_string(), "EQ".to_string()),
         ("eagle".to_string(), "Eagle".to_string()),
         ("earthly".to_string(), "Earthly".to_string()),
+        ("Earthfile".to_string(), "Earthly".to_string()),
         ("easybuild".to_string(), "Easybuild".to_string()),
         ("ecere projects".to_string(), "Ecere Projects".to_string()),
         ("editorconfig".to_string(), "EditorConfig".to_string()),
