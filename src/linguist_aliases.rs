@@ -595,6 +595,7 @@ lazy_static! {
             "Microsoft Visual Studio Solution".to_string()
         ),
         ("minid".to_string(), "MiniD".to_string()),
+        ("mint".to_string(), "Mint".to_string()),
         ("mirah".to_string(), "Mirah".to_string()),
         ("modelica".to_string(), "Modelica".to_string()),
         ("modula-2".to_string(), "Modula-2".to_string()),

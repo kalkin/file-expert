@@ -12046,6 +12046,60 @@ mod microsoft_visual_studio_solution {
     }
 }
 
+mod mint {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Mint/HeaderTest.mint");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Mint".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Mint/InlineJS.mint");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Mint".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
+        let path = Path::new(&"./samples/Mint/Comment.mint");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Mint".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_3() {
+        let path = Path::new(&"./samples/Mint/Counter.mint");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Mint".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_4() {
+        let path = Path::new(&"./samples/Mint/TodoItem.mint");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Mint".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_5() {
+        let path = Path::new(&"./samples/Mint/ApplicationStore.mint");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Mint".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod modelica {
     use file_expert::guess;
     use file_expert::Guess;

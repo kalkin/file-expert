@@ -608,6 +608,7 @@ lazy_static! {
             "Microsoft Visual Studio Solution".to_string()
         ),
         (".minid".to_string(), "MiniD".to_string()),
+        (".mint".to_string(), "Mint".to_string()),
         (".druby".to_string(), "Mirah".to_string()),
         (".duby".to_string(), "Mirah".to_string()),
         (".mirah".to_string(), "Mirah".to_string()),
