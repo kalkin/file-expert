@@ -902,6 +902,7 @@ lazy_static! {
         (".tmux".to_string(), "Shell".to_string()),
         (".tool".to_string(), "Shell".to_string()),
         (".zsh".to_string(), "Shell".to_string()),
+        (".zsh-theme".to_string(), "Shell".to_string()),
         (".sh-session".to_string(), "ShellSession".to_string()),
         (".shen".to_string(), "Shen".to_string()),
         (".sieve".to_string(), "Sieve".to_string()),

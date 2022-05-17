@@ -5708,6 +5708,7 @@ Shell:
   - ".tmux"
   - ".tool"
   - ".zsh"
+  - ".zsh-theme"
   filenames:
   - ".bash_aliases"
   - ".bash_history"
