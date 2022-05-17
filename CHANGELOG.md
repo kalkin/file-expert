@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - 2022-05-17
+
+### Added
+
+- Support for GSC (github/linguist#5634)
+- Support for hook (github/linguist#5754)
+- Support for Procfile language (github/linguist#5760)
+- Support for Clarity (github/linguist#5665)
+- Support for Protocol Buffer text format (github/linguist#5716)
+- Support for Gleam programming language (github/linguist#5688)
+- Support for Mint (github/linguist#5402)
+- Support for RPGLE language (github/linguist#5240)
+- Support for Curry programming language (github/linguist#5111)
+- Support for Janet (github/linguist#4674)
+
+### Changed
+
+- Add `.zsh-theme` to supported Shell extensions
+- Merge Systemd with desktop
+- Add Earthfile alias to Earthly (github/linguist#5721)
+
 ## [v1.1.0] - 2022-05-09
 
 ### Added
