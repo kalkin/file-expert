@@ -790,6 +790,8 @@ lazy_static! {
         (".pprx".to_string(), "REXX".to_string()),
         (".rex".to_string(), "REXX".to_string()),
         (".rmd".to_string(), "RMarkdown".to_string()),
+        (".rpgle".to_string(), "RPGLE".to_string()),
+        (".sqlrpgle".to_string(), "RPGLE".to_string()),
         (".rnh".to_string(), "RUNOFF".to_string()),
         (".rkt".to_string(), "Racket".to_string()),
         (".rktd".to_string(), "Racket".to_string()),

@@ -16520,6 +16520,84 @@ mod rpc {
     }
 }
 
+mod rpgle {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/RPGLE/ifsread.rpgle");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("RPGLE".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/RPGLE/qcmdexc_ex.rpgle");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("RPGLE".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
+        let path = Path::new(&"./samples/RPGLE/anilist.sqlrpgle");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("RPGLE".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_3() {
+        let path = Path::new(&"./samples/RPGLE/sms_h.rpgle");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("RPGLE".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_4() {
+        let path = Path::new(&"./samples/RPGLE/psds.rpgle");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("RPGLE".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_5() {
+        let path = Path::new(&"./samples/RPGLE/bfint.sqlrpgle");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("RPGLE".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_6() {
+        let path = Path::new(&"./samples/RPGLE/dspf.rpgle");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("RPGLE".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_7() {
+        let path = Path::new(&"./samples/RPGLE/sms.sqlrpgle");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("RPGLE".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_8() {
+        let path = Path::new(&"./samples/RPGLE/fizzbuzz.rpgle");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("RPGLE".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod rpm_spec {
     use file_expert::guess;
     use file_expert::Guess;
