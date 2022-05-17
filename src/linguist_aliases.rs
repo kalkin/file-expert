@@ -162,6 +162,7 @@ lazy_static! {
         ("chuck".to_string(), "ChucK".to_string()),
         ("cirru".to_string(), "Cirru".to_string()),
         ("clarion".to_string(), "Clarion".to_string()),
+        ("clarity".to_string(), "Clarity".to_string()),
         ("classic asp".to_string(), "Classic ASP".to_string()),
         ("asp".to_string(), "Classic ASP".to_string()),
         ("clean".to_string(), "Clean".to_string()),

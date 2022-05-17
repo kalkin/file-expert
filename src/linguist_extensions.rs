@@ -137,6 +137,7 @@ lazy_static! {
         (".ck".to_string(), "ChucK".to_string()),
         (".cirru".to_string(), "Cirru".to_string()),
         (".clw".to_string(), "Clarion".to_string()),
+        (".clar".to_string(), "Clarity".to_string()),
         (".asp".to_string(), "Classic ASP".to_string()),
         (".icl".to_string(), "Clean".to_string()),
         (".dcl".to_string(), "Clean".to_string()),
