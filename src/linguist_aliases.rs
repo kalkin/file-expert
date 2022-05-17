@@ -752,6 +752,7 @@ lazy_static! {
         ("pwsh".to_string(), "PowerShell".to_string()),
         ("prisma".to_string(), "Prisma".to_string()),
         ("processing".to_string(), "Processing".to_string()),
+        ("procfile".to_string(), "Procfile".to_string()),
         ("proguard".to_string(), "Proguard".to_string()),
         ("prolog".to_string(), "Prolog".to_string()),
         ("promela".to_string(), "Promela".to_string()),

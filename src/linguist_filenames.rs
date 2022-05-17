@@ -182,6 +182,7 @@ lazy_static! {
         ("Rexfile".to_string(), "Perl".to_string()),
         ("ack".to_string(), "Perl".to_string()),
         ("cpanfile".to_string(), "Perl".to_string()),
+        ("Procfile".to_string(), "Procfile".to_string()),
         ("Modulefile".to_string(), "Puppet".to_string()),
         (".gclient".to_string(), "Python".to_string()),
         ("DEPS".to_string(), "Python".to_string()),
