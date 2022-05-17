@@ -6039,10 +6039,6 @@ Swift:
   codemirror_mode: swift
   codemirror_mime_type: text/x-swift
   language_id: 362
-Systemd:
-  type: data
-  extensions:
-  - ".service"
 SystemVerilog:
   type: programming
   color: "#DAE1C2"
@@ -7135,6 +7131,7 @@ desktop:
   extensions:
   - ".desktop"
   - ".desktop.in"
+  - ".service"
   tm_scope: source.desktop
   ace_mode: text
   language_id: 412

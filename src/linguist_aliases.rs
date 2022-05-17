@@ -953,7 +953,6 @@ lazy_static! {
         ("supercollider".to_string(), "SuperCollider".to_string()),
         ("svelte".to_string(), "Svelte".to_string()),
         ("swift".to_string(), "Swift".to_string()),
-        ("systemd".to_string(), "Systemd".to_string()),
         ("systemverilog".to_string(), "SystemVerilog".to_string()),
         ("ti program".to_string(), "TI Program".to_string()),
         ("tla".to_string(), "TLA".to_string()),

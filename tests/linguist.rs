@@ -23422,6 +23422,14 @@ mod desktop {
 
     #[test]
     fn test_0() {
+        let path = Path::new(&"./samples/desktop/nebula.service");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("desktop".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
         let path = Path::new(&"./samples/desktop/example.desktop");
         let actual = guess(&path).unwrap();
         let expected = Guess::Kind("desktop".to_string());
