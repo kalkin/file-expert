@@ -8949,6 +8949,36 @@ mod jsoniq {
     }
 }
 
+mod janet {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Janet/life.janet");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Janet".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Janet/lazyseqs.janet");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Janet".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_2() {
+        let path = Path::new(&"./samples/Janet/tarray.janet");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Janet".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod jasmin {
     use file_expert::guess;
     use file_expert::Guess;

@@ -64,6 +64,7 @@ lazy_static! {
         ("io".to_string(), "Io".to_string()),
         ("ioke".to_string(), "Ioke".to_string()),
         ("jconsole".to_string(), "J".to_string()),
+        ("janet".to_string(), "Janet".to_string()),
         ("chakra".to_string(), "JavaScript".to_string()),
         ("d8".to_string(), "JavaScript".to_string()),
         ("gjs".to_string(), "JavaScript".to_string()),

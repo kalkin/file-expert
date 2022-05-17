@@ -453,6 +453,7 @@ lazy_static! {
         ("json5".to_string(), "JSON5".to_string()),
         ("jsonld".to_string(), "JSONLD".to_string()),
         ("jsoniq".to_string(), "JSONiq".to_string()),
+        ("janet".to_string(), "Janet".to_string()),
         ("jasmin".to_string(), "Jasmin".to_string()),
         ("java".to_string(), "Java".to_string()),
         ("java properties".to_string(), "Java Properties".to_string()),

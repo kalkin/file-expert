@@ -468,6 +468,7 @@ lazy_static! {
         ),
         (".json5".to_string(), "JSON5".to_string()),
         (".jsonld".to_string(), "JSONLD".to_string()),
+        (".janet".to_string(), "Janet".to_string()),
         (".java".to_string(), "Java".to_string()),
         (".jav".to_string(), "Java".to_string()),
         (".jsp".to_string(), "Java Server Pages".to_string()),
