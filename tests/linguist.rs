@@ -23517,6 +23517,28 @@ mod fish {
     }
 }
 
+mod hoon {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/hoon/eyre.hoon");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("hoon".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/hoon/canvas.hoon");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("hoon".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod jq {
     use file_expert::guess;
     use file_expert::Guess;

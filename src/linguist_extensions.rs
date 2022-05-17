@@ -1176,6 +1176,7 @@ lazy_static! {
         (".eh".to_string(), "eC".to_string()),
         (".edn".to_string(), "edn".to_string()),
         (".fish".to_string(), "fish".to_string()),
+        (".hoon".to_string(), "hoon".to_string()),
         (".mrc".to_string(), "mIRC Script".to_string()),
         (".mcfunction".to_string(), "mcfunction".to_string()),
         (".mu".to_string(), "mupad".to_string()),
