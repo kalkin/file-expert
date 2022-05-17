@@ -215,6 +215,7 @@ lazy_static! {
         ("csound-sco".to_string(), "Csound Score".to_string()),
         ("cuda".to_string(), "Cuda".to_string()),
         ("cue sheet".to_string(), "Cue Sheet".to_string()),
+        ("curry".to_string(), "Curry".to_string()),
         ("cycript".to_string(), "Cycript".to_string()),
         ("cython".to_string(), "Cython".to_string()),
         ("pyrex".to_string(), "Cython".to_string()),

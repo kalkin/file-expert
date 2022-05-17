@@ -182,6 +182,7 @@ lazy_static! {
         (".sco".to_string(), "Csound Score".to_string()),
         (".cu".to_string(), "Cuda".to_string()),
         (".cuh".to_string(), "Cuda".to_string()),
+        (".curry".to_string(), "Curry".to_string()),
         (".cy".to_string(), "Cycript".to_string()),
         (".pyx".to_string(), "Cython".to_string()),
         (".pxd".to_string(), "Cython".to_string()),

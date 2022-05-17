@@ -3781,6 +3781,28 @@ mod cue_sheet {
     }
 }
 
+mod curry {
+    use file_expert::guess;
+    use file_expert::Guess;
+    use std::path::Path;
+
+    #[test]
+    fn test_0() {
+        let path = Path::new(&"./samples/Curry/Prelude.curry");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Curry".to_string());
+        assert_eq!(actual, expected);
+    }
+
+    #[test]
+    fn test_1() {
+        let path = Path::new(&"./samples/Curry/Nat.curry");
+        let actual = guess(&path).unwrap();
+        let expected = Guess::Kind("Curry".to_string());
+        assert_eq!(actual, expected);
+    }
+}
+
 mod cycript {
     use file_expert::guess;
     use file_expert::Guess;
