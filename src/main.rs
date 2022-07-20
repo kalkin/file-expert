@@ -36,7 +36,6 @@ use std::io;
 use std::io::prelude::*;
 use std::path::Path;
 use std::process::exit;
-use update_informer::{registry, Check};
 
 fn app() -> clap::Command<'static> {
     clap::command!()
@@ -53,7 +52,9 @@ fn app() -> clap::Command<'static> {
 
 fn main() {
     let matches: ArgMatches = app().get_matches();
+    #[cfg(feature = "update-informer")]
     {
+        use update_informer::{registry, Check};
         let informer = update_informer::new(
             registry::Crates,
             env!("CARGO_PKG_NAME"),
