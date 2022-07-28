@@ -30,28 +30,28 @@ mod linguist_interpreters;
 mod modeline;
 mod shebang;
 
-use clap::{Arg, ArgMatches};
+use clap::Parser;
 use expert::Guess;
 use std::io;
 use std::io::prelude::*;
 use std::path::Path;
 use std::process::exit;
 
-fn app() -> clap::Command<'static> {
-    clap::command!()
-        .override_help("Expert system for recognizing file types")
-        .help_expected(true)
-        .dont_collapse_args_in_usage(true)
-        .arg(
-            Arg::new("file")
-                .help("Files to identify")
-                .required(false)
-                .multiple_values(true),
-        )
+#[derive(Parser)]
+#[clap(
+    author,
+    version,
+    about = "Expert system for recognizing file types",
+    help_expected = true,
+    dont_collapse_args_in_usage = true
+)]
+struct Args {
+    #[clap(name = "file", help = "File to identify")]
+    files: Vec<String>,
 }
 
 fn main() {
-    let matches: ArgMatches = app().get_matches();
+    let matches = Args::parse();
     #[cfg(feature = "update-informer")]
     {
         use update_informer::{registry, Check};
@@ -66,23 +66,7 @@ fn main() {
         }
     }
     let mut exit_code = 0;
-    if matches.is_present("file") {
-        for file in matches.values_of("file").unwrap() {
-            let result = expert::guess(Path::new(file));
-            match result {
-                Ok(lang) => {
-                    if let Guess::Unknown = lang {
-                        exit_code = 1;
-                    }
-                    println!("{}\t{}", file, lang);
-                }
-                Err(e) => {
-                    exit_code = 1;
-                    eprintln!("{}\t{}", file, e);
-                }
-            }
-        }
-    } else {
+    if matches.files.is_empty() {
         let stdin = io::stdin();
         for line in stdin.lock().lines() {
             match line {
@@ -104,11 +88,22 @@ fn main() {
                 Err(_) => break,
             }
         }
+    } else {
+        for file in matches.files {
+            let result = expert::guess(Path::new(&file));
+            match result {
+                Ok(lang) => {
+                    if let Guess::Unknown = lang {
+                        exit_code = 1;
+                    }
+                    println!("{}\t{}", file, lang);
+                }
+                Err(e) => {
+                    exit_code = 1;
+                    eprintln!("{}\t{}", file, e);
+                }
+            }
+        }
     }
     exit(exit_code);
-}
-
-#[test]
-fn verify_app() {
-    app().debug_assert();
 }
