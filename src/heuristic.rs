@@ -48,9 +48,9 @@ pub fn guess_by_interpreter(body: &[String]) -> Option<&'static String> {
                     #[allow(clippy::else_if_without_else)]
                     if let Ok(captures) = EXEC_REGEX.captures(line) {
                         if let Some(caps) = captures {
-                            let interpreter = caps.get(1).unwrap().as_str();
-                            if INTERPRETERS.contains_key(interpreter) {
-                                return INTERPRETERS.get(interpreter);
+                            let exec_interpreter = caps.get(1).unwrap().as_str();
+                            if INTERPRETERS.contains_key(exec_interpreter) {
+                                return INTERPRETERS.get(exec_interpreter);
                             }
                         } else {
                             break;
