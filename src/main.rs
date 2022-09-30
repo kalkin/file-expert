@@ -50,7 +50,7 @@ struct Args {
     files: Vec<String>,
 }
 
-#[allow(clippy::print_stderr,clippy::print_stdout)]
+#[allow(clippy::print_stderr, clippy::print_stdout, clippy::exit)]
 fn main() {
     let matches = Args::parse();
     #[cfg(feature = "update-informer")]
