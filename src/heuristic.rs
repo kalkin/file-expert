@@ -45,6 +45,7 @@ pub fn guess_by_interpreter(body: &[String]) -> Option<&'static String> {
         if let Some(language) = INTERPRETERS.get(&interpreter) {
             if language == "Shell" {
                 for line in &body[1..] {
+                    #[allow(clippy::else_if_without_else)]
                     if let Ok(captures) = EXEC_REGEX.captures(line) {
                         if let Some(caps) = captures {
                             let interpreter = caps.get(1).unwrap().as_str();

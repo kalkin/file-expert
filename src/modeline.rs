@@ -28,6 +28,7 @@ lazy_static! {
 }
 
 pub fn parse(line: &str) -> Option<&str> {
+    #[allow(clippy::else_if_without_else)]
     if let Some(caps) = VI_REGEX.captures(line).unwrap() {
         if let Some(m) = caps.get(1) {
             return Some(m.as_str());
