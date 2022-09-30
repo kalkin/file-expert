@@ -60,42 +60,42 @@ mod test {
     #[test]
     fn simple() {
         assert_eq!(interpreter("Lore Ipsum Dolores"), None);
-        assert_eq!(interpreter("#!/usr/bin/perl"), Some("perl".to_string()));
-        assert_eq!(interpreter("#! /usr/bin/perl"), Some("perl".to_string()));
-        assert_eq!(interpreter("#!/usr/bin/jq -fr"), Some("jq".to_string()));
+        assert_eq!(interpreter("#!/usr/bin/perl"), Some("perl".to_owned()));
+        assert_eq!(interpreter("#! /usr/bin/perl"), Some("perl".to_owned()));
+        assert_eq!(interpreter("#!/usr/bin/jq -fr"), Some("jq".to_owned()));
         assert_eq!(interpreter("#!/var/foo/bin/python"), None);
         assert_eq!(interpreter("#! /sbin/"), None);
         assert_eq!(interpreter("#! /sbin/ -fr"), None);
-        assert_eq!(interpreter("#!/usr/bin/env perl"), Some("perl".to_string()));
+        assert_eq!(interpreter("#!/usr/bin/env perl"), Some("perl".to_owned()));
         assert_eq!(
             interpreter("#!/usr/bin/env  perl"),
-            Some("perl".to_string())
+            Some("perl".to_owned())
         );
         assert_eq!(
             interpreter("#!/usr/bin/env  perl -n"),
-            Some("perl".to_string())
+            Some("perl".to_owned())
         );
         assert_eq!(
             interpreter("#!/usr/bin/env -vS ruby -w -Ilib:test"),
-            Some("ruby".to_string())
+            Some("ruby".to_owned())
         );
         assert_eq!(
             interpreter("#!/usr/bin/env -vS ruby -wKU"),
-            Some("ruby".to_string())
+            Some("ruby".to_owned())
         );
         assert_eq!(
             interpreter("#!/usr/bin/env --split-string sed -f"),
-            Some("sed".to_string())
+            Some("sed".to_owned())
         );
         assert_eq!(
             interpreter("#!/usr/bin/env -S GH_TOKEN=ghp_*** deno run --allow-net"),
-            Some("deno".to_string())
+            Some("deno".to_owned())
         );
         assert_eq!(
             interpreter(
                 "#! /usr/bin/env A=003 B=149 C=150 D=xzd E=base64 F=tar G=gz H=head I=tail sh"
             ),
-            Some("sh".to_string())
+            Some("sh".to_owned())
         );
     }
 }

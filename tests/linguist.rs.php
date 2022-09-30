@@ -36,8 +36,8 @@ function print_test(string $type, int $i, SplFileInfo $info, array $skipped)
     #[test]
     fn $testName() {
         let path = Path::new(&"./samples/$path");
-        let actual = guess(&path).unwrap();
-        let expected = Guess::Kind("$type".to_string());
+        let actual = guess(path).unwrap();
+        let expected = Guess::Kind("$type".to_owned());
         assert_eq!(actual, expected);
     }
 

@@ -47,7 +47,7 @@ use lazy_static::lazy_static;
 lazy_static! {
     pub static ref MODELINE_ALIASES: HashMap<String, String> = [
 <?php foreach ($ALIAS_TO_LANG as $name => $lang) :?>
-        ("<?= $name ?>".to_string(), "<?= $lang ?>".to_string()),
+        ("<?= $name ?>".to_owned(), "<?= $lang ?>".to_owned()),
 <?php endforeach ?>
     ].iter().cloned().collect();
 }

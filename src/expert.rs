@@ -47,42 +47,42 @@ impl Display for Guess {
 pub fn guess(path: &Path) -> Result<Guess, std::io::Error> {
     let metadata = path.metadata()?;
     if metadata.is_dir() {
-        return Ok(Guess::Kind("Directory".to_string()));
+        return Ok(Guess::Kind("Directory".to_owned()));
     }
 
     if let Some(lang) = guess_by_filename(path) {
-        return Ok(Guess::Kind(lang.to_string()));
+        return Ok(Guess::Kind(lang.clone()));
     }
     let optional_extensions = extensions(path);
     let content = Content::new(path)?;
     match content {
-        Content::Binary(_) => return Ok(Guess::Kind("Binary".to_string())),
+        Content::Binary(_) => return Ok(Guess::Kind("Binary".to_owned())),
         Content::Empty => {
             if let Some(ext_vec) = optional_extensions {
                 for ext in ext_vec {
                     if let Some(lang) = guess_by_extensions(&ext) {
-                        return Ok(Guess::Kind(lang.to_string()));
+                        return Ok(Guess::Kind(lang.clone()));
                     }
                 }
             }
-            return Ok(Guess::Kind("Unknown file".to_string()));
+            return Ok(Guess::Kind("Unknown file".to_owned()));
         }
         Content::Text { modelines, body } => {
             if let Some(interpreter) = guess_by_interpreter(&body) {
-                return Ok(Guess::Kind(interpreter.to_string()));
+                return Ok(Guess::Kind(interpreter.clone()));
             }
             if let Some(lang) = guess_by_modeline(&modelines) {
-                return Ok(Guess::Kind(lang.to_string()));
+                return Ok(Guess::Kind(lang.clone()));
             }
 
             if let Some(ext_vec) = optional_extensions {
                 for ext in ext_vec {
                     if let Some(lang) = guess_by_heuristic(&ext, &body) {
-                        return Ok(Guess::Kind(lang.to_string()));
+                        return Ok(Guess::Kind(lang.to_owned()));
                     }
 
                     if let Some(lang) = guess_by_extensions(&ext) {
-                        return Ok(Guess::Kind(lang.to_string()));
+                        return Ok(Guess::Kind(lang.clone()));
                     }
                 }
             }
@@ -152,7 +152,7 @@ fn test_extensions() {
     assert_eq!(expected, actual);
 
     let path = Path::new("libfoo.dll.config");
-    let expected = vec![".dll.config".to_string(), ".config".to_string()];
+    let expected = vec![".dll.config".to_owned(), ".config".to_owned()];
     let actual = &extensions(&path).unwrap();
     assert_eq!(expected[0], actual[0]);
     assert_eq!(expected[1], actual[1]);
