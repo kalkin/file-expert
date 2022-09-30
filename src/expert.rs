@@ -33,6 +33,7 @@ pub enum Guess {
 
 #[cfg(not(tarpaulin_include))]
 impl Display for Guess {
+    #[inline]
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::Kind(lang) => f.write_str(lang),
@@ -44,6 +45,7 @@ impl Display for Guess {
 ///
 /// # Errors
 /// Will return [`std::io::Error`] if there're issues with reading the file
+#[inline]
 pub fn guess(path: &Path) -> Result<Guess, std::io::Error> {
     let metadata = path.metadata()?;
     if metadata.is_dir() {
