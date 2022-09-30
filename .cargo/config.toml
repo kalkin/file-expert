@@ -56,6 +56,7 @@ rustflags = [
         "-Aclippy::multiple_inherent_impl",
         "-Aclippy::pattern_type_mismatch",
         "-Aclippy::pub_use",
+        "-Aclippy::separated_literal_suffix",
         "-Aclippy::string_slice",
         "-Aclippy::std_instead_of_alloc",
         "-Aclippy::std_instead_of_core",
