@@ -23,7 +23,7 @@ pub fn interpreter(first_line: &str) -> Option<String> {
     if !first_line.starts_with("#!") {
         return None;
     }
-    let line = (&first_line[2..]).trim();
+    let line = first_line[2..].trim();
     let valid_paths = vec![
         "/bin/",
         "/opt/bin/",

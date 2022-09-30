@@ -133,27 +133,27 @@ fn extensions(path: &Path) -> Option<Vec<String>> {
 fn test_extensions() {
     let path = Path::new("foo/bar.js");
     let expected = ".js";
-    let actual = &extensions(&path).unwrap()[0];
+    let actual = &extensions(path).unwrap()[0];
     assert_eq!(expected, actual);
 
     let path = Path::new("foo/bar.Js");
     let expected = ".js";
-    let actual = &extensions(&path).unwrap()[0];
+    let actual = &extensions(path).unwrap()[0];
     assert_eq!(expected, actual);
 
     let path = Path::new(".gitignore");
     let expected: Option<Vec<String>> = None;
-    let actual = extensions(&path);
+    let actual = extensions(path);
     assert_eq!(expected, actual);
 
     let path = Path::new(".gitignore.js");
     let expected = ".js";
-    let actual = &extensions(&path).unwrap()[0];
+    let actual = &extensions(path).unwrap()[0];
     assert_eq!(expected, actual);
 
     let path = Path::new("libfoo.dll.config");
     let expected = vec![".dll.config".to_owned(), ".config".to_owned()];
-    let actual = &extensions(&path).unwrap();
+    let actual = &extensions(path).unwrap();
     assert_eq!(expected[0], actual[0]);
     assert_eq!(expected[1], actual[1]);
 }
