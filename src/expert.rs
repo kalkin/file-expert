@@ -35,8 +35,8 @@ pub enum Guess {
 impl Display for Guess {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            Guess::Kind(lang) => f.write_str(lang),
-            Guess::Unknown => f.write_str("Unknown file"),
+            Self::Kind(lang) => f.write_str(lang),
+            Self::Unknown => f.write_str("Unknown file"),
         }
     }
 }
