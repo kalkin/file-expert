@@ -37,7 +37,7 @@ impl Content {
     pub fn new(path: &Path) -> Result<Self, std::io::Error> {
         let mut file = File::open(path)?;
         let file_size = file.metadata()?.len();
-        #[allow(clippy::cast_possible_truncation)]
+        #[allow(clippy::as_conversions,clippy::cast_possible_truncation)]
         let amount_to_read = if file_size < MAX_SIZE as u64 {
             file_size as usize // file_size is already < MAX_SIZE which fits in a `usize`
         } else {
