@@ -25,9 +25,12 @@ use crate::heuristic::{
 use std::fmt::{Display, Formatter};
 use std::path::Path;
 
+/// A file type guess result
 #[derive(Debug, Eq, PartialEq)]
 pub enum Guess {
+    /// File type
     Kind(String),
+    /// Unknown file type
     Unknown,
 }
 
@@ -42,6 +45,7 @@ impl Display for Guess {
     }
 }
 
+/// Guess the file type
 ///
 /// # Errors
 /// Will return [`std::io::Error`] if there're issues with reading the file

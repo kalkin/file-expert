@@ -18,6 +18,7 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 //
 #![recursion_limit = "512"]
+#![allow(missing_docs)]
 
 mod data_structures;
 mod expert;

@@ -18,6 +18,8 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 //
 #![recursion_limit = "512"]
+#![allow(missing_docs)]
+/// Api for file-expert
 mod data_structures;
 mod expert;
 mod heuristic;
@@ -29,5 +31,7 @@ mod linguist_interpreters;
 mod modeline;
 mod shebang;
 
+/// Guess the file type
 pub use crate::expert::guess;
+/// A file type guess result
 pub use crate::expert::Guess;
