@@ -109,6 +109,8 @@ fn extensions(path: &Path) -> Option<Vec<String>> {
             }
 
             let mut ext2 = ext1.clone();
+            #[allow(clippy::arithmetic)]
+            // arithmetic: filename >= ext
             let new_end = filename.len() - ext1.len();
             for c in filename[0..new_end].chars().rev() {
                 ext2.insert(0, c);

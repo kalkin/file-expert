@@ -31,6 +31,7 @@ pub enum Content {
     Empty,
 }
 
+#[allow(clippy::arithmetic)]
 const MAX_SIZE: usize = 4096 * 32;
 
 impl Content {
