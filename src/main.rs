@@ -69,6 +69,9 @@ fn main() {
     let mut exit_code = 0;
     if matches.files.is_empty() {
         let stdin = io::stdin();
+        // FIXME: The following clippy annotation is a workaround for the following bug:
+        // https://github.com/rust-lang/rust-clippy/issues/9135
+        #[allow(clippy::significant_drop_in_scrutinee)]
         for line in stdin.lock().lines() {
             match line {
                 Ok(l) => {
