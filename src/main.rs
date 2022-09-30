@@ -75,7 +75,7 @@ fn main() {
                     let result = expert::guess(Path::new(&l));
                     match result {
                         Ok(lang) => {
-                            if let Guess::Unknown = lang {
+                            if lang == Guess::Unknown {
                                 exit_code = 1;
                             }
                             println!("{}\t{}", l, lang);
@@ -94,7 +94,7 @@ fn main() {
             let result = expert::guess(Path::new(&file));
             match result {
                 Ok(lang) => {
-                    if let Guess::Unknown = lang {
+                    if lang == Guess::Unknown {
                         exit_code = 1;
                     }
                     println!("{}\t{}", file, lang);
