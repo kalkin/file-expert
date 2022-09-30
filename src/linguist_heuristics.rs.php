@@ -57,6 +57,7 @@ $HEURISTICS = yaml_parse_file($HEURISTICS_FILE);
 #[allow(clippy::too_many_lines)]
 #[allow(clippy::match_same_arms)]
 #[allow(clippy::if_same_then_else)]
+#[allow(clippy::if_then_some_else_none)]
 pub fn linguist_heuristic(ext: &str, content: &[String]) -> Option<&'static str> {
     match ext {
 <?php
