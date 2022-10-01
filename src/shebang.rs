@@ -67,10 +67,7 @@ mod test {
         assert_eq!(interpreter("#! /sbin/"), None);
         assert_eq!(interpreter("#! /sbin/ -fr"), None);
         assert_eq!(interpreter("#!/usr/bin/env perl"), Some("perl".to_owned()));
-        assert_eq!(
-            interpreter("#!/usr/bin/env  perl"),
-            Some("perl".to_owned())
-        );
+        assert_eq!(interpreter("#!/usr/bin/env  perl"), Some("perl".to_owned()));
         assert_eq!(
             interpreter("#!/usr/bin/env  perl -n"),
             Some("perl".to_owned())
