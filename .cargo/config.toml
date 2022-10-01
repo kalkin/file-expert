@@ -1,0 +1,66 @@
+[target.'cfg(all())']
+rustflags = [
+	# rust lints
+        "-Dabsolute_paths_not_starting_with_crate",
+        "-Delided_lifetimes_in_paths",
+        "-Dexplicit_outlives_requirements",
+        "-Dfuture-incompatible",
+        "-Dmeta_variable_misuse",
+        "-Dmissing_debug_implementations",
+        "-Dnonstandard-style",
+        "-Dnoop_method_call",
+        "-Dpointer_structural_match",
+        "-Drust-2018-idioms",
+        "-Drust-2021-compatibility",
+        "-Dsingle_use_lifetimes",
+        "-Dtrivial_casts",
+        "-Dtrivial_numeric_casts",
+        "-Dunused_imports",
+        "-Dunused_import_braces",
+        "-Dunused_lifetimes",
+        "-Dunused_qualifications",
+
+	# clippy lints
+        "-Dclippy::all",
+        "-Dclippy::cargo",
+        "-Dclippy::fallible-impl-from",
+        "-Dclippy::pedantic",
+        "-Dclippy::restriction",
+        "-Dclippy::nursery",
+
+	# Warnings
+        "-Wclippy::todo",
+        "-Wmissing_docs",
+        "-Wclippy::multiple-crate-versions",
+        "-Wunsafe_code",
+        "-Wunsafe_op_in_unsafe_fn",
+
+	# clippy::nursery Exceptions
+        "-Aclippy::cognitive-complexity",
+
+	# clippy::pedantic Exceptions
+        "-Aclippy::manual-assert", # pedantic
+
+	# clippy::restriction Exceptions
+        "-Aclippy::expect-used",
+        "-Aclippy::implicit-return",
+        "-Aclippy::non-ascii-literal",
+        "-Aclippy::default_numeric_fallback",
+        "-Aclippy::exhaustive_enums",
+        "-Aclippy::exhaustive_structs",
+        "-Aclippy::indexing_slicing",
+        "-Aclippy::integer_arithmetic",
+        "-Aclippy::integer_division",
+        "-Aclippy::missing_docs_in_private_items",
+        "-Aclippy::mod-module-files",
+        "-Aclippy::multiple_inherent_impl",
+        "-Aclippy::pattern_type_mismatch",
+        "-Aclippy::pub_use",
+        "-Aclippy::string_slice",
+        "-Aclippy::std_instead_of_alloc",
+        "-Aclippy::std_instead_of_core",
+        "-Aclippy::unwrap_in_result",
+        "-Aclippy::unwrap_used",
+        "-Aclippy::use_debug",
+        "-Aclippy::wildcard_enum_match_arm",
+]
