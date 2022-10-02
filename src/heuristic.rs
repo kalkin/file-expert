@@ -29,8 +29,8 @@ use lazy_static::lazy_static;
 use std::path::Path;
 
 lazy_static! {
-    static ref SKIP_REGEX: Regex = Regex::new(r#"^(?:#.*|\s*)"#).unwrap();
-    static ref EXEC_REGEX: Regex = Regex::new(r#"^\s*exec\s+(\w+)\s+.*$"#).unwrap();
+    static ref SKIP_REGEX: Regex = Regex::new(r#"^(?:#.*|\s*)"#).expect("Valid RegEx");
+    static ref EXEC_REGEX: Regex = Regex::new(r#"^\s*exec\s+(\w+)\s+.*$"#).expect("Valid RegEx");
 }
 
 pub fn guess_by_filename(path: &Path) -> Option<&'static String> {
@@ -48,7 +48,7 @@ pub fn guess_by_interpreter(body: &[String]) -> Option<&'static String> {
                     #[allow(clippy::else_if_without_else)]
                     if let Ok(captures) = EXEC_REGEX.captures(line) {
                         if let Some(caps) = captures {
-                            let exec_interpreter = caps.get(1).unwrap().as_str();
+                            let exec_interpreter = caps.get(1).expect("caps has len >= 2").as_str();
                             if INTERPRETERS.contains_key(exec_interpreter) {
                                 return INTERPRETERS.get(exec_interpreter);
                             }

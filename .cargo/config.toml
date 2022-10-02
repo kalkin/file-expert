@@ -61,7 +61,6 @@ rustflags = [
         "-Aclippy::std_instead_of_alloc",
         "-Aclippy::std_instead_of_core",
         "-Aclippy::unwrap_in_result",
-        "-Aclippy::unwrap_used",
         "-Aclippy::use_debug",
         "-Aclippy::wildcard_enum_match_arm",
 ]

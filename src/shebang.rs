@@ -41,8 +41,7 @@ pub fn interpreter(first_line: &str) -> Option<String> {
             break;
         }
     }
-    interpreter_starts?;
-    let start = interpreter_starts.unwrap();
+    let start = interpreter_starts?;
     if line.len() == start {
         return None;
     }

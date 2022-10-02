@@ -47,7 +47,7 @@ foreach ($PATTERNS as $name => $pattern) :
     $escaped_name = escape_name($name);
     $pattern = str_replace('"', '\"', $pattern);
     ?>
-    static ref <?= $escaped_name ?>: Regex = Regex::new(r#"<?= $pattern ?>"#).unwrap();
+    static ref <?= $escaped_name ?>: Regex = Regex::new(r#"<?= $pattern ?>"#).expect("Valid RegEx");
 <?php endforeach ?>
 }
 <?php
@@ -112,7 +112,7 @@ foreach ($HEURISTICS as $extRules) :
 }
 fn match_lines(regex: &Regex, lines: &[String]) -> bool {
     for line in lines {
-        if regex.is_match(line).unwrap() {
+        if regex.is_match(line).expect("Valid RegEx") {
             return true;
         }
     }
