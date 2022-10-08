@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 2022-05-17
+## [Unreleased] - 2022-10-08
 
 ### Added
 
@@ -25,6 +25,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add `.zsh-theme` to supported Shell extensions
 - Merge Systemd with desktop
 - Add Earthfile alias to Earthly (github/linguist#5721)
+- Add missing inline annotation
+- Print proper usage on --help argument
+
+### Fixed
+
+- Migrate `--help` handling to clap@v4.0.0
+- Actually make update-informer optional
 
 ## [v1.1.0] - 2022-05-09
 
